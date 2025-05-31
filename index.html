@@ -10,7 +10,6 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0; padding: 0;
       background: #f4f4f4;
-      color: #333;
     }
     header, footer {
       background: #111;
@@ -45,7 +44,7 @@
     .service-box p {
       margin: 10px 0 15px;
     }
-    .service-box button {
+    .service-box a.button {
       padding: 10px 20px;
       background: #111;
       color: white;
@@ -54,8 +53,10 @@
       cursor: pointer;
       font-weight: 700;
       transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
     }
-    .service-box button:hover {
+    .service-box a.button:hover {
       background: #333;
     }
     #checkout img {
@@ -102,35 +103,19 @@
       border-radius: 4px;
       font-weight: 700;
       width: 100%;
-      box-sizing: border-box;
-      transition: background-color 0.3s ease;
     }
     form button:hover {
       background-color: #333;
     }
     /* Responsive tweaks */
     @media (max-width: 600px) {
-      header, footer {
-        padding: 30px 10px;
-      }
       section {
-        padding: 30px 10px;
+        padding: 20px 10px;
       }
       .service-box {
-        width: 90%;
+        max-width: 90%;
         margin: 20px auto;
-        padding: 15px 10px;
-      }
-      form {
-        padding: 0 10px;
-      }
-      #checkout img {
-        height: 30px;
-        margin: 3px;
-      }
-      nav a {
-        margin: 0 5px;
-        font-size: 14px;
+        padding: 10px;
       }
     }
   </style>
@@ -149,42 +134,42 @@
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/3.png?raw=true" alt="Shopify Store Setup" />
       <h3>Shopify Store Setup</h3>
       <p>Launch your own online store the right way.</p>
-      <button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASM8jxlEMhcDuQ1lqBb_43oRvDPB-IrdHELmMevQk4vNNlbzbxn45_WcBJI5CrRryELA1BHA_Bq7nt_F'">$100 - Add to Cart</button>
+      <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/1.png?raw=true" alt="eBook Cover Design" />
       <h3>eBook Cover Design</h3>
       <p>Professional covers that grab attention.</p>
-      <button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASM8jxlEMhcDuQ1lqBb_43oRvDPB-IrdHELmMevQk4vNNlbzbxn45_WcBJI5CrRryELA1BHA_Bq7nt_F'">$50 - Add to Cart</button>
+      <a href="https://buy.stripe.com/9B614n1ys7bo1wf93h2wU06" class="button" target="_blank" rel="noopener noreferrer">$50 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_52_51%20PM.png?raw=true" alt="Promo Flyers" />
       <h3>Promo Flyers</h3>
       <p>Flyers that hustle and convert.</p>
-      <button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASM8jxlEMhcDuQ1lqBb_43oRvDPB-IrdHELmMevQk4vNNlbzbxn45_WcBJI5CrRryELA1BHA_Bq7nt_F'">$40 - Add to Cart</button>
+      <a href="https://buy.stripe.com/5kQ00j6SMgLY5Mv2ET2wU05" class="button" target="_blank" rel="noopener noreferrer">$40 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_53_11%20PM.png?raw=true" alt="Brand Identity Kit" />
       <h3>Brand Identity Kit</h3>
       <p>Custom branded kits to level up your biz.</p>
-      <button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASM8jxlEMhcDuQ1lqBb_43oRvDPB-IrdHELmMevQk4vNNlbzbxn45_WcBJI5CrRryELA1BHA_Bq7nt_F'">$100 - Add to Cart</button>
+      <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_53_07%20PM.png?raw=true" alt="Graphic Design" />
       <h3>Graphic Design</h3>
       <p>Flyers, logos, and visuals that hustle for you.</p>
-      <button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASM8jxlEMhcDuQ1lqBb_43oRvDPB-IrdHELmMevQk4vNNlbzbxn45_WcBJI5CrRryELA1BHA_Bq7nt_F'">$75 - Add to Cart</button>
+      <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank" rel="noopener noreferrer">$75 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2007_15_34%20PM.png?raw=true" alt="Pen Game Profit" />
       <h3>eBook Course - Pen Game Profit</h3>
       <p>Learn to write, design, and sell your own eBooks.</p>
-      <button onclick="location.href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASM8jxlEMhcDuQ1lqBb_43oRvDPB-IrdHELmMevQk4vNNlbzbxn45_WcBJI5CrRryELA1BHA_Bq7nt_F'">$150 - Enroll Now</button>
+      <a href="https://buy.stripe.com/6oE5kEbCd7b1e5u7ss" class="button" target="_blank" rel="noopener noreferrer">$150 - Enroll Now</a>
     </div>
   </section>
 
@@ -196,34 +181,33 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <form action="https://formspree.io/f/mldnrlao" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="_replyto" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" rows="4" required></textarea>
       <button type="submit">Send</button>
     </form>
   </section>
 
-  <section id="checkout">
-    <h2>Checkout Options</h2>
-    <p>Secure payments accepted via PayPal</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo" />
+  <section id="checkout" style="background:#222; color:#fff; padding: 20px 0; margin-top: 40px;">
+    <h2>Checkout with Card</h2>
+    <p>We accept Visa, Mastercard, American Express.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="American Express" style="height: 35px;" />
   </section>
 
   <footer>
-    <nav>
-      <a href="https://www.facebook.com/profile.php?id=100083548507206" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" />
+    <div>
+      <a class="social-icon" href="https://www.facebook.com/profile.php?id=100083548507206" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" />
         <span>Facebook</span>
       </a>
-      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok" />
+      <a class="social-icon" href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" />
         <span>TikTok</span>
       </a>
-    </nav>
-    <p>&copy; 2025 Rent Due Hustle. All Rights Reserved.</p>
+    </div>
+    <p>© 2025 Rent Due Hustle. All rights reserved.</p>
   </footer>
-</body>
-</html>
-
 </body>
 </html>
