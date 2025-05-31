@@ -118,6 +118,41 @@
         padding: 10px;
       }
     }
+
+    /* New styles for Rent Due Digital Flip Pack section */
+    #digital-flip-pack {
+      text-align: center;
+      padding: 30px 20px;
+      background: #eee;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    #digital-flip-pack h2 {
+      color: #4b0082;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    #digital-flip-pack p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    #digital-flip-pack a.button {
+      display: inline-block;
+      background-color: #4b0082;
+      color: white;
+      padding: 15px 30px;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+    #digital-flip-pack a.button:hover {
+      background-color: #3a006a;
+    }
   </style>
 </head>
 <body>
@@ -126,7 +161,11 @@
     <h1>Welcome to Rent Due Hustle</h1>
   </header>
 
-  <a href="/digital-flip-pack.html">Rent Due Digital Flip Pack</a>
+  <section id="digital-flip-pack">
+    <h2>Rent Due Digital Flip Pack</h2>
+    <p>Grab your digital goldmine for just $9.99 — no skills needed, just hustle and sell.</p>
+    <a href="/digital-flip-pack.html" class="button">Learn More & Buy Now</a>
+  </section>
 
   <section id="services">
     <h2>Our Services</h2>
@@ -168,48 +207,33 @@
     </div>
 
     <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2007_15_34%20PM.png?raw=true" alt="Pen Game Profit" />
-      <h3>eBook Course - Pen Game Profit</h3>
-      <p>Learn to write, design, and sell your own eBooks.</p>
-      <a href="https://buy.stripe.com/6oE5kEbCd7b1e5u7ss" class="button" target="_blank" rel="noopener noreferrer">$150 - Enroll Now</a>
+      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2007_15_34%20PM.png?raw=true" alt="eBook Course" />
+      <h3>eBook Course</h3>
+      <p>Learn to make and sell your own eBooks.</p>
+      <a href="https://buy.stripe.com/7sI5kY7O60ob8Rf5kR" class="button" target="_blank" rel="noopener noreferrer">$50 - Add to Cart</a>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We hustle smart and help you get paid. From branding to digital delivery, Rent Due Hustle got you.</p>
+  <section id="checkout">
+    <h2>Checkout Options</h2>
+    <p>We currently accept credit/debit card payments via Stripe only.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="Visa" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="MasterCard" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" />
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mldnrlao" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="_replyto" placeholder="Your email" required />
-      <textarea name="message" placeholder="Your message" rows="4" required></textarea>
-      <button type="submit">Send</button>
+    <form action="https://formsubmit.co/your-email@example.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
-  <section id="checkout" style="background:#222; color:#fff; padding: 20px 0; margin-top: 40px;">
-    <h2>Checkout with Card</h2>
-    <p>We accept Visa, Mastercard, American Express.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="American Express" style="height: 35px;" />
-  </section>
-
   <footer>
-    <div>
-      <a class="social-icon" href="https://www.facebook.com/profile.php?id=100083548507206" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" />
-        <span>Facebook</span>
-      </a>
-      <a class="social-icon" href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" />
-        <span>TikTok</span>
-      </a>
-    </div>
-    <p>© 2025 Rent Due Hustle. All rights reserved.</p>
+    <p>© 2025 Rent Due Hustle | All Rights Reserved</p>
   </footer>
 </body>
 </html>
