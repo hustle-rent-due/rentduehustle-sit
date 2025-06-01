@@ -78,6 +78,22 @@
     footer p {
       font-size: 0.9em;
       color: #aaa;
+      margin: 8px 0;
+    }
+    footer .payment-logos {
+      margin-top: 15px;
+    }
+    footer .payment-logos img {
+      height: 28px;
+      margin: 0 8px;
+      vertical-align: middle;
+      filter: brightness(0) invert(1);
+    }
+    footer .trust-badge {
+      margin-top: 15px;
+    }
+    footer .trust-badge img {
+      height: 40px;
     }
     form {
       max-width: 400px;
@@ -117,8 +133,14 @@
         margin: 20px auto;
         padding: 10px;
       }
+      footer .payment-logos img {
+        height: 24px;
+        margin: 0 6px;
+      }
+      footer .trust-badge img {
+        height: 30px;
+      }
     }
-
     /* New styles for Rent Due Digital Flip Pack section */
     #digital-flip-pack {
       text-align: center;
@@ -153,6 +175,23 @@
     #digital-flip-pack a.button:hover {
       background-color: #3a006a;
     }
+    /* New policy styles */
+    #policies {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #333;
+    }
+    #policies h3 {
+      color: #4b0082;
+      margin-top: 25px;
+    }
   </style>
 </head>
 <body>
@@ -164,7 +203,7 @@
   <section id="digital-flip-pack">
     <h2>Rent Due Digital Flip Pack</h2>
     <p>Grab your digital goldmine for just $9.99 — no skills needed, just hustle and sell.</p>
-    <a href="/digital-flip-pack.html" class="button">Learn More & Buy Now</a>
+    <a href="https://buy.stripe.com/fZu28r1ys1R4caT4N12wU07" class="button">Learn More & Buy Now</a>
   </section>
 
   <section id="services">
@@ -175,65 +214,94 @@
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/3.png?raw=true" alt="Shopify Store Setup" />
       <h3>Shopify Store Setup</h3>
       <p>Launch your own online store the right way.</p>
-      <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
+      <a href="https://book.stripe.com/dRm00j90U53g3En6V92wU00" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/1.png?raw=true" alt="eBook Cover Design" />
       <h3>eBook Cover Design</h3>
       <p>Professional covers that grab attention.</p>
-      <a href="https://buy.stripe.com/9B614n1ys7bo1wf93h2wU06" class="button" target="_blank" rel="noopener noreferrer">$50 - Add to Cart</a>
+      <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank" rel="noopener noreferrer">$50 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_52_51%20PM.png?raw=true" alt="Promo Flyers" />
       <h3>Promo Flyers</h3>
       <p>Flyers that hustle and convert.</p>
-      <a href="https://buy.stripe.com/5kQ00j6SMgLY5Mv2ET2wU05" class="button" target="_blank" rel="noopener noreferrer">$40 - Add to Cart</a>
+      <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank" rel="noopener noreferrer">$40 - Add to Cart</a>
     </div>
 
     <div class="service-box">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_53_11%20PM.png?raw=true" alt="Brand Identity Kit" />
       <h3>Brand Identity Kit</h3>
       <p>Custom branded kits to level up your biz.</p>
-      <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
+      <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank" rel="noopener noreferrer">$80 - Add to Cart</a>
     </div>
-
-    <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_53_07%20PM.png?raw=true" alt="Graphic Design" />
-      <h3>Graphic Design</h3>
-      <p>Flyers, logos, and visuals that hustle for you.</p>
-      <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank" rel="noopener noreferrer">$75 - Add to Cart</a>
-    </div>
-
-    <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2007_15_34%20PM.png?raw=true" alt="eBook Course" />
-      <h3>eBook Course</h3>
-      <p>Learn to make and sell your own eBooks.</p>
-      <a href="https://buy.stripe.com/7sI5kY7O60ob8Rf5kR" class="button" target="_blank" rel="noopener noreferrer">$50 - Add to Cart</a>
-    </div>
-  </section>
-
-  <section id="checkout">
-    <h2>Checkout Options</h2>
-    <p>We currently accept credit/debit card payments via Stripe only.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="Visa" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" alt="MasterCard" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" />
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/jettilabz@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <form action="https://formspree.io/f/mknkbnwv" method="POST" id="contact-form">
+      <label for="name">Name</label><br />
+      <input type="text" id="name" name="name" placeholder="Your name" required /><br />
+      
+      <label for="email">Email</label><br />
+      <input type="email" id="email" name="_replyto" placeholder="you@example.com" required /><br />
+      
+      <label for="message">Message</label><br />
+      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea><br />
+      
       <button type="submit">Send Message</button>
     </form>
   </section>
 
+  <section id="policies">
+    <h2>Policies</h2>
+
+    <h3>Refund Policy</h3>
+    <p>All sales are final. Due to the nature of digital products, refunds are not available.</p>
+
+    <h3>Privacy Policy</h3>
+    <p>We respect your privacy and will never share your information.</p>
+
+    <h3>Terms of Use</h3>
+    <p>By purchasing and downloading any product from the Rent Due Hustle Digital Flip Pack, you agree to the following terms:</p>
+    <ol>
+      <li><strong>License Grant</strong><br />
+      You are granted a limited license to use and resell the digital products as outlined in the Certificate of Resell Rights.</li>
+
+      <li><strong>Prohibited Actions</strong><br />
+      You may NOT:
+        <ul>
+          <li>Claim ownership of the original content or master files.</li>
+          <li>Redistribute or resell the products as-is on open marketplaces (e.g., public PLR sites, Etsy, Amazon) without modification or value-added services.</li>
+          <li>Share the products freely or give them away to third parties without permission.</li>
+        </ul>
+      </li>
+
+      <li><strong>Customization and Branding</strong><br />
+      You may customize the products by adding your own branding, editing content, or combining with other products to create unique offerings.</li>
+
+      <li><strong>No Warranty</strong><br />
+      Products are provided "as-is" without warranty. Hustle Rent Media is not responsible for your resale business outcomes.</li>
+
+      <li><strong>Limitation of Liability</strong><br />
+      Hustle Rent Media shall not be liable for any damages resulting from use or inability to use the products.</li>
+    </ol>
+  </section>
+
   <footer>
-    <p>© 2025 Rent Due Hustle. All rights reserved.</p>
+    <p>© 2025 Hustle Rent Media LLC — All Rights Reserved</p>
+    <div class="payment-logos" aria-label="Accepted Payment Methods">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png" alt="Visa" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mastercard-logo.png/640px-Mastercard-logo.png" alt="Mastercard" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png" alt="PayPal" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Apple_Pay_logo.svg" alt="Apple Pay" />
+    </div>
+
+    <div class="trust-badge" aria-label="Trust and Security Badges">
+      <img src="https://www.checkoutwc.com/wp-content/uploads/2021/07/trust-badges.jpg" alt="Payment and Trust Badges" />
+    </div>
   </footer>
 </body>
 </html>
