@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystery Boxes | Hustle Rent Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0; padding: 0;
+      background: linear-gradient(to right, #4e0a63, #7c0d94);
+      color: #fff;
+    }
+    header, footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      animation: flicker 2s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; text-shadow: 0 0 10px #ff9a8b; }
+      100% { opacity: 1; text-shadow: 0 0 20px #ff9a8b; }
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .box-tier {
+      background: white;
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .box-tier:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    .box-tier h3 {
+      font-size: 1.8rem;
+      color: #4e0a63;
+      margin-bottom: 10px;
+    }
+    .box-tier p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 12px 25px;
+      background: #4e0a63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #ff9a8b;
+      color: #111;
+      transform: scale(1.05);
+    }
+    .character-banner {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .character-banner img {
+      width: 100%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Amazon Mystery Boxes</h1>
+    <p>Real Value. Real Products. No Gimmicks. 💼📦💰</p>
+  </header>
+
+  <div class="container">
+    <div class="character-banner">
+      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%202,%202025%20at%2003_45_39%20PM.png?raw=true" alt="Mystery Box Characters">
+    </div>
+
+    <div class="box-tier">
+      <h3>$75 Starter Box</h3>
+      <p>Perfect for first-time flippers. Includes 5–7 brand new overstock items like clothing, accessories, or household goods. Guaranteed to beat retail value.</p>
+      <a href="https://buy.stripe.com/test-link-75" class="button" target="_blank">Buy Starter Box</a>
+    </div>
+
+    <div class="box-tier">
+      <h3>$250 Hustle Box</h3>
+      <p>Serious value for serious resellers. Includes 15–20 items across multiple categories. Everything is brand new with tags, packed to flip fast.</p>
+      <a href="https://buy.stripe.com/test-link-250" class="button" target="_blank">Buy Hustle Box</a>
+    </div>
+
+    <div class="box-tier">
+      <h3>$400+ Elite Box</h3>
+      <p>Our largest box with maximum inventory. Great for resellers with stores or bulk buyers. 25+ items valued well over $700 retail. Limited supply.</p>
+      <a href="https://buy.stripe.com/test-link-400" class="button" target="_blank">Buy Elite Box</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Hustle Rent Media LLC — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Add subtle animation when scrolling to boxes
+    const boxes = document.querySelectorAll('.box-tier');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'scale(1.03)';
+          setTimeout(() => entry.target.style.transform = '', 300);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    boxes.forEach(box => observer.observe(box));
+  </script>
+</body>
+</html>
