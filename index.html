@@ -3,331 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rent Due Hustle</title>
+  <title>Mic & Morals | Hustle Rent Media</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
+      margin: 0; 
       font-family: 'Montserrat', sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f4f4;
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
     }
-    header, footer {
-      background: #111;
-      color: #fff;
+    header {
+      background: #4e0a63;
+      padding: 20px;
       text-align: center;
-      padding: 40px 20px;
-    }
-    nav a {
       color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
     section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .service-box {
-      background: white;
-      margin: 30px auto;
-      max-width: 500px;
-      padding: 15px;
+      margin-bottom: 40px;
+      background: #1f1f1f;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+      box-shadow: 0 6px 15px rgba(78, 10, 99, 0.7);
     }
-    .service-box img {
-      width: 100%;
-      border-radius: 8px;
+    h2 {
+      color: #ff9a8b;
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid #4e0a63;
+      padding-bottom: 6px;
     }
-    .service-box h3 {
-      margin-top: 15px;
+    p {
+      font-size: 1.1rem;
     }
-    .service-box p {
-      margin: 10px 0 15px;
-    }
-    .service-box a.button {
+    a.button {
+      display: inline-block;
+      background: #4e0a63;
+      color: #fff;
       padding: 10px 20px;
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: 700;
       transition: background 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .service-box a.button:hover {
-      background: #333;
-    }
-    #checkout img {
-      height: 40px;
-      margin: 5px;
-    }
-    .social-icon {
-      margin: 0 10px;
-      display: inline-block;
-    }
-    .social-icon img {
-      width: 24px;
-      vertical-align: middle;
-    }
-    .social-icon span {
-      color: #fff;
-      margin-left: 5px;
-    }
-    footer p {
-      font-size: 0.9em;
-      color: #aaa;
-      margin: 8px 0;
-    }
-    footer .payment-logos {
       margin-top: 15px;
     }
-    footer .payment-logos img {
-      height: 28px;
-      margin: 0 8px;
-      vertical-align: middle;
+    a.button:hover {
+      background: #ff9a8b;
+    }
+    /* Social Icons */
+    .social-links {
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 12px;
+      transition: transform 0.2s ease;
+    }
+    .social-links a:hover {
+      transform: scale(1.15);
+    }
+    .social-links img {
+      width: 30px;
+      height: 30px;
       filter: brightness(0) invert(1);
     }
-    footer .trust-badge {
-      margin-top: 15px;
-    }
-    footer .trust-badge img {
-      height: 40px;
-    }
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      padding-right: 20px;
-      text-align: left;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1em;
-      box-sizing: border-box;
-    }
-    form button {
-      padding: 10px 20px;
-      background-color: #111;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: 700;
-      width: 100%;
-    }
-    form button:hover {
-      background-color: #333;
-    }
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      section {
-        padding: 20px 10px;
-      }
-      .service-box {
-        max-width: 90%;
-        margin: 20px auto;
-        padding: 10px;
-      }
-      footer .payment-logos img {
-        height: 24px;
-        margin: 0 6px;
-      }
-      footer .trust-badge img {
-        height: 30px;
-      }
-    }
-    /* New styles for Rent Due Digital Flip Pack section */
-    /* General Styles */
-    .mystery-box-section {
-        background: linear-gradient(135deg, #4e0a63, #ff9a8b);
-        border-radius: 12px;
-        padding: 40px 20px;
-        text-align: center;
-        color: white;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        margin: 30px auto;
-        max-width: 600px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .mystery-box-section h2 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-
-    .mystery-box-section p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-
-    .mystery-box-section .button {
-        background: #fff;
-        color: #4e0a63;
-        padding: 15px 30px;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        text-decoration: none;
-        display: inline-block;
-        font-weight: bold;
-        transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .mystery-box-section .button:hover {
-        background: #ff9a8b;
-        color: white;
-        transform: scale(1.05);
-    }
-
-    .mystery-box-section:hover {
-        transform: scale(1.05);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    @media (max-width: 768px) {
-        .mystery-box-section {
-            padding: 20px 10px;
-        }
-        .mystery-box-section h2 {
-            font-size: 1.8rem;
-        }
-        .mystery-box-section p {
-            font-size: 1rem;
-        }
-    }
-
-    /* New policy styles */
-    #policies {
-      max-width: 700px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: left;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #333;
-    }
-    #policies h3 {
-      color: #4b0082;
-      margin-top: 25px;
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      background: #222;
+      color: #bbb;
+      border-top: 1px solid #444;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/49afde96-74d9-4db9-9bf9-df35c5ccfa69.png?raw=true" alt="Rent Due Hustle Logo" style="width: 120px; margin-bottom: 20px;" />
-    <h1>HUSTLE RENT MEDIA</h1>
+    Hustle Rent Media — Mic & Morals
   </header>
 
-  <section id="digital-flip-pack" class="mystery-box-section">
-    <h2>AMAZON MYSTERY BOXES</h2>
-    <p>Score big with surprise boxes packed with brand new overstock items worth way more than you pay.
-Choose your tier — $75, $250, or $400+ — and let the hustle deliver the value! 💼📦💰</p>
-   <a href="mystery-boxes.html" class="button">Learn More & Buy Now</a>
-  </section>
+  <main>
+    <section id="hustle-codes">
+      <h2>Hustle.Codes</h2>
+      <p>Unlock the secrets of success and street wisdom with Hustle.Codes — bite-sized truths and actionable lessons designed to elevate your grind and mindset.</p>
+      <a href="https://link-to-hustle-codes" class="button" target="_blank" rel="noopener noreferrer">Explore Hustle.Codes</a>
+    </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>Promo Flyers, Shopify Setups, eBook Courses, Graphic Design & More.</p>
+    <section id="mic-morals">
+      <h2>Mic & Morals Podcast</h2>
+      <p>Dive deep into raw conversations about life, hustle, accountability, relationships, and real talk. Mic & Morals brings you authentic voices, motivation, and lessons from the streets and beyond.</p>
+      <a href="https://link-to-mic-morals-podcast" class="button" target="_blank" rel="noopener noreferrer">Listen to Episodes</a>
+    </section>
 
-    <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/3.png?raw=true" alt="Shopify Store Setup" />
-      <h3>Shopify Store Setup</h3>
-      <p>Launch your own online store the right way.</p>
-      <a href="https://book.stripe.com/dRm00j90U53g3En6V92wU00" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
-    </div>
+    <section id="media-services">
+      <h2>Media Services</h2>
+      <p>Need professional branding, design, video editing, or promo materials? Hustle Rent Media has you covered with affordable, high-impact services tailored to your hustle.</p>
+      <a href="mailto:contact@hustlerentmedia.com" class="button">Contact Us</a>
+    </section>
 
-    <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/1.png?raw=true" alt="eBook Cover Design" />
-      <h3>eBook Cover Design</h3>
-      <p>Professional covers that grab attention.</p>
-      <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank" rel="noopener noreferrer">$50 - Add to Cart</a>
-    </div>
-
-    <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_52_51%20PM.png?raw=true" alt="Promo Flyers" />
-      <h3>Promo Flyers</h3>
-      <p>Flyers that hustle and convert.</p>
-      <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank" rel="noopener noreferrer">$45 - Add to Cart</a>
-    </div>
-
-    <div class="service-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20May%2030,%202025%20at%2004_53_11%20PM.png?raw=true" alt="Brand Identity Kit" />
-      <h3>Brand Identity Kit</h3>
-      <p>Custom branded kits to level up your biz.</p>
-      <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mknkbnwv" method="POST" id="contact-form">
-      <label for="name">Name</label><br />
-      <input type="text" id="name" name="name" placeholder="Your name" required /><br />
-      
-      <label for="email">Email</label><br />
-      <input type="email" id="email" name="_replyto" placeholder="you@example.com" required /><br />
-      
-      <label for="message">Message</label><br />
-      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea><br />
-      
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <section id="policies">
-    <h2>Policies</h2>
-
-    <h3>Refund Policy</h3>
-    <p>All sales are final. Due to the nature of digital products, refunds are not available.</p>
-
-    <h3>Privacy Policy</h3>
-    <p>We respect your privacy and will never share your information.</p>
-
-    <h3>Terms of Use</h3>
-    <p>By purchasing and downloading any product from the Rent Due Hustle Digital Flip Pack, you agree to the following terms:</p>
-    <ol>
-      <li><strong>License Grant</strong><br />
-      You are granted a limited license to use and resell the digital products as outlined in the Certificate of Resell Rights.</li>
-
-      <li><strong>Prohibited Actions</strong><br />
-      You may NOT:
-        <ul>
-          <li>Claim ownership of the original content or master files.</li>
-          <li>Redistribute or resell the products as-is on open marketplaces (e.g., public PLR sites, Etsy, Amazon) without modification or value-added services.</li>
-          <li>Share the products freely or give them away to third parties without permission.</li>
-        </ul>
-      </li>
-
-      <li><strong>Customization and Branding</strong><br />
-      You may customize the products by adding your own branding, editing content, or combining with other products to create unique offerings.</li>
-
-      <li><strong>No Warranty</strong><br />
-      Products are provided "as-is" without warranty. Hustle Rent Media is not responsible for your resale business outcomes.</li>
-
-      <li><strong>Limitation of Liability</strong><br />
-      Hustle Rent Media shall not be liable for any damages resulting from use or inability to use the products.</li>
-    </ol>
-  </section>
+    <section id="social-media">
+      <h2>Connect with Us</h2>
+      <div class="social-links" aria-label="Social Media Links">
+        <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer" title="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" />
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100083548507206" target="_blank" rel="noopener noreferrer" title="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+        </a>
+        <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" title="YouTube">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Hustle Rent Media LLC — All Rights Reserved</p>
-    <div class="payment-logos" aria-label="Accepted Payment Methods">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png" alt="Visa" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mastercard-logo.png/640px-Mastercard-logo.png" alt="Mastercard" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png" alt="PayPal" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Apple_Pay_logo.svg" alt="Apple Pay" />
-    </div>
-
-    <div class="trust-badge" aria-label="Trust and Security Badges">
-      <img src="https://www.checkoutwc.com/wp-content/uploads/2021/07/trust-badges.jpg" alt="Payment and Trust Badges" />
-    </div>
+    &copy; 2025 Hustle Rent Media LLC — All Rights Reserved
   </footer>
 </body>
 </html>
