@@ -3,174 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hustle Rent Media — Mic & Morals</title>
+  <title>Hustle Rent Media</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --purple: #4e0a63;
-      --green: #1db954;
-      --bg-dark: #121212;
-      --bg-section: #2a2a2a;
-      --text-light: #eee;
-      --text-lighter: #fafafa;
-    }
     body {
-      margin: 0;
+      margin: 0; 
       font-family: 'Montserrat', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
+      background: #121212;
+      color: #eee;
       line-height: 1.6;
-      overflow-x: hidden;
     }
     header {
-      background: var(--purple);
-      padding: 25px 15px;
+      background: #4e0a63;
+      padding: 20px;
       text-align: center;
       color: #fff;
       font-weight: 700;
-      font-size: 2rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      box-shadow: 0 4px 12px rgba(78, 10, 99, 0.8);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      position: relative;
+    }
+    header img {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 50px;
+      width: auto;
     }
     main {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 25px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
     section {
-      margin-bottom: 50px;
-      background: var(--bg-section);
-      border-radius: 12px;
-      padding: 30px 35px;
-      box-shadow: 0 8px 24px rgba(78, 10, 99, 0.8);
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      color: var(--text-lighter);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+      margin-bottom: 40px;
+      background: #1f1f1f;
+      border-radius: 10px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 15px rgba(78, 10, 99, 0.7);
+      text-align: center;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    section img.section-logo {
+      max-width: 200px;
+      margin-bottom: 15px;
+      border-radius: 8px;
     }
     h2 {
-      color: var(--green);
-      margin-bottom: 18px;
+      color: #ff9a8b;
+      margin-bottom: 15px;
       font-weight: 700;
-      border-bottom: 3px solid var(--purple);
-      padding-bottom: 8px;
-      font-size: 2rem;
-      letter-spacing: 0.03em;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      border-bottom: 2px solid #4e0a63;
+      padding-bottom: 6px;
     }
     p {
-      font-size: 1.15rem;
-      margin-bottom: 20px;
-      color: var(--text-lighter);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+      font-size: 1.1rem;
     }
     a.button {
       display: inline-block;
-      background: var(--purple);
+      background: #4e0a63;
       color: #fff;
-      padding: 12px 28px;
+      padding: 10px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: 0 5px 15px rgba(78, 10, 99, 0.7);
-      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-      user-select: none;
+      transition: background 0.3s ease;
+      margin-top: 15px;
     }
-    a.button:hover,
-    a.button:focus {
-      background: var(--green);
-      box-shadow: 0 8px 20px rgba(29, 185, 84, 0.85);
-      transform: scale(1.05);
-      outline: none;
+    a.button:hover {
+      background: #ff9a8b;
     }
-    /* Social Links */
+    /* Social Icons */
     .social-links {
       text-align: center;
     }
     .social-links a {
       display: inline-block;
-      margin: 0 15px;
-      transition: transform 0.3s ease;
-      border-radius: 50%;
-      padding: 8px;
-      background: #fff; /* White background for contrast */
-      box-shadow: 0 3px 8px rgba(78, 10, 99, 0.8);
+      margin: 0 12px;
+      transition: transform 0.2s ease;
     }
-    .social-links a:hover,
-    .social-links a:focus {
-      transform: scale(1.2);
-      background: var(--green);
-      box-shadow: 0 6px 18px rgba(29, 185, 84, 0.85);
-      outline: none;
+    .social-links a:hover {
+      transform: scale(1.15);
     }
     .social-links img {
-      width: 32px;
-      height: 32px;
-      filter: none; /* Remove filter for visibility */
-      display: block;
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
     }
     footer {
       text-align: center;
-      padding: 25px 15px;
+      padding: 20px 10px;
       font-size: 0.9rem;
       background: #222;
       color: #bbb;
       border-top: 1px solid #444;
-      user-select: none;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      main {
-        margin: 30px 15px;
-        padding: 0 15px;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      a.button {
-        font-size: 1rem;
-        padding: 10px 22px;
-      }
-      .social-links a {
-        margin: 0 10px;
-      }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="/mnt/data/ChatGPT Image Jun 11, 2025 at 08_14_17 PM.png" alt="Hustle Rent Media Logo" />
     Hustle Rent Media — Mic & Morals
   </header>
 
   <main>
-    <section id="hustle-codes" tabindex="0">
+    <section id="hustle-codes">
+      <img class="section-logo" src="/mnt/data/ChatGPT Image Jun 6, 2025 at 09_19_16 AM.png" alt="Hustle Codes Logo" />
       <h2>Hustle.Codes</h2>
-      <p>Unlock the secrets of life and humanity with Hustle.Codes — bite-sized truths and real wisdom to elevate your mindset and grind.</p>
-      <a href="https://link-to-hustle-codes" class="button" target="_blank" rel="noopener noreferrer" aria-label="Explore Hustle.Codes">Explore Hustle.Codes</a>
+      <p>Unlock the secrets of life and humanity with Hustle.Codes — </p>
+      <a href="https://link-to-hustle-codes" class="button" target="_blank" rel="noopener noreferrer">Explore Hustle.Codes</a>
     </section>
 
-    <section id="mic-morals" tabindex="0">
+    <section id="mic-morals">
+      <img class="section-logo" src="/mnt/data/ChatGPT Image Jun 6, 2025 at 09_19_07 AM.png" alt="Mic & Morals Logo" />
       <h2>Mic & Morals Podcast</h2>
-      <p>Dive deep into raw conversations about life, hustle, accountability, relationships, and real talk. Mic & Morals brings authentic voices, motivation, and lessons from the streets and beyond.</p>
-      <a href="https://link-to-mic-morals-podcast" class="button" target="_blank" rel="noopener noreferrer" aria-label="Listen to Mic & Morals Episodes">Listen to Episodes</a>
+      <p>Dive deep into raw conversations about life, hustle, accountability, relationships, and real talk. Mic & Morals brings you authentic voices, motivation, and lessons from the streets and beyond.</p>
+      <a href="https://link-to-mic-morals-podcast" class="button" target="_blank" rel="noopener noreferrer">Listen to Episodes</a>
     </section>
 
-    <section id="media-services" tabindex="0">
+    <section id="media-services">
       <h2>Media Services</h2>
       <p>Need professional branding, design, web design, or promo materials? Hustle Rent Media has you covered with affordable, high-impact services tailored to your hustle.</p>
-      <a href="mailto:contact@hustlerentmedia.com" class="button" aria-label="Contact Hustle Rent Media">Contact Us</a>
+      <a href="mailto:contact@hustlerentmedia.com" class="button">Contact Us</a>
     </section>
 
-    <section id="social-media" tabindex="0">
+    <section id="social-media">
       <h2>Connect with Us</h2>
       <div class="social-links" aria-label="Social Media Links">
         <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer" title="TikTok">
@@ -189,24 +146,5 @@
   <footer>
     &copy; 2025 Hustle Rent Media LLC — All Rights Reserved
   </footer>
-
-  <script>
-    // Fade-in sections on scroll
-    function fadeInOnScroll() {
-      const sections = document.querySelectorAll('section');
-      const triggerBottom = window.innerHeight * 0.85;
-
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < triggerBottom) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', fadeInOnScroll);
-    window.addEventListener('load', fadeInOnScroll);
-  </script>
 </body>
 </html>
