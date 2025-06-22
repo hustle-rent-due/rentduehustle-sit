@@ -123,7 +123,6 @@
     form button:hover {
       background-color: #333;
     }
-    /* Responsive tweaks */
     @media (max-width: 600px) {
       section {
         padding: 20px 10px;
@@ -141,70 +140,45 @@
         height: 30px;
       }
     }
-    /* New styles for Rent Due Digital Flip Pack section */
-   /* General Styles */
-.mystery-box-section {
-    background: linear-gradient(135deg, #4e0a63, #ff9a8b);  /* Gradient background */
-    border-radius: 12px;  /* Rounded corners */
-    padding: 40px 20px;  /* Padding for spacing */
-    text-align: center;  /* Center the text */
-    color: white;  /* White text */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* Soft shadow */
-    margin: 30px auto;  /* Center the section on the page */
-    max-width: 600px;  /* Limit the max width for a neat design */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transitions */
-}
-
-.mystery-box-section h2 {
-    font-size: 2rem;  /* Make the title stand out */
-    margin-bottom: 10px;  /* Spacing under the title */
-}
-
-.mystery-box-section p {
-    font-size: 1.2rem;  /* Readable description */
-    margin-bottom: 20px;  /* Spacing below the paragraph */
-}
-
-.mystery-box-section .button {
-    background: #fff;  /* White button background */
-    color: #4e0a63;  /* Purple text color */
-    padding: 15px 30px;  /* Generous button padding */
-    border-radius: 8px;  /* Rounded button corners */
-    font-size: 1.1rem;  /* Increase button font size */
-    text-decoration: none;  /* Remove underline */
-    display: inline-block;  /* Make it behave like a button */
-    font-weight: bold;  /* Bold text */
-    transition: background 0.3s ease, transform 0.2s ease;  /* Smooth button transitions */
-}
-
-.mystery-box-section .button:hover {
-    background: #ff9a8b;  /* Change to a pinkish hue on hover */
-    color: white;  /* White text on hover */
-    transform: scale(1.05);  /* Slightly enlarge the button */
-}
-
-/* Hover Effect for the Section */
-.mystery-box-section :hover {
-    transform: scale(1.05);  /* Scale the entire section */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
     .mystery-box-section {
-        padding: 20px 10px;  /* Less padding on smaller screens */
+      background: linear-gradient(135deg, #4e0a63, #ff9a8b);
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      margin: 30px auto;
+      max-width: 600px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .mystery-box-section h2 {
-        font-size: 1.8rem;  /* Smaller title font on mobile */
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
-
     .mystery-box-section p {
-        font-size: 1rem;  /* Smaller paragraph font on mobile */
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
-}
-
-    /* New policy styles */
+    .mystery-box-section .button {
+      background: #fff;
+      color: #4e0a63;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .mystery-box-section .button:hover {
+      background: #ff9a8b;
+      color: white;
+      transform: scale(1.05);
+    }
+    .mystery-box-section:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
     #policies {
       max-width: 700px;
       margin: 40px auto;
@@ -229,12 +203,11 @@
     <h1>HUSTLE RENT MEDIA</h1>
   </header>
 
-  <<section id="digital-flip-pack" class="mystery-box-section">
-    <h2>AMAZON MYSTERY BOXES</h2>
-    <p>JULY HUSTLE CHEAT SHEET IS HERE💼📦💰</p>
-   <a href="mystery-boxes.html" class="button">Learn More & Buy Now</a>
-</section>
-
+  <section class="mystery-box-section">
+    <h2>JULY HUSTLE CHEAT SHEET</h2>
+    <p>Download your FREE cheat pack of hashtags, captions, and promo tools now.</p>
+    <a href="https://hustlerentmedia.com/downloads/JulyHustleCheatPack.zip" class="button" target="_blank">Download Now</a>
+  </section>
 
   <section id="services">
     <h2>Our Services</h2>
@@ -267,57 +240,6 @@
       <p>Custom branded kits to level up your biz.</p>
       <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank" rel="noopener noreferrer">$100 - Add to Cart</a>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mknkbnwv" method="POST" id="contact-form">
-      <label for="name">Name</label><br />
-      <input type="text" id="name" name="name" placeholder="Your name" required /><br />
-      
-      <label for="email">Email</label><br />
-      <input type="email" id="email" name="_replyto" placeholder="you@example.com" required /><br />
-      
-      <label for="message">Message</label><br />
-      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea><br />
-      
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <section id="policies">
-    <h2>Policies</h2>
-
-    <h3>Refund Policy</h3>
-    <p>All sales are final. Due to the nature of digital products, refunds are not available.</p>
-
-    <h3>Privacy Policy</h3>
-    <p>We respect your privacy and will never share your information.</p>
-
-    <h3>Terms of Use</h3>
-    <p>By purchasing and downloading any product from the Rent Due Hustle Digital Flip Pack, you agree to the following terms:</p>
-    <ol>
-      <li><strong>License Grant</strong><br />
-      You are granted a limited license to use and resell the digital products as outlined in the Certificate of Resell Rights.</li>
-
-      <li><strong>Prohibited Actions</strong><br />
-      You may NOT:
-        <ul>
-          <li>Claim ownership of the original content or master files.</li>
-          <li>Redistribute or resell the products as-is on open marketplaces (e.g., public PLR sites, Etsy, Amazon) without modification or value-added services.</li>
-          <li>Share the products freely or give them away to third parties without permission.</li>
-        </ul>
-      </li>
-
-      <li><strong>Customization and Branding</strong><br />
-      You may customize the products by adding your own branding, editing content, or combining with other products to create unique offerings.</li>
-
-      <li><strong>No Warranty</strong><br />
-      Products are provided "as-is" without warranty. Hustle Rent Media is not responsible for your resale business outcomes.</li>
-
-      <li><strong>Limitation of Liability</strong><br />
-      Hustle Rent Media shall not be liable for any damages resulting from use or inability to use the products.</li>
-    </ol>
   </section>
 
   <footer>
