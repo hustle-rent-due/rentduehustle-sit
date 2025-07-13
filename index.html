@@ -1,216 +1,131 @@
-!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rent Due Hustle</title>
+  <title>Hustle Rent Media</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0; padding: 0;
       background: #f4f4f4;
-      color: #fff;
     }
     header, footer {
-      background: #111;
+      background: #000;
       color: #fff;
       text-align: center;
       padding: 40px 20px;
-    }
-    nav {
-      background: #1c1c3a;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.6);
     }
     nav a {
       color: #fff;
-      margin: 0 18px;
+      margin: 0 10px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #8317b5;
     }
     section {
       padding: 40px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      background: linear-gradient(135deg, #1c1c3a, #2f2f62);
-    }
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
       text-align: center;
-      color: #e0d5ff;
     }
-    .product-box {
-      background: #272747;
+    .section-box {
+      background: white;
+      margin: 30px auto;
+      max-width: 700px;
       padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 6px 18px rgba(131, 23, 181, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .product-box h3 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      color: #d1baff;
-    }
-    .product-box p {
-      margin-bottom: 15px;
-      color: #b9a6d9;
-    }
-    .product-box a.button {
-      display: inline-block;
-      background: #8317b5;
-      color: white;
-      padding: 12px 28px;
+    .section-box img {
+      width: 100%;
       border-radius: 8px;
-      font-weight: 700;
+    }
+    .section-box h2 {
+      margin-top: 20px;
+      font-size: 2rem;
+    }
+    .section-box p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+    .section-box a.button {
+      padding: 12px 28px;
+      background: #000;
+      color: white;
+      border-radius: 6px;
       text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
       transition: background 0.3s ease;
     }
-    .product-box a.button:hover {
-      background: #a33ed4;
+    .section-box a.button:hover {
+      background: #333;
     }
-    footer .payment-logos img {
+    .socials {
+      margin-top: 20px;
+    }
+    .socials a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .socials img {
       height: 28px;
-      margin: 0 8px;
       vertical-align: middle;
       filter: brightness(0) invert(1);
     }
-    footer .trust-badge img {
-      height: 40px;
+    .trust-badge {
+      margin-top: 20px;
     }
-    /* Responsive nav for mobile */
-    @media (max-width: 600px) {
-      nav {
-        flex-wrap: wrap;
-        padding: 10px 0;
-      }
-      nav a {
-        margin: 8px 10px;
-        font-size: 1rem;
-      }
-      section {
-        margin: 20px 15px;
-        padding: 30px 15px;
-      }
+    .trust-badge img {
+      height: 40px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%206,%202025%20at%2009_19_09%20AM.png?raw=true" alt="Rent Due Hustle Logo" style="width: 220px; margin-bottom: 0;" />
-  </header>
-
-  <nav>
-    <a href="#hustle-dot-codes">Hustle Dot Codes</a>
-    <a href="#podcast">Mic & Morals Podcast</a>
-    <a href="#tiktok-box">TikTok Box Live</a>
-    <a href="#contact">Connect</a>
-    <a href="#terms">Hustle Policy</a>
-  </nav>
-
-  <section id="hustle-dot-codes">
+    <img src="https://raw.githubusercontent.com/hustle-rent-due/rentduehustle-sit/main/ChatGPT%20Image%20Jun%206,%202025%20at%2008_39_19%20AM.png" alt="Hustle Rent Media Logo" style="max-width: 240px;" />
+    <nav>
+      <a href="#tiktok-box">TikTok Box</a>
+      <a href="#hustle-codes">Hustle Codes</a>
+      <a href="#mic-morals">Podcast</a>
+      <a href="#terms">Terms</a>
+      <a href="#order">Order Info</a>
+    </nav>
+  </header>  <section id="tiktok-box" class="section-box">
+    <img src="https://raw.githubusercontent.com/hustle-rent-due/rentduehustle-sit/main/file_00000000b1d461f9a293e47a2f60d176.png" alt="TikTok Box">
+    <h2>TikTok Box</h2>
+    <p>Mystery. Motion. Money. Tap into the Amazon Overstock box experience, TikTok-style.</p>
+    <a href="https://buy.stripe.com/cNieVdcd68fs8YH6V92wU0d" class="button" target="_blank">Buy Now – $20</a>
+  </section>  <section id="hustle-codes" class="section-box">
+    <img src="https://raw.githubusercontent.com/hustle-rent-due/rentduehustle-sit/main/ChatGPT%20Image%20Jun%2011,%202025%20at%2008_14_17%20PM.png" alt="Hustle Codes">
     <h2>Hustle Dot Codes</h2>
-
-    <div class="product-box">
-      <h3>Vibration Manifestation Code</h3>
-      <p>Tap into your personalized vibration frequency to manifest reality.</p>
-      <a href="https://buy.stripe.com/8x2bJ10uogLYdeXenB2wU0b" class="button" target="_blank">Buy Now — $9.99</a>
-    </div>
-
-    <div class="product-box">
-      <h3>Website Building Service</h3>
-      <p>Custom websites built for your brand hustle.</p>
-      <a href="https://book.stripe.com/dRm00j90U53g3En6V92wU00" class="button" target="_blank">Order Now — $100</a>
-    </div>
-
-    <div class="product-box">
-      <h3>Brand Identity Kits</h3>
-      <p>Custom brand kits to level up your hustle.</p>
-      <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank">Get Yours — $100</a>
-    </div>
-
-    <div class="product-box">
-      <h3>eBook Cover Design</h3>
-      <p>Professional covers that grab attention.</p>
-      <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank">Order — $50</a>
-    </div>
-
-    <div class="product-box">
-      <h3>Promo Flyers</h3>
-      <p>Flyers that hustle and convert.</p>
-      <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank">Get It — $45</a>
-    </div>
-  </section>
-
-  <section id="podcast">
+    <p>Digital products and services rooted in vibration, branding, and motion:</p>
+    <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank">Brand Kit – $100</a><br><br>
+    <a href="https://book.stripe.com/dRm00j90U53g3En6V92wU00" class="button" target="_blank">Website Build – $100</a><br><br>
+    <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank">eBook Cover – $50</a><br><br>
+    <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank">Promo Flyers – $45</a><br><br>
+    <a href="#" class="button" target="_blank">Vibration Code – Coming Soon</a>
+  </section>  <section id="mic-morals" class="section-box">
+    <img src="https://raw.githubusercontent.com/hustle-rent-due/rentduehustle-sit/main/file-T6biKwZHV6iAhN3GHnHJEn.png" alt="Mic & Morals Podcast">
     <h2>Mic & Morals Podcast</h2>
-    <p style="text-align:center; max-width: 600px; margin: auto; color: #c9c0f2;">Listen to the latest episodes of the Mic & Morals Podcast — deep dives into hustle, mindset, and real talk.</p>
-    <!-- Example embed Spotify iframe (replace with your podcast) -->
-    <iframe src="https://open.spotify.com/embed/show/your-podcast-id" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 16px; margin-top: 25px;"></iframe>
-  </section>
-
-  <section id="tiktok-box">
-    <h2>TikTok Box Live</h2>
-    <p style="text-align:center; max-width: 600px; margin: auto; color: #c9c0f2;">Catch our live Amazon mystery box unboxings and exclusive TikTok drops — follow us on TikTok @hustlerentmedia</p>
-    <div style="text-align:center; margin-top: 25px;">
-      <a href="https://www.tiktok.com/@hustlerentmedia" target="_blank" style="display: inline-block; background: #8317b5; color: white; padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: background 0.3s ease;">Follow @hustlerentmedia on TikTok</a>
+    <p>Unfiltered truth from the hustle grind. Built by voice, powered by perspective.</p>
+    <a href="https://www.tiktok.com/@hustle.rent.media" class="button" target="_blank">Watch on TikTok</a>
+  </section>  <section id="terms" class="section-box">
+    <h2>Terms & Conditions</h2>
+    <p>All sales are final. No refunds. Please review product descriptions carefully before purchase. Delivery time for digital goods: Instant to 24 hours. Delivery for custom services: 3–5 business days. TikTok Box ships within 2–4 days.</p>
+  </section>  <section id="order" class="section-box">
+    <h2>Order Process</h2>
+    <p>1. Choose your product or service and click the payment link. <br>
+       2. Complete checkout using Stripe. <br>
+       3. You'll receive confirmation and delivery info by email. <br>
+       4. For digital goods, check your inbox. For physical goods (TikTok Box), shipping info will be provided.</p>
+  </section>  <footer>
+    <p>© 2025 Hustle Rent Media LLC</p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@hustle.rent.media" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok"></a>
+      <a href="https://www.youtube.com/@hustle-rent-media" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_square_%282017%29.svg" alt="YouTube"></a>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Connect with the Hustle</h2>
-    <p style="text-align:center; max-width: 600px; margin: auto; color: #c9c0f2;">Follow us on social media or reach out directly:</p>
-    <div style="text-align:center; margin-top: 20px; font-size: 1.2rem;">
-      <a href="https://www.instagram.com/hustlerentmedia" target="_blank" style="color:#d7b7ff; margin: 0 10px; text-decoration: none;">Instagram</a> |
-      <a href="https://www.facebook.com/hustlerentmedia" target="_blank" style="color:#d7b7ff; margin: 0 10px; text-decoration: none;">Facebook</a> |
-      <a href="https://twitter.com/hustlerentmedia" target="_blank" style="color:#d7b7ff; margin: 0 10px; text-decoration: none;">Twitter</a> |
-      <a href="mailto:contact@hustlerentmedia.com" style="color:#d7b7ff; margin: 0 10px; text-decoration: none;">Email</a>
-    </div>
-  </section>
-
-  <section id="terms">
-    <h2>Hustle Policy</h2>
-    <p style="max-width: 600px; margin: auto; color: #c9c0f2; line-height: 1.6;">
-      <strong>Refund Policy:</strong> All digital products are final sale. No refunds after purchase.<br><br>
-      <strong>Order Process:</strong> Digital products deliver instantly after payment. Custom services may take 3-5 business days.<br><br>
-      <strong>Privacy:</strong> We respect your privacy and do not share your data.<br><br>
-      Please contact us with any questions before purchase.
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Hustle Rent Media LLC — All Rights Reserved</p>
-    <div class="payment-logos" aria-label="Accepted Payment Methods">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png" alt="Visa" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mastercard-logo.png/640px-Mastercard-logo.png" alt="Mastercard" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png" alt="PayPal" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Apple_Pay_logo.svg" alt="Apple Pay" />
-    </div>
-    <div class="trust-badge" aria-label="Trust and Security Badges" style="margin-top:15px;">
+    <div class="trust-badge">
       <img src="https://www.checkoutwc.com/wp-content/uploads/2021/07/trust-badges.jpg" alt="Payment and Trust Badges" />
     </div>
   </footer>
-
 </body>
 </html>
-
-
-
-
-
-
-
