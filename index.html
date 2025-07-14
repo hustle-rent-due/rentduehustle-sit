@@ -3,107 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hustle Rent Media</title>
-  <meta name="description" content="Hustle Rent Media - Digital products, TikTok boxes, podcasts, and hustle codes to fuel your grind." />
-  <meta name="keywords" content="Hustle, Rent, Media, TikTok, Digital Products, Podcast, Branding, Hustle Codes" />
-  <meta name="author" content="Hustle Rent Media LLC" />
-  <meta property="og:title" content="Hustle Rent Media" />
-  <meta property="og:description" content="Digital products, TikTok boxes, podcasts, and hustle codes to fuel your grind." />
-  <meta property="og:image" content="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%206,%202025%20at%2009_19_07%20AM.png?raw=true" />
-  <meta property="og:url" content="https://hustlerentmedia.com" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/favicon.ico?raw=true" type="image/x-icon" />
+  <title>Hustle Rent Media — PSYCHE</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #222; }
-    header, footer { background: #000; color: #fff; text-align: center; padding: 40px 20px; }
-    nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: 700; }
-    section { padding: 40px 20px; max-width: 700px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    section.visible { opacity: 1; transform: translateY(0); }
-    section img { width: 100%; border-radius: 8px; height: auto; }
-    section h2 { margin-top: 20px; font-size: 2rem; font-weight: 700; }
-    section p { margin: 15px 0; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.03em; color: #222; }
-    a.button { display: inline-block; padding: 12px 28px; margin-top: 15px; background: linear-gradient(135deg, #f0a500, #d18e00); color: #000; border-radius: 6px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 6px rgba(208, 142, 0, 0.5); transition: background 0.3s ease, box-shadow 0.3s ease; }
-    a.button:hover { background: linear-gradient(135deg, #d18e00, #f0a500); box-shadow: 0 6px 12px rgba(208, 142, 0, 0.8); }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      background: url('https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%202,%202025%20at%2003_53_55%20PM.png?raw=true') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .hero-content a {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 30px;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 999;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .product-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+    }
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%206,%202025%20at%2009_19_07%20AM.png?raw=true" alt="Hustle Rent Media Logo" style="max-width: 240px;" />
-    <nav>
-      <a href="#tiktok-box">TikTok Box</a>
-      <a href="#hustle-codes">Hustle Codes</a>
-      <a href="#mic-morals">Podcast</a>
-      <a href="#terms">Terms</a>
-      <a href="#order">Order Info</a>
-    </nav>
+    <div class="hero-content">
+      <h1>From Idea to Impact</h1>
+      <a href="#services">Explore Services</a>
+    </div>
   </header>
 
-  <main>
-    <section id="tiktok-box" class="section-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/file_00000000b1d461f9a293e47a2f60d176.png?raw=true" alt="TikTok Box">
-      <h2>TikTok Box</h2>
-      <p>Mystery. Motion. Money. Tap into the Amazon Overstock box experience, TikTok-style.</p>
-      <a href="https://buy.stripe.com/cNieVdcd68fs8YH6V92wU0d" class="button" target="_blank">Buy Now – $20</a>
-    </section>
+  <nav>
+    <a href="#services">Hustle Codes</a>
+    <a href="#podcast">Podcast</a>
+    <a href="#order">Order Info</a>
+    <a href="#terms">Terms</a>
+  </nav>
 
-    <section id="hustle-codes" class="section-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%2011,%202025%20at%2008_14_17%20PM.png?raw=true" alt="Hustle Codes">
-      <h2>Hustle Dot Codes</h2>
-      <p>Digital products and services rooted in vibration, branding, and motion:</p>
-      <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank">Brand Kit – $100</a><br><br>
-      <a href="https://book.stripe.com/dRm00j90U53g3En6V92wU00" class="button" target="_blank">Website Build – $100</a><br><br>
-      <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank">eBook Cover – $50</a><br><br>
-      <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank">Promo Flyers – $45</a><br><br>
-      <a href="#" class="button" target="_blank">Vibration Code – Coming Soon</a>
-    </section>
+  <section class="section" id="services">
+    <h2>Hustle Dot Codes</h2>
+    <div class="products">
+      <div class="product-card">
+        <h3>Brand Kit</h3>
+        <p>Launch-ready identity system</p>
+        <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" target="_blank">$100</a>
+      </div>
+      <div class="product-card">
+        <h3>Website Build</h3>
+        <p>Custom landing or brand site</p>
+        <a href="https://book.stripe.com/dRm00j90U53g3En6V92wU00" target="_blank">$100</a>
+      </div>
+      <div class="product-card">
+        <h3>eBook Cover</h3>
+        <p>Bold, creative, and scroll-stopping</p>
+        <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" target="_blank">$50</a>
+      </div>
+      <div class="product-card">
+        <h3>Promo Flyers</h3>
+        <p>Motion-ready visuals that sell</p>
+        <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" target="_blank">$45</a>
+      </div>
+      <div class="product-card">
+        <h3>Vibration Code</h3>
+        <p>Coming soon...</p>
+        <a href="#">🔥</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="mic-morals" class="section-box">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%206,%202025%20at%2009_19_16%20AM.png?raw=true" alt="Mic & Morals Podcast">
-      <h2>Mic & Morals Podcast</h2>
-      <p>Unfiltered truth from the hustle grind. Built by voice, powered by perspective.</p>
-      <a href="https://www.tiktok.com/@hustle.rent.media" class="button" target="_blank">Watch on TikTok</a>
-    </section>
+  <section class="section" id="podcast">
+    <h2>Mic & Morals Podcast</h2>
+    <p>Unfiltered truth from the hustle grind. Built by voice, powered by perspective.</p>
+    <a href="https://www.tiktok.com/@hustle.rent.media" target="_blank">Watch on TikTok</a>
+  </section>
 
-    <section id="terms" class="section-box">
-      <h2>Terms & Conditions</h2>
-      <p>All sales are final. No refunds. Please review product descriptions carefully before purchase. Delivery time for digital goods: Instant to 24 hours. Delivery for custom services: 3–5 business days. TikTok Box ships within 2–4 days.</p>
-    </section>
+  <section class="section" id="order">
+    <h2>Order Process</h2>
+    <p>
+      1. Choose your product or service and click the payment link.<br>
+      2. Complete checkout using Stripe.<br>
+      3. You’ll receive confirmation and delivery info by email.<br>
+      4. For digital goods, check your inbox. For physical goods, shipping info will follow.
+    </p>
+  </section>
 
-    <section id="order" class="section-box">
-      <h2>Order Process</h2>
-      <p>1. Choose your product or service and click the payment link. <br>
-         2. Complete checkout using Stripe. <br>
-         3. You'll receive confirmation and delivery info by email. <br>
-         4. For digital goods, check your inbox. For physical goods (TikTok Box), shipping info will be provided.</p>
-    </section>
-  </main>
+  <section class="section" id="terms">
+    <h2>Terms & Conditions</h2>
+    <p>
+      All sales are final. No refunds. Please review product descriptions carefully before purchase.
+      Delivery time for digital goods: Instant to 24 hours. Delivery for custom services: 3–5 business days.
+    </p>
+  </section>
 
   <footer>
     <p>© 2025 Hustle Rent Media LLC</p>
-    <div class="socials">
-      <a href="https://www.tiktok.com/@hustle.rent.media" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok"></a>
-      <a href="https://www.youtube.com/@hustle-rent-media" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_square_%282017%29.svg" alt="YouTube"></a>
-    </div>
-    <div class="trust-badge">
-      <img src="https://www.checkoutwc.com/wp-content/uploads/2021/07/trust-badges.jpg" alt="Payment and Trust Badges" />
+    <div>
+      <a href="https://www.tiktok.com/@hustle.rent.media" target="_blank">TikTok</a> |
+      <a href="https://www.youtube.com/@hustle-rent-media" target="_blank">YouTube</a>
     </div>
   </footer>
 
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
 </body>
 </html>
