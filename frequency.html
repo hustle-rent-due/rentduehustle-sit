@@ -10,102 +10,137 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0; padding: 0;
       background: #f8f8f8;
-      color: #111;
+      color: #333;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
       padding: 40px 20px;
-      line-height: 1.6;
+      line-height: 1.65;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 900;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       text-align: center;
-      color: #222;
+      background: linear-gradient(90deg, #1e90ff, #8a2be2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.12em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+      font-family: 'Montserrat', sans-serif;
     }
     h2 {
-      font-size: 1.8rem;
+      font-size: 2.1rem;
       font-weight: 800;
-      margin-top: 40px;
-      margin-bottom: 15px;
+      margin-top: 50px;
+      margin-bottom: 20px;
       color: #222;
+      border-bottom: 3px solid #8a2be2;
+      padding-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
     }
     p, li {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      color: #333;
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      color: #444;
+      line-height: 1.6;
+      font-weight: 500;
     }
     ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
+      margin-left: 22px;
+      margin-bottom: 30px;
     }
     .button {
       display: inline-block;
-      padding: 14px 30px;
-      background: #000;
+      padding: 14px 34px;
+      background: #1e90ff;
       color: white;
       font-weight: 700;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 25px;
       margin-right: 12px;
-      transition: background 0.3s ease;
+      box-shadow: 0 5px 15px rgba(30,144,255,0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
     }
     .button:hover {
-      background: #333;
+      background: #551a8b;
+      box-shadow: 0 7px 25px rgba(85,26,139,0.7);
     }
     .audio-box {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-top: 30px;
+      padding: 25px 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      margin-top: 40px;
       text-align: left;
+      font-weight: 600;
     }
     label, input, button {
       font-family: 'Montserrat', sans-serif;
       display: block;
       width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      margin: 14px 0;
+      padding: 14px 16px;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      font-weight: 600;
+      transition: border-color 0.25s ease;
+    }
+    label {
+      color: #1e90ff;
+      font-size: 1.2rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: #8a2be2;
+      box-shadow: 0 0 8px #8a2be2;
     }
     button {
-      background: #000;
+      background: #1e90ff;
       color: #fff;
       border: none;
       font-weight: 700;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(30,144,255,0.4);
     }
     button:hover {
-      background: #333;
+      background: #551a8b;
+      box-shadow: 0 7px 25px rgba(85,26,139,0.7);
     }
     img.banner-img {
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 30px;
+      border-radius: 14px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     img.diagram-img {
       width: 100%;
-      border-radius: 12px;
-      margin: 30px 0;
+      border-radius: 14px;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
     .highlight-bar {
       font-weight: 700;
       font-style: italic;
       color: #1e90ff;
       background-color: #f0f8ff;
-      padding: 16px 20px;
-      border-radius: 10px;
-      margin: 30px 0;
-      font-size: 1.25rem;
-      line-height: 1.4;
+      padding: 22px 28px;
+      border-radius: 14px;
+      margin: 40px 0;
+      font-size: 1.3rem;
+      line-height: 1.5;
       text-align: center;
       user-select: text;
+      box-shadow: 0 6px 20px rgba(30,144,255,0.25);
     }
     .highlight-bar span.rock {
       color: #d2691e;
@@ -117,7 +152,7 @@
 </head>
 <body>
 
-  <h1>Personal Frequency Codes by Dr Quantum</h1>
+  <h1>Personal Frequency Codes</h1>
 
   <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/file_0000000084a061fb99d0958aec1674fb.png?raw=true" alt="Frequency Codes Banner" class="banner-img" />
 
