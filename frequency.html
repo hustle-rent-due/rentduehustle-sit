@@ -8,28 +8,28 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 40px 20px;
+      margin: 0; padding: 0;
       background: #f8f8f8;
       color: #111;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      padding: 40px 20px;
     }
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 900;
       margin-bottom: 30px;
       text-align: center;
     }
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 800;
       margin-top: 40px;
       margin-bottom: 10px;
     }
     p, li {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 15px;
     }
@@ -39,13 +39,14 @@
     }
     .button {
       display: inline-block;
-      padding: 12px 26px;
+      padding: 14px 30px;
       background: #000;
       color: white;
       font-weight: 700;
       text-decoration: none;
       border-radius: 8px;
-      margin: 20px 12px 0 0;
+      margin-top: 25px;
+      margin-right: 12px;
       transition: background 0.3s ease;
     }
     .button:hover {
@@ -80,45 +81,60 @@
     button:hover {
       background: #333;
     }
-    img.banner-img,
+    img.banner-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
     img.diagram-img {
       width: 100%;
-      max-width: 600px;
-      height: auto;
+      max-height: 180px;
+      object-fit: contain;
       border-radius: 12px;
-      margin: 20px auto 30px;
-      display: block;
+      margin: 30px 0;
+    }
+    .notice {
+      background: #fff3cd;
+      border-left: 6px solid #ffeeba;
+      padding: 15px 20px;
+      margin: 30px 0;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #856404;
     }
   </style>
 </head>
 <body>
-
-  <!-- Top Back Button -->
-  <a href="https://hustlerentmedia.com" class="button" style="display: block; text-align: center; margin-bottom: 30px;">← Back to Main Site</a>
 
   <h1>Personal Frequency Codes by Dr Quantum</h1>
 
   <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/file_0000000084a061fb99d0958aec1674fb.png?raw=true" alt="Frequency Codes Banner" class="banner-img" />
 
   <p>
-    Your personal frequency code is a unique vibrational key created specifically for you using your name, birthday, and sacred resonance. It’s designed to help you align your energy with the universe and collapse potential into reality.
+    Your personal frequency code is a unique vibrational key created just for you using essential personal data like your full name, birth date, and elements of sacred resonance. This code helps align your energy with universal frequencies to support your goals and growth.
   </p>
 
   <h2>What’s Included</h2>
   <ul>
-    <li><strong>$99 Package:</strong> One Personal Frequency Code with PDF guide and activation card.</li>
-    <li><strong>$250 Package:</strong> Full set of three codes — Personal, Business, and Creative — each with their own PDF and cards.</li>
+    <li><strong>$99 Package:</strong> One Personal Frequency Code delivered as a PDF guide with activation tools to support your energetic alignment.</li>
+    <li><strong>$250 Package:</strong> Full set of three codes — Personal, Business, and Creative — each with its own PDF guide and activation support.</li>
   </ul>
 
   <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/file_00000000b52062438d043272138a0d8d.png?raw=true" alt="Frequency Codes Diagram" class="diagram-img" />
 
   <h2>Important Information</h2>
   <ul>
-    <li>Delivery time is typically 1 to 2 business days.</li>
-    <li>This is a fully personalized digital product.</li>
+    <li>Delivery time is typically 1 to 2 business days after receiving your order details.</li>
+    <li>This is a fully personalized digital product crafted specifically for you.</li>
     <li><strong>No refunds</strong> due to the custom nature of this service.</li>
     <li>All sales are final. Please purchase only if you understand and accept these terms.</li>
   </ul>
+
+  <div class="notice">
+    <p><strong>Privacy & Order Process:</strong> After purchase, you will receive a secure link to a private form where you provide your full name, birth date, and any additional info needed. This data is used solely to create your unique codes and is handled with the utmost privacy.</p>
+  </div>
 
   <h2>Listen & Activate Your Frequency</h2>
   <div class="audio-box">
@@ -130,9 +146,6 @@
 
   <a href="https://buy.stripe.com/8x200j6SMdzMdeX7Zd2wU0g" target="_blank" class="button">Buy Single Code – $99</a>
   <a href="https://buy.stripe.com/9B6bJ17WQ0N0caTdjx2wU0h" target="_blank" class="button">Buy Full Package – $250</a>
-
-  <!-- Bottom Back Button -->
-  <a href="https://hustlerentmedia.com" class="button" style="margin-top: 40px; display: block; text-align: center;">← Back to Main Site</a>
 
   <script>
     let audioCtx, oscillator;
