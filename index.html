@@ -17,9 +17,10 @@
       background: #000;
       text-align: center;
       padding: 20px 10px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      /* sticky removed */
+      position: static;
+      top: auto;
+      z-index: auto;
     }
     header img {
       max-width: 200px;
@@ -76,35 +77,35 @@
     }
     .section-box {
       background: white;
-      margin: 30px auto;
-      max-width: 720px;
-      padding: 20px 25px;
+      margin: 20px auto;
+      max-width: 520px; /* smaller width */
+      padding: 15px 20px; /* reduced padding */
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
     }
     .section-box img {
       width: 100%;
       border-radius: 8px;
     }
     .section-box h2 {
-      margin-top: 20px;
-      font-size: 2rem;
+      margin-top: 15px;
+      font-size: 1.8rem;
       font-weight: 800;
     }
     .section-box p {
-      margin: 12px 0 15px;
-      font-size: 1.1rem;
+      margin: 10px 0 12px;
+      font-size: 1rem;
       font-weight: 600;
     }
     .section-box a.button {
-      padding: 12px 26px;
+      padding: 10px 22px;
       background: #000;
       color: white;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 8px;
       transition: background 0.3s ease;
     }
     .section-box a.button:hover {
@@ -113,10 +114,10 @@
     .details-button {
       background: #ffd700;
       color: #000;
-      padding: 10px 24px;
+      padding: 8px 20px;
       border-radius: 6px;
       font-weight: 700;
-      margin-top: 8px;
+      margin-top: 6px;
       display: inline-block;
       text-decoration: none;
       transition: background 0.3s ease;
