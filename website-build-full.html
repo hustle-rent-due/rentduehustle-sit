@@ -47,6 +47,43 @@
     a.button:hover {
       background: #e6c200;
     }
+    /* New styles for highlighted sections */
+    .included-section {
+      background: #0a2e4d;
+      color: #fff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 20px rgba(10, 46, 77, 0.6);
+      margin-bottom: 40px;
+    }
+    .included-section h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #ffd700;
+      text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.8);
+    }
+    .included-section ul {
+      list-style-type: disc;
+      margin-left: 25px;
+      color: #d6e9ff;
+    }
+    .included-section ul li {
+      margin-bottom: 14px;
+    }
+    .payment-info {
+      background: #e8f0fe;
+      color: #202a4f;
+      border-radius: 12px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 12px rgba(32, 42, 79, 0.25);
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+    .payment-info strong {
+      color: #0a2e4d;
+    }
   </style>
 </head>
 <body>
@@ -54,25 +91,27 @@
 
   <p>This full-service website package is perfect for creators, entrepreneurs, brands, or businesses who want a professional online presence built from scratch with speed, clarity, and design that hits.</p>
 
-  <p><strong>What’s Included:</strong></p>
-  <ul>
-    <li><strong>Consultation Form:</strong> You'll receive a detailed form to submit your vision, content, images, services, and any inspiration links. This helps us capture your brand voice from the start.</li>
-    <li><strong>Complete Website Design & Build:</strong> Fully custom site (1–5 pages) based on your content and goals — Home, About, Services, Contact, etc.</li>
-    <li><strong>Mobile Optimization:</strong> Your site will look clean and perform on all devices (phones, tablets, desktops).</li>
-    <li><strong>Custom Visual Layout:</strong> Font styling, color matching, and layout structured to guide viewers to action.</li>
-    <li><strong>Section-by-Section Flow:</strong> Scroll layout with branding sections like testimonials, product display, service options, and more — based on your needs.</li>
-    <li><strong>Social Media Integration:</strong> Links and icons to your TikTok, YouTube, Instagram, etc.</li>
-    <li><strong>Basic SEO Setup:</strong> Site structure built to help with search visibility.</li>
-    <li><strong>1 round of edits:</strong> Includes one revision after delivery. You tell us the tweaks and we apply them.</li>
-    <li><strong>Delivery Method:</strong> Delivered as an HTML file (or uploaded directly if hosting is arranged).</li>
-  </ul>
+  <section class="included-section" aria-label="What's Included">
+    <h2>What’s Included</h2>
+    <ul>
+      <li><strong>Consultation Form:</strong> You'll receive a detailed form to submit your vision, content, images, services, and any inspiration links. This helps us capture your brand voice from the start.</li>
+      <li><strong>Complete Website Design & Build:</strong> Fully custom site (1–5 pages) based on your content and goals — Home, About, Services, Contact, etc.</li>
+      <li><strong>Mobile Optimization:</strong> Your site will look clean and perform on all devices (phones, tablets, desktops).</li>
+      <li><strong>Custom Visual Layout:</strong> Font styling, color matching, and layout structured to guide viewers to action.</li>
+      <li><strong>Section-by-Section Flow:</strong> Scroll layout with branding sections like testimonials, product display, service options, and more — based on your needs.</li>
+      <li><strong>Social Media Integration:</strong> Links and icons to your TikTok, YouTube, Instagram, etc.</li>
+      <li><strong>Basic SEO Setup:</strong> Site structure built to help with search visibility.</li>
+      <li><strong>1 Round of Edits:</strong> Includes one revision after delivery. You tell us the tweaks and we apply them.</li>
+      <li><strong>Delivery Method:</strong> Delivered as an HTML file (or uploaded directly if hosting is arranged).</li>
+    </ul>
+  </section>
 
-  <p><strong>Turnaround Time:</strong><br />
-  Once your form is submitted, your site will be delivered in 3–5 business days. First draft will be emailed with delivery confirmation. Revisions (if any) follow after that.</p>
+  <section class="payment-info" aria-label="Payment and Form Info">
+    <p><strong>After Payment:</strong></p>
+    <p>Upon completing your payment, you will be automatically redirected to a Google Form to submit your website vision, content, branding assets, and specific requests. This step is essential to ensure your site reflects your unique style and goals perfectly.</p>
+    <p><em>Please complete the form promptly to help us deliver your fully customized website within <strong>1–2 business days</strong>.</em></p>
+  </section>
 
-  <p><strong>Refund Policy:</strong><br />
-  This is a digital service. All sales are final. No refunds will be issued once payment is made and form is submitted. Please review all details before submitting.</p>
-
-  <a href="https://buy.stripe.com/8x200j5OIcvI0sbcft2wU0e" class="button" target="_blank">Pay $1000 – Start My Website</a>
+  <a href="https://buy.stripe.com/8x200j5OIcvI0sbcft2wU0e" class="button" target="_blank" rel="noopener noreferrer">Pay $1000 – Start My Website</a>
 </body>
 </html>
