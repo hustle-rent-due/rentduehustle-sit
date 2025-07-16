@@ -40,7 +40,12 @@
     }
     p, li {
       font-size: 1.15rem;
-      color: #ccc;
+      /* Gradient text effect for body text */
+      background: linear-gradient(90deg, #00ffe7, #7f00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
     .button {
       display: inline-block;
@@ -76,6 +81,7 @@
       border: 1px solid #555;
       background: #111;
       color: #fff;
+      font-weight: 600;
     }
     button {
       background: #00ffe7;
@@ -87,10 +93,10 @@
       background: #7f00ff;
       color: #fff;
     }
-    img.banner-img, img.diagram-img {
-      width: 50%;        /* Smaller images */
+    img.diagram-img {
+      width: 50%;
       border-radius: 12px;
-      margin: 30px auto; /* Center images */
+      margin: 30px auto;
       display: block;
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
@@ -100,6 +106,12 @@
       border-left: 6px solid #00ffe7;
       margin: 40px 0;
       font-size: 1.2rem;
+      /* Keep highlight bar text white for clarity */
+      color: #eee;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0ff, #a0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .reviews {
       background: #1a1a1a;
@@ -116,6 +128,7 @@
       border-left: 4px solid #7f00ff;
       padding-left: 15px;
       font-style: italic;
+      color: #ccc;
     }
     footer {
       margin-top: 60px;
@@ -139,7 +152,7 @@
   <a href="https://buy.stripe.com/8x200j6SMdzMdeX7Zd2wU0g" class="button">Buy Now – $99</a>
   <a href="https://buy.stripe.com/9B6bJ17WQ0N0caTdjx2wU0h" class="button">Buy Full Pack – $250</a>
 
-  <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/file_0000000084a061fb99d0958aec1674fb.png?raw=true" alt="Frequency Codes Banner" class="banner-img" />
+  <!-- Removed first image -->
 
   <p>
     Your personal frequency code is a unique vibrational key, calculated using your name, birthday, and sacred resonance including the golden ratio. This personalized tone aligns your energy with universal flow — like a spiritual fingerprint to unlock your highest state.
