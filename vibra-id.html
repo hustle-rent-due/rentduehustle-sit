@@ -9,7 +9,7 @@
     <meta name="author" content="HustleRentMedia" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
     <style>
-        /* ======= Your Original Styles ======= */
+        /* ===== Your Original Styles ===== */
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0; padding: 0;
@@ -59,12 +59,13 @@
             -webkit-text-fill-color: #ffffff !important;
             background: none !important;
         }
-        /* ======= Button Styles & Ripple Effect ======= */
+        /* ===== Button Styles & Ripple Effect ===== */
         .button {
             display: inline-block;
             padding: 14px 30px;
             background: #00ffe7;
-            color: #000;
+            color: #000 !important;
+            -webkit-text-fill-color: #000 !important; /* Fix for button text visibility */
             font-weight: 700;
             text-decoration: none;
             border-radius: 8px;
@@ -77,7 +78,8 @@
         }
         .button:hover {
             background: #7f00ff;
-            color: #fff;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important; /* Fix for button hover text visibility */
             box-shadow: 0 4px 20px rgba(127,0,255,0.5);
         }
         /* Ripple Effect */
@@ -230,14 +232,14 @@
         <label style="color: #00ffe7; font-weight: 700; margin-bottom: 8px; display: block;">
             Executive Emergence Consultation – $2,500
         </label>
-        <a href="https://buy.stripe.com/00wfZhcd6dzMcaTdjx2wU0k" class="button" style="background: #7f00ff; color: #fff; margin-bottom: 20px;">
+        <a href="https://buy.stripe.com/00wfZhcd6dzMcaTdjx2wU0k" class="button" style="background: #7f00ff; color: #fff; -webkit-text-fill-color: #fff; margin-bottom: 20px;">
             Book Executive Emergence Consultation
         </a>
 
         <label style="color: #00ffe7; font-weight: 700; margin-bottom: 8px; display: block;">
             Mastery Program Enrollment – $15,000
         </label>
-        <a href="https://buy.stripe.com/28E4gzdhafHU4Irbbp2wU0j" class="button" style="background: #7f00ff; color: #fff;">
+        <a href="https://buy.stripe.com/28E4gzdhafHU4Irbbp2wU0j" class="button" style="background: #7f00ff; color: #fff; -webkit-text-fill-color: #fff;">
             Enroll in Mastery Program
         </a>
     </p>
@@ -280,7 +282,7 @@
         This system isn't just theoretical. It's the culmination of my personal, ongoing empirical research and <strong class="vibra-id-highlight">proven application</strong> into the true nature of reality and consciousness. Through rigorous observation and consistent application of these principles, I've <strong class="vibra-id-highlight">demonstrated and actualized the power of the Observer Code to influence probabilistic outcomes</strong>, leading to significant financial shifts and <strong class="vibra-id-highlight">my own emergence into the millionaire stage.</strong> <strong class="vibra-id-highlight">These patterns are truth, and vibrations are the language of that truth, leading directly to tangible results.</strong>
     </p>
     <p style="text-align: center;">
-        <a href="#" class="button" style="background: #7f00ff; color: #fff;">Explore My Research & Results Log (Coming Soon!)</a>
+        <a href="#" class="button" style="background: #7f00ff; color: #fff; -webkit-text-fill-color: #fff;">Explore My Research & Results Log (Coming Soon!)</a>
         <br><small style="color: #999;">(This link will lead to a detailed blog or research log documenting real-world applications and the undeniable results of the DEF.)</small>
     </p>
 
