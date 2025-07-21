@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+:  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -20,13 +20,9 @@
             margin-right: auto;
             padding: 40px 20px;
             line-height: 1.7;
-            opacity: 0; /* start invisible for fade-in */
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        body.fade-in {
-            opacity: 1;
+            opacity: 1; /* Removed fade-in for immediate visibility */
             transform: translateY(0);
+            transition: none;
         }
         h1 {
             font-size: 3rem;
@@ -65,7 +61,7 @@
             padding: 14px 30px;
             background: #00ffe7;
             color: #000 !important;
-            -webkit-text-fill-color: #000 !important; /* Fix for button text visibility */
+            -webkit-text-fill-color: #000 !important;
             font-weight: 700;
             text-decoration: none;
             border-radius: 8px;
@@ -79,10 +75,9 @@
         .button:hover {
             background: #7f00ff;
             color: #fff !important;
-            -webkit-text-fill-color: #fff !important; /* Fix for button hover text visibility */
+            -webkit-text-fill-color: #fff !important;
             box-shadow: 0 4px 20px rgba(127,0,255,0.5);
         }
-        /* Ripple Effect */
         .button::after {
             content: "";
             position: absolute;
@@ -102,7 +97,6 @@
             opacity: 1;
             transition: 0s;
         }
-        /* Your other styles below unchanged */
         .audio-box {
             background: #1e1e1e;
             padding: 24px;
@@ -308,7 +302,6 @@
     </footer>
 
     <script>
-        // ===== Your Existing Audio Player Script (UNCHANGED) =====
         let audioCtx, oscillator;
         const messageBox = document.getElementById('messageBox');
 
@@ -323,5 +316,5 @@
 
         function playTone() {
             const freqInput = document.getElementById('freq');
-            const
+            const frequency = parseFloat(freqInput.value    
 
