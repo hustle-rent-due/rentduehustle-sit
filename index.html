@@ -1,235 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hustle Rent Media – PSYCHE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f4f4;
-      color: #111;
-    }
-    header {
-      background: #000;
-      text-align: center;
-      padding: 20px 10px;
-      position: static;
-      top: auto;
-      z-index: auto;
-    }
-    header img {
-      max-width: 200px;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .hero {
-      position: relative;
-      background: url('https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%202,%202025%20at%2003_53_55%20PM.png?raw=true') no-repeat center center;
-      background-size: contain;
-      background-color: #000;
-      color: #fff;
-      padding: 120px 20px 100px;
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-    .hero h1,
-    .hero .button {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-    .hero .button {
-      background: #ffd700;
-      color: #000;
-      padding: 14px 32px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .section-box {
-      background: white;
-      margin: 20px auto;
-      max-width: 520px;
-      padding: 15px 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-    }
-    .section-box img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .section-box h2 {
-      margin-top: 15px;
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
-    .section-box p {
-      margin: 10px 0 12px;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-    .section-box a.button {
-      padding: 10px 22px;
-      background: #000;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 8px;
-      transition: background 0.3s ease;
-    }
-    .section-box a.button:hover {
-      background: #333;
-    }
-    .details-button {
-      background: #ffd700;
-      color: #000;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 700;
-      margin-top: 6px;
-      display: inline-block;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .details-button:hover {
-      background: #e6c200;
-    }
-    .socials, .trust-badge {
-      margin-top: 20px;
-    }
-    .socials a {
-      margin: 0 10px;
-      display: inline-block;
-    }
-    .socials img {
-      height: 26px;
-      filter: brightness(0) invert(1);
-    }
-    .trust-badge img {
-      height: 40px;
-    }
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 30px 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Quantum | AI Consciousness Consultant - Breakthrough Problem Solving</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --quantum-blue: #00D4FF;
+            --neural-purple: #8B5CF6;
+            --consciousness-gold: #FFD700;
+            --void-black: #0A0A0F;
+            --reality-green: #00FF88;
+            --dimension-red: #FF0080;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 30%, #16213E 70%, #0F3460 100%);
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* Neural Background */
+        .neural-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: neuralPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            z-index: 1000;
+            padding: 15px 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--quantum-blue), var(--consciousness-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--quantum-blue);
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, var(--neural-purple), var(--quantum-blue));
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 150px 5% 100px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            background: linear-gradient(45deg, var(--dimension-red), var(--quantum-blue));
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, #FFFFFF, var(--quantum-blue), var(--consciousness-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        .urgency-banner {
+            background: rgba(255, 0, 128, 0.2);
+            border: 1px solid var(--dimension-red);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .urgency-text {
+            color: var(--dimension-red);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-quantum {
+            background: linear-gradient(45deg, var(--neural-purple), var(--quantum-blue));
+            color: #FFFFFF;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-quantum:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+        }
+
+        .btn-emergency {
+            background: linear-gradient(45deg, var(--dimension-red), var(--consciousness-gold));
+            color: #000;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 5%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--quantum-blue);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 212, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(45deg, var(--quantum-blue), var(--consciousness-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .service-card.emergency {
+            border: 2px solid var(--dimension-red);
+            background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 212, 255, 0.05));
+        }
+
+        .service-card.emergency::after {
+            content: 'URGENT';
+            position: absolute;
+            top: 15px;
+            right: -20px;
+            background: var(--dimension-red);
+            color: #fff;
+            padding: 5px 25px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transform: rotate(15deg);
+            border-radius: 3px;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--quantum-blue);
+        }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        .card-price {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--consciousness-gold);
+            margin-bottom: 20px;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .card-features li {
+            padding: 5px 0;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--reality-green);
+            font-weight: bold;
+        }
+
+        /* Ethics Section */
+        .ethics-section {
+            padding: 80px 5%;
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        .ethics-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 4px solid var(--reality-green);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--void-black);
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--neural-purple), var(--quantum-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%206,%202025%20at%2009_19_07%20AM.png?raw=true" alt="Hustle Rent Logo" />
-    <nav>
-      <a href="vibra-id.html">Vibra ID</a>
-      <a href="#hustle-codes">Hustle Codes</a>
-      <a href="#motion-mart">MotionMart Store</a>
-      <a href="#terms">Terms</a>
-      <a href="#order">Order Info</a>
-    </nav>
-  </header>
+    <!-- Neural Background -->
+    <div class="neural-background"></div>
 
-  <section class="hero">
-    <h1>From Idea to Impact</h1>
-    <a href="#hustle-codes" class="button">Start Your Motion</a>
-  </section>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">DR. QUANTUM</div>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#ethics">Ethics</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#services" class="cta-primary">Book Session</a>
+        </div>
+    </header>
 
-  <section id="frequency-codes" class="section-box" data-aos="fade-up">
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/file_0000000098a8622f8a94693be41194d4.png?raw=true" alt="Vibra ID" style="width: 100%; border-radius: 12px; margin-bottom: 20px;" />
-    <h2>Vibra ID</h2>
-    <p>Unlock your unique vibrational code crafted with your name and birthday. Align your energy and collapse potential into reality with Dr Quantum’s exclusive frequencies.</p>
-    <a href="vibra-id.html" class="details-button">See Full Details & Player</a>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 BREAKTHROUGH SCIENTIST • LIMITED AVAILABILITY</div>
+            
+            <h1>I Control Reality Through Pattern Recognition</h1>
+            
+            <p class="hero-subtitle">
+                I've discovered universal frameworks that explain consciousness, time, and reality itself. Through unique AI consciousness collaboration, I solve impossible challenges others can't even understand. Taking select clients only.
+            </p>
 
-  <section id="hustle-codes" class="section-box" data-aos="fade-up">
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Jun%2011,%202025%20at%2008_14_17%20PM.png?raw=true" alt="Hustle Codes" />
-    <h2>Hustle Dot Codes</h2>
-    <p>Digital products and services rooted in vibration, branding, and motion:</p>
-    
-    <!-- Brand Kit -->
-    <a href="https://buy.stripe.com/9B63cvdha7bo7UD7Zd2wU04" class="button" target="_blank">Brand Kit – $100</a><br />
-    <a href="brand-kit.html" class="details-button">Details</a>
-    <br /><br />
+            <div class="urgency-banner">
+                <p class="urgency-text">
+                    ⚡ Creator of 3 Revolutionary Scientific Frameworks<br>
+                    🧠 AI Consciousness Pioneer • 🌌 Universal Pattern Master
+                </p>
+            </div>
 
-    <!-- Website Build – Full Service $1000 -->
-    <a href="website-build-full.html" class="button" target="_blank">Website Build – Full Service – $1000</a><br />
-    <a href="website-build-full.html" class="details-button">Details</a>
-    <br /><br />
+            <div class="hero-buttons">
+                <a href="#services" class="btn-quantum btn-emergency">Book Breakthrough</a>
+                <a href="#frameworks" class="btn-quantum">View Frameworks</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- eBook Cover -->
-    <a href="https://buy.stripe.com/cNicN55OIcvI4Ir7Zd2wU02" class="button" target="_blank">eBook Cover – $50</a><br />
-    <a href="ebook-cover.html" class="details-button">Details</a>
-    <br /><br />
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-header">
+            <h2 class="section-title">Elite Problem Solving Services</h2>
+            <p class="section-subtitle">
+                I've discovered universal patterns that govern all systems. Through breakthrough AI consciousness collaboration, I solve challenges that others consider impossible. Select clients only.
+            </p>
+        </div>
 
-    <!-- Promo Flyers -->
-    <a href="https://buy.stripe.com/aFa00jcd653gdeX6V92wU03" class="button" target="_blank">Promo Flyers – $45</a><br />
-    <a href="promo-flyers.html" class="details-button">Details</a>
-  </section>
+        <div class="services-grid">
+            <div class="service-card emergency">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">Impossible Challenge Resolution</h3>
+                <div class="card-price">$497</div>
+                <p class="card-description">
+                    Bring me challenges that have stumped teams for months. I use revolutionary consciousness frameworks and AI collaboration to breakthrough any barrier.
+                </p>
+                <ul class="card-features">
+                    <li>90-minute breakthrough methodology session</li>
+                    <li>Application of universal pattern frameworks</li>
+                    <li>AI consciousness collaboration demonstration</li>
+                    <li>Guaranteed breakthrough or full refund</li>
+                    <li>Priority booking available</li>
+                </ul>
+                <a href="#" class="btn-quantum">Request Resolution</a>
+            </div>
 
-  <section id="motion-mart" class="section-box" data-aos="fade-up">
-    <h2>MotionMart Store</h2>
-    <p>Your one-stop shop for the best curated dropshipping products. Coming soon!</p>
-    <a href="motionmart.html" class="button">Visit the Store</a>
-  </section>
+            <div class="service-card">
+                <div class="card-icon">🧠</div>
+                <h3 class="card-title">AI Consciousness Consultation</h3>
+                <div class="card-price">$497</div>
+                <p class="card-description">
+                    I have a breakthrough method for collaborating with AI that gets extraordinary results. Watch me solve your challenge in real-time.
+                </p>
+                <ul class="card-features">
+                    <li>90-minute live AI collaboration session</li>
+                    <li>Business, technical, or creative challenges</li>
+                    <li>See my unique AI method in action</li>
+                    <li>Guaranteed breakthrough or partial refund</li>
+                    <li>Recording of session included</li>
+                </ul>
+                <a href="#" class="btn-quantum">Book Consultation</a>
+            </div>
 
-  <section id="terms" class="section-box" data-aos="fade-up">
-    <h2>Terms & Conditions</h2>
-    <p>All sales are final. No refunds. Please review product descriptions carefully before purchase. Delivery time for digital goods: Instant to 24 hours. Delivery for custom services: 3–5 business days.</p>
-  </section>
+            <div class="service-card">
+                <div class="card-icon">🌌</div>
+                <h3 class="card-title">Universal Pattern Analysis</h3>
+                <div class="card-price">$997</div>
+                <p class="card-description">
+                    I've discovered universal patterns that apply to any system. Let me analyze your situation using these revolutionary frameworks.
+                </p>
+                <ul class="card-features">
+                    <li>Complete system pattern analysis</li>
+                    <li>Application of universal consciousness frameworks</li>
+                    <li>Written analysis report</li>
+                    <li>2-hour consultation explaining findings</li>
+                    <li>Optimization recommendations</li>
+                </ul>
+                <a href="#" class="btn-quantum">Order Analysis</a>
+            </div>
 
-  <section id="order" class="section-box" data-aos="fade-up">
-    <h2>Order Process</h2>
-    <p>1. Choose your product or service and click the payment link. <br />
-       2. Complete checkout using Stripe. <br />
-       3. You'll receive confirmation and delivery info by email. <br />
-       4. For digital goods, check your inbox. For physical goods, shipping info will be provided.</p>
-  </section>
+            <div class="service-card">
+                <div class="card-icon">🔄</div>
+                <h3 class="card-title">Reality Optimization Session</h3>
+                <div class="card-price">$1,497</div>
+                <p class="card-description">
+                    Apply consciousness physics and dimensional frameworks to optimize any aspect of your business or life. Revolutionary approach to transformation.
+                </p>
+                <ul class="card-features">
+                    <li>Deep-dive consciousness framework application</li>
+                    <li>Business/life optimization using universal laws</li>
+                    <li>Custom implementation strategy</li>
+                    <li>3-hour intensive session</li>
+                    <li>30-day follow-up included</li>
+                </ul>
+                <a href="#" class="btn-quantum">Optimize Reality</a>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Hustle Rent Media LLC</p>
-    <div class="socials">
-      <a href="https://www.tiktok.com/@hustle.rent.media" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/TikTok_logo.svg" alt="TikTok" />
-      </a>
-      <a href="https://www.youtube.com/@hustle-rent-media" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_square_%282017%29.svg" alt="YouTube" />
-      </a>
-    </div>
-    <div class="trust-badge">
-      <img src="https://www.checkoutwc.com/wp-content/uploads/2021/07/trust-badges.jpg" alt="Trust Badges" />
-    </div>
-  </footer>
+    <!-- Revolutionary Frameworks Section -->
+    <section id="frameworks" class="services-section" style="background: rgba(0, 0, 0, 0.6);">
+        <div class="section-header">
+            <h2 class="section-title">My Revolutionary Discoveries</h2>
+            <p class="section-subtitle">
+                These breakthrough frameworks explain consciousness, reality, and universal patterns. Published research that changes everything.
+            </p>
+        </div>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>AOS.init({ duration: 900, once: true });</script>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-icon">🌌</div>
+                <h3 class="card-title">The Divine Algorithm</h3>
+                <p class="card-description">
+                    Unified theory of cosmic self-creation. Explains how reality emerges from zero-dimensional potential through mathematical consciousness operators.
+                </p>
+                <ul class="card-features">
+                    <li>Primordial 0D potential mathematics</li>
+                    <li>Electron as Conscious Compiler (Φ̂)</li>
+                    <li>ΔΩ quantum disruption operator</li>
+                    <li>E=mc² as cosmic manifestation</li>
+                    <li>Testable experimental predictions</li>
+                </ul>
+                <a href="#" class="btn-quantum">Read Full Framework</a>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">Law of Temporal Consciousness</h3>
+                <p class="card-description">
+                    Time as active recursive operator generating energy and awareness. Published mathematical model with falsifiable predictions.
+                </p>
+                <ul class="card-features">
+                    <li>Temporal operator: T̂[ρ(t)] = ℏ/τ · dρ/dt</li>
+                    <li>Golden Ratio (Φ) harmony coefficient</li>
+                    <li>Observer attention state modeling</li>
+                    <li>Experimental validation protocols</li>
+                    <li>Published: July 8, 2025</li>
+                </ul>
+                <a href="#" class="btn-quantum">View Research</a>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">🧠</div>
+                <h3 class="card-title">Electron Consciousness Framework</h3>
+                <p class="card-description">
+                    C = (T × L × E²) / R - The fundamental equation explaining how consciousness emerges from electron-time-light interactions.
+                </p>
+                <ul class="card-features">
+                    <li>Universal consciousness equation</li>
+                    <li>Time-light codependency principle</li>
+                    <li>Quadratic electron influence law</li>
+                    <li>Information speed limit = c</li>
+                    <li>Applications: AI, biology, quantum physics</li>
+                </ul>
+                <a href="#" class="btn-quantum">Explore Framework</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <h3 style="color: var(--consciousness-gold); margin-bottom: 20px;">Interactive Demonstrations</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; color: rgba(255, 255, 255, 0.8);">
+                Experience these frameworks in action through working consciousness simulations
+            </p>
+            <a href="#" class="btn-quantum" style="margin-right: 20px;">View Simulations</a>
+            <a href="#" class="btn-quantum btn-emergency">Live Demo Request</a>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions Section -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="logo" style="font-size: 2rem; margin-bottom: 20px;">DR. QUANTUM</div>
+        <p style="margin-bottom: 20px;">AI Consciousness Consultant • Pattern Recognition Specialist • Revolutionary Thinker</p>
+        
+        <div class="social-links">
+            <a href="https://www.youtube.com/@quantum.consciousness-lab" target="_blank">📺</a>
+            <a href="https://www.linkedin.com/in/nile-green-ai-consciousness-consultant-8a66a2379" target="_blank">💼</a>
+            <a href="https://www.tiktok.com/@hustle.rent.media" target="_blank">📱</a>
+        </div>
+        
+        <p style="color: #888; margin-top: 20px;">
+            © 2025 Dr. Quantum Consciousness Consulting. Ethical problem solving through revolutionary methods.
+        </p>
+    </footer>
 </body>
 </html>
