@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Download: The AI Revenue Multiplier</title>
+<style>
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,sans-serif;
+    background:#0a0a0a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    text-align:center;
+    padding:20px;
+  }
+  .container{
+    max-width:500px;
+    padding:40px;
+    background:#1a1a1a;
+    border-radius:12px;
+    border:1px solid #333;
+  }
+  h1{
+    color:#00e5ff;
+    margin-bottom:20px;
+    font-size:2rem;
+  }
+  .download-btn{
+    background:linear-gradient(90deg,#6b5cff,#00e5ff);
+    color:#000;
+    padding:16px 32px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    margin:20px 0;
+    font-size:1.1rem;
+  }
+  .download-btn:hover{
+    transform:translateY(-2px);
+  }
+  p{
+    color:#ccc;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎉 Payment Successful!</h1>
+  
+  <p>Your download will start automatically. If it doesn't, click the button below:</p>
+  
+  <a href="ai-revenue-multiplier.pdf" download="The-AI-Revenue-Multiplier.pdf" class="download-btn">
+    📚 Download Your Book
+  </a>
+  
+  <p><strong>File:</strong> The-AI-Revenue-Multiplier.pdf<br>
+  <strong>Size:</strong> Advanced Business AI Strategies</p>
+</div>
+
+<script>
+// Auto-download after 2 seconds
+setTimeout(() => {
+  const link = document.querySelector('a[download]');
+  if (link) link.click();
+}, 2000);
+</script>
+
+</body>
+</html>
