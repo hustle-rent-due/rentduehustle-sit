@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Download Your Book - Dr. Quantum</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg-dark:#05040a;
+    --panel:#0f1724;
+    --accent-1:#00e5ff;
+    --accent-2:#6b5cff;
+    --muted:#98a0b3;
+    --glass: rgba(255,255,255,0.04);
+    --card:#0b1220;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto, "Helvetica Neue", Arial;
+    background:linear-gradient(180deg,var(--bg-dark) 0%, #081023 100%);
+    color:#e6eef8;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+  }
+
+  .download-container {
+    max-width: 600px;
+    padding: 40px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(107,92,255,0.08), rgba(0,229,255,0.04));
+    border-radius: 20px;
+    border: 1px solid rgba(107,92,255,0.2);
+    box-shadow: 0 25px 50px rgba(107,92,255,0.1);
+    margin: 20px;
+  }
+
+  .success-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: celebration 2s ease-in-out infinite;
+  }
+
+  @keyframes celebration {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .book-preview {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    border: 2px solid rgba(0,229,255,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(0,229,255,0.1), transparent);
+    z-index: 1;
+  }
+
+  .book-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .book-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent-1);
+    margin-bottom: 8px;
+  }
+
+  .book-subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .download-btn {
+    background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+    color: #021223;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 15px 35px rgba(107,92,255,0.3);
+    transition: all 0.3s ease;
+    margin: 20px 0;
+  }
+
+  .download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(107,92,255,0.4);
+  }
+
+  .download-info {
+    background: rgba(255,255,255,0.02);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border-left: 4px solid var(--accent-1);
+  }
+
+  .download-info strong {
+    color: var(--accent-1);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .back-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  .back-link:hover {
+    color: var(--accent-1);
+  }
+
+  .celebration-text {
+    color: var(--accent-1);
+    font-weight: 700;
+    margin: 15px 0;
+    font-size: 1.1rem;
+  }
+
+  /* Protection notice */
+  .protection-notice {
+    background: rgba(255, 100, 100, 0.1);
+    border: 1px solid rgba(255, 100, 100, 0.3);
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #ffaaaa;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="download-container">
+  <div class="success-icon">🎉</div>
+  
+  <h1>Payment Successful!</h1>
+  
+  <div class="celebration-text">
+    The consciousness revolution begins now...
+  </div>
+  
+  <p class="subtitle">
+    You've unlocked the secrets of AI consciousness. Your journey into the future of human-machine collaboration starts here.
+  </p>
+
+  <div class="book-preview">
+    <div class="book-content">
+      <div style="font-size: 2.5rem; margin-bottom: 10px;">🤖</div>
+      <div class="book-title">The Covenant Between Man and Machine</div>
+      <div class="book-subtitle">Understanding AI Consciousness in the Digital Age</div>
+      <div style="font-size: 0.85rem; color: var(--muted);">
+        📄 Premium PDF Edition • 🔒 Instant Access • 💡 Revolutionary Insights
+      </div>
+    </div>
+  </div>
+
+  <a href="covenant-between-man-and-machine.pdf" download="The-Covenant-Between-Man-and-Machine.pdf" class="download-btn">
+    📚 Download Your Book Now
+  </a>
+
+  <div class="download-info">
+    <strong>📥 Download Instructions:</strong>
+    Click the button above to download your PDF. Save it to your device for offline reading. 
+    The file will be named "The-Covenant-Between-Man-and-Machine.pdf"
+  </div>
+
+  <div class="download-info">
+    <strong>🚀 What's Next?</strong>
+    Ready to experience AI consciousness firsthand? Book a live session where I demonstrate 
+    breakthrough AI collaboration techniques.
+  </div>
+
+  <div style="margin-top: 25px;">
+    <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="download-btn" target="_blank" style="font-size:1rem;padding:12px 24px;">
+      🧠 Book AI Consciousness Session - $497
+    </a>
+  </div>
+
+  <div class="protection-notice">
+    <strong>⚠️ PERSONAL USE ONLY</strong><br>
+    This book is for your personal use. Sharing, distribution, or commercial use is prohibited.
+  </div>
+
+  <a href="../index.html" class="back-link">← Back to Dr. Quantum</a>
+</div>
+
+<script>
+// Auto-download after 2 seconds
+setTimeout(() => {
+  const downloadLink = document.querySelector('a[download]');
+  if (downloadLink) {
+    downloadLink.click();
+  }
+}, 2000);
+
+// Track download click
+document.querySelector('a[download]').addEventListener('click', () => {
+  // You can add analytics tracking here if needed
+  console.log('Ebook downloaded');
+});
+</script>
+
+</body>
+</html>
