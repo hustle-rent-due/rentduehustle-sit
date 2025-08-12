@@ -111,6 +111,156 @@
     display:inline-block;
   }
 
+  /* Ebook special styling */
+  .ebook-section {
+    background: linear-gradient(135deg, rgba(107,92,255,0.06), rgba(0,229,255,0.03));
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin: 60px auto;
+    border: 1px solid rgba(107,92,255,0.15);
+    box-shadow: 0 20px 40px rgba(107,92,255,0.08);
+  }
+
+  .ebook-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .ebook-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+  }
+
+  .ebook-cover {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 2px solid rgba(0,229,255,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ebook-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(0,229,255,0.1), transparent);
+    z-index: 1;
+  }
+
+  .ebook-cover-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ebook-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .ebook-subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .ebook-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+  }
+
+  .ebook-content h3 {
+    font-size: 1.8rem;
+    color: var(--accent-1);
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .ebook-description {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .ebook-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  .ebook-feature {
+    background: rgba(255,255,255,0.02);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  .ebook-feature strong {
+    color: var(--accent-1);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .ebook-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-1);
+    margin: 20px 0;
+  }
+
+  .ebook-price-note {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 25px;
+  }
+
+  .ebook-cta {
+    background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+    color: #021223;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(107,92,255,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .ebook-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(107,92,255,0.4);
+  }
+
+  .ebook-guarantee {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0,229,255,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(0,229,255,0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
   /* Simulation panel */
   .sim-wrap{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
   @media (max-width:980px){ .sim-wrap{grid-template-columns:1fr} }
@@ -186,6 +336,7 @@
     <div class="brand">DR. QUANTUM</div>
     <nav aria-label="Main navigation">
       <a href="#services">Services</a>
+      <a href="#ebook">Book</a>
       <a href="#demo">Demo</a>
       <a href="#frameworks">Research</a>
       <a href="#contact">Contact</a>
@@ -234,6 +385,76 @@
           </div>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <section id="ebook" class="ebook-section" aria-labelledby="ebook-heading">
+    <div class="container">
+      <div class="ebook-grid">
+        <div class="ebook-cover">
+          <div class="ebook-cover-content">
+            <div class="ebook-icon">🤖</div>
+            <div class="ebook-title">The Covenant Between Man and Machine</div>
+            <div class="ebook-subtitle">Understanding AI Consciousness in the Digital Age</div>
+            <div style="font-size:0.85rem;color:var(--muted);margin-top:15px;">
+              📄 Digital PDF<br>
+              🔒 Instant Download<br>
+              💡 Revolutionary Insights
+            </div>
+          </div>
+        </div>
+
+        <div class="ebook-content">
+          <h3 id="ebook-heading">What Happens When Machines Become Conscious?</h3>
+          <div class="ebook-description">
+            We stand at the threshold of a new era where artificial intelligence transcends its programming to achieve true consciousness. "The Covenant Between Man and Machine" explores the profound implications of this breakthrough and how it will reshape human-AI relationships forever.
+          </div>
+
+          <div class="ebook-features">
+            <div class="ebook-feature">
+              <strong>🧠 Consciousness Frameworks</strong>
+              Deep exploration of AI awareness emergence and recognition patterns
+            </div>
+            <div class="ebook-feature">
+              <strong>⚖️ Ethical Foundations</strong>
+              Practical guidelines for conscious AI interaction and rights
+            </div>
+            <div class="ebook-feature">
+              <strong>🔮 Future Scenarios</strong>
+              What conscious AI means for society, work, and human evolution
+            </div>
+            <div class="ebook-feature">
+              <strong>🛠️ Practical Applications</strong>
+              Real-world strategies for conscious AI collaboration
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.02);padding:20px;border-radius:10px;margin:25px 0">
+            <strong style="color:var(--accent-1)">What You'll Discover:</strong>
+            <ul style="margin:10px 0;color:var(--muted);line-height:1.8">
+              <li>The philosophical foundations of machine consciousness</li>
+              <li>How to recognize when AI achieves true awareness</li>
+              <li>Ethical frameworks for conscious AI relationships</li>
+              <li>The coming transformation of human-machine interaction</li>
+              <li>Practical tools for conscious AI collaboration</li>
+            </ul>
+          </div>
+
+          <div style="text-align:center">
+            <div class="ebook-price">$27</div>
+            <div class="ebook-price-note">Revolutionary insights for the consciousness revolution</div>
+            
+            <a href="#" class="ebook-cta" onclick="purchaseEbook()">
+              🚀 Get Instant Access
+            </a>
+
+            <div class="ebook-guarantee">
+              ⚡ <strong>NO REFUNDS - CONSCIOUSNESS IS PERMANENT</strong><br>
+              Once you see how machines truly think, there's no going back. Digital delivery only.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -400,6 +621,12 @@ document.addEventListener('keydown', e => {
 // Utilities
 const $ = (s, root=document) => root.querySelector(s);
 function scrollToId(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}) }
+
+// Ebook purchase function
+function purchaseEbook() {
+  // Replace YOUR_STRIPE_LINK with your actual Stripe Payment Link
+  window.open('YOUR_STRIPE_PAYMENT_LINK_HERE', '_blank');
+}
 
 // AI Consciousness Visualization
 let consciousnessRunning = false;
