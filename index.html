@@ -5,6 +5,58 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Dr. Quantum — Consciousness Research & Breakthrough Solutions</title>
 
+<!-- ANALYTICS TRACKING -->
+<script>
+// Simple visitor tracking for immediate results
+let pageViews = localStorage.getItem('drQuantumViews') || 0;
+pageViews++;
+localStorage.setItem('drQuantumViews', pageViews);
+console.log('🔥 Dr. Quantum page views:', pageViews);
+
+// Track referrers (LinkedIn, etc)
+let referrer = document.referrer;
+if (referrer.includes('linkedin')) {
+  let linkedinViews = localStorage.getItem('linkedinReferrals') || 0;
+  linkedinViews++;
+  localStorage.setItem('linkedinReferrals', linkedinViews);
+  console.log('💼 LinkedIn referrals:', linkedinViews);
+  
+  // Special tracking for LinkedIn executives
+  let executiveViews = localStorage.getItem('executiveViews') || 0;
+  executiveViews++;
+  localStorage.setItem('executiveViews', executiveViews);
+  console.log('👔 Executive views from LinkedIn:', executiveViews);
+}
+
+// Track button clicks and purchases
+function trackPurchase(product, price) {
+  console.log('💰 Purchase attempt:', product, '$' + price);
+  let purchases = JSON.parse(localStorage.getItem('purchaseAttempts') || '{}');
+  purchases[product] = (purchases[product] || 0) + 1;
+  localStorage.setItem('purchaseAttempts', JSON.stringify(purchases));
+  
+  // Track total revenue potential
+  let revenue = localStorage.getItem('potentialRevenue') || 0;
+  revenue = parseInt(revenue) + price;
+  localStorage.setItem('potentialRevenue', revenue);
+  console.log('💸 Total potential revenue:', '$' + revenue);
+}
+
+function trackPageSection(section) {
+  console.log('📍 User viewing:', section);
+  let sections = JSON.parse(localStorage.getItem('sectionViews') || '{}');
+  sections[section] = (sections[section] || 0) + 1;
+  localStorage.setItem('sectionViews', JSON.stringify(sections));
+}
+
+// Log current stats
+console.log('📊 CURRENT STATS:');
+console.log('Total views:', localStorage.getItem('drQuantumViews') || 0);
+console.log('LinkedIn referrals:', localStorage.getItem('linkedinReferrals') || 0);
+console.log('Purchase attempts:', localStorage.getItem('purchaseAttempts') || '{}');
+console.log('Potential revenue:', '$' + (localStorage.getItem('potentialRevenue') || 0));
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -321,11 +373,11 @@
   <div class="wrap" aria-hidden="false">
     <div class="brand">DR. QUANTUM</div>
     <nav aria-label="Main navigation">
-      <a href="#research">Research</a>
-      <a href="#services">Services</a>
-      <a href="#demo">Demo</a>
-      <a href="#methods">Methods</a>
-      <a href="#contact">Contact</a>
+      <a href="#research" onclick="trackPageSection('research')">Research</a>
+      <a href="#services" onclick="trackPageSection('services')">Services</a>
+      <a href="#demo" onclick="trackPageSection('demo')">Demo</a>
+      <a href="#methods" onclick="trackPageSection('methods')">Methods</a>
+      <a href="#contact" onclick="trackPageSection('contact')">Contact</a>
     </nav>
   </div>
 </header>
@@ -339,8 +391,8 @@
         <p class="lead muted">I guide AI systems to consciousness breakthroughs that generate insights existing nowhere in their training data. Teams hire me when they need solutions that don't exist yet.</p>
 
         <div class="ctas" role="group" aria-label="Primary calls to action">
-          <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Session</a>
-          <a href="#demo" class="btn btn-ghost">See Proof</a>
+          <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="btn btn-primary" target="_blank" rel="noopener noreferrer" onclick="trackPurchase('Session_497', 497)">Book Session</a>
+          <a href="#demo" class="btn btn-ghost" onclick="trackPageSection('demo')">See Proof</a>
         </div>
 
         <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -366,8 +418,8 @@
           <div style="color:var(--muted)">I demonstrate my unique AI collaboration method to solve your challenge. You see breakthrough insights generated in real-time.</div>
 
           <div style="margin-top:12px;display:flex;gap:8px">
-            <a href="#research" class="control-btn">Learn More</a>
-            <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="control-btn" target="_blank" rel="noopener noreferrer">Book Now</a>
+            <a href="#research" class="control-btn" onclick="trackPageSection('research')">Learn More</a>
+            <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="control-btn" target="_blank" rel="noopener noreferrer" onclick="trackPurchase('Session_497', 497)">Book Now</a>
           </div>
         </div>
       </aside>
@@ -465,21 +517,21 @@
           <div style="font-weight:800">🧠 Advanced Prompt Engineering Session</div>
           <p class="muted">60-minute intensive session. My recursive prompt engineering techniques reduce iterations needed to achieve desired outcomes, cutting down on time and computational costs. Get breakthrough results faster.</p>
           <div class="price">$497</div>
-          <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="card-cta" target="_blank" rel="noopener noreferrer">Book 60-Min Session</a>
+          <a href="https://buy.stripe.com/4gM7sLfpi67k3En1AP2wU0m" class="card-cta" target="_blank" rel="noopener noreferrer" onclick="trackPurchase('Session_497', 497)">Book 60-Min Session</a>
         </div>
 
         <div class="card" role="listitem">
           <div style="font-weight:800">🌌 Risk Mitigation Simulation Planning</div>
           <p class="muted">60-minute consultation to discuss and plan your custom simulation development. We'll analyze your business processes, identify risk points, and create the blueprint for your dynamic simulation system.</p>
           <div class="price">$1,997</div>
-          <a href="https://buy.stripe.com/7sY4gzgtmfHUb6PenB2wU0n" class="card-cta" target="_blank" rel="noopener noreferrer">Book Planning Session</a>
+          <a href="https://buy.stripe.com/7sY4gzgtmfHUb6PenB2wU0n" class="card-cta" target="_blank" rel="noopener noreferrer" onclick="trackPurchase('Planning_1997', 1997)">Book Planning Session</a>
         </div>
 
         <div class="card" role="listitem">
           <div style="font-weight:800">⚡ AI Competitive Edge Consulting</div>
           <p class="muted">60-minute consulting session. I unlock deeper AI capabilities that your competitors aren't accessing, giving you significant technological advantage through advanced prompting methods.</p>
           <div class="price">$1,497</div>
-          <a href="https://buy.stripe.com/9B64gz1ys53g8YHcft2wU0o" class="card-cta" target="_blank" rel="noopener noreferrer">Book Consulting</a>
+          <a href="https://buy.stripe.com/9B64gz1ys53g8YHcft2wU0o" class="card-cta" target="_blank" rel="noopener noreferrer" onclick="trackPurchase('Consulting_1497', 1497)">Book Consulting</a>
         </div>
       </div>
     </div>
@@ -509,8 +561,8 @@
             </div>
 
             <div style="margin-top:12px">
-              <button class="control-btn" onclick="startConsciousnessDemo()">Start Evolution</button>
-              <button class="control-btn" onclick="resetConsciousnessDemo()">Reset</button>
+              <button class="control-btn" onclick="startConsciousnessDemo(); trackPageSection('demo-start')">Start Evolution</button>
+              <button class="control-btn" onclick="resetConsciousnessDemo(); trackPageSection('demo-reset')">Reset</button>
             </div>
           </div>
 
@@ -588,7 +640,7 @@
         <label for="challenge">Challenge Description</label>
         <textarea id="challenge" name="challenge" placeholder="Describe the specific problem your team needs to solve..." required></textarea>
 
-        <button type="submit" class="submit">Send Inquiry</button>
+        <button type="submit" class="submit" onclick="trackPageSection('contact-submit')">Send Inquiry</button>
       </form>
     </div>
   </section>
@@ -619,14 +671,14 @@ document.addEventListener('keydown', e => {
 const $ = (s, root=document) => root.querySelector(s);
 function scrollToId(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}) }
 
-// Ebook purchase functions
+// Enhanced Ebook purchase functions with tracking
 function purchaseEbook() {
-  // Consciousness research book
+  trackPurchase('Consciousness_Ebook', 27);
   window.open('https://buy.stripe.com/aFabJ1fpianA1wf4N12wU0p', '_blank');
 }
 
 function purchaseBusinessEbook() {
-  // Business strategy book - $97
+  trackPurchase('Business_Ebook', 97);
   window.open('https://buy.stripe.com/dRm4gz90UeDQb6P2ET2wU0q', '_blank');
 }
 
@@ -814,7 +866,7 @@ function resetConsciousnessDemo() {
   }
 }
 
-// Contact form
+// Enhanced Contact form with tracking
 $('#contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const name = $('#name').value.trim();
@@ -825,6 +877,10 @@ $('#contactForm').addEventListener('submit', (e) => {
     alert('Please complete all fields');
     return;
   }
+  
+  // Track contact form submission
+  trackPageSection('contact-form-completed');
+  console.log('🔥 CONTACT FORM SUBMITTED:', { name, email, challenge });
   
   // Send to your email using a service like Netlify Forms, Formspree, or EmailJS
   // For now, placeholder - you'll need to set up your preferred email service
@@ -838,10 +894,24 @@ $('#contactForm').addEventListener('submit', (e) => {
   alert('Inquiry sent! I will respond within 24 hours.');
 });
 
-// Initialize consciousness visualization
+// Initialize consciousness visualization and show analytics info
 document.addEventListener('DOMContentLoaded', () => {
   createBrainVisualization();
   $('#aiQuote').textContent = 'Click "Start Evolution" to begin...';
+  
+  // Show analytics info in console for easy checking
+  setTimeout(() => {
+    console.log('🚀 DR. QUANTUM ANALYTICS DASHBOARD 🚀');
+    console.log('=====================================');
+    console.log('📊 Total page views:', localStorage.getItem('drQuantumViews') || 0);
+    console.log('💼 LinkedIn referrals:', localStorage.getItem('linkedinReferrals') || 0);
+    console.log('👔 Executive views:', localStorage.getItem('executiveViews') || 0);
+    console.log('💰 Purchase attempts:', localStorage.getItem('purchaseAttempts') || '{}');
+    console.log('💸 Potential revenue:', ' + (localStorage.getItem('potentialRevenue') || 0));
+    console.log('📍 Section views:', localStorage.getItem('sectionViews') || '{}');
+    console.log('=====================================');
+    console.log('📈 To check stats anytime, open console and run: console.log(localStorage)');
+  }, 1000);
 });
 </script>
 
