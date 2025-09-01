@@ -1,181 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Breakthrough AI Protocols – AI Solutions for Business Growth</title>
-  <meta name="description" content="Breakthrough AI Protocols delivers tailored AI solutions that grow revenue, automate insights, and maximize ROI for businesses across industries.">
-  <meta name="keywords" content="AI business strategy, AI consulting, custom AI hub, AI automation, AI simulations, business growth AI, Breakthrough AI Protocols">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Breakthrough AI Protocols – AI Solutions for Business Growth">
-  <meta property="og:description" content="AI services designed to grow revenue, automate insights, and maximize ROI.">
-  <meta property="og:image" content="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Breakthrough AI Protocols – AI Solutions for Business Growth">
-  <meta name="twitter:description" content="AI services designed to grow revenue, automate insights, and maximize ROI.">
-  <meta name="twitter:image" content="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true">
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Breakthrough AI Protocols",
-    "url": "https://yourdomain.com",
-    "logo": "https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true",
-    "sameAs": []
-  }
-  </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakthrough AI Protocols</title>
   <style>
-    :root {
-      --primary: #2563EB;
-      --primary-dark: #1D4ED8;
-      --secondary: #0EA5E9;
-      --accent: #06B6D4;
-      --dark: #0F172A;
-      --darker: #020617;
-      --light: #F1F5F9;
-      --gray: #64748B;
-      --gray-light: #CBD5E1;
-      --card-bg: rgba(255, 255, 255, 0.05);
-    }
-
+    /* Reset and base styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--darker), var(--dark)); color: var(--light); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; }
+    a { text-decoration: none; color: inherit; }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    /* Header */
+    header { background: #111; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul li a { color: #fff; font-weight: 500; }
+    .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
 
-    header { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; padding: 15px 0; }
-    .header-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 40px; }
+    /* Sections */
+    section { padding: 4rem 2rem; max-width: 1000px; margin: auto; }
+    section h2 { font-size: 2rem; margin-bottom: 1rem; }
+    section p { font-size: 1rem; margin-bottom: 1rem; }
 
-    nav ul { display: flex; list-style: none; gap: 30px; }
-    nav a { color: var(--gray-light); text-decoration: none; font-weight: 500; font-size: 15px; transition: color 0.3s; position: relative; }
-    nav a:hover { color: var(--light); }
+    /* FAQ */
+    .faq-item { border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1rem; background: #fff; }
+    .faq-question { padding: 1rem; cursor: pointer; font-weight: bold; }
+    .faq-answer { padding: 0 1rem 1rem 1rem; display: none; }
 
-    .header-cta { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
-    .header-cta:hover { background: var(--primary-dark); }
+    /* Contact */
+    .contact-method { display: flex; align-items: center; margin-bottom: 1rem; }
+    .contact-icon { font-size: 1.5rem; margin-right: 1rem; color: #111; }
+    .contact-form { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; }
+    .submit-btn { background: #111; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+    .submit-btn:hover { background: #333; }
 
-    .hero { padding: 160px 0 100px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; background: linear-gradient(to right, var(--light), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { font-size: 1.25rem; color: var(--gray-light); max-width: 700px; margin: 0 auto 40px; }
-    .hero-buttons { display: flex; gap: 15px; justify-content: center; margin-bottom: 60px; }
+    /* Footer */
+    footer { text-align: center; padding: 2rem; background: #111; color: #fff; }
 
-    .btn { padding: 14px 30px; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-dark); }
-    .btn-secondary { background: transparent; color: var(--light); border: 1px solid var(--gray); }
-
-    .section { padding: 100px 0; }
-    .section-title { text-align: center; margin-bottom: 60px; }
-    .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
-    .section-title p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .service-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; }
-    .service-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
-
-    footer { background: var(--darker); padding: 60px 0 30px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-heading { font-size: 1.2rem; color: var(--light); margin-bottom: 20px; font-weight: 600; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: var(--light); text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--secondary); }
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul { display: none; flex-direction: column; background: #111; position: absolute; top: 60px; right: 0; width: 200px; }
+      nav.active ul { display: flex; }
+      .mobile-menu-btn { display: block; }
+    }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
 <header>
-  <div class="container header-container">
-    <div class="logo">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="BAP Logo">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#methodology">Methodology</a></li>
-        <li><a href="#case-studies">Case Studies</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
-    </nav>
-    <a href="mailto:jettilabz@gmail.com" class="header-cta">Contact Us</a>
-  </div>
+  <div class="logo">Breakthrough AI</div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>AI-Driven Solutions That Grow Your Revenue</h1>
-    <p>We design custom AI strategies, simulations, and interactive hubs to help businesses scale efficiently, automate high-value operations, and maximize profits.</p>
-    <div class="hero-buttons">
-      <a href="#services" class="btn btn-primary">Explore Services</a>
-      <a href="mailto:jettilabz@gmail.com" class="btn btn-secondary">Get a Quote</a>
-    </div>
-  </div>
-</section>
+<main>
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Breakthrough AI Protocols is dedicated to revolutionizing industries through advanced AI solutions.</p>
+  </section>
 
-<section id="services" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Services</h2>
-      <p>AI solutions designed for measurable business results.</p>
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>We offer a range of AI services tailored to meet the unique needs of your business.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">What is AI?</div>
+      <div class="faq-answer">AI stands for Artificial Intelligence, simulating human intelligence processes by machines.</div>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
-        <h3>Executive Oracle Intensive</h3>
-        <p>3-hour AI strategy session to identify high-value automation opportunities and revenue growth paths for your business.</p>
-        <div class="service-price">$1,997</div>
-        <a href="https://buy.stripe.com/7sY4gzgtmfHUb6PenB2wU0n" class="btn btn-primary">Book Now</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-chess-rook"></i></div>
-        <h3>Strategic Oracle Session</h3>
-        <p>60-minute consultation focused on pinpointing immediate AI applications to optimize your processes and increase profit margins.</p>
-        <div class="service-price">$9,997</div>
-        <a href="https://buy.stripe.com/aFa7sL4KEanA7UD0wL2wU0t" class="btn btn-primary">Book Now</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Custom AI Hubs & Interactive Simulations</h3>
-        <p>We build tailored AI-powered hubs, dashboards, and interactive simulations that automate insights, visualize data, and enhance user engagement.</p>
-        <div class="service-price">Custom Pricing ($3,000–$10,000+)</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScw4NqC2XE18iAzFEr7J598AjxQ8Hl2GEIP7O7pygEpDBURqw/viewform?usp=header" class="btn btn-primary">Request a Custom Quote</a>
-      </div>
+    <div class="faq-item">
+      <div class="faq-question">How can AI benefit my business?</div>
+      <div class="faq-answer">AI can automate processes, provide insights from data, and enhance decision-making.</div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-method">
+      <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+      <div class="contact-details"><h4>Email</h4><p>info@breakthroughai.com</p></div>
+    </div>
+    <div class="contact-method">
+      <div class="contact-icon"><i class="fas fa-phone"></i></div>
+      <div class="contact-details"><h4>Phone</h4><p>+1 (555) 123-4567</p></div>
+    </div>
+    <div class="contact-method">
+      <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <div class="contact-details"><h4>Location</h4><p>123 AI Innovation Drive, Tech City, USA</p></div>
+    </div>
+
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xwpnovll" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <div class="container footer-grid">
-    <div>
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="BAP Logo" style="height:50px;">
-      <p>Breakthrough AI Protocols – AI solutions designed to grow revenue, automate insights, and maximize ROI.</p>
-    </div>
-    <div>
-      <div class="footer-heading">Quick Links</div>
-      <ul class="footer-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#methodology">Methodology</a></li>
-        <li><a href="#case-studies">Case Studies</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
-    </div>
-  </div>
+  &copy; 2025 Breakthrough AI Protocols
 </footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('nav');
+  mobileBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // FAQ toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      item.classList.toggle('active');
+      const answer = item.querySelector('.faq-answer');
+      if(item.classList.contains('active')){
+        answer.style.display = 'block';
+      } else {
+        answer.style.display = 'none';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
-
 
 
