@@ -1,499 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAP - Breakthrough AI Protocols</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2563EB;
-            --primary-dark: #1D4ED8;
-            --secondary: #0EA5E9;
-            --accent: #06B6D4;
-            --dark: #0F172A;
-            --darker: #020617;
-            --light: #F1F5F9;
-            --gray: #64748B;
-            --gray-light: #CBD5E1;
-            --success: #10B981;
-            --surface: #FFFFFF;
-            --card-bg: rgba(255, 255, 255, 0.05);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            color: var(--light);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .logo-main {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--light);
-            letter-spacing: -1px;
-        }
-
-        .logo-sub {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--secondary);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: -2px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: var(--gray-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--light);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .header-cta {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .header-cta:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            text-align: center;
-            background: radial-gradient(ellipse at top center, rgba(37, 99, 235, 0.15), transparent 70%);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--light), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--gray-light);
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 60px;
-        }
-
-        .btn {
-            padding: 14px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border: 1px solid var(--gray);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--gray-light);
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Services Section */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(10px);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-color: rgba(37, 99, 235, 0.3);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
-
-        .service-card p {
-            color: var(--gray-light);
-            margin-bottom: 20px;
-        }
-
-        .service-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin: 20px 0;
-        }
-
-        /* Methodology Section */
-        .methodology {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .process-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .step {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--light);
-        }
-
-        .step-content p {
-            color: var(--gray-light);
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--gray-light);
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 20px;
-            border-left: 3px solid var(--primary);
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        .author-details h4 {
-            font-size: 1.1rem;
-            color: var(--light);
-        }
-
-        .author-details p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 80px 0;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--light);
-        }
-
-        .cta-section p {
-            color: var(--gray-light);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--darker);
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 20px;
-        }
-
-        .footer-brand p {
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-
-        .footer-heading {
-            font-size: 1.2rem;
-            color: var(--light);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--light);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            color: var(--gray);
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: var(--primary);
-        }
-
-        @media(max-width: 768px){
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAP - Breakthrough AI Protocols</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --secondary: #0EA5E9;
+    --accent: #06B6D4;
+    --dark: #0F172A;
+    --darker: #020617;
+    --light: #F1F5F9;
+    --gray: #64748B;
+    --gray-light: #CBD5E1;
+    --success: #10B981;
+    --surface: #FFFFFF;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+    color: var(--light);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+.container {max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+header {
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+.header-container {display: flex; justify-content: space-between; align-items: center;}
+.logo {display: flex; flex-direction: column; line-height: 1;}
+.logo-main {font-size: 32px; font-weight: 800; color: var(--light); letter-spacing: -1px;}
+.logo-sub {font-size: 12px; font-weight: 600; color: var(--secondary); letter-spacing: 1.5px; text-transform: uppercase; margin-top: -2px;}
+nav ul {display: flex; list-style: none; gap: 30px;}
+nav a {color: var(--gray-light); text-decoration: none; font-weight: 500; font-size: 15px; transition: color 0.3s; position: relative;}
+nav a:hover {color: var(--light);}
+nav a::after {content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s;}
+nav a:hover::after {width: 100%;}
+.header-cta {background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s;}
+.header-cta:hover {background: var(--primary-dark);}
+.hero {padding: 160px 0 100px; text-align: center; background: radial-gradient(ellipse at top center, rgba(37, 99, 235, 0.15), transparent 70%);}
+.hero h1 {font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; background: linear-gradient(to right, var(--light), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.1;}
+.hero p {font-size: 1.25rem; color: var(--gray-light); max-width: 700px; margin: 0 auto 20px;}
+.hero-sub {font-size: 1rem; color: var(--gray); margin-bottom: 30px;}
+.hero-buttons {display: flex; gap: 15px; justify-content: center; margin-bottom: 60px;}
+.btn {padding: 14px 30px; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;}
+.btn-primary {background: var(--primary); color: white; border: none;}
+.btn-primary:hover {background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);}
+.btn-secondary {background: transparent; color: var(--light); border: 1px solid var(--gray);}
+.btn-secondary:hover {background: rgba(255, 255, 255, 0.05); border-color: var(--gray-light);}
+.section {padding: 100px 0;}
+.section-title {text-align: center; margin-bottom: 60px;}
+.section-title h2 {font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; color: var(--light);}
+.section-title p {color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto;}
+.services-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;}
+.service-card {background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 30px; transition: transform 0.3s, box-shadow 0.3s; backdrop-filter: blur(10px);}
+.service-card:hover {transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); border-color: rgba(37, 99, 235, 0.3);}
+.service-icon {width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px;}
+.service-card h3 {font-size: 1.5rem; margin-bottom: 15px; color: var(--light);}
+.service-card p {color: var(--gray-light); margin-bottom: 20px;}
+.service-price {font-size: 1.5rem; font-weight: 700; color: var(--secondary); margin: 20px 0;}
+.methodology {background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);}
+.process-steps {display: flex; flex-direction: column; gap: 40px; max-width: 800px; margin: 0 auto;}
+.step {display: flex; gap: 20px; align-items: flex-start;}
+.step-number {background: linear-gradient(135deg, var(--primary), var(--accent)); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; flex-shrink: 0;}
+.step-content h3 {font-size: 1.5rem; margin-bottom: 10px; color: var(--light);}
+.step-content p {color: var(--gray-light);}
+.case-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;}
+.case-card {background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);}
+.case-metric {font-size: 2rem; font-weight: 700; color: var(--success); margin-bottom: 10px;}
+.cta-section {text-align: center; background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 80px 0;}
+.cta-section h2 {font-size: 2.5rem; margin-bottom: 20px; color: var(--light);}
+.cta-section p {color: var(--gray-light); max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem;}
+footer {background: var(--darker); padding: 60px 0 30px;}
+.footer-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;}
+.footer-brand .logo {margin-bottom: 20px;}
+.footer-brand p {color: var(--gray); margin-bottom: 20px;}
+.footer-heading {font-size: 1.2rem; color: var(--light); margin-bottom: 20px; font-weight: 600;}
+.footer-links {list-style: none;}
+.footer-links li {margin-bottom: 12px;}
+.footer-links a {color: var(--gray); text-decoration: none; transition: color 0.3s;}
+.footer-links a:hover {color: var(--light);}
+.social-icons {display: flex; gap: 15px; margin-top: 10px;}
+.social-icons a {color: var(--gray); font-size: 18px; transition: color 0.3s;}
+.social-icons a:hover {color: var(--primary);}
+@media(max-width: 768px){nav ul {flex-direction: column; gap: 15px; align-items: center;} .hero h1 {font-size: 2.5rem;} .hero p {font-size: 1rem;}}
+</style>
 </head>
 <body>
 <header>
@@ -506,7 +112,7 @@
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#methodology">Methodology</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#cases">Case Studies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -518,6 +124,7 @@
     <div class="container">
         <h1>AI-Driven Solutions That Grow Your Revenue</h1>
         <p>We design custom AI strategies, simulations, and interactive hubs to help businesses scale efficiently, automate high-value operations, and maximize profits.</p>
+        <p class="hero-sub">Increase operational efficiency by 30% with AI-powered workflows.</p>
         <div class="hero-buttons">
             <a href="#services" class="btn btn-primary">Explore Services</a>
             <a href="mailto:jettilabz@gmail.com" class="btn btn-secondary">Get a Quote</a>
@@ -529,14 +136,13 @@
     <div class="container">
         <div class="section-title">
             <h2>Our Services</h2>
-            <p>AI solutions designed for measurable business results. No fluff, no mystical talk—just ROI-focused implementation.</p>
         </div>
         <div class="services-grid">
             <!-- Executive Oracle Intensive -->
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
                 <h3>Executive Oracle Intensive</h3>
-                <p>Full-day AI strategy session to identify high-value automation opportunities and revenue growth paths for your business.</p>
+                <p>3-hour AI strategy session to identify high-value automation opportunities and revenue growth paths for your business.</p>
                 <div class="service-price">$1,997</div>
                 <a href="https://buy.stripe.com/7sY4gzgtmfHUb6PenB2wU0n" class="btn btn-primary">Book Now</a>
             </div>
@@ -554,13 +160,106 @@
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
                 <h3>Custom AI Hubs & Interactive Simulations</h3>
-                <p>We build tailored AI-powered hubs, dashboards, and interactive simulations that automate insights, visualize data, and enhance user engagement.</p>
+                <p>Tailored AI-powered hubs, dashboards, and interactive simulations that automate insights, visualize data, and enhance user engagement.</p>
                 <div class="service-price">Custom Pricing ($3,000–$10,000+)</div>
-                <a href="mailto:jettilabz@gmail.com" class="btn btn-primary">Request a Custom Quote</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScw4NqC2XE18iAzFEr7J598AjxQ8Hl2GEIP7O7pygEpDBURqw/viewform?usp=header" class="btn btn-primary">Request a Custom Quote</a>
             </div>
         </div>
     </div>
 </section>
+
+<section id="methodology" class="section methodology">
+    <div class="container">
+        <div class="section-title">
+            <h2>How We Work</h2>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Discovery</h3>
+                    <p>Identify opportunities in your business to leverage AI for automation, insights, and revenue growth.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Design</h3>
+                    <p>Build tailored dashboards, simulations, or AI workflows to meet your business goals.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Optimize & Scale</h3>
+                    <p>Deploy AI solutions, monitor performance, and refine for maximum ROI.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cases" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Case Studies</h2>
+        </div>
+        <div class="case-grid">
+            <div class="case-card">
+                <div class="case-metric">15h/week</div>
+                <p>Automated reporting for Client X, saving 15 hours weekly while improving accuracy.</p>
+            </div>
+            <div class="case-card">
+                <div class="case-metric">12%</div>
+                <p>Revenue increase for Client Y within 3 months of deploying AI optimization workflows.</p>
+            </div>
+            <div class="case-card">
+                <div class="case-metric">30%</div>
+                <p>Operational efficiency improved by 30% for Client Z with interactive AI hubs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="cta-section">
+    <div class="container">
+        <h2>Ready to Scale Your Business with AI?</h2>
+        <p>Book a session or request a custom AI hub today to start optimizing your business operations and revenue streams.</p>
+        <a href="https://buy.stripe.com/7sY4gzgtmfHUb6PenB2wU0n" class="btn btn-primary">Book a Session</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScw4NqC2XE18iAzFEr7J598AjxQ8Hl2GEIP7O7pygEpDBURqw/viewform?usp=header" class="btn btn-secondary">Request a Custom Quote</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <div class="logo">
+                <div class="logo-main">BAP</div>
+                <div class="logo-sub">Breakthrough AI Protocols</div>
+            </div>
+            <p>AI solutions designed to grow revenue, automate insights, and maximize ROI.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/nile-green-8a66a2379" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#cases">Case Studies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="footer-heading">Legal</h4>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
 
