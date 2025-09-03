@@ -1,1372 +1,1134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Breakthrough AI Protocols – AI Solutions for Business Growth</title>
-  <meta name="description" content="Breakthrough AI Protocols delivers tailored AI solutions that grow revenue, automate insights, and maximize ROI for businesses across industries.">
-  <meta name="keywords" content="AI business strategy, AI consulting, custom AI hub, AI automation, AI simulations, business growth AI, Breakthrough AI Protocols">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Breakthrough AI Protocols – AI Solutions for Business Growth">
-  <meta property="og:description" content="AI services designed to grow revenue, automate insights, and maximize ROI.">
-  <meta property="og:image" content="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Breakthrough AI Protocols – AI Solutions for Business Growth">
-  <meta name="twitter:description" content="AI services designed to grow revenue, automate insights, and maximize ROI.">
-  <meta name="twitter:image" content="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true">
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Breakthrough AI Protocols",
-    "url": "https://yourdomain.com",
-    "logo": "https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true",
-    "sameAs": [
-      "https://twitter.com/BAPxAI",
-      "https://youtube.com/@BAPxAI"
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2563EB;
-      --primary-dark: #1D4ED8;
-      --secondary: #0EA5E9;
-      --accent: #06B6D4;
-      --dark: #0F172A;
-      --darker: #020617;
-      --light: #F1F5F9;
-      --gray: #64748B;
-      --gray-light: #CBD5E1;
-      --success: #10B981;
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --transition: all 0.3s ease;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background: linear-gradient(135deg, var(--darker), var(--dark)); 
-      color: var(--light); 
-      line-height: 1.6; 
-      overflow-x: hidden; 
-      scroll-behavior: smooth; 
-    }
-
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    /* Header Styles */
-    header { 
-      background: rgba(2, 6, 23, 0.95); 
-      backdrop-filter: blur(10px); 
-      border-bottom: 1px solid rgba(255,255,255,0.1); 
-      position: fixed; 
-      width: 100%; 
-      top: 0; 
-      z-index: 1000; 
-      padding: 15px 0; 
-      transition: var(--transition);
-    }
-    
-    header.scrolled {
-      padding: 10px 0;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-    
-    .header-container { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-    }
-    
-    .logo { 
-      display: flex; 
-      align-items: center; 
-      gap: 10px; 
-    }
-    
-    .logo img { 
-      height: 50px; 
-      transition: var(--transition);
-    }
-    
-    .logo-text { 
-      display: flex; 
-      flex-direction: column; 
-      line-height: 1; 
-    }
-    
-    .logo-main { 
-      font-size: 24px; 
-      font-weight: 800; 
-      color: var(--light); 
-    }
-    
-    .logo-sub { 
-      font-size: 12px; 
-      font-weight: 600; 
-      color: var(--secondary); 
-      text-transform: uppercase; 
-    }
-
-    nav ul { 
-      display: flex; 
-      list-style: none; 
-      gap: 30px; 
-    }
-    
-    nav a { 
-      color: var(--gray-light); 
-      text-decoration: none; 
-      font-weight: 500; 
-      font-size: 15px; 
-      transition: var(--transition); 
-      position: relative;
-    }
-    
-    nav a:hover { 
-      color: var(--light); 
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .header-cta { 
-      background: var(--primary); 
-      color: white; 
-      border: none; 
-      padding: 10px 20px; 
-      border-radius: 8px; 
-      font-weight: 600; 
-      cursor: pointer; 
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    .header-cta:hover { 
-      background: var(--primary-dark); 
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-    }
-    
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--light);
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero { 
-      padding: 180px 0 100px; 
-      text-align: center; 
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(ellipse at center top, rgba(37, 99, 235, 0.2), transparent 70%);
-      z-index: -1;
-    }
-    
-    .hero h1 { 
-      font-size: 3.5rem; 
-      font-weight: 800; 
-      margin-bottom: 20px; 
-      background: linear-gradient(to right, var(--light), var(--secondary)); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      line-height: 1.2;
-    }
-    
-    .hero p { 
-      font-size: 1.25rem; 
-      color: var(--gray-light); 
-      max-width: 700px; 
-      margin: 0 auto 40px; 
-    }
-    
-    .hero-buttons { 
-      display: flex; 
-      gap: 15px; 
-      justify-content: center; 
-      margin-bottom: 60px; 
-      flex-wrap: wrap;
-    }
-
-    .btn { 
-      padding: 14px 30px; 
-      border-radius: 8px; 
-      font-weight: 600; 
-      font-size: 16px; 
-      cursor: pointer; 
-      text-decoration: none; 
-      display: inline-flex; 
-      align-items: center; 
-      gap: 8px; 
-      transition: var(--transition);
-    }
-    
-    .btn-primary { 
-      background: var(--primary); 
-      color: white; 
-      border: none;
-    }
-    
-    .btn-primary:hover { 
-      background: var(--primary-dark); 
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    }
-    
-    .btn-secondary { 
-      background: transparent; 
-      color: var(--light); 
-      border: 1px solid var(--gray); 
-    }
-    
-    .btn-secondary:hover { 
-      background: rgba(255, 255, 255, 0.05); 
-      border-color: var(--gray-light);
-      transform: translateY(-3px);
-    }
-    
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-    
-    .stat-item {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 5px;
-    }
-    
-    .stat-label {
-      font-size: 14px;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Section Styles */
-    .section { 
-      padding: 100px 0; 
-      position: relative;
-    }
-    
-    .section-title { 
-      text-align: center; 
-      margin-bottom: 60px; 
-    }
-    
-    .section-title h2 { 
-      font-size: 2.5rem; 
-      font-weight: 700; 
-      margin-bottom: 15px; 
-      position: relative;
-      display: inline-block;
-    }
-    
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 3px;
-    }
-    
-    .section-title p { 
-      color: var(--gray); 
-      font-size: 1.1rem; 
-      max-width: 600px; 
-      margin: 0 auto; 
-    }
-
-    /* Services Grid */
-    .services-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 30px; 
-    }
-    
-    .service-card { 
-      background: var(--card-bg); 
-      border: 1px solid rgba(255,255,255,0.1); 
-      border-radius: 16px; 
-      padding: 30px; 
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      opacity: 0;
-      transition: var(--transition);
-    }
-    
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      border-color: rgba(37, 99, 235, 0.3);
-    }
-    
-    .service-card:hover::before {
-      opacity: 1;
-    }
-    
-    .service-icon { 
-      width: 70px; 
-      height: 70px; 
-      background: linear-gradient(135deg, var(--primary), var(--accent)); 
-      border-radius: 16px; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      font-size: 28px; 
-      margin-bottom: 20px; 
-      transition: var(--transition);
-    }
-    
-    .service-card:hover .service-icon {
-      transform: rotate(5deg) scale(1.1);
-    }
-    
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: var(--light);
-    }
-    
-    .service-card p {
-      color: var(--gray-light);
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-    
-    .service-price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin: 20px 0;
-    }
-    
-    .service-features {
-      margin: 20px 0;
-      padding-left: 20px;
-    }
-    
-    .service-features li {
-      margin-bottom: 8px;
-      color: var(--gray-light);
-      position: relative;
-    }
-    
-    .service-features li::before {
-      content: '✓';
-      color: var(--success);
-      position: absolute;
-      left: -20px;
-      font-weight: bold;
-    }
-
-    /* Methodology Section */
-    .methodology {
-      background: linear-gradient(to bottom, var(--darker), var(--dark));
-      position: relative;
-    }
-    
-    .methodology::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" stroke="%232563EB" stroke-width="2" fill="none" /></svg>');
-      background-size: 30px 30px;
-      opacity: 0.3;
-    }
-    
-    .process-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .step {
-      display: flex;
-      gap: 25px;
-      align-items: flex-start;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 25px;
-      border-radius: 12px;
-      border-left: 4px solid var(--primary);
-      transition: var(--transition);
-    }
-    
-    .step:hover {
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateX(5px);
-    }
-    
-    .step-number {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    
-    .step-content h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: var(--light);
-    }
-    
-    .step-content p {
-      color: var(--gray-light);
-    }
-
-    /* Case Studies Section */
-    .case-studies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    
-    .case-study-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .case-study-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    }
-    
-    .case-study-image {
-      height: 200px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      color: white;
-    }
-    
-    .case-study-content {
-      padding: 25px;
-    }
-    
-    .case-study-content h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: var(--light);
-    }
-    
-    .case-study-content p {
-      color: var(--gray-light);
-      margin-bottom: 20px;
-    }
-    
-    .case-study-stats {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .case-study-stat {
-      text-align: center;
-      flex: 1;
-    }
-    
-    .case-study-stat-number {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--secondary);
-    }
-    
-    .case-study-stat-label {
-      font-size: 12px;
-      color: var(--gray);
-      text-transform: uppercase;
-    }
-
-    /* Contact Section */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: start;
-    }
-    
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    
-    .contact-method {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .contact-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-    
-    .contact-details h4 {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-      color: var(--light);
-    }
-    
-    .contact-details p {
-      color: var(--gray-light);
-    }
-    
-    .contact-form {
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--light);
-      font-weight: 500;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 15px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--light);
-      font-family: 'Inter', sans-serif;
-      transition: var(--transition);
-    }
-    
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-    }
-    
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .submit-btn {
-      width: 100%;
-      padding: 15px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    
-    .submit-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    /* FAQ Section */
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .faq-item {
-      margin-bottom: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    
-    .faq-question {
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.03);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    
-    .faq-question:hover {
-      background: rgba(255, 255, 255, 0.06);
-    }
-    
-    .faq-answer {
-      padding: 0 20px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-    
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-      padding: 20px;
-    }
-    
-    .faq-item.active .faq-toggle i {
-      transform: rotate(180deg);
-    }
-    
-    .faq-toggle {
-      transition: var(--transition);
-    }
-
-    /* Footer */
-    footer { 
-      background: var(--darker); 
-      padding: 80px 0 30px; 
-      position: relative;
-    }
-    
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    }
-    
-    .footer-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-      gap: 40px; 
-      margin-bottom: 40px; 
-    }
-    
-    .footer-heading { 
-      font-size: 1.2rem; 
-      color: var(--light); 
-      margin-bottom: 20px; 
-      font-weight: 600; 
-      position: relative;
-      display: inline-block;
-    }
-    
-    .footer-heading::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 30px;
-      height: 2px;
-      background: var(--primary);
-    }
-    
-    .footer-links { 
-      list-style: none; 
-    }
-    
-    .footer-links li { 
-      margin-bottom: 12px; 
-    }
-    
-    .footer-links a { 
-      color: var(--gray-light); 
-      text-decoration: none; 
-      transition: var(--transition); 
-      display: inline-block;
-    }
-    
-    .footer-links a:hover { 
-      color: var(--secondary); 
-      transform: translateX(5px);
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--gray);
-      font-size: 14px;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 50%;
-      color: var(--light);
-      transition: var(--transition);
-    }
-    
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      header {
-        padding: 12px 0;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      nav {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--darker);
-        padding: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: var(--transition);
-      }
-      
-      nav.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
-      
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      .hero {
-        padding: 150px 0 80px;
-      }
-      
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-      
-      .hero p {
-        font-size: 1.1rem;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .section {
-        padding: 80px 0;
-      }
-      
-      .section-title h2 {
-        font-size: 2rem;
-      }
-      
-      .stats {
-        gap: 25px;
-      }
-      
-      .stat-number {
-        font-size: 2rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .service-card {
-        padding: 20px;
-      }
-      
-      .step {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakthrough AI Protocols - AI-Powered Business Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --secondary: #0EA5E9;
+            --accent: #06B6D4;
+            --dark: #0F172A;
+            --darker: #020617;
+            --light: #F1F5F9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+            min-height: 100vh;
+        }
+        .dashboard-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .status-online { background: #10B981; }
+        .status-offline { background: #EF4444; }
+        .status-maintenance { background: #F59E0B; }
+        .truck-marker { 
+            border-radius: 50%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            color: white; 
+            font-weight: bold; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .navigation { 
+            background: linear-gradient(to right, var(--primary-dark), var(--primary)); 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .notification-dot { 
+            position: absolute; 
+            top: -5px; 
+            right: -5px; 
+            width: 12px; 
+            height: 12px; 
+            background-color: #EF4444; 
+            border-radius: 50%; 
+        }
+        .pulse { 
+            animation: pulse 1.5s infinite; 
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        #map { 
+            height: 400px; 
+            max-height: 70vh; 
+            border-radius: 8px;
+            z-index: 1;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        .delivery-status {
+            transition: all 0.3s ease;
+        }
+        .delivery-status:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .filter-btn {
+            transition: all 0.2s ease;
+        }
+        .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        .weather-widget {
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            color: white;
+            border-radius: 10px;
+        }
+        .sidebar {
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                z-index: 50;
+                width: 70%;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+        }
+        .demo-header {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* New styles for the main website */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1473181488821-2d23949a045a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .demo-launcher {
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            transition: all 0.3s ease;
+        }
+        .demo-launcher:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3), 0 4px 6px -2px rgba(6, 182, 212, 0.3);
+        }
+        
+        /* BAP brand specific styles */
+        .bap-gradient {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+        .bap-gradient-text {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bap-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .bap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
-<header>
-  <div class="container header-container">
-    <div class="logo">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="BAPxAI Logo">
-      <div class="logo-text">
-        <span class="logo-main">BAPxAI</span>
-        <span class="logo-sub">Breakthrough AI Protocols</span>
-      </div>
-    </div>
-    
-    <button class="mobile-menu-btn">
-      <i class="fas fa-bars"></i>
-    </button>
-    
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#methodology">Methodology</a></li>
-        <li><a href="#case-studies">Case Studies</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<body class="bg-gray-50 font-sans">
+    <!-- Main Website Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-brain text-2xl text-blue-600"></i>
+                    <h1 class="text-xl font-bold text-gray-800">Breakthrough AI Protocols</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="nav-link text-gray-600 hover:text-blue-600">Services</a>
+                    <a href="#methodology" class="nav-link text-gray-600 hover:text-blue-600">Methodology</a>
+                    <a href="#case-studies" class="nav-link text-gray-600 hover:text-blue-600">Case Studies</a>
+                    <a href="#faq" class="nav-link text-gray-600 hover:text-blue-600">FAQ</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+                    <a href="#demo" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Demo</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-xl text-gray-600">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
     </nav>
-    <a href="#contact" class="header-cta">Get Started</a>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="container">
-    <h1>AI-Driven Solutions That Grow Your Revenue</h1>
-    <p>We design custom AI strategies, simulations, and interactive hubs to help businesses scale efficiently, automate high-value operations, and maximize profits.</p>
-    <div class="hero-buttons">
-      <a href="#services" class="btn btn-primary">Explore Services</a>
-      <a href="#contact" class="btn btn-secondary">Get a Quote</a>
-    </div>
-    
-    <div class="stats">
-      <div class="stat-item">
-        <div class="stat-number">98%</div>
-        <div class="stat-label">Client Satisfaction</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">120+</div>
-        <div class="stat-label">Projects Completed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">45%</div>
-        <div class="stat-label">Avg. Revenue Growth</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Services</h2>
-      <p>AI solutions designed for measurable business results.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-regular fa-clock"></i></div>
-        <h3>Hourly AI Consultation</h3>
-        <p>Expert AI strategy, process optimization, and implementation guidance tailored to your specific business needs.</p>
-        
-        <ul class="service-features">
-          <li>Custom AI strategy development</li>
-          <li>Process optimization analysis</li>
-          <li>Implementation guidance</li>
-          <li>Flexible booking options</li>
-        </ul>
-        
-        <div class="service-price">$500/hour</div>
-        <a href="https://book.stripe.com/8x28wP0uobrE6Qz4N12wU0u" class="btn btn-primary">Book Now</a>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Custom AI Hubs & Interactive Simulations</h3>
-        <p>We build tailored AI-powered hubs, dashboards, and interactive simulations that automate insights, visualize data, and enhance user engagement.</p>
-        
-        <ul class="service-features">
-          <li>Custom AI solution design</li>
-          <li>Interactive data visualization</li>
-          <li>Ongoing support & maintenance</li>
-          <li>Performance analytics dashboard</li>
-        </ul>
-        
-        <div class="service-price">Custom Pricing ($3,000–$10,000+)</div>
-        <a href="#contact" class="btn btn-primary">Request a Custom Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="methodology" class="section methodology">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Methodology</h2>
-      <p>Proven AI frameworks and interactive simulations that turn data into actionable strategies.</p>
-    </div>
-    
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Discovery & Analysis</h3>
-          <p>We begin by deeply understanding your business objectives, challenges, and data ecosystem to identify the most impactful AI opportunities.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Solution Design</h3>
-          <p>Our experts design tailored AI solutions that align with your specific business needs, ensuring maximum ROI and seamless integration.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>Implementation</h3>
-          <p>We develop and deploy your AI solutions with precision, focusing on scalability, security, and user experience.</p>
-        </div>
-      </div>
-      
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3>Optimization & Growth</h3>
-          <p>We continuously monitor and refine your AI systems to ensure they evolve with your business and deliver sustained value.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="case-studies" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Case Studies</h2>
-      <p>Real-world examples of AI solutions driving measurable business results.</p>
-    </div>
-    
-    <div class="case-studies-grid">
-      <div class="case-study-card">
-        <div class="case-study-image">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="case-study-content">
-          <h3>E-Commerce Revenue Growth</h3>
-          <p>Implemented AI-powered recommendation engine that increased average order value by 35% and customer retention by 42%.</p>
-          
-          <div class="case-study-stats">
-            <div class="case-study-stat">
-              <div class="case-study-stat-number">35%</div>
-              <div class="case-study-stat-label">Revenue Increase</div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <i class="fas fa-brain text-2xl text-blue-600"></i>
+                <button id="close-menu" class="text-2xl text-gray-600">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div class="case-study-stat">
-              <div class="case-study-stat-number">42%</div>
-              <div class="case-study-stat-label">Retention Boost</div>
+            <div class="flex flex-col space-y-6 text-center">
+                <a href="#services" class="text-xl font-medium text-gray-800">Services</a>
+                <a href="#methodology" class="text-xl font-medium text-gray-800">Methodology</a>
+                <a href="#case-studies" class="text-xl font-medium text-gray-800">Case Studies</a>
+                <a href="#faq" class="text-xl font-medium text-gray-800">FAQ</a>
+                <a href="#contact" class="text-xl font-medium text-gray-800">Contact</a>
+                <a href="#demo" class="bg-blue-600 text-white py-3 px-6 rounded-lg text-xl font-medium">View Demo</a>
             </div>
-          </div>
         </div>
-      </div>
-      
-      <div class="case-study-card">
-        <div class="case-study-image">
-          <i class="fas fa-robot"></i>
-        </div>
-        <div class="case-study-content">
-          <h3>Process Automation</h3>
-          <p>Designed and deployed an AI workflow automation system that reduced operational costs by 28% and processing time by 65%.</p>
-          
-          <div class="case-study-stats">
-            <div class="case-study-stat">
-              <div class="case-study-stat-number">28%</div>
-              <div class="case-study-stat-label">Cost Reduction</div>
-            </div>
-            <div class="case-study-stat">
-              <div class="case-study-stat-number">65%</div>
-              <div class="case-study-stat-label">Time Saved</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="case-study-card">
-        <div class="case-study-image">
-          <i class="fas fa-user-graduate"></i>
-        </div>
-        <div class="case-study-content">
-          <h3>Educational Platform</h3>
-          <p>Created an AI-powered adaptive learning platform that improved student engagement by 57% and knowledge retention by 43%.</p>
-          
-          <div class="case-study-stats">
-            <div class="case-study-stat">
-              <div class="case-study-stat-number">57%</div>
-              <div class="case-study-stat-label">More Engagement</div>
-            </div>
-            <div class="case-study-stat">
-              <div class="case-study-stat-number">43%</div>
-              <div class="case-study-stat-label">Better Retention</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
 
-<section id="faq" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Frequently Asked Questions</h2>
-      <p>Get answers to common questions about our AI services and solutions.</p>
-    </div>
-    
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">
-          How long does it take to implement an AI solution?
-          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center pt-20">
+        <div class="container mx-auto px-4 py-16 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Transform Your Business with Custom AI Solutions</h1>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">We design custom AI strategies, interactive dashboards, and data hubs to help businesses scale efficiently, automate high-value operations, and maximize profits.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg text-lg font-medium transition">Explore Services</a>
+                <a href="#demo" class="demo-launcher text-white py-3 px-8 rounded-lg text-lg font-medium">See Our Tech In Action</a>
+            </div>
         </div>
-        <div class="faq-answer">
-          <p>The implementation timeline varies based on the complexity of the solution. Hourly consultations provide immediate value, while custom AI hubs typically take 4-8 weeks to design, develop, and deploy.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          Do I need technical expertise to benefit from your services?
-          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-        </div>
-        <div class="faq-answer">
-          <p>Not at all. Our solutions are designed to be accessible to business leaders regardless of technical background. We handle the technical complexity while focusing on delivering business outcomes.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          What industries do you specialize in?
-          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-        </div>
-        <div class="faq-answer">
-          <p>We've worked with clients across e-commerce, healthcare, education, finance, and manufacturing. Our methodology is adaptable to virtually any industry that can benefit from AI-driven insights and automation.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          How do you measure the success of your AI implementations?
-          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-        </div>
-        <div class="faq-answer">
-          <p>We establish clear KPIs before any engagement, focusing on metrics that matter to your business such as revenue growth, cost reduction, process efficiency, customer satisfaction, and ROI.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-      <p>Get in touch for a consultation or custom AI solutions.</p>
-    </div>
-    
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Email Us</h4>
-            <p>jettilabz@gmail.com</p>
-          </div>
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="stat-number">98%</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-2">CLIENT SATISFACTION</h3>
+                </div>
+                <div class="p-6">
+                    <div class="stat-number">120+</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-2">PROJECTS COMPLETED</h3>
+                </div>
+                <div class="p-6">
+                    <div class="stat-number">45%</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-2">AVG. REVENUE GROWTH</h3>
+                </div>
+            </div>
         </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Call Us</h4>
-            <p>570-277-5107</p>
-          </div>
-        </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Location</h4>
-            <p>Based in Pennsylvania, serving clients globally</p>
-          </div>
-        </div>
-        
-        <div class="contact-method">
-          <div class="contact-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="contact-details">
-            <h4>Business Hours</h4>
-            <p>Monday - Friday: 9AM - 6PM EST</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="contact-form">
-        <form id="contactForm" action="https://formspree.io/f/xwpnovll" method="POST">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="service">Service Interest</label>
-            <select id="service" name="service">
-              <option value="">Select a service</option>
-              <option value="hourly">Hourly AI Consultation</option>
-              <option value="custom">Custom AI Hub</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="BAPxAI Logo" style="height:50px; margin-bottom: 20px;">
-        <p>Breakthrough AI Protocols – AI solutions designed to grow revenue, automate insights, and maximize ROI.</p>
-        
-        <div class="social-links">
-          <a href="https://youtube.com/@BAPxAI"><i class="fab fa-youtube"></i></a>
-          <a href="https://twitter.com/BAPxAI"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">AI solutions designed for measurable business results across all industries.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Hourly AI Consultation</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Expert AI strategy, process optimization, and implementation guidance tailored to your specific business needs.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Custom AI strategy development</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Process optimization analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Implementation guidance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Flexible booking options</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-blue-600">$500/hour</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-chart-network text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Custom AI Hubs & Interactive Dashboards</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">We build tailored AI-powered hubs, dashboards, and interactive simulations that automate insights, visualize data, and enhance user engagement for any industry.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Custom AI solution design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Interactive data visualization</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Ongoing support & maintenance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Performance analytics dashboard</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-purple-600">Custom Pricing</span>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg transition">Request Quote</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div>
-        <h3 class="footer-heading">Services</h3>
-        <ul class="footer-links">
-          <li><a href="#services">Hourly AI Consultation</a></li>
-          <li><a href="#services">Custom AI Hubs</a></li>
-          <li><a href="#services">Interactive Simulations</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h3 class="footer-heading">Company</h3>
-        <ul class="footer-links">
-          <li><a href="#methodology">Our Methodology</a></li>
-          <li><a href="#case-studies">Case Studies</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h3 class="footer-heading">Legal</h3>
-        <ul class="footer-links">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="cookies.html">Cookie Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2023 Breakthrough AI Protocols. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script>
-  // Mobile menu toggle
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('nav');
-  
-  mobileMenuBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    mobileMenuBtn.innerHTML = nav.classList.contains('active') 
-      ? '<i class="fas fa-times"></i>' 
-      : '<i class="fas fa-bars"></i>';
-  });
-  
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
-  });
-  
-  // FAQ accordion
-  const faqItems = document.querySelectorAll('.faq-item');
-  
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    
-    question.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-  });
-  
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        // Close mobile menu if open
-        nav.classList.remove('active');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Methodology</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Proven AI frameworks and interactive simulations that turn data into actionable strategies.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Discovery & Analysis</h3>
+                    <p class="text-gray-600">We begin by deeply understanding your business objectives, challenges, and data ecosystem to identify the most impactful AI opportunities.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Solution Design</h3>
+                    <p class="text-gray-600">Our experts design tailored AI solutions that align with your specific business needs, ensuring maximum ROI and seamless integration.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Implementation</h3>
+                    <p class="text-gray-600">We develop and deploy your AI solutions with precision, focusing on scalability, security, and user experience.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Optimization & Growth</h3>
+                    <p class="text-gray-600">We continuously monitor and refine your AI systems to ensure they evolve with your business and deliver sustained value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Case Studies</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Real-world examples of AI solutions driving measurable business results across industries.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">E-Commerce Revenue Growth</h3>
+                    <p class="text-gray-600 mb-4">Implemented AI-powered recommendation engine that increased average order value by 35% and customer retention by 42%.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">35%</div>
+                            <div class="text-sm text-gray-600">REVENUE INCREASE</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">42%</div>
+                            <div class="text-sm text-gray-600">RETENTION BOOST</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Process Automation</h3>
+                    <p class="text-gray-600 mb-4">Designed and deployed an AI workflow automation system that reduced operational costs by 28% and processing time by 65%.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-600">28%</div>
+                            <div class="text-sm text-gray-600">COST REDUCTION</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">65%</div>
+                            <div class="text-sm text-gray-600">TIME SAVED</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Educational Platform</h3>
+                    <p class="text-gray-600 mb-4">Created an AI-powered adaptive learning platform that improved student engagement by 57% and knowledge retention by 43%.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-yellow-600">57%</div>
+                            <div class="text-sm text-gray-600">MORE ENGAGEMENT</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-indigo-600">43%</div>
+                            <div class="text-sm text-gray-600">BETTER RETENTION</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Capability Showcase: Interactive Dashboard</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">This is a live example of a custom AI dashboard we built for logistics. It demonstrates our expertise in creating real-time, data-driven interfaces that can be tailored to <strong>any industry</strong>.</p>
+            
+            <!-- Demo Version Notice -->
+            <div class="demo-header rounded-t-lg">
+                <p><strong>Industry Example: Logistics</strong> - This interactive demo showcases our technical capabilities in building complex, real-time AI dashboards.</p>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="flex">
+                <!-- Sidebar Menu -->
+                <div class="sidebar bg-white w-64 min-h-screen shadow-lg p-4 md:block">
+                    <div class="mb-8">
+                        <h2 class="font-bold text-lg text-gray-800 mb-4">Main Menu</h2>
+                        <ul class="space-y-2">
+                            <li class="p-2 rounded-lg bg-blue-100 text-blue-800 font-medium">
+                                <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                            </li>
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <i class="fas fa-truck mr-2"></i> Fleet Management
+                            </li>
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Live Tracking
+                            </li>
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <i class="fas fa-chart-line mr-2"></i> Analytics
+                            </li>
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                                <i class="fas fa-cog mr-2"></i> Settings
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h2 class="font-bold text-lg text-gray-800 mb-4">Quick Actions</h2>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg mb-2 hover:bg-blue-700 transition">
+                            <i class="fas fa-plus mr-2"></i> New Delivery
+                        </button>
+                        <button class="w-full bg-green-600 text-white py-2 rounded-lg mb-2 hover:bg-green-700 transition">
+                            <i class="fas fa-file-export mr-2"></i> Generate Report
+                        </button>
+                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                            <i class="fas fa-bell mr-2"></i> View Alerts
+                        </button>
+                    </div>
+                    
+                    <!-- Demo Information Box -->
+                    <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <h3 class="font-bold text-blue-800 mb-2">What This Demonstrates</h3>
+                        <p class="text-sm text-blue-700">
+                            This is a functional example of the <strong>type of complex, real-time dashboard</strong> we build. The technology behind this—real-time data visualization, interactive maps, live analytics—can be applied to finance, healthcare, manufacturing, and more.
+                            <a href="#contact" class="font-medium underline">Contact us</a> to discuss a solution for your industry.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="flex-1 container mx-auto px-4 py-6">
+                    <!-- Dashboard Header -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800">Dashboard Overview</h2>
+                            <p class="text-gray-600">Welcome back! Here's what's happening with your fleet today.</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 flex items-center space-x-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Live Data</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Updated just now</span>
+                            <span id="current-time" class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">10:45 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="font-bold text-gray-500">Fleet Online</h2>
+                                    <p class="text-3xl font-bold mt-2">12 / 15</p>
+                                </div>
+                                <i class="fas fa-truck text-blue-500 text-2xl"></i>
+                            </div>
+                            <div class="mt-4 flex items-center">
+                                <span class="status-online w-3 h-3 rounded-full mr-2"></span>
+                                <span class="text-sm text-gray-500">12 Active</span>
+                                <span class="status-offline w-3 h-3 rounded-full ml-4 mr-2"></span>
+                                <span class="text-sm text-gray-500">3 Offline</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="font-bold text-gray-500">On-Time Deliveries</h2>
+                                    <p class="text-3xl font-bold mt-2">92%</p>
+                                </div>
+                                <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                            </div>
+                            <div class="mt-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-500 h-2.5 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="font-bold text-gray-500">Delayed Shipments</h2>
+                                    <p class="text-3xl font-bold mt-2">3</p>
+                                </div>
+                                <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+                            </div>
+                            <div class="mt-4">
+                                <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Needs attention</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-purple-500">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="font-bold text-gray-500">Fuel Efficiency</h2>
+                                    <p class="text-3xl font-bold mt-2">7.8 mpg</p>
+                                </div>
+                                <i class="fas fa-gas-pump text-purple-500 text-2xl"></i>
+                            </div>
+                            <div class="mt-4 flex items-center">
+                                <span class="text-sm text-green-600"><i class="fas fa-arrow-up"></i> 2.4%</span>
+                                <span class="text-sm text-gray-500 ml-2">from last week</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map and Active Deliveries -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                        <!-- Map Section -->
+                        <div class="lg:col-span-2 bg-white p-4 rounded-lg shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="font-bold text-lg">Live Fleet Tracking</h2>
+                                <div class="flex space-x-2">
+                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded" data-status="all">All</button>
+                                    <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="active">Active</button>
+                                    <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="delayed">Delayed</button>
+                                    <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="offline">Offline</button>
+                                </div>
+                            </div>
+                            <div id="map"></div>
+                        </div>
+                        
+                        <!-- Active Deliveries -->
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="font-bold text-lg">Active Deliveries</h2>
+                                <i class="fas fa-sync-alt text-gray-500 cursor-pointer hover:text-blue-500" id="refresh-deliveries"></i>
+                            </div>
+                            <div class="space-y-4 max-h-96 overflow-y-auto pr-2" id="deliveries-container">
+                                <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                    <div>
+                                        <h3 class="font-medium">Truck 1</h3>
+                                        <p class="text-sm text-gray-500">Philadelphia → NYC</p>
+                                        <p class="text-xs text-gray-400">ETA: 45 min</p>
+                                    </div>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                </div>
+                                
+                                <div class="delivery-status flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                                    <div>
+                                        <h3 class="font-medium">Truck 3</h3>
+                                        <p class="text-sm text-gray-500">Boston → Hartford</p>
+                                        <p class="text-xs text-gray-400">ETA: 1 hr 15 min</p>
+                                    </div>
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Delayed</span>
+                                </div>
+                                
+                                <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                    <div>
+                                        <h3 class="font-medium">Truck 4</h3>
+                                        <p class="text-sm text-gray-500">Baltimore → Washington</p>
+                                        <p class="text-xs text-gray-400">ETA: 30 min</p>
+                                    </div>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                </div>
+                                
+                                <div class="delivery-status flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                                    <div>
+                                        <h3 class="font-medium">Truck 7</h3>
+                                        <p class="text-sm text-gray-500">Albany → Syracuse</p>
+                                        <p class="text-xs text-gray-400">ETA: 2 hr 30 min</p>
+                                    </div>
+                                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Critical</span>
+                                </div>
+                                
+                                <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                    <div>
+                                        <h3 class="font-medium">Truck 9</h3>
+                                        <p class="text-sm text-gray-500">Newark → Jersey City</p>
+                                        <p class="text-xs text-gray-400">ETA: 25 min</p>
+                                    </div>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KPI Charts -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="font-bold text-lg">Deliveries per Day</h2>
+                                <select class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
+                                    <option selected>This Week</option>
+                                    <option>Last Week</option>
+                                    <option>This Month</option>
+                                </select>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="deliveriesChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="font-bold text-lg">Fuel Costs & Efficiency</h2>
+                                <select class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
+                                    <option selected>Last 4 Weeks</option>
+                                    <option>Last 8 Weeks</option>
+                                    <option>This Quarter</option>
+                                </select>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="fuelChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maintenance Status -->
+                    <div class="bg-white p-4 rounded-lg shadow mb-6">
+                        <h2 class="font-bold text-lg mb-4">Maintenance Status</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 bg-green-50 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-12 w-12 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="font-medium">Up to Date</h3>
+                                        <p class="text-sm text-gray-500">9 vehicles</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-yellow-50 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-12 w-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-exclamation text-yellow-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="font-medium">Due Soon</h3>
+                                        <p class="text-sm text-gray-500">4 vehicles</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-red-50 rounded-lg">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-12 w-12 bg-red-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-times text-red-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="font-medium">Overdue</h3>
+                                        <p class="text-sm text-gray-500">2 vehicles</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Section -->
+                    <div id="contact" class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">See What We Can Build For You</h2>
+                        <p class="text-gray-600 mb-4">This interactive dashboard demonstrates our capability to build complex, real-time systems. Imagine a similar solution tailored to your industry's specific data and challenges.</p>
+                        <p class="text-gray-600 mb-4">Our full platform capabilities include:</p>
+                        <ul class="list-disc pl-5 text-gray-600 mb-6">
+                            <li>Advanced predictive algorithms</li>
+                            <li>Custom data integration from any source</li>
+                            <li>Real-time analytics and visualization</li>
+                            <li>Interactive simulation environments</li>
+                            <li>Cross-platform compatibility</li>
+                        </ul>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-2">Let's Build Your Solution</h3>
+                            <p class="text-blue-700 mb-3">Contact us to discuss how we can apply this level of technical expertise to your business challenges.</p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition">
+                                    <i class="fas fa-envelope mr-2"></i> Email Us
+                                </button>
+                                <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition">
+                                    <i class="fas fa-phone mr-2"></i> Call Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Get answers to common questions about our AI services and solutions.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">How long does it take to implement an AI solution?</h3>
+                    <p class="text-gray-600">Implementation time varies based on complexity, but most projects range from 4-12 weeks. We provide a detailed timeline during our initial consultation.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Do I need technical expertise to benefit from your services?</h3>
+                    <p class="text-gray-600">Not at all. We handle all technical aspects and provide training and ongoing support to ensure your team can effectively use our solutions.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">What industries do you specialize in?</h3>
+                    <p class="text-gray-600">We've worked with logistics, e-commerce, healthcare, education, and manufacturing sectors. Our AI solutions are adaptable to virtually any industry.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">How do you measure the success of your AI implementations?</h3>
+                    <p class="text-gray-600">We establish clear KPIs before implementation and provide detailed analytics dashboards to track ROI, efficiency gains, and other success metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contact Us</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Get in touch for a consultation or custom AI solutions.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Email Us</h3>
+                            <p class="text-gray-600">jettilabz@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Call Us</h3>
+                            <p class="text-gray-600">570-277-5107</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Location</h3>
+                            <p class="text-gray-600">Based in Pennsylvania, serving clients globally</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-clock text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Business Hours</h3>
+                            <p class="text-gray-600">Monday - Friday: 9AM - 6PM EST</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-gray-100 p-8 rounded-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interest</label>
+                            <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Hourly Consultation</option>
+                                <option>Custom AI Hub</option>
+                                <option>Interactive Simulation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-2xl text-blue-400 mr-2"></i>
+                        <h3 class="text-xl font-bold">Breakthrough AI Protocols</h3>
+                    </div>
+                    <p class="text-gray-400">AI solutions designed to grow revenue, automate insights, and maximize ROI.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Hourly AI Consultation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Custom AI Hubs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Interactive Simulations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Our Methodology</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Breakthrough AI Protocols. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Initialize Leaflet map
+    var map = L.map('map').setView([40.7128, -74.0060], 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Simulated fleet positions
+    var fleet = [
+        {lat: 40.715, lng: -74.002, name: "Truck 1", status: "active", driver: "John D."},
+        {lat: 40.722, lng: -74.010, name: "Truck 2", status: "active", driver: "Maria L."},
+        {lat: 40.705, lng: -74.015, name: "Truck 3", status: "delayed", driver: "Robert K."},
+        {lat: 40.730, lng: -74.005, name: "Truck 4", status: "active", driver: "Sarah M."},
+        {lat: 40.718, lng: -73.985, name: "Truck 5", status: "offline", driver: "Michael T."},
+        {lat: 40.695, lng: -74.000, name: "Truck 6", status: "active", driver: "James P."}
+    ];
+
+    var markersArray = [];
+
+    // Function to create truck icon with pulse effect if needed
+    function createTruckIcon(status) {
+        var color = status === "active" ? '#10B981' :
+                    status === "delayed" ? '#F59E0B' : '#EF4444';
+        var pulseClass = (status === "delayed" || status === "offline") ? 'pulse' : '';
         
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
+        return L.divIcon({
+            className: `truck-marker ${pulseClass}`,
+            html: `<div style="
+                width: 30px; height: 30px; border-radius: 50%; background-color: ${color};
+                display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+                    <i class="fas fa-truck" style="color: white; font-size: 14px;"></i>
+                </div>`,
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -15]
         });
-      }
+    }
+
+    // Add markers to map
+    fleet.forEach(function(truck){
+        var marker = L.marker([truck.lat, truck.lng], {icon: createTruckIcon(truck.status)}).addTo(map);
+
+        marker.bindPopup(`
+            <div class="font-bold">${truck.name}</div>
+            <div>Driver: ${truck.driver}</div>
+            <div>Status: <span class="font-medium">${truck.status.charAt(0).toUpperCase() + truck.status.slice(1)}</span></div>
+            <div class="mt-2"><button class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">View Details</button></div>
+        `);
+
+        // Store reference to marker and truck status
+        marker.truckStatus = truck.status;
+        markersArray.push(marker);
     });
-  });
-  
-  // Form submission feedback
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function() {
-      // Form will be handled by Formspree
-      // We'll just show a temporary message
-      const submitBtn = this.querySelector('.submit-btn');
-      const originalText = submitBtn.innerHTML;
-      
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitBtn.disabled = true;
-      
-      setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const status = this.getAttribute('data-status');
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-gray-100');
+                btn.classList.remove('bg-blue-100');
+            });
+            
+            this.classList.add('active');
+            this.classList.remove('bg-gray-100');
+            this.classList.add('bg-blue-100');
+            
+            // Show/hide markers based on filter
+            markersArray.forEach(marker => {
+                if (status === 'all') {
+                    map.addLayer(marker);
+                } else if (marker.truckStatus === status) {
+                    map.addLayer(marker);
+                } else {
+                    map.removeLayer(marker);
+                }
+            });
+        });
+    });
+
+    // Simulate truck movement
+    function moveTruck(truckIndex) {
+        if(fleet[truckIndex].status !== "offline") {
+            fleet[truckIndex].lat += (Math.random()-0.5)*0.005;
+            fleet[truckIndex].lng += (Math.random()-0.5)*0.005;
+            markersArray[truckIndex].setLatLng([fleet[truckIndex].lat, fleet[truckIndex].lng]);
+            
+            // Update popup with new position info
+            markersArray[truckIndex].setPopupContent(`
+                <div class="font-bold">${fleet[truckIndex].name}</div>
+                <div>Driver: ${fleet[truckIndex].driver}</div>
+                <div>Status: <span class="font-medium">${fleet[truckIndex].status.charAt(0).toUpperCase() + fleet[truckIndex].status.slice(1)}</span></div>
+                <div>Location: ${fleet[truckIndex].lat.toFixed(4)}, ${fleet[truckIndex].lng.toFixed(4)}</div>
+                <div class="mt-2"><button class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">View Details</button></div>
+            `);
+        }
+    }
+
+    // Update time function
+    function updateTime() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        document.getElementById('current-time').textContent = timeStr;
+    }
+
+    // Initialize time and update every minute
+    updateTime();
+    setInterval(updateTime, 60000);
+
+    // Mobile menu functionality
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.remove('hidden');
+    });
+
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+
+    // Refresh deliveries list
+    document.getElementById('refresh-deliveries').addEventListener('click', function() {
+        this.classList.add('fa-spin');
         setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-        }, 3000);
-      }, 1500);
+            this.classList.remove('fa-spin');
+        }, 1000);
     });
-  }
-</script>
+
+    // Simulate movement for active trucks
+    setInterval(function() {
+        for(var i = 0; i < fleet.length; i++) {
+            if(fleet[i].status === "active" || fleet[i].status === "delayed") {
+                moveTruck(i);
+            }
+        }
+    }, 3000);
+
+    // Chart.js - Deliveries per day
+    var ctx = document.getElementById('deliveriesChart').getContext('2d');
+    var deliveriesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Mon','Tue','Wed','Thu','Fri','Sat'],
+            datasets: [{
+                label: 'Completed Deliveries', 
+                data: [45, 52, 38, 60, 70, 65],
+                backgroundColor: 'rgba(59, 130, 246, 0.7)', 
+                borderColor: 'rgba(59, 130, 246, 1)', 
+                borderWidth: 1
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Deliveries'
+                    }
+                }
+            }
+        }
+    });
+
+    // Chart.js - Fuel Costs
+    var ctx2 = document.getElementById('fuelChart').getContext('2d');
+    var fuelChart = new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['Week 1','Week 2','Week 3','Week 4'],
+            datasets: [
+                {
+                    label: 'Fuel Cost ($)', 
+                    data: [1200, 1100, 1300, 1250], 
+                    borderColor: 'rgba(239, 68, 68, 0.8)', 
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)', 
+                    fill: true, 
+                    tension: 0.3, 
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'Efficiency (mpg)', 
+                    data: [7.2, 7.5, 7.3, 7.8], 
+                    borderColor: 'rgba(16, 185, 129, 0.8)', 
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)', 
+                    fill: true, 
+                    tension: 0.3, 
+                    yAxisID: 'y1'
+                }
+            ]
+        },
+        options: { 
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'Fuel Cost ($)'
+                    }
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Efficiency (mpg)'
+                    },
+                    grid: {
+                        drawOnChartArea: false
+                    }
+                }
+            }
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        });
+    });
+    </script>
+
 </body>
 </html>
-
