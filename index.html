@@ -121,6 +121,122 @@
             border-bottom: 1px solid #e5e7eb;
         }
         
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6B7280;
+        }
+        .close-modal:hover {
+            color: #374151;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+        .btn-primary {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563EB;
+        }
+        .btn-secondary {
+            background-color: #6B7280;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #4B5563;
+        }
+        
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 0.375rem;
+            background-color: #10B981;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .toast-error {
+            background-color: #EF4444;
+        }
+        .toast-warning {
+            background-color: #F59E0B;
+        }
+        .toast-icon {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
         /* New styles for the main website */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1473181488821-2d23949a045a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
@@ -449,13 +565,13 @@
                     
                     <div>
                         <h2 class="font-bold text-lg text-gray-800 mb-4">Quick Actions</h2>
-                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg mb-2 hover:bg-blue-700 transition">
+                        <button id="new-delivery-btn" class="w-full bg-blue-600 text-white py-2 rounded-lg mb-2 hover:bg-blue-700 transition">
                             <i class="fas fa-plus mr-2"></i> New Delivery
                         </button>
-                        <button class="w-full bg-green-600 text-white py-2 rounded-lg mb-2 hover:bg-green-700 transition">
+                        <button id="generate-report-btn" class="w-full bg-green-600 text-white py-2 rounded-lg mb-2 hover:bg-green-700 transition">
                             <i class="fas fa-file-export mr-2"></i> Generate Report
                         </button>
-                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                        <button id="view-alerts-btn" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
                             <i class="fas fa-bell mr-2"></i> View Alerts
                         </button>
                     </div>
@@ -850,7 +966,7 @@
                     <ul class="space-y-2">
                         <li><a href="#services" class="text-gray-400 hover:text-white transition">Hourly AI Consultation</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-white transition">Custom AI Hubs</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Interactive Simulations</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition>Interactive Simulations</a></li>
                     </ul>
                 </div>
                 
@@ -879,6 +995,164 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal for New Delivery -->
+    <div id="new-delivery-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-xl font-bold text-gray-800">Create New Delivery</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="new-delivery-form">
+                <div class="form-group">
+                    <label for="delivery-origin">Origin</label>
+                    <input type="text" id="delivery-origin" class="form-control" placeholder="Enter origin address" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-destination">Destination</label>
+                    <input type="text" id="delivery-destination" class="form-control" placeholder="Enter destination address" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-priority">Priority</label>
+                    <select id="delivery-priority" class="form-control" required>
+                        <option value="">Select priority</option>
+                        <option value="standard">Standard</option>
+                        <option value="express">Express</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-notes">Notes (Optional)</label>
+                    <textarea id="delivery-notes" class="form-control" rows="3" placeholder="Additional delivery instructions"></textarea>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Delivery</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Generate Report -->
+    <div id="generate-report-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-xl font-bold text-gray-800">Generate Report</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="generate-report-form">
+                <div class="form-group">
+                    <label for="report-type">Report Type</label>
+                    <select id="report-type" class="form-control" required>
+                        <option value="">Select report type</option>
+                        <option value="performance">Performance Summary</option>
+                        <option value="delivery">Delivery Analytics</option>
+                        <option value="maintenance">Maintenance History</option>
+                        <option value="fuel">Fuel Efficiency</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="report-period">Time Period</label>
+                    <select id="report-period" class="form-control" required>
+                        <option value="">Select time period</option>
+                        <option value="week">Last Week</option>
+                        <option value="month">Last Month</option>
+                        <option value="quarter">Last Quarter</option>
+                        <option value="year">Last Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="form-group" id="custom-date-range" style="display: none;">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" class="form-control">
+                        </div>
+                        <div>
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="report-format">Format</label>
+                    <select id="report-format" class="form-control" required>
+                        <option value="pdf">PDF</option>
+                        <option value="excel">Excel</option>
+                        <option value="csv">CSV</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Generate Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for View Alerts -->
+    <div id="view-alerts-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-xl font-bold text-gray-800">System Alerts</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="space-y-4 max-h-96 overflow-y-auto">
+                <div class="p-3 bg-red-50 rounded-lg">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-medium text-red-800">Critical: Truck #7 Maintenance Overdue</h4>
+                            <p class="text-sm text-red-600">Maintenance was due 3 days ago. Schedule service immediately.</p>
+                            <p class="text-xs text-red-500">Alert created: Today at 09:23 AM</p>
+                        </div>
+                        <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="p-3 bg-yellow-50 rounded-lg">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-medium text-yellow-800">Warning: Fuel Efficiency Drop Detected</h4>
+                            <p class="text-sm text-yellow-600">Average fuel efficiency decreased by 12% compared to last month.</p>
+                            <p class="text-xs text-yellow-500">Alert created: Yesterday at 02:15 PM</p>
+                        </div>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Medium Priority</span>
+                    </div>
+                </div>
+                
+                <div class="p-3 bg-blue-50 rounded-lg">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-medium text-blue-800">Info: System Update Available</h4>
+                            <p class="text-sm text-blue-600">New dashboard version 2.3.1 is available with performance improvements.</p>
+                            <p class="text-xs text-blue-500">Alert created: 2 days ago at 10:45 AM</p>
+                        </div>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Low Priority</span>
+                    </div>
+                </div>
+                
+                <div class="p-3 bg-yellow-50 rounded-lg">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-medium text-yellow-800">Warning: Route Deviation Detected</h4>
+                            <p class="text-sm text-yellow-600">Truck #3 has deviated from the planned route by more than 5 miles.</p>
+                            <p class="text-xs text-yellow-500">Alert created: 3 days ago at 04:30 PM</p>
+                        </div>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Medium Priority</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button class="btn btn-secondary close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <span id="toast-message">Operation completed successfully!</span>
+    </div>
 
     <script>
     // Initialize Leaflet map
@@ -1006,6 +1280,7 @@
         this.classList.add('fa-spin');
         setTimeout(() => {
             this.classList.remove('fa-spin');
+            showToast('Deliveries list refreshed successfully!');
         }, 1000);
     });
 
@@ -1128,6 +1403,127 @@
             }
         });
     });
+
+    // Modal functionality
+    function setupModal(modalId, openButtonId) {
+        const modal = document.getElementById(modalId);
+        const openButton = document.getElementById(openButtonId);
+        const closeButtons = modal.querySelectorAll('.close-modal');
+        
+        openButton.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Setup modals
+    setupModal('new-delivery-modal', 'new-delivery-btn');
+    setupModal('generate-report-modal', 'generate-report-btn');
+    setupModal('view-alerts-modal', 'view-alerts-btn');
+    
+    // Form submissions
+    document.getElementById('new-delivery-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const origin = document.getElementById('delivery-origin').value;
+        const destination = document.getElementById('delivery-destination').value;
+        const priority = document.getElementById('delivery-priority').value;
+        
+        // Simulate API call
+        setTimeout(() => {
+            document.getElementById('new-delivery-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            showToast(`New ${priority} delivery from ${origin} to ${destination} created successfully!`);
+            
+            // Reset form
+            this.reset();
+        }, 1000);
+    });
+    
+    document.getElementById('generate-report-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const reportType = document.getElementById('report-type').value;
+        const reportPeriod = document.getElementById('report-period').value;
+        const reportFormat = document.getElementById('report-format').value;
+        
+        // Simulate report generation
+        setTimeout(() => {
+            document.getElementById('generate-report-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            showToast(`${reportType.charAt(0).toUpperCase() + reportType.slice(1)} report generated successfully in ${reportFormat.toUpperCase()} format!`);
+            
+            // Reset form
+            this.reset();
+        }, 1500);
+    });
+    
+    // Show/hide custom date range based on selection
+    document.getElementById('report-period').addEventListener('change', function() {
+        const customDateRange = document.getElementById('custom-date-range');
+        if (this.value === 'custom') {
+            customDateRange.style.display = 'block';
+        } else {
+            customDateRange.style.display = 'none';
+        }
+    });
+    
+    // Toast notification function
+    function showToast(message, type = 'success') {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        
+        toastMessage.textContent = message;
+        
+        // Set toast color based on type
+        if (type === 'error') {
+            toast.classList.add('toast-error');
+            toast.classList.remove('toast-warning');
+            toast.querySelector('.toast-icon').className = 'fas fa-exclamation-circle toast-icon';
+        } else if (type === 'warning') {
+            toast.classList.add('toast-warning');
+            toast.classList.remove('toast-error');
+            toast.querySelector('.toast-icon').className = 'fas fa-exclamation-triangle toast-icon';
+        } else {
+            toast.classList.remove('toast-error', 'toast-warning');
+            toast.querySelector('.toast-icon').className = 'fas fa-check-circle toast-icon';
+        }
+        
+        toast.classList.add('show');
+        
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+    
+    // Simulate random alerts for demo purposes
+    setInterval(() => {
+        // 10% chance to show a random alert
+        if (Math.random() < 0.1) {
+            const alerts = [
+                "New delivery request received",
+                "Truck #3 has completed its route",
+                "Maintenance scheduled for Truck #5",
+                "Weather alert: potential delays in Northeast region"
+            ];
+            
+            const randomAlert = alerts[Math.floor(Math.random() * alerts.length)];
+            showToast(randomAlert, Math.random() < 0.3 ? 'warning' : 'success');
+        }
+    }, 10000);
     </script>
 
 </body>
