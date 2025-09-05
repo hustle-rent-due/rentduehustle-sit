@@ -302,6 +302,12 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
+        
+        /* Logo styling */
+        .logo-img {
+            height: 32px;
+            width: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -310,7 +316,7 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
-                    <i class="fas fa-brain text-2xl text-blue-600"></i>
+                    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="Breakthrough AI Protocols Logo" class="logo-img">
                     <h1 class="text-xl font-bold text-gray-800">Breakthrough AI Protocols</h1>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -332,7 +338,7 @@
     <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden">
         <div class="container mx-auto px-4 py-8">
             <div class="flex justify-between items-center mb-8">
-                <i class="fas fa-brain text-2xl text-blue-600"></i>
+                <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="Breakthrough AI Protocols Logo" class="logo-img">
                 <button id="close-menu" class="text-2xl text-gray-600">
                     <i class="fas fa-times"></i>
                 </button>
@@ -545,19 +551,19 @@
                     <div class="mb-8">
                         <h2 class="font-bold text-lg text-gray-800 mb-4">Main Menu</h2>
                         <ul class="space-y-2">
-                            <li class="p-2 rounded-lg bg-blue-100 text-blue-800 font-medium">
+                            <li class="p-2 rounded-lg bg-blue-100 text-blue-800 font-medium sidebar-item active" data-section="dashboard">
                                 <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
                             </li>
-                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer sidebar-item" data-section="fleet">
                                 <i class="fas fa-truck mr-2"></i> Fleet Management
                             </li>
-                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer sidebar-item" data-section="tracking">
                                 <i class="fas fa-map-marker-alt mr-2"></i> Live Tracking
                             </li>
-                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer sidebar-item" data-section="analytics">
                                 <i class="fas fa-chart-line mr-2"></i> Analytics
                             </li>
-                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                            <li class="p-2 rounded-lg hover:bg-gray-100 cursor-pointer sidebar-item" data-section="settings">
                                 <i class="fas fa-cog mr-2"></i> Settings
                             </li>
                         </ul>
@@ -601,206 +607,272 @@
                         </div>
                     </div>
 
-                    <!-- Dashboard Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h2 class="font-bold text-gray-500">Fleet Online</h2>
-                                    <p class="text-3xl font-bold mt-2">12 / 15</p>
-                                </div>
-                                <i class="fas fa-truck text-blue-500 text-2xl"></i>
-                            </div>
-                            <div class="mt-4 flex items-center">
-                                <span class="status-online w-3 h-3 rounded-full mr-2"></span>
-                                <span class="text-sm text-gray-500">12 Active</span>
-                                <span class="status-offline w-3 h-3 rounded-full ml-4 mr-2"></span>
-                                <span class="text-sm text-gray-500">3 Offline</span>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h2 class="font-bold text-gray-500">On-Time Deliveries</h2>
-                                    <p class="text-3xl font-bold mt-2">92%</p>
-                                </div>
-                                <i class="fas fa-check-circle text-green-500 text-2xl"></i>
-                            </div>
-                            <div class="mt-4">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-green-500 h-2.5 rounded-full" style="width: 92%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h2 class="font-bold text-gray-500">Delayed Shipments</h2>
-                                    <p class="text-3xl font-bold mt-2">3</p>
-                                </div>
-                                <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
-                            </div>
-                            <div class="mt-4">
-                                <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Needs attention</span>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-purple-500">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h2 class="font-bold text-gray-500">Fuel Efficiency</h2>
-                                    <p class="text-3xl font-bold mt-2">7.8 mpg</p>
-                                </div>
-                                <i class="fas fa-gas-pump text-purple-500 text-2xl"></i>
-                            </div>
-                            <div class="mt-4 flex items-center">
-                                <span class="text-sm text-green-600"><i class="fas fa-arrow-up"></i> 2.4%</span>
-                                <span class="text-sm text-gray-500 ml-2">from last week</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Map and Active Deliveries -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-                        <!-- Map Section -->
-                        <div class="lg:col-span-2 bg-white p-4 rounded-lg shadow">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="font-bold text-lg">Live Fleet Tracking</h2>
-                                <div class="flex space-x-2">
-                                    <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded" data-status="all">All</button>
-                                    <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="active">Active</button>
-                                    <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="delayed">Delayed</button>
-                                    <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="offline">Offline</button>
-                                </div>
-                            </div>
-                            <div id="map"></div>
-                        </div>
-                        
-                        <!-- Active Deliveries -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="font-bold text-lg">Active Deliveries</h2>
-                                <i class="fas fa-sync-alt text-gray-500 cursor-pointer hover:text-blue-500" id="refresh-deliveries"></i>
-                            </div>
-                            <div class="space-y-4 max-h-96 overflow-y-auto pr-2" id="deliveries-container">
-                                <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                    <!-- Dashboard Content Sections -->
+                    <div id="dashboard-section" class="dashboard-section">
+                        <!-- Dashboard Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                            <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+                                <div class="flex justify-between items-start">
                                     <div>
-                                        <h3 class="font-medium">Truck 1</h3>
-                                        <p class="text-sm text-gray-500">Philadelphia → NYC</p>
-                                        <p class="text-xs text-gray-400">ETA: 45 min</p>
+                                        <h2 class="font-bold text-gray-500">Fleet Online</h2>
+                                        <p class="text-3xl font-bold mt-2">12 / 15</p>
                                     </div>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                    <i class="fas fa-truck text-blue-500 text-2xl"></i>
                                 </div>
-                                
-                                <div class="delivery-status flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                                <div class="mt-4 flex items-center">
+                                    <span class="status-online w-3 h-3 rounded-full mr-2"></span>
+                                    <span class="text-sm text-gray-500">12 Active</span>
+                                    <span class="status-offline w-3 h-3 rounded-full ml-4 mr-2"></span>
+                                    <span class="text-sm text-gray-500">3 Offline</span>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+                                <div class="flex justify-between items-start">
                                     <div>
-                                        <h3 class="font-medium">Truck 3</h3>
-                                        <p class="text-sm text-gray-500">Boston → Hartford</p>
-                                        <p class="text-xs text-gray-400">ETA: 1 hr 15 min</p>
+                                        <h2 class="font-bold text-gray-500">On-Time Deliveries</h2>
+                                        <p class="text-3xl font-bold mt-2">92%</p>
                                     </div>
-                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Delayed</span>
+                                    <i class="fas fa-check-circle text-green-500 text-2xl"></i>
                                 </div>
-                                
-                                <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                                    <div>
-                                        <h3 class="font-medium">Truck 4</h3>
-                                        <p class="text-sm text-gray-500">Baltimore → Washington</p>
-                                        <p class="text-xs text-gray-400">ETA: 30 min</p>
-                                    </div>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
-                                </div>
-                                
-                                <div class="delivery-status flex items-center justify-between p-3 bg-red-50 rounded-lg">
-                                    <div>
-                                        <h3 class="font-medium">Truck 7</h3>
-                                        <p class="text-sm text-gray-500">Albany → Syracuse</p>
-                                        <p class="text-xs text-gray-400">ETA: 2 hr 30 min</p>
-                                    </div>
-                                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Critical</span>
-                                </div>
-                                
-                                <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                                    <div>
-                                        <h3 class="font-medium">Truck 9</h3>
-                                        <p class="text-sm text-gray-500">Newark → Jersey City</p>
-                                        <p class="text-xs text-gray-400">ETA: 25 min</p>
-                                    </div>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- KPI Charts -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="font-bold text-lg">Deliveries per Day</h2>
-                                <select class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
-                                    <option selected>This Week</option>
-                                    <option>Last Week</option>
-                                    <option>This Month</option>
-                                </select>
-                            </div>
-                            <div class="chart-container">
-                                <canvas id="deliveriesChart"></canvas>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="font-bold text-lg">Fuel Costs & Efficiency</h2>
-                                <select class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
-                                    <option selected>Last 4 Weeks</option>
-                                    <option>Last 8 Weeks</option>
-                                    <option>This Quarter</option>
-                                </select>
-                            </div>
-                            <div class="chart-container">
-                                <canvas id="fuelChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Maintenance Status -->
-                    <div class="bg-white p-4 rounded-lg shadow mb-6">
-                        <h2 class="font-bold text-lg mb-4">Maintenance Status</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="p-4 bg-green-50 rounded-lg">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-12 w-12 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <h3 class="font-medium">Up to Date</h3>
-                                        <p class="text-sm text-gray-500">9 vehicles</p>
+                                <div class="mt-4">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 92%"></div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="p-4 bg-yellow-50 rounded-lg">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-12 w-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-exclamation text-yellow-600"></i>
+                            <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="font-bold text-gray-500">Delayed Shipments</h2>
+                                        <p class="text-3xl font-bold mt-2">3</p>
                                     </div>
-                                    <div class="ml-4">
-                                        <h3 class="font-medium">Due Soon</h3>
-                                        <p class="text-sm text-gray-500">4 vehicles</p>
-                                    </div>
+                                    <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+                                </div>
+                                <div class="mt-4">
+                                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Needs attention</span>
                                 </div>
                             </div>
                             
-                            <div class="p-4 bg-red-50 rounded-lg">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-12 w-12 bg-red-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-times text-red-600"></i>
+                            <div class="dashboard-card bg-white p-4 rounded-lg shadow border-l-4 border-purple-500">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h2 class="font-bold text-gray-500">Fuel Efficiency</h2>
+                                        <p class="text-3xl font-bold mt-2">7.8 mpg</p>
                                     </div>
-                                    <div class="ml-4">
-                                        <h3 class="font-medium">Overdue</h3>
-                                        <p class="text-sm text-gray-500">2 vehicles</p>
+                                    <i class="fas fa-gas-pump text-purple-500 text-2xl"></i>
+                                </div>
+                                <div class="mt-4 flex items-center">
+                                    <span class="text-sm text-green-600"><i class="fas fa-arrow-up"></i> 2.4%</span>
+                                    <span class="text-sm text-gray-500 ml-2">from last week</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map and Active Deliveries -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                            <!-- Map Section -->
+                            <div class="lg:col-span-2 bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="font-bold text-lg">Live Fleet Tracking</h2>
+                                    <div class="flex space-x-2">
+                                        <button class="filter-btn bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded" data-status="all">All</button>
+                                        <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="active">Active</button>
+                                        <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="delayed">Delayed</button>
+                                        <button class="filter-btn bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded" data-status="offline">Offline</button>
                                     </div>
+                                </div>
+                                <div id="map"></div>
+                            </div>
+                            
+                            <!-- Active Deliveries -->
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="font-bold text-lg">Active Deliveries</h2>
+                                    <i class="fas fa-sync-alt text-gray-500 cursor-pointer hover:text-blue-500" id="refresh-deliveries"></i>
+                                </div>
+                                <div class="space-y-4 max-h-96 overflow-y-auto pr-2" id="deliveries-container">
+                                    <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                        <div>
+                                            <h3 class="font-medium">Truck 1</h3>
+                                            <p class="text-sm text-gray-500">Philadelphia → NYC</p>
+                                            <p class="text-xs text-gray-400">ETA: 45 min</p>
+                                        </div>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                    </div>
+                                    
+                                    <div class="delivery-status flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                                        <div>
+                                            <h3 class="font-medium">Truck 3</h3>
+                                            <p class="text-sm text-gray-500">Boston → Hartford</p>
+                                            <p class="text-xs text-gray-400">ETA: 1 hr 15 min</p>
+                                        </div>
+                                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Delayed</span>
+                                    </div>
+                                    
+                                    <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                        <div>
+                                            <h3 class="font-medium">Truck 4</h3>
+                                            <p class="text-sm text-gray-500">Baltimore → Washington</p>
+                                            <p class="text-xs text-gray-400">ETA: 30 min</p>
+                                        </div>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                    </div>
+                                    
+                                    <div class="delivery-status flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                                        <div>
+                                            <h3 class="font-medium">Truck 7</h3>
+                                            <p class="text-sm text-gray-500">Albany → Syracuse</p>
+                                            <p class="text-xs text-gray-400">ETA: 2 hr 30 min</p>
+                                        </div>
+                                        <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Critical</span>
+                                    </div>
+                                    
+                                    <div class="delivery-status flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                        <div>
+                                            <h3 class="font-medium">Truck 9</h3>
+                                            <p class="text-sm text-gray-500">Newark → Jersey City</p>
+                                            <p class="text-xs text-gray-400">ETA: 25 min</p>
+                                        </div>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">On Time</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- KPI Charts -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="font-bold text-lg">Deliveries per Day</h2>
+                                    <select class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
+                                        <option selected>This Week</option>
+                                        <option>Last Week</option>
+                                        <option>This Month</option>
+                                    </select>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="deliveriesChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="font-bold text-lg">Fuel Costs & Efficiency</h2>
+                                    <select class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
+                                        <option selected>Last 4 Weeks</option>
+                                        <option>Last 8 Weeks</option>
+                                        <option>This Quarter</option>
+                                    </select>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="fuelChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Maintenance Status -->
+                        <div class="bg-white p-4 rounded-lg shadow mb-6">
+                            <h2 class="font-bold text-lg mb-4">Maintenance Status</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="p-4 bg-green-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-12 w-12 bg-green-100 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-green-600"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h3 class="font-medium">Up to Date</h3>
+                                            <p class="text-sm text-gray-500">9 vehicles</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-4 bg-yellow-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-12 w-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-exclamation text-yellow-600"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h3 class="font-medium">Due Soon</h3>
+                                            <p class="text-sm text-gray-500">4 vehicles</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-4 bg-red-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-12 w-12 bg-red-100 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-times text-red-600"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h3 class="font-medium">Overdue</h3>
+                                            <p class="text-sm text-gray-500">2 vehicles</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other Sections (initially hidden) -->
+                    <div id="fleet-section" class="dashboard-section hidden">
+                        <div class="bg-white p-6 rounded-lg shadow mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Fleet Management</h2>
+                            <p class="text-gray-600 mb-4">This section would show detailed information about your fleet vehicles, maintenance schedules, and operational status.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="p-4 bg-blue-50 rounded-lg">
+                                    <h3 class="text-lg font-semibold text-blue-800 mb-2">Vehicle Inventory</h3>
+                                    <p class="text-blue-700">View and manage all vehicles in your fleet with detailed specifications and status information.</p>
+                                </div>
+                                <div class="p-4 bg-green-50 rounded-lg">
+                                    <h3 class="text-lg font-semibold text-green-800 mb-2">Maintenance Scheduling</h3>
+                                    <p class="text-green-700">Schedule and track maintenance tasks to keep your fleet in optimal condition.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="tracking-section" class="dashboard-section hidden">
+                        <div class="bg-white p-6 rounded-lg shadow mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Live Tracking</h2>
+                            <p class="text-gray-600 mb-4">This section would provide real-time tracking of all vehicles with advanced filtering and monitoring capabilities.</p>
+                            <div class="p-4 bg-purple-50 rounded-lg">
+                                <h3 class="text-lg font-semibold text-purple-800 mb-2">Real-time Location Data</h3>
+                                <p class="text-purple-700">Monitor vehicle locations, routes, and estimated arrival times with live updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="analytics-section" class="dashboard-section hidden">
+                        <div class="bg-white p-6 rounded-lg shadow mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Analytics</h2>
+                            <p class="text-gray-600 mb-4">This section would provide detailed analytics and insights into your logistics operations, performance metrics, and trends.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="p-4 bg-indigo-50 rounded-lg">
+                                    <h3 class="text-lg font-semibold text-indigo-800 mb-2">Performance Reports</h3>
+                                    <p class="text-indigo-700">Generate detailed reports on delivery times, fuel efficiency, and operational costs.</p>
+                                </div>
+                                <div class="p-4 bg-pink-50 rounded-lg">
+                                    <h3 class="text-lg font-semibold text-pink-800 mb-2">Trend Analysis</h3>
+                                    <p class="text-pink-700">Identify patterns and trends to optimize routes and improve operational efficiency.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="settings-section" class="dashboard-section hidden">
+                        <div class="bg-white p-6 rounded-lg shadow mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Settings</h2>
+                            <p class="text-gray-600 mb-4">This section would allow you to configure system settings, user permissions, and notification preferences.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="p-4 bg-gray-100 rounded-lg">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">User Management</h3>
+                                    <p class="text-gray-700">Manage user accounts, roles, and permissions for system access.</p>
+                                </div>
+                                <div class="p-4 bg-gray-100 rounded-lg">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Notification Preferences</h3>
+                                    <p class="text-gray-700">Configure how and when you receive alerts and notifications.</p>
                                 </div>
                             </div>
                         </div>
@@ -955,7 +1027,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-brain text-2xl text-blue-400 mr-2"></i>
+                        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Aug%2030,%202025%20at%2007_51_25%20PM.png?raw=true" alt="Breakthrough AI Protocols Logo" class="h-8 mr-2">
                         <h3 class="text-xl font-bold">Breakthrough AI Protocols</h3>
                     </div>
                     <p class="text-gray-400">AI solutions designed to grow revenue, automate insights, and maximize ROI.</p>
@@ -1524,6 +1596,36 @@
             showToast(randomAlert, Math.random() < 0.3 ? 'warning' : 'success');
         }
     }, 10000);
+    
+    // Sidebar navigation functionality
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove active class from all items
+            document.querySelectorAll('.sidebar-item').forEach(el => {
+                el.classList.remove('bg-blue-100', 'text-blue-800', 'font-medium');
+                el.classList.add('hover:bg-gray-100');
+            });
+            
+            // Add active class to clicked item
+            this.classList.remove('hover:bg-gray-100');
+            this.classList.add('bg-blue-100', 'text-blue-800', 'font-medium');
+            
+            // Get the section to show
+            const sectionId = this.getAttribute('data-section') + '-section';
+            
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Show toast notification
+            const sectionName = this.textContent.trim();
+            showToast(`${sectionName} section loaded`);
+        });
+    });
     </script>
 
 </body>
