@@ -1,1097 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Breakthrough AI Protocols - AI-Powered Business Solutions</title>
- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
- <style>
- :root {
- --primary: #2563EB;
- --primary-dark: #1D4ED8;
- --secondary: #0EA5E9;
- --accent: #06B6D4;
- --dark: #0F172A;
- --darker: #020617;
- --light: #F1F5F9;
- }
- 
- body {
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- background: transparent;
- min-height: 100vh;
- position: relative;
- z-index: 1;
- color: #e6f0fb; /* Light text for dark theme */
- }
- 
- .section-overlay {
- background: rgba(15, 23, 42, 0.9); /* Semi-transparent dark overlay */
- padding: 2rem 0;
- border-radius: 8px;
- }
- 
- .dashboard-card {
- transition: transform 0.3s ease, box-shadow 0.3s ease;
- border-left: 4px solid;
- }
- .dashboard-card:hover {
- transform: translateY(-5px);
- box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
- }
- .status-online { background: #10B981; }
- .status-offline { background: #EF4444; }
- .status-maintenance { background: #F59E0B; }
- .truck-marker { 
- border-radius: 50%; 
- display: flex; 
- justify-content: center; 
- align-items: center; 
- color: white; 
- font-weight: bold; 
- box-shadow: 0 2px 5px rgba(0,0,0,0.3);
- }
- .navigation { 
- background: linear-gradient(to right, var(--primary-dark), var(--primary)); 
- box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
- }
- .notification-dot { 
- position: absolute; 
- top: -5px; 
- right: -5px; 
- width: 12px; 
- height: 12px; 
- background-color: #EF4444; 
- border-radius: 50%; 
- }
- .pulse { 
- animation: pulse 1.5s infinite; 
- }
- @keyframes pulse {
- 0% { transform: scale(1); opacity: 1; }
- 50% { transform: scale(1.1); opacity: 0.8; }
- 100% { transform: scale(1); opacity: 1; }
- }
- #map { 
- height: 400px; 
- max-height: 70vh; 
- border-radius: 8px;
- z-index: 1;
- }
- .chart-container {
- position: relative;
- height: 300px;
- width: 100%;
- }
- .delivery-status {
- transition: all 0.3s ease;
- }
- .delivery-status:hover {
- transform: translateX(5px);
- box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
- }
- .filter-btn {
- transition: all 0.2s ease;
- }
- .filter-btn.active {
- background-color: var(--primary);
- color: white;
- }
- .weather-widget {
- background: linear-gradient(to right, var(--secondary), var(--accent));
- color: white;
- border-radius: 10px;
- }
- .sidebar {
- transition: all 0.3s ease;
- }
- @media (max-width: 768px) {
- .sidebar {
- transform: translateX(-100%);
- position: fixed;
- top: 0;
- left: 0;
- height: 100vh;
- z-index: 50;
- width: 70%;
- }
- .sidebar.open {
- transform: translateX(0);
- }
- }
- .demo-header {
- background: linear-gradient(to right, var(--primary-dark), var(--primary));
- color: white;
- padding: 0.5rem; /* Reduced padding */
- text-align: center;
- border-bottom: 1px solid #e5e7eb;
- }
- 
- /* Modal styles */
- .modal {
- display: none;
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background-color: rgba(0, 0, 0, 0.5);
- z-index: 1000;
- justify-content: center;
- align-items: center;
- }
- .modal-content {
- background-color: rgba(15, 23, 42, 0.9);
- padding: 1.5rem;
- border-radius: 8px;
- width: 90%;
- max-width: 500px;
- max-height: 90vh;
- overflow-y: auto;
- box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
- color: #e6f0fb;
- }
- .modal-header {
- display: flex;
- justify-content: space-between;
- align-items: center;
- margin-bottom: 1rem;
- }
- .close-modal {
- background: none;
- border: none;
- font-size: 1.5rem;
- cursor: pointer;
- color: #6B7280;
- }
- .close-modal:hover {
- color: #374151;
- }
- .form-group {
- margin-bottom: 1rem;
- }
- .form-group label {
- display: block;
- margin-bottom: 0.25rem;
- font-weight: 500;
- color: #e6f0fb;
- }
- .form-control {
- width: 100%;
- padding: 0.5rem;
- border: 1px solid #D1D5DB;
- border-radius: 0.375rem;
- font-size: 0.875rem;
- background: rgba(255, 255, 255, 0.1);
- color: #e6f0fb;
- }
- .form-control:focus {
- outline: none;
- border-color: #3B82F6;
- box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
- }
- .btn {
- display: inline-block;
- padding: 0.5rem 1rem;
- border-radius: 0.375rem;
- font-weight: 500;
- cursor: pointer;
- transition: all 0.2s ease;
- border: none;
- }
- .btn-primary {
- background-color: #3B82F6;
- color: white;
- }
- .btn-primary:hover {
- background-color: #2563EB;
- }
- .btn-secondary {
- background-color: #6B7280;
- color: white;
- }
- .btn-secondary:hover {
- background-color: #4B5563;
- }
- 
- /* Toast notification */
- .toast {
- position: fixed;
- bottom: 20px;
- right: 20px;
- padding: 0.75rem 1rem;
- border-radius: 0.375rem;
- background-color: #10B981;
- color: white;
- box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
- display: flex;
- align-items: center;
- z-index: 1000;
- transform: translateY(100px);
- opacity: 0;
- transition: all 0.3s ease;
- }
- .toast.show {
- transform: translateY(0);
- opacity: 1;
- }
- .toast-error {
- background-color: #EF4444;
- }
- .toast-warning {
- background-color: #F59E0B;
- }
- .toast-icon {
- margin-right: 0.5rem;
- font-size: 1rem;
- }
- 
- /* Hero and General Styles */
- .hero-section {
- background: transparent;
- min-height: 80vh;
- position: relative;
- z-index: 1;
- padding: 2rem 0;
- }
- .service-card {
- transition: all 0.3s ease;
- }
- .service-card:hover {
- transform: translateY(-10px);
- box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
- }
- .stat-number {
- font-size: 2.5rem; /* Slightly reduced */
- font-weight: bold;
- background: linear-gradient(to right, var(--primary), var(--primary-dark));
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- }
- .nav-link {
- position: relative;
- }
- .nav-link::after {
- content: '';
- position: absolute;
- width: 0;
- height: 2px;
- bottom: -5px;
- left: 0;
- background-color: var(--primary);
- transition: width 0.3s ease;
- }
- .nav-link:hover::after {
- width: 100%;
- }
- .demo-launcher {
- background: linear-gradient(to right, var(--accent), var(--secondary));
- transition: all 0.3s ease;
- }
- .demo-launcher:hover {
- transform: scale(1.05);
- box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3), 0 4px 6px -2px rgba(6, 182, 212, 0.3);
- }
- 
- /* BAP Brand Styles */
- .bap-gradient {
- background: linear-gradient(to right, var(--primary), var(--accent));
- }
- .bap-gradient-text {
- background: linear-gradient(to right, var(--primary), var(--accent));
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- }
- .bap-card {
- background: rgba(15, 23, 42, 0.9);
- border-radius: 12px;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
- transition: all 0.3s ease;
- }
- .bap-card:hover {
- transform: translateY(-5px);
- box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
- }
- 
- /* Logo Styling */
- .logo-img {
- height: 32px;
- width: auto;
- }
- 
- /* Simulator Styles (Tightened) */
- .simulator-container {
- background: rgba(7, 16, 34, 0.95); /* Slightly darker for contrast */
- color: #e6f0fb;
- border-radius: 8px;
- overflow: hidden;
- box-shadow: 0 5px 15px rgba(2, 6, 23, 0.6);
- margin: 1rem 0; /* Reduced margin */
- }
- .simulator-header {
- background: linear-gradient(90deg, #4fd1c5, #60a5fa);
- padding: 0.5rem; /* Reduced padding */
- display: flex;
- justify-content: space-between;
- align-items: center;
- }
- .simulator-controls {
- display: flex;
- gap: 5px; /* Reduced gap */
- padding: 0.5rem; /* Reduced padding */
- background: rgba(15, 23, 36, 0.9);
- }
- .simulator-btn {
- background: linear-gradient(90deg, #4fd1c5, #d946ef);
- border: none;
- padding: 6px 8px; /* Reduced padding */
- border-radius: 6px;
- color: #042034;
- font-weight: 700;
- font-size: 0.875rem; /* Reduced font size */
- cursor: pointer;
- display: flex;
- align-items: center;
- gap: 3px; /* Reduced gap */
- }
- .simulator-btn.ghost {
- background: transparent;
- color: #60a5fa;
- border: 1px solid rgba(255, 255, 255, 0.1);
- }
- .simulator-view {
- padding: 0.75rem; /* Reduced padding */
- max-height: 500px; /* Reduced height */
- overflow-y: auto;
- }
- .simulator-kpi-grid {
- display: grid;
- grid-template-columns: repeat(2, 1fr);
- gap: 5px; /* Reduced gap */
- margin-bottom: 0.5rem; /* Reduced margin */
- }
- .simulator-kpi {
- background: rgba(255, 255, 255, 0.05);
- padding: 8px; /* Reduced padding */
- border-radius: 6px;
- display: flex;
- flex-direction: column;
- gap: 4px; /* Reduced gap */
- }
- .simulator-kpi .label {
- font-size: 0.75rem; /* Reduced font size */
- color: #9fb0c8;
- }
- .simulator-kpi .value {
- font-size: 1rem; /* Reduced font size */
- font-weight: bold;
- }
- .simulator-tile-grid {
- display: grid;
- grid-template-columns: repeat(2, 1fr);
- gap: 4px; /* Reduced gap */
- }
- .simulator-tile {
- background: rgba(255, 255, 255, 0.02);
- padding: 6px; /* Reduced padding */
- border-radius: 6px;
- font-size: 0.75rem; /* Reduced font size */
- }
- .simulator-tile.danger {
- animation: pulse-glow 2s infinite;
- }
- @keyframes pulse-glow {
- 0%, 100% { box-shadow: 0 0 10px rgba(255, 107, 107, 0.4); }
- 50% { box-shadow: 0 0 25px rgba(255, 107, 107, 0.8); }
- }
- 
- /* Demo Section Styling */
- .demo-section {
- padding: 2rem 0; /* Reduced padding */
- background: transparent;
- color: #e6f0fb;
- }
-
- /* Particle Container */
- #particles-js {
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: -1;
- background: linear-gradient(to bottom, #0f172a, #1e293b);
- overflow: hidden;
- }
-
- /* Shooting Star Animation */
- .shooting-star {
- position: absolute;
- width: 2px;
- height: 2px;
- background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
- box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
- animation: shoot 3s linear infinite;
- }
-
- @keyframes shoot {
- 0% {
- transform: translate(100vw, random(-100vh, 100vh)) rotate(45deg);
- opacity: 0;
- }
- 20% {
- opacity: 1;
- }
- 90% {
- opacity: 0.5;
- }
- 100% {
- transform: translate(-100vw, random(-100vh, 100vh)) rotate(45deg);
- opacity: 0;
- }
- }
-
- /* Social Media Icons */
- .social-icon {
- display: inline-flex;
- align-items: center;
- justify-content: center;
- width: 36px;
- height: 36px;
- border-radius: 50%;
- background: rgba(255, 255, 255, 0.1);
- color: #e6f0fb;
- transition: all 0.3s ease;
- margin-right: 8px;
- }
- .social-icon:hover {
- background: var(--primary);
- transform: translateY(-3px);
- }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustle Rent Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #111;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 30px;
+        }
+        header .cta-buttons a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 0 10px;
+            background-color: #e63946;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .services, .ebooks, .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .podcast iframe {
+            width: 100%;
+            height: 166px;
+            border: none;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        .contact-form button {
+            padding: 12px 25px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        footer a {
+            color: #e63946;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .services, .ebooks, .portfolio {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
- <div id="particles-js"></div>
 
- <!-- Main Website Navigation -->
- <nav class="bg-white shadow-lg fixed w-full z-50">
- <div class="container mx-auto px-4">
- <div class="flex justify-between items-center py-4">
- <div class="flex items-center space-x-3">
- <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2013,%202025%20at%2007_02_09%20PM.png?raw=true" alt="Breakthrough AI Protocols Logo" class="logo-img">
- <h1 class="text-xl font-bold text-gray-800">Breakthrough AI Protocols</h1>
- </div>
- <div class="hidden md:flex items-center space-x-8">
- <a href="#services" class="nav-link text-gray-600 hover:text-blue-600">Services</a>
- <a href="#methodology" class="nav-link text-gray-600 hover:text-blue-600">Methodology</a>
- <a href="#case-studies" class="nav-link text-gray-600 hover:text-blue-600">Case Studies</a>
- <a href="#demo" class="nav-link text-gray-600 hover:text-blue-600">Demo</a>
- <a href="#faq" class="nav-link text-gray-600 hover:text-blue-600">FAQ</a>
- <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
- <a href="#demo" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">View Demo</a>
- </div>
- <button id="mobile-menu-btn" class="md:hidden text-xl text-gray-600">
- <i class="fas fa-bars"></i>
- </button>
- </div>
- </div>
- </nav>
+    <!-- Hero Section -->
+    <header>
+        <h1>Hustle Rent Media</h1>
+        <p>Your Brand. Your Hustle. Your Media.</p>
+        <div class="cta-buttons">
+            <a href="#services">See Our Services</a>
+            <a href="#ebooks">Grab an eBook</a>
+        </div>
+    </header>
 
- <!-- Mobile Menu -->
- <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden">
- <div class="container mx-auto px-4 py-8">
- <div class="flex justify-between items-center mb-8">
- <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2013,%202025%20at%2007_02_09%20PM.png?raw=true" alt="Breakthrough AI Protocols Logo" class="logo-img">
- <button id="close-menu" class="text-2xl text-gray-600">
- <i class="fas fa-times"></i>
- </button>
- </div>
- <div class="flex flex-col space-y-6 text-center">
- <a href="#services" class="text-xl font-medium text-gray-800">Services</a>
- <a href="#methodology" class="text-xl font-medium text-gray-800">Methodology</a>
- <a href="#case-studies" class="text-xl font-medium text-gray-800">Case Studies</a>
- <a href="#demo" class="text-xl font-medium text-gray-800">Demo</a>
- <a href="#faq" class="text-xl font-medium text-gray-800">FAQ</a>
- <a href="#contact" class="text-xl font-medium text-gray-800">Contact</a>
- <a href="#demo" class="bg-blue-600 text-white py-3 px-6 rounded-lg text-xl font-medium">View Demo</a>
- </div>
- </div>
- </div>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Graphic & Web Design</h3>
+                <p>Flyers, eBook covers, brand kits, full website design for entrepreneurs and businesses.</p>
+                <a href="#contact">Book Now</a>
+            </div>
+            <div class="card">
+                <h3>Classes & Tutorials</h3>
+                <p>Learn digital marketing, content creation, and design skills to level up your hustle.</p>
+                <a href="#contact">Enroll Now</a>
+            </div>
+            <div class="card">
+                <h3>eBook Publishing</h3>
+                <p>We create, design, and launch professional eBooks for your brand or business.</p>
+                <a href="#ebooks">View eBooks</a>
+            </div>
+            <div class="card">
+                <h3>Brand Kits & Assets</h3>
+                <p>Custom or pre-made brand kits and digital assets to elevate your online presence.</p>
+                <a href="#contact">Get a Kit</a>
+            </div>
+        </div>
+    </section>
 
- <!-- Hero Section -->
- <section class="hero-section section-overlay">
- <div class="container mx-auto px-4 py-16 text-center">
- <h1 class="text-4xl md:text-5xl font-bold mb-6">AI That Thinks, Dashboards That Deliver</h1>
- <p class="text-xl mb-10 max-w-3xl mx-auto">
- Unlock the power of custom AI solutions, interactive dashboards, and real-time data hubs. 
- Scale faster, automate smarter, and make business decisions with precision that outpaces the competition.
- </p>
- <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
- <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg text-lg font-medium transition">
- Explore Services
- </a>
- <a href="#demo" class="demo-launcher text-white py-3 px-8 rounded-lg text-lg font-medium">
- See Our Tech In Action
- </a>
- </div>
- </div>
- </section>
+    <!-- eBooks Section -->
+    <section id="ebooks">
+        <h2>Our eBooks</h2>
+        <div class="ebooks">
+            <div class="card">
+                <img src="ebook1-cover.jpg" alt="eBook 1">
+                <h3>Traponomics</h3>
+                <p>A guide to modern hustle strategies and money-making systems.</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="card">
+                <img src="ebook2-cover.jpg" alt="eBook 2">
+                <h3>Struggle Plates</h3>
+                <p>Simple, affordable meals and tips for the everyday hustler.</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="card">
+                <img src="ebook-coming-soon.jpg" alt="Coming Soon">
+                <h3>eBook Coming Soon</h3>
+                <p>Stay tuned for our next release packed with strategies and insights.</p>
+            </div>
+        </div>
+    </section>
 
- <!-- Stats Section -->
- <section class="section-overlay">
- <div class="container mx-auto px-4">
- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
- <div class="p-4">
- <div class="stat-number">98%</div>
- <h3 class="text-lg font-semibold text-gray-200 mt-2">CLIENT SATISFACTION</h3>
- <p class="text-gray-400 mt-1 text-sm">Clients consistently praise our AI solutions and service quality</p>
- </div>
- <div class="p-4">
- <div class="stat-number">50+</div>
- <h3 class="text-lg font-semibold text-gray-200 mt-2">PROJECTS COMPLETED</h3>
- <p class="text-gray-400 mt-1 text-sm">Delivered tailored AI systems across diverse industries</p>
- </div>
- <div class="p-4">
- <div class="stat-number">45%</div>
- <h3 class="text-lg font-semibold text-gray-200 mt-2">AVG. REVENUE GROWTH</h3>
- <p class="text-gray-400 mt-1 text-sm">Clients see measurable ROI after implementing our solutions</p>
- </div>
- </div>
- </div>
- </section>
+    <!-- Podcast Section -->
+    <section id="podcast">
+        <h2>Mic & Morals Podcast</h2>
+        <p>Conversations that inspire, educate, and elevate your hustle. Tune in for insights on business, culture, and personal growth.</p>
+        <div class="podcast">
+            <!-- Example Spotify Embed -->
+            <iframe src="https://open.spotify.com/embed/show/YOUR_SPOTIFY_LINK" allow="encrypted-media"></iframe>
+        </div>
+        <a href="https://open.spotify.com/show/YOUR_SPOTIFY_LINK" target="_blank">Listen Now</a>
+    </section>
 
- <!-- Services Section -->
- <section id="services" class="section-overlay">
- <div class="container mx-auto px-4">
- <h2 class="text-3xl font-bold text-center text-gray-200 mb-8">Our Services</h2>
- <p class="text-lg text-center text-gray-400 mb-8 max-w-3xl mx-auto">AI solutions designed for measurable business results across all industries.</p>
- 
- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
- <div class="service-card p-4 rounded-lg shadow">
- <div class="flex items-center mb-4">
- <div class="bg-blue-100 p-2 rounded-full mr-2">
- <i class="fas fa-clock text-blue-600 text-xl"></i>
- </div>
- <h3 class="text-xl font-bold text-gray-200">Hourly AI Consultation</h3>
- </div>
- <p class="text-gray-400 mb-4 text-sm">Expert AI strategy, process optimization, and implementation guidance tailored to your specific business needs.</p>
- <ul class="space-y-2 mb-4">
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Custom AI strategy development</li>
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Process optimization analysis</li>
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Implementation guidance</li>
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Flexible booking options</li>
- </ul>
- <div class="flex justify-between items-center">
- <span class="text-xl font-bold text-blue-400">$500/hour</span>
- <a href="https://book.stripe.com/8x28wP0uobrE6Qz4N12wU0u" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded-lg text-sm transition">Book Now</a>
- </div>
- </div>
- 
- <div class="service-card p-4 rounded-lg shadow">
- <div class="flex items-center mb-4">
- <div class="bg-purple-100 p-2 rounded-full mr-2">
- <i class="fas fa-chart-network text-purple-600 text-xl"></i>
- </div>
- <h3 class="text-xl font-bold text-gray-200">Custom AI Hubs & Interactive Dashboards</h3>
- </div>
- <p class="text-gray-400 mb-4 text-sm">We build tailored AI-powered hubs, dashboards, and interactive simulations that automate insights, visualize data, and enhance user engagement for any industry.</p>
- <ul class="space-y-2 mb-4">
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Custom AI solution design</li>
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Interactive data visualization</li>
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Ongoing support & maintenance</li>
- <li class="flex items-center"><i class="fas fa-check text-green-500 mr-1"></i> Performance analytics dashboard</li>
- </ul>
- <div class="flex justify-between items-center">
- <span class="text-xl font-bold text-purple-400">Custom Pricing</span>
- <a href="https://docs.google.com/forms/d/e/1FAIpQLScw4NqC2XE18iAzFEr7J598AjxQ8Hl2GEIP7O7pygEpDBURqw/viewform?usp=header" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white py-1 px-4 rounded-lg text-sm transition">Request Quote</a>
- </div>
- </div>
- </div>
- </div>
- </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Our Work</h2>
+        <div class="portfolio">
+            <div class="card">
+                <img src="portfolio1.jpg" alt="Portfolio 1">
+                <h3>Website Design</h3>
+                <p>Custom websites built for small businesses and creators.</p>
+            </div>
+            <div class="card">
+                <img src="portfolio2.jpg" alt="Portfolio 2">
+                <h3>Flyer Design</h3>
+                <p>Creative promotional materials for events and campaigns.</p>
+            </div>
+            <div class="card">
+                <img src="portfolio3.jpg" alt="Portfolio 3">
+                <h3>Brand Kit</h3>
+                <p>Complete branding packages to make your business stand out.</p>
+            </div>
+        </div>
+    </section>
 
- <!-- Demo Section with Simulator -->
- <section id="demo" class="demo-section">
- <div class="container mx-auto px-4">
- <h2 class="text-3xl font-bold text-center text-gray-200 mb-4">Interactive Executive Dashboard Demo</h2>
- <p class="text-lg text-center text-gray-400 mb-8 max-w-3xl mx-auto">
- Experience our custom AI dashboard technology firsthand. This executive accountability simulator demonstrates the type of interactive, data-driven solutions we build for our clients.
- </p>
- 
- <div class="simulator-container">
- <div class="simulator-header">
- <div class="flex items-center gap-2">
- <div class="logo" style="width: 30px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; background: linear-gradient(135deg, #4fd1c5, #60a5fa 50%, #d946ef 100%); color: #042034; font-size: 12px;">BAP</div>
- <h3 class="text-sm">Exec Accountability Simulator</h3>
- </div>
- <div class="text-xs">Live simulated data</div>
- </div>
- 
- <div class="simulator-controls">
- <button class="simulator-btn" id="simulator-run"><i class="fas fa-play"></i> Run</button>
- <button class="simulator-btn ghost" id="simulator-reset"><i class="fas fa-rotate-right"></i> Reset</button>
- </div>
- 
- <div class="simulator-view">
- <div class="simulator-kpi-grid">
- <div class="simulator-kpi">
- <div class="label">Revenue</div>
- <div class="value" id="sim-revenue">$1,000,000</div>
- <div class="drift text-xs">Δ 2.0%</div>
- </div>
- <div class="simulator-kpi">
- <div class="label">Churn</div>
- <div class="value" id="sim-churn">12%</div>
- <div class="drift text-xs">No Owner</div>
- </div>
- <div class="simulator-kpi">
- <div class="label">Idle Fleet</div>
- <div class="value" id="sim-idle">8%</div>
- <div class="drift text-xs">Owner: Ops Director</div>
- </div>
- <div class="simulator-kpi">
- <div class="label">Cloud Migration</div>
- <div class="value" id="sim-migration">75%</div>
- <div class="drift text-xs">Owner: CTO</div>
- </div>
- </div>
- 
- <div class="mb-2">
- <div class="text-xs mb-1">Decision Prompts</div>
- <div class="simulator-tile-grid" id="sim-decisions">
- <div class="simulator-tile danger">OpEx Overrun by $50,000</div>
- <div class="simulator-tile">Revenue up 11.1% — Check OpEx</div>
- </div>
- </div>
- 
- <div>
- <div class="text-xs mb-1">Accountability Score</div>
- <div class="progress-container" style="height: 6px; background: rgba(255, 255, 255, 0.04); border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
- <div class="progress-bar" style="height: 100%; background: linear-gradient(90deg, #4fd1c5, #60a5fa); width: 82%; transition: width 0.6s;"></div>
- </div>
- <div class="text-xs text-center">82%</div>
- </div>
- </div>
- </div>
- 
- <div class="mt-6 text-center">
- <p class="mb-4 text-sm">This is a simplified preview of the executive dashboards we create. Our full solutions include:</p>
- <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left max-w-4xl mx-auto">
- <div class="bg-white bg-opacity-10 p-3 rounded-lg">
- <h4 class="font-bold mb-1 text-sm"><i class="fas fa-chart-line mr-1"></i> Real-time Analytics</h4>
- <p class="text-xs">Live data integration with customizable metrics and KPIs</p>
- </div>
- <div class="bg-white bg-opacity-10 p-3 rounded-lg">
- <h4 class="font-bold mb-1 text-sm"><i class="fas fa-cogs mr-1"></i> Interactive Simulations</h4>
- <p class="text-xs">What-if scenarios to test decisions before implementation</p>
- </div>
- <div class="bg-white bg-opacity-10 p-3 rounded-lg">
- <h4 class="font-bold mb-1 text-sm"><i class="fas fa-bell mr-1"></i> Proactive Alerts</h4>
- <p class="text-xs">Automated notifications for critical metrics and anomalies</p>
- </div>
- </div>
- 
- <div class="mt-6">
- <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg text-sm font-medium transition inline-block">
- Request Your Custom Dashboard
- </a>
- </div>
- </div>
- </div>
- </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
- <!-- Methodology Section -->
- <section id="methodology" class="section-overlay">
- <div class="container mx-auto px-4">
- <h2 class="text-3xl font-bold text-center text-gray-200 mb-8">Our Methodology</h2>
- <p class="text-lg text-center text-gray-400 mb-8 max-w-3xl mx-auto">Proven AI frameworks and interactive simulations that turn data into actionable strategies.</p>
- 
- <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
- <div class="text-center p-4">
- <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
- <span class="text-xl font-bold text-blue-600">1</span>
- </div>
- <h3 class="text-lg font-semibold text-gray-200 mb-2">Discovery & Analysis</h3>
- <p class="text-gray-400 text-sm">We begin by deeply understanding your business objectives, challenges, and data ecosystem to identify the most impactful AI opportunities.</p>
- </div>
- 
- <div class="text-center p-4">
- <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
- <span class="text-xl font-bold text-blue-600">2</span>
- </div>
- <h3 class="text-lg font-semibold text-gray-200 mb-2">Solution Design</h3>
- <p class="text-gray-400 text-sm">Our experts design tailored AI solutions that align with your specific business needs, ensuring maximum ROI and seamless integration.</p>
- </div>
- 
- <div class="text-center p-4">
- <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
- <span class="text-xl font-bold text-blue-600">3</span>
- </div>
- <h3 class="text-lg font-semibold text-gray-200 mb-2">Implementation</h3>
- <p class="text-gray-400 text-sm">We develop and deploy your AI solutions with precision, focusing on scalability, security, and user experience.</p>
- </div>
- 
- <div class="text-center p-4">
- <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
- <span class="text-xl font-bold text-blue-600">4</span>
- </div>
- <h3 class="text-lg font-semibold text-gray-200 mb-2">Optimization & Growth</h3>
- <p class="text-gray-400 text-sm">We continuously monitor and refine your AI systems to ensure they evolve with your business and deliver sustained value.</p>
- </div>
- </div>
- </div>
- </section>
+    <!-- Footer -->
+    <footer>
+        <p>
+            <a href="#services">Services</a> | 
+            <a href="#ebooks">eBooks</a> | 
+            <a href="#podcast">Podcast</a> | 
+            <a href="#contact">Contact</a> | 
+            <a href="terms.html">Terms & Conditions</a>
+        </p>
+        <p>
+            <a href="https://twitter.com/yourhandle" target="_blank">X</a>
+            <a href="https://youtube.com/yourchannel" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@yourhandle" target="_blank">TikTok</a>
+        </p>
+        <p>© 2025 Hustle Rent Media. All Rights Reserved.</p>
+    </footer>
 
- <!-- Case Studies Section -->
- <section id="case-studies" class="section-overlay">
- <div class="container mx-auto px-4">
- <h2 class="text-3xl font-bold text-center text-gray-200 mb-8">Case Studies</h2>
- <p class="text-lg text-center text-gray-400 mb-8 max-w-3xl mx-auto">Real-world examples of AI solutions driving measurable business results across industries.</p>
- 
- <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
- <!-- Lawn Care Business Simulation -->
- <div class="bap-card p-4 rounded-lg shadow">
- <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/943e3335-b205-408e-89f8-2bdaf21770ec.png?raw=true" alt="Lawn Care Simulation" class="w-full h-32 object-cover rounded-lg mb-3 shadow-sm" />
- <h3 class="text-lg font-bold text-gray-200 mb-3">Lawn Care Operations Optimization</h3>
- <p class="text-gray-400 mb-3 text-sm">Implemented AI-driven scheduling and fleet management for a lawn care business, increasing service coverage efficiency and reducing idle time.</p>
- <div class="grid grid-cols-2 gap-3 mt-3">
- <div class="text-center">
- <div class="text-xl font-bold text-blue-400">48%</div>
- <div class="text-xs text-gray-400">SERVICE COVERAGE</div>
- </div>
- <div class="text-center">
- <div class="text-xl font-bold text-green-400">22%</div>
- <div class="text-xs text-gray-400">IDLE TIME REDUCTION</div>
- </div>
- </div>
- </div>
- 
- <!-- E-Commerce Dashboard -->
- <div class="bap-card p-4 rounded-lg shadow">
- <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/b83adae9-1498-4be2-b338-12ed9168e158.png?raw=true" alt="E-Commerce Dashboard" class="w-full h-32 object-cover rounded-lg mb-3 shadow-sm" />
- <h3 class="text-lg font-bold text-gray-200 mb-3">E-Commerce Revenue Growth</h3>
- <p class="text-gray-400 mb-3 text-sm">AI-powered analytics dashboard helped an e-commerce company optimize inventory and promotions, increasing revenue and improving delivery predictability.</p>
- <div class="grid grid-cols-2 gap-3 mt-3">
- <div class="text-center">
- <div class="text-xl font-bold text-red-400">35%</div>
- <div class="text-xs text-gray-400">REVENUE INCREASE</div>
- </div>
- <div class="text-center">
- <div class="text-xl font-bold text-purple-400">65%</div>
- <div class="text-xs text-gray-400">FULFILLMENT IMPROVEMENT</div>
- </div>
- </div>
- </div>
- 
- <!-- C-Level Executive Dashboard -->
- <div class="bap-card p-4 rounded-lg shadow">
- <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/b4220553-4fae-486b-8999-e72541e0f219.png?raw=true" alt="C-Level Executive Dashboard" class="w-full h-32 object-cover rounded-lg mb-3 shadow-sm" />
- <h3 class="text-lg font-bold text-gray-200 mb-3">C-Level Executive Dashboard</h3>
- <p class="text-gray-400 mb-3 text-sm">Developed a real-time executive dashboard for senior management, integrating KPIs across operations, logistics, and sales to drive data-informed decisions.</p>
- <div class="grid grid-cols-2 gap-3 mt-3">
- <div class="text-center">
- <div class="text-xl font-bold text-yellow-400">92%</div>
- <div class="text-xs text-gray-400">KPI VISIBILITY</div>
- </div>
- <div class="text-center">
- <div class="text-xl font-bold text-indigo-400">87%</div>
- <div class="text-xs text-gray-400">DECISION ACCURACY</div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
-
- <!-- Contact / Build Your Solution Section -->
- <section id="contact" class="section-overlay">
- <div class="container mx-auto px-4">
- <div class="max-w-4xl mx-auto p-6 rounded-2xl shadow-2xl">
- <h2 class="text-3xl font-extrabold text-gray-200 mb-4 text-center">
- Transform Your Business with Next-Level AI
- </h2>
- <p class="text-gray-400 mb-4 text-lg text-center">
- We design **interactive simulations, executive dashboards, and real-time HUDs** that give your business **unmatched visibility and control**. 
- Visualize scenarios, monitor KPIs, and make strategic decisions faster than ever before.
- </p>
-
- <p class="text-gray-400 mb-4 font-semibold text-lg">
- Our solutions are tailored to provide:
- </p>
- <ul class="list-disc pl-5 text-gray-400 mb-4 space-y-2 text-sm">
- <li>**Custom simulation environments** that predict outcomes and optimize performance</li>
- <li>**Executive-grade dashboards & HUDs** for real-time KPIs and actionable insights</li>
- <li>**Seamless integration** with your existing systems and data sources</li>
- <li>**Advanced predictive AI** that uncovers hidden opportunities and reduces risk</li>
- <li>**Cross-platform web applications** accessible from desktop, tablet, or mobile</li>
- </ul>
-
- <div class="bg-gradient-to-r from-blue-900 to-green-900 p-6 rounded-xl shadow-inner">
- <h3 class="text-xl font-bold text-gray-200 mb-3 text-center">
- Your Business, Supercharged by AI
- </h3>
- <p class="text-gray-400 mb-4 text-center text-sm">
- Work with a team that combines **strategic AI consulting** with **hands-on development**. 
- We build systems that not only show insights but let you **act on them immediately** — simulations, dashboards, and HUDs crafted for decision-makers like you.
- </p>
- <div class="flex flex-col sm:flex-row justify-center gap-4 mt-4">
- <a href="mailto:jettilabz@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-xl text-center transition shadow-lg text-sm">
- <i class="fas fa-envelope mr-1"></i> Schedule a Consultation
- </a>
- <a href="tel:570-277-5107" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-5 rounded-xl text-center transition shadow-lg text-sm">
- <i class="fas fa-phone mr-1"></i> Call Us Now
- </a>
- </div>
- </div>
- </div>
- </div>
- </section>
-
- <!-- FAQ Section -->
- <section id="faq" class="section-overlay">
- <div class="container mx-auto px-4">
- <h2 class="text-3xl font-bold text-center text-gray-200 mb-8">Frequently Asked Questions</h2>
- <p class="text-lg text-center text-gray-400 mb-8 max-w-3xl mx-auto">Answers to key questions about BAP AI solutions and executive dashboards.</p>
- 
- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
- <div class="bap-card p-4 rounded-lg shadow">
- <h3 class="text-lg font-bold text-gray-200 mb-2">How long does it take to implement a solution?</h3>
- <p class="text-gray-400 text-sm">Most AI dashboard projects, including custom simulations, are delivered within <strong>1-2 weeks</strong>. We provide a clear timeline upfront and keep you updated every step of the way.</p>
- </div>
- 
- <div class="bap-card p-4 rounded-lg shadow">
- <h3 class="text-lg font-bold text-gray-200 mb-2">Do I need technical expertise?</h3>
- <p class="text-gray-400 text-sm">No technical experience is required. Our team handles setup, integration, and training, so your staff can start using the dashboards immediately.</p>
- </div>
- 
- <div class="bap-card p-4 rounded-lg shadow">
- <h3 class="text-lg font-bold text-gray-200 mb-2">Which industries do you serve?</h3>
- <p class="text-gray-400 text-sm">We specialize in: <strong>logistics, e-commerce, and manufacturing</strong>. These are the sectors where our AI simulations and dashboards have proven measurable impact.</p>
- </div>
- 
- <div class="bap-card p-4 rounded-lg shadow">
- <h3 class="text-lg font-bold text-gray-200 mb-2">How do you measure success?</h3>
- <p class="text-gray-400 text-sm">We set clear KPIs before starting your project and provide real-time analytics dashboards to track efficiency, ROI, and operational improvements.</p>
- </div>
-
- <div class="bap-card p-4 rounded-lg shadow">
- <h3 class="text-lg font-bold text-gray-200 mb-2">Can I customize the dashboards for my business?</h3>
- <p class="text-gray-400 text-sm">Absolutely. Each dashboard and simulation is tailored to your workflows, KPIs, and business goals, ensuring actionable insights for your team.</p>
- </div>
-
- <div class="bap-card p-4 rounded-lg shadow">
- <h3 class="text-lg font-bold text-gray-200 mb-2">What level of support do you provide?</h3>
- <p class="text-gray-400 text-sm">We offer full post-deployment support, including updates, troubleshooting, and guidance to maximize your investment in AI tools.</p>
- </div>
- </div>
- </div>
- </section>
-
- <!-- Footer -->
- <footer class="bg-gray-900 text-white py-8">
- <div class="container mx-auto px-4">
- <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
- <div>
- <div class="flex items-center mb-3">
- <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2013,%202025%20at%2007_02_09%20PM.png?raw=true" alt="Breakthrough AI Protocols Logo" class="h-8 mr-2">
- <h3 class="text-lg font-bold">Breakthrough AI Protocols</h3>
- </div>
- <p class="text-gray-500 text-sm">AI solutions designed to grow revenue, automate insights, and maximize ROI.</p>
- <div class="mt-4 flex">
- <a href="https://www.linkedin.com/in/nile-green-8a66a2379" target="_blank" class="social-icon">
- <i class="fab fa-linkedin-in"></i>
- </a>
- <a href="https://youtube.com/@BAPxAI" target="_blank" class="social-icon">
- <i class="fab fa-youtube"></i>
- </a>
- <a href="https://x.com/BAPxAI" target="_blank" class="social-icon">
- <i class="fab fa-x-twitter"></i>
- </a>
- </div>
- </div>
- 
- <div>
- <h4 class="text-base font-semibold mb-3">Services</h4>
- <ul class="space-y-2">
- <li><a href="#services" class="text-gray-500 hover:text-white transition text-sm">Hourly AI Consultation</a></li>
- <li><a href="#services" class="text-gray-500 hover:text-white transition text-sm">Custom AI Hubs</a></li>
- <li><a href="#services" class="text-gray-500 hover:text-white transition text-sm">Interactive Simulations</a></li>
- </ul>
- </div>
- 
- <div>
- <h4 class="text-base font-semibold mb-3">Company</h4>
- <ul class="space-y-2">
- <li><a href="#methodology" class="text-gray-500 hover:text-white transition text-sm">Our Methodology</a></li>
- <li><a href="#case-studies" class="text-gray-500 hover:text-white transition text-sm">Case Studies</a></li>
- <li><a href="#faq" class="text-gray-500 hover:text-white transition text-sm">FAQ</a></li>
- <li><a href="#contact" class="text-gray-500 hover:text-white transition text-sm">Contact Us</a></li>
- </ul>
- </div>
- 
- <div>
- <h4 class="text-base font-semibold mb-3">Legal</h4>
- <ul class="space-y-2">
- <li><a href="#" class="text-gray-500 hover:text-white transition text-sm">Privacy Policy</a></li>
- <li><a href="#" class="text-gray-500 hover:text-white transition text-sm">Terms of Service</a></li>
- <li><a href="#" class="text-gray-500 hover:text-white transition text-sm">Cookie Policy</a></li>
- </ul>
- </div>
- </div>
- 
- <div class="border-t border-gray-700 mt-6 pt-4 text-center text-gray-500 text-xs">
- <p>© 2023 Breakthrough AI Protocols. All rights reserved.</p>
- </div>
- </div>
- </footer>
-
- <script>
- // Mobile menu functionality
- document.getElementById('mobile-menu-btn').addEventListener('click', function() {
- document.getElementById('mobile-menu').classList.remove('hidden');
- });
- 
- document.getElementById('close-menu').addEventListener('click', function() {
- document.getElementById('mobile-menu').classList.add('hidden');
- });
- 
- // Simulator functionality
- document.addEventListener('DOMContentLoaded', function() {
- const runButton = document.getElementById('simulator-run');
- const resetButton = document.getElementById('simulator-reset');
- 
- if (runButton && resetButton) {
- runButton.addEventListener('click', runSimulation);
- resetButton.addEventListener('click', resetSimulation);
- }
- 
- // Initialize simulator values
- resetSimulation();
-
- // Initialize particles.js with shooting star effect
- particlesJS('particles-js', {
- particles: {
- number: { value: 100, density: { enable: true, value_area: 800 } },
- color: { value: '#ffffff' },
- shape: { type: 'circle' },
- opacity: { value: 0.5, random: true, anim: { enable: false } },
- size: { value: 1, random: true, anim: { enable: false } },
- line_linked: { enable: false },
- move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
- },
- interactivity: {
- detect_on: 'canvas',
- events: { onhover: { enable: false }, onclick: { enable: false }, resize: true },
- modes: { repulse: { distance: 100, duration: 0.4 } }
- },
- retina_detect: true
- });
-
- // Add shooting stars dynamically
- function createShootingStar() {
- const star = document.createElement('div');
- star.className = 'shooting-star';
- star.style.left = Math.random() * 100 + 'vw';
- star.style.top = Math.random() * 100 + 'vh';
- document.getElementById('particles-js').appendChild(star);
-
- // Remove star after animation
- star.addEventListener('animationend', () => star.remove());
-
- // Create new star after a random delay
- setTimeout(createShootingStar, Math.random() * 2000 + 1000);
- }
-
- // Start with a few shooting stars
- for (let i = 0; i < 3; i++) {
- createShootingStar();
- }
- });
- 
- // Simulator state
- let simulatorState = {
- revenue: 1000000,
- churn: 12,
- idleFleet: 8,
- migration: 75
- };
- 
- function runSimulation() {
- simulatorState.revenue += Math.floor(Math.random() * 50000 - 10000);
- simulatorState.churn += Math.floor(Math.random() * 3 - 1);
- simulatorState.idleFleet += Math.floor(Math.random() * 3 - 1);
- simulatorState.migration += Math.floor(Math.random() * 5 - 2);
- 
- simulatorState.revenue = Math.max(800000, simulatorState.revenue);
- simulatorState.churn = Math.max(5, Math.min(25, simulatorState.churn));
- simulatorState.idleFleet = Math.max(5, Math.min(20, simulatorState.idleFleet));
- simulatorState.migration = Math.max(50, Math.min(100, simulatorState.migration));
- 
- updateSimulatorUI();
- showToast('Simulation completed! New data generated.', 'success');
- }
- 
- function resetSimulation() {
- simulatorState = {
- revenue: 1000000,
- churn: 12,
- idleFleet: 8,
- migration: 75
- };
- updateSimulatorUI();
- showToast('Simulation reset to initial values.', 'info');
- }
- 
- function updateSimulatorUI() {
- document.getElementById('sim-revenue').textContent = '$' + simulatorState.revenue.toLocaleString();
- document.getElementById('sim-churn').textContent = simulatorState.churn + '%';
- document.getElementById('sim-idle').textContent = simulatorState.idleFleet + '%';
- document.getElementById('sim-migration').textContent = simulatorState.migration + '%';
- 
- const decisionsContainer = document.getElementById('sim-decisions');
- decisionsContainer.innerHTML = '';
- 
- if (simulatorState.idleFleet > 10) {
- const tile = document.createElement('div');
- tile.className = 'simulator-tile danger';
- tile.textContent = `Idle fleet > 10% — Action required`;
- decisionsContainer.appendChild(tile);
- }
- 
- if (simulatorState.churn > 15) {
- const tile = document.createElement('div');
- tile.className = 'simulator-tile danger';
- tile.textContent = `Churn > 15% — Who owns Customer Success?`;
- decisionsContainer.appendChild(tile);
- }
- 
- if (decisionsContainer.children.length === 0) {
- const tile = document.createElement('div');
- tile.className = 'simulator-tile';
- tile.textContent = 'All metrics within target ranges';
- decisionsContainer.appendChild(tile);
- }
- }
- 
- function showToast(message, type = 'info') {
- const toast = document.createElement('div');
- toast.className = `toast ${type === 'error' ? 'toast-error' : type === 'success' ? '' : 'toast-warning'}`;
- toast.innerHTML = `
- <span class="toast-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : '⚠'}</span>
- <span >${message}</span>
- `;
- document.body.appendChild(toast);
- setTimeout(() => toast.classList.add('show'), 100);
- setTimeout(() => {
- toast.classList.remove('show');
- setTimeout(() => document.body.removeChild(toast), 300);
- }, 3000);
- }
- </script>
 </body>
 </html>
