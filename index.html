@@ -17,30 +17,30 @@
     header {
       background-color: #111;
       color: #fff;
-      padding: 60px 20px;
+      padding: 30px 20px; /* smaller header padding */
       text-align: center;
       position: relative;
       overflow: hidden;
     }
     header img.logo {
-      max-width: 200px;
-      margin-bottom: 20px;
+      max-width: 150px; /* smaller logo */
+      margin-bottom: 15px;
       animation: fadeIn 1.5s ease-in-out;
     }
     header h1 {
-      font-size: 3em;
+      font-size: 2.2em; /* smaller text */
       margin: 10px 0;
       animation: slideDown 1.2s ease;
     }
     header p {
-      font-size: 1.2em;
-      margin: 10px 0 30px;
+      font-size: 1em;
+      margin: 10px 0 20px;
       animation: fadeIn 2s ease;
     }
     header .cta-buttons a {
       display: inline-block;
-      padding: 12px 25px;
-      margin: 0 10px;
+      padding: 10px 20px;
+      margin: 0 8px;
       background-color: #e63946;
       color: #fff;
       text-decoration: none;
@@ -54,7 +54,7 @@
     }
 
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       max-width: 1200px;
       margin: 0 auto;
       opacity: 0;
@@ -67,8 +67,8 @@
     }
     h2 {
       text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 40px;
+      font-size: 2.2em;
+      margin-bottom: 30px;
     }
     .services, .ebooks, .portfolio {
       display: flex;
@@ -93,6 +93,11 @@
       max-width: 100%;
       border-radius: 10px;
     }
+    /* Smaller image only for Classes & Tutorials */
+    .classes-img {
+      max-height: 180px;
+      object-fit: cover;
+    }
     .card h3 {
       margin-top: 15px;
       margin-bottom: 10px;
@@ -116,8 +121,8 @@
       background-color: #d62828;
     }
     .podcast img {
-      max-width: 200px;
-      margin-bottom: 20px;
+      max-width: 180px;
+      margin-bottom: 15px;
     }
     .contact-form {
       max-width: 600px;
@@ -148,7 +153,7 @@
       background-color: #111;
       color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
     footer a {
       color: #e63946;
@@ -163,7 +168,6 @@
       }
     }
 
-    /* Keyframes */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -195,25 +199,25 @@
         <h3>Graphic & Web Design</h3>
         <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Services">
         <p>Flyers, eBook covers, brand kits, full website design for entrepreneurs and businesses.</p>
-        <a href="#contact">Book Now</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Book Now</a>
       </div>
       <div class="card">
         <h3>Flyer Design</h3>
         <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/flyermocknew.png?raw=true" alt="Flyer Design Service">
-        <p>Eye‐catching flyers and promotional materials to keep the crowd focused on your event or offer.</p>
-        <a href="#portfolio">View Examples</a>
+        <p>Eye-catching flyers and promotional materials to keep the crowd focused on your event or offer.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Order Now</a>
       </div>
       <div class="card">
         <h3>Brand Kits & Assets</h3>
         <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service">
         <p>Custom visual identity sets including logo, palette & typography for your brand lift.</p>
-        <a href="#portfolio">Get a Kit</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Get a Kit</a>
       </div>
       <div class="card">
         <h3>Classes & Tutorials</h3>
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials" class="classes-img">
         <p>Learn digital marketing, content creation, and design skills to level up your hustle.</p>
-        <a href="#contact">Enroll Now</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Enroll Now</a>
       </div>
     </div>
   </section>
@@ -264,7 +268,7 @@
       <div class="card">
         <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/flyermocknew.png?raw=true" alt="Flyer Design Portfolio">
         <h3>Flyer Design</h3>
-        <p>Eye‐catching flyers and promotional materials for events and offers.</p>
+        <p>Eye-catching flyers and promotional materials for events and offers.</p>
       </div>
       <div class="card">
         <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Portfolio">
@@ -299,7 +303,7 @@
     <p>
       <a href="https://twitter.com/yourhandle" target="_blank">X</a>
       <a href="https://youtube.com/@hustlerentmedia" target="_blank">YouTube</a>
-      <a href="https://www.tiktok.com/@yourhandle" target="_blank">TikTok</a>
+      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank">TikTok</a>
     </p>
     <p>© 2025 Hustle Rent Media. All Rights Reserved.</p>
   </footer>
@@ -322,4 +326,5 @@
 
 </body>
 </html>
+
 
