@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,11 +17,9 @@
     }
     /* Hero / Header */
     header {
-      background: linear-gradient(-45deg, #111, #222, #e63946, #d62828);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
+      background: rgba(0,0,0,0.6); /* transparent overlay */
       color: #fff;
-      padding: 20px 15px; /* smaller */
+      padding: 20px 15px;
       text-align: center;
     }
     header img.logo {
@@ -101,11 +99,6 @@
       max-width: 100%;
       border-radius: 10px;
     }
-    /* Smaller image for Classes */
-    .classes-img {
-      max-height: 160px;
-      object-fit: cover;
-    }
     .card h3 {
       margin-top: 12px;
       margin-bottom: 8px;
@@ -128,41 +121,29 @@
     .card a:hover {
       background-color: #d62828;
     }
-    /* Disabled button */
-    .disabled-btn {
-      background-color: gray !important;
-      cursor: not-allowed;
-      pointer-events: none;
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #aaa;
     }
-    .podcast img {
-      max-width: 160px;
-      margin-bottom: 15px;
+
+    /* Premium ebook spotlight */
+    #ebooks {
+      background: radial-gradient(circle at center, #1a1a1a, #0e0e0e);
+      color: #f5f5f5;
+      padding: 60px 20px;
+      border-radius: 12px;
     }
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
+    #ebooks .card {
+      background-color: #222;
+      color: #f5f5f5;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
     }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1em;
+    #ebooks .card:hover {
+      box-shadow: 0 0 20px rgba(79,209,197,0.4);
     }
-    .contact-form button {
-      padding: 12px 25px;
-      background-color: #e63946;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .contact-form button:hover {
-      background-color: #d62828;
-    }
+
     footer {
       background-color: #111;
       color: #fff;
@@ -176,7 +157,6 @@
       font-weight: bold;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 768px) {
       header h1 { font-size: 1.5em; }
       header p { font-size: 0.8em; }
@@ -184,12 +164,6 @@
       .card { max-width: 90%; }
     }
 
-    /* Background Animation */
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -208,14 +182,34 @@
     <h1>Hustle Rent Media</h1>
     <p>Your Brand. Your Hustle. Your Media.</p>
     <div class="cta-buttons">
-      <a href="#services">See Our Services</a>
       <a href="#ebooks">The Hustle Library</a>
+      <a href="#services">Hustle Rent Media Services</a>
     </div>
   </header>
 
-  <!-- Services Section -->
+  <!-- Hustle Library Spotlight FIRST -->
+  <section id="ebooks">
+    <h2>The Hustle Library</h2>
+    <div class="ebooks">
+      <div class="card">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control" loading="lazy">
+        <h3>The Biology of Control</h3>
+        <p>The Psychology of Freedom — explore mindset and growth through deeper perspectives.</p>
+        <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank">Buy Now</a>
+      </div>
+      <div class="card">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover" loading="lazy">
+        <h3>Traponomics</h3>
+        <p>A guide to modern hustle strategies and money-making systems.</p>
+        <a href="#">Buy Now</a>
+      </div>
+    </div>
+    <p class="note">📚 More titles coming soon...</p>
+  </section>
+
+  <!-- Services renamed -->
   <section id="services">
-    <h2>Our Services</h2>
+    <h2>Hustle Rent Media Services</h2>
     <div class="services">
       <div class="card">
         <h3>Graphic & Web Design</h3>
@@ -244,30 +238,6 @@
     </div>
   </section>
 
-  <!-- Hustle Library -->
-  <section id="ebooks">
-    <h2>The Hustle Library</h2>
-    <div class="ebooks">
-      <div class="card">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover" loading="lazy">
-        <h3>Traponomics</h3>
-        <p>A guide to modern hustle strategies and money-making systems.</p>
-        <a href="javascript:void(0)" class="disabled-btn">Coming Soon</a>
-      </div>
-      <div class="card">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control" loading="lazy">
-        <h3>The Biology of Control</h3>
-        <p>The Psychology of Freedom — explore mindset and growth through deeper perspectives.</p>
-        <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank">Buy Now</a>
-      </div>
-      <div class="card">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/comingsoon.png?raw=true" alt="eBook Coming Soon" loading="lazy">
-        <h3>Coming Soon</h3>
-        <p>Stay tuned for our next release packed with strategies and insights.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Podcast Section -->
   <section id="podcast">
     <h2>Mic & Morals Podcast</h2>
@@ -278,49 +248,12 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <h2>Our Work</h2>
-    <div class="portfolio">
-      <div class="card">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Portfolio - Website Design" loading="lazy">
-        <h3>Website Design</h3>
-        <p>Custom websites built for small businesses and creators.</p>
-      </div>
-      <div class="card">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/flyermocknew.png?raw=true" alt="Flyer Design Portfolio" loading="lazy">
-        <h3>Flyer Design</h3>
-        <p>Eye-catching flyers and promotional materials for events and offers.</p>
-      </div>
-      <div class="card">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Portfolio" loading="lazy">
-        <h3>Brand Kit</h3>
-        <p>Visual identity packages with logos, colors, and typography.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-form">
-      <form action="https://formspree.io/f/xwpnovll" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
     <p>
-      <a href="#services">Services</a> | 
       <a href="#ebooks">The Hustle Library</a> | 
-      <a href="#podcast">Podcast</a> | 
-      <a href="#contact">Contact</a> | 
-      <a href="terms.html">Terms & Conditions</a>
+      <a href="#services">Hustle Rent Media Services</a> | 
+      <a href="#podcast">Podcast</a>
     </p>
     <p>
       <a href="https://twitter.com/yourhandle" target="_blank">X</a>
