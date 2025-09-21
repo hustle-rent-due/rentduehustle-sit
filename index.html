@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hustle Rent Media | Branding, Design & Hustle Knowledge</title>
   <meta name="description" content="Hustle Rent Media offers branding, flyer design, web design, classes, brand kits, eBooks, and the Mic & Morals podcast. Build your hustle with us.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -15,72 +15,33 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+      color: #FFFFFF;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Animated cyberpunk background with particles */
+    /* Background */
     .background {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: 
-        linear-gradient(45deg, #0a0a0a 0%, #1a1a2e 100%);
+      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
       z-index: -2;
-      overflow: hidden;
     }
 
-    .background::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-      opacity: 0.05;
-      animation: glitch 10s infinite;
-    }
-
-    @keyframes glitch {
-      0%, 100% { transform: translate(0, 0); opacity: 0.05; }
-      2% { transform: translate(2px, -2px); opacity: 0.1; }
-      4% { transform: translate(-2px, 2px); opacity: 0.05; }
-    }
-
-    .background::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="10" cy="10" r="2" fill="cyan"/%3E%3C/svg%3E');
-      animation: particles 20s linear infinite;
-      opacity: 0.2;
-    }
-
-    @keyframes particles {
-      0% { background-position: 0 0; }
-      100% { background-position: 1000px 1000px; }
-    }
-
-    /* Header with holographic effect */
+    /* Header with polished look */
     header {
-      background: rgba(10, 10, 20, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-      color: #fff;
+      background: rgba(26, 26, 26, 0.9);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      color: #FFFFFF;
       padding: 30px 20px;
       text-align: center;
       position: relative;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     header::before {
@@ -90,36 +51,28 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, cyan, transparent);
-      animation: glow 3s ease-in-out infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+      background: linear-gradient(90deg, transparent, #FFD700, transparent);
     }
 
     header img.logo {
       max-width: 130px;
       margin-bottom: 15px;
-      filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
     }
 
     header h1 {
       font-size: 2.4em;
       margin: 10px 0;
       font-weight: 700;
-      background: linear-gradient(45deg, #00f7ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      color: #FFD700;
+      text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
     }
 
     header p {
       font-size: 1.2em;
       margin: 10px 0 20px;
-      opacity: 0.8;
-      letter-spacing: 1px;
+      opacity: 0.9;
+      letter-spacing: 0.5px;
     }
 
     .cta-buttons {
@@ -131,49 +84,30 @@
 
     .cta-button {
       padding: 12px 30px;
-      background: transparent;
-      border: 2px solid cyan;
-      color: cyan;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 25px;
       font-weight: 500;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-button::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
-      transition: 0.5s;
-    }
-
-    .cta-button:hover::after {
-      left: 100%;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
     }
 
     .cta-button:hover {
-      background: rgba(0, 255, 255, 0.1);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      background: linear-gradient(45deg, #DAA520, #FFD700);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
     }
 
-    /* Sections with holographic effect */
+    /* Sections with clean design */
     section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: 40px auto;
-      background: rgba(10, 10, 20, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(26, 26, 26, 0.9);
       border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-      border: 1px solid rgba(0, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 215, 0, 0.1);
     }
 
     h2 {
@@ -181,10 +115,8 @@
       font-size: 2.3em;
       margin-bottom: 40px;
       font-weight: 700;
-      background: linear-gradient(45deg, #00f7ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      color: #FFD700;
+      text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
     }
 
     /* Card styles */
@@ -195,17 +127,17 @@
     }
 
     .card {
-      background: rgba(15, 15, 30, 0.8);
-      border-radius: 8px;
+      background: #2A2A2A;
+      border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      position: relative;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .card:hover {
-      transform: translateY(-5px) rotateX(5deg);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
     }
 
     .card-image {
@@ -214,19 +146,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 0, 0, 0.3);
+      background: #1A1A1A;
     }
 
     .card-image img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      transition: transform 0.5s ease, filter 0.3s ease;
+      transition: transform 0.5s ease;
     }
 
     .card:hover .card-image img {
-      transform: scale(1.1);
-      filter: brightness(1.2);
+      transform: scale(1.05);
     }
 
     .card-content {
@@ -236,22 +167,21 @@
     .card h3 {
       font-size: 1.5em;
       margin-bottom: 12px;
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-weight: 600;
     }
 
     .card p {
       margin-bottom: 20px;
-      opacity: 0.8;
+      opacity: 0.9;
       font-weight: 300;
     }
 
     .card a {
       display: inline-block;
       padding: 10px 20px;
-      background: transparent;
-      border: 2px solid #ff00ff;
-      color: #ff00ff;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A;
       text-decoration: none;
       border-radius: 5px;
       font-weight: 500;
@@ -259,29 +189,29 @@
     }
 
     .card a:hover {
-      background: rgba(255, 0, 255, 0.1);
-      box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+      background: linear-gradient(45deg, #DAA520, #FFD700);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
     }
 
     .coming-soon {
-      border: 2px solid #6c757d !important;
-      color: #6c757d !important;
+      background: linear-gradient(45deg, #6c757d, #495057) !important;
+      color: #FFFFFF !important;
       cursor: not-allowed;
     }
 
     .coming-soon:hover {
-      background: rgba(108, 117, 125, 0.1) !important;
-      box-shadow: 0 0 15px rgba(108, 117, 125, 0.4) !important;
+      background: linear-gradient(45deg, #5a6268, #3d444b) !important;
+      box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important;
     }
 
     /* Ebook section styling */
     #ebooks {
-      background: rgba(10, 10, 20, 0.7);
-      border: 1px solid rgba(0, 255, 255, 0.2);
+      background: rgba(26, 26, 26, 0.9);
+      border: 1px solid rgba(255, 215, 0, 0.1);
     }
 
     #ebooks .card {
-      background: rgba(15, 15, 30, 0.8);
+      background: #2A2A2A;
     }
 
     .note {
@@ -293,22 +223,22 @@
 
     /* Featured card styling */
     .featured-card {
-      border: 2px solid rgba(0, 255, 255, 0.6);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4) !important;
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
     }
 
     .featured-badge {
       position: absolute;
       top: 15px;
       right: 15px;
-      background: linear-gradient(45deg, #00f7ff, #ff00ff);
-      color: white;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A;
       padding: 5px 12px;
       border-radius: 20px;
       font-size: 0.8em;
       font-weight: bold;
       z-index: 10;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
 
     /* Podcast section */
@@ -321,7 +251,7 @@
       margin: 0 auto 20px;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .podcast-image img {
@@ -331,14 +261,12 @@
 
     /* Footer */
     footer {
-      background: rgba(10, 10, 20, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      color: #fff;
+      background: rgba(26, 26, 26, 0.9);
+      color: #FFFFFF;
       text-align: center;
       padding: 30px 20px;
       margin-top: 60px;
-      border-top: 1px solid rgba(0, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 215, 0, 0.1);
     }
 
     .footer-links {
@@ -346,15 +274,15 @@
     }
 
     .footer-links a {
-      color: #00f7ff;
+      color: #FFD700;
       margin: 0 15px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
-      color: #ff00ff;
-      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+      color: #DAA520;
+      text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
     }
 
     .social-links {
@@ -367,17 +295,18 @@
       height: 40px;
       line-height: 40px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
+      background: rgba(255, 215, 0, 0.1);
+      color: #FFD700;
       border-radius: 50%;
       margin: 0 8px;
       transition: all 0.3s ease;
     }
 
     .social-links a:hover {
-      background: #00f7ff;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      background: #FFD700;
+      color: #1A1A1A;
       transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
 
     /* Responsive design */
@@ -544,7 +473,7 @@
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/micmralslogo.png?raw=true" alt="Mic & Morals Podcast Logo">
     </div>
     <p><strong>Coming Soon</strong></p>
-    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #00f7ff;">@hustlerentmedia</a></p>
+    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #FFD700;">@hustlerentmedia</a></p>
   </section>
 
   <!-- Footer -->
@@ -569,16 +498,8 @@
       setTimeout(function() {
         fadeElements.forEach(element => { element.style.opacity = 1; });
       }, 100);
-
-      // Glitch effect on card hover
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          card.style.animation = 'glitch 0.3s';
-          setTimeout(() => { card.style.animation = ''; }, 300);
-        });
-      });
     });
   </script>
 </body>
 </html>
+
