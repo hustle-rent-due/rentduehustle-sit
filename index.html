@@ -32,7 +32,7 @@
       background: 
         radial-gradient(circle at 15% 50%, rgba(41, 9, 59, 0.3) 0%, transparent 25%),
         radial-gradient(circle at 85% 30%, rgba(20, 39, 80, 0.3) 0%, transparent 25%),
-        radial-gradient(circle at 50% 80%, rgba(80, 20, 40, 极速.3) 0%, transparent 25%);
+        radial-gradient(circle at 50% 80%, rgba(80, 20, 40, 0.3) 0%, transparent 25%);
       background-color: #121212;
       z-index: -2;
     }
@@ -61,7 +61,7 @@
 
     header img.logo {
       max-width: 120px;
-      margin-bottom: 15极速;
+      margin-bottom: 15px;
       filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.5));
     }
 
@@ -131,7 +131,7 @@
     /* Card styles */
     .services, .ebooks {
       display: grid;
-      grid-template-column极速: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
 
@@ -217,7 +217,7 @@
       border: 1px solid rgba(230, 57, 70, 0.2);
     }
 
-    #ebook极速 .card {
+    #ebooks .card {
       background: rgba(25, 25, 25, 0.8);
     }
 
@@ -340,7 +340,7 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-极速    }
+    }
 
     .fade-in {
       animation: fadeIn 1s ease forwards;
@@ -366,7 +366,7 @@
   <header class="fade-in">
     <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_37_47%20AM.png?raw=true" alt="Hustle Rent Media Logo" class="logo">
     <h1>Hustle Rent Media</h1>
-    <p>Your Brand. Your Hustle. Your Media.</极速>
+    <p>Your Brand. Your Hustle. Your Media.</p>
     <div class="cta-buttons">
       <a href="#ebooks" class="cta-button">The Hustle Library</a>
       <a href="#services" class="cta-button">Our Services</a>
@@ -391,7 +391,7 @@
         </div>
       </div>
       
-      <!-- The Biology of Control Card (Fixed) -->
+      <!-- The Biology of Control Card -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control">
@@ -403,7 +403,7 @@
         </div>
       </div>
       
-      <!-- Traponomics Card (Fixed) -->
+      <!-- Traponomics Card -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover">
@@ -422,6 +422,7 @@
   <section id="services" class="fade-in delay-2">
     <h2>Hustle Rent Media Services</h2>
     <div class="services">
+      <!-- Website -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Services">
@@ -432,19 +433,23 @@
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Book Now</a>
         </div>
       </div>
+
+      <!-- Flyer Design -->
       <div class="card">
         <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/f极速ermocknew.png?raw=true" alt="Flyer Design Service">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Service">
         </div>
         <div class="card-content">
           <h3>Flyer Design</h3>
           <p>Eye-catching flyers and promotional materials to keep the crowd focused on your event or offer.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp极速header" target="_blank">Order Now</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Order Now</a>
         </div>
       </div>
+
+      <!-- Brand Kit -->
       <div class="card">
-        <div class极速card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service" style="max-width:90%; max-height:160px; object-fit:contain;">
         </div>
         <div class="card-content">
           <h3>Brand Kits & Assets</h3>
@@ -452,6 +457,8 @@
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Get a Kit</a>
         </div>
       </div>
+
+      <!-- Classes -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials">
@@ -494,15 +501,9 @@
     // Simple fade-in animation for elements
     document.addEventListener('DOMContentLoaded', function() {
       const fadeElements = document.querySelectorAll('.fade-in');
-      
-      fadeElements.forEach(element => {
-        element.style.opacity = 0;
-      });
-      
+      fadeElements.forEach(element => { element.style.opacity = 0; });
       setTimeout(function() {
-        fadeElements.forEach(element => {
-          element.style.opacity = 1;
-        });
+        fadeElements.forEach(element => { element.style.opacity = 1; });
       }, 100);
     });
   </script>
