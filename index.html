@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hustle Rent Media | Branding, Design & Hustle Knowledge</title>
   <meta name="description" content="Hustle Rent Media offers branding, flyer design, web design, classes, brand kits, eBooks, and the Mic & Morals podcast. Build your hustle with us.">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -15,14 +15,14 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0a0a;
       color: #e0e0e0;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Animated background */
+    /* Animated cyberpunk background with particles */
     .background {
       position: fixed;
       top: 0;
@@ -30,23 +30,57 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 15% 50%, rgba(41, 9, 59, 0.3) 0%, transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(20, 39, 80, 0.3) 0%, transparent 25%),
-        radial-gradient(circle at 50% 80%, rgba(80, 20, 40, 0.3) 0%, transparent 25%);
-      background-color: #121212;
+        linear-gradient(45deg, #0a0a0a 0%, #1a1a2e 100%);
       z-index: -2;
+      overflow: hidden;
     }
 
-    /* Header with glass morphism effect */
+    .background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+      opacity: 0.05;
+      animation: glitch 10s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(0, 0); opacity: 0.05; }
+      2% { transform: translate(2px, -2px); opacity: 0.1; }
+      4% { transform: translate(-2px, 2px); opacity: 0.05; }
+    }
+
+    .background::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="10" cy="10" r="2" fill="cyan"/%3E%3C/svg%3E');
+      animation: particles 20s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes particles {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+
+    /* Header with holographic effect */
     header {
-      background: rgba(15, 15, 15, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(10, 10, 20, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
       color: #fff;
-      padding: 25px 20px;
+      padding: 30px 20px;
       text-align: center;
       position: relative;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
     }
 
     header::before {
@@ -55,77 +89,102 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.5), transparent);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, cyan, transparent);
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
     }
 
     header img.logo {
-      max-width: 120px;
+      max-width: 130px;
       margin-bottom: 15px;
-      filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.5));
+      filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
     }
 
     header h1 {
-      font-size: 2.2em;
+      font-size: 2.4em;
       margin: 10px 0;
       font-weight: 700;
-      background: linear-gradient(45deg, #e63946, #f48c06);
+      background: linear-gradient(45deg, #00f7ff, #ff00ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 10px rgba(230, 57, 70, 0.3);
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     }
 
     header p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin: 10px 0 20px;
-      opacity: 0.9;
+      opacity: 0.8;
+      letter-spacing: 1px;
     }
 
     .cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .cta-button {
-      padding: 12px 25px;
-      background: linear-gradient(45deg, #e63946, #d62828);
-      color: white;
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid cyan;
+      color: cyan;
       text-decoration: none;
-      border-radius: 30px;
+      border-radius: 5px;
       font-weight: 500;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .cta-button:hover::after {
+      left: 100%;
     }
 
     .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
-      background: linear-gradient(45deg, #d62828, #e63946);
+      background: rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      transform: translateY(-2px);
     }
 
-    /* Sections with glass effect */
+    /* Sections with holographic effect */
     section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: 40px auto;
-      background: rgba(20, 20, 20, 0.6);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(10, 10, 20, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      border: 1px solid rgba(0, 255, 255, 0.1);
     }
 
     h2 {
       text-align: center;
-      font-size: 2.2em;
+      font-size: 2.3em;
       margin-bottom: 40px;
       font-weight: 700;
-      background: linear-gradient(45deg, #e63946, #f48c06);
+      background: linear-gradient(45deg, #00f7ff, #ff00ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
     }
 
     /* Card styles */
@@ -136,17 +195,17 @@
     }
 
     .card {
-      background: rgba(30, 30, 30, 0.7);
-      border-radius: 12px;
+      background: rgba(15, 15, 30, 0.8);
+      border-radius: 8px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      position: relative;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(230, 57, 70, 0.2);
+      transform: translateY(-5px) rotateX(5deg);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
     }
 
     .card-image {
@@ -155,18 +214,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.3);
     }
 
     .card-image img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, filter 0.3s ease;
     }
 
     .card:hover .card-image img {
-      transform: scale(1.05);
+      transform: scale(1.1);
+      filter: brightness(1.2);
     }
 
     .card-content {
@@ -174,22 +234,24 @@
     }
 
     .card h3 {
-      font-size: 1.4em;
+      font-size: 1.5em;
       margin-bottom: 12px;
       color: #fff;
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
     }
 
     .card p {
       margin-bottom: 20px;
-      opacity: 0.9;
+      opacity: 0.8;
       font-weight: 300;
     }
 
     .card a {
       display: inline-block;
       padding: 10px 20px;
-      background: linear-gradient(45deg, #e63946, #f48c06);
-      color: white;
+      background: transparent;
+      border: 2px solid #ff00ff;
+      color: #ff00ff;
       text-decoration: none;
       border-radius: 5px;
       font-weight: 500;
@@ -197,28 +259,29 @@
     }
 
     .card a:hover {
-      background: linear-gradient(45deg, #d62828, #e63946);
-      box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+      background: rgba(255, 0, 255, 0.1);
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
     }
 
     .coming-soon {
-      background: linear-gradient(45deg, #6c757d, #495057) !important;
+      border: 2px solid #6c757d !important;
+      color: #6c757d !important;
       cursor: not-allowed;
     }
 
     .coming-soon:hover {
-      background: linear-gradient(45deg, #5a6268, #3d444b) !important;
+      background: rgba(108, 117, 125, 0.1) !important;
       box-shadow: 0 0 15px rgba(108, 117, 125, 0.4) !important;
     }
 
     /* Ebook section styling */
     #ebooks {
-      background: rgba(20, 20, 20, 0.7);
-      border: 1px solid rgba(230, 57, 70, 0.2);
+      background: rgba(10, 10, 20, 0.7);
+      border: 1px solid rgba(0, 255, 255, 0.2);
     }
 
     #ebooks .card {
-      background: rgba(25, 25, 25, 0.8);
+      background: rgba(15, 15, 30, 0.8);
     }
 
     .note {
@@ -230,22 +293,22 @@
 
     /* Featured card styling */
     .featured-card {
-      position: relative;
-      border: 2px solid rgba(230, 57, 70, 0.5);
-      box-shadow: 0 0 20px rgba(230, 57, 70, 0.3) !important;
+      border: 2px solid rgba(0, 255, 255, 0.6);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4) !important;
     }
 
     .featured-badge {
       position: absolute;
       top: 15px;
       right: 15px;
-      background: linear-gradient(45deg, #e63946, #f48c06);
+      background: linear-gradient(45deg, #00f7ff, #ff00ff);
       color: white;
-      padding: 5px 10px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-size: 0.8em;
       font-weight: bold;
       z-index: 10;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     }
 
     /* Podcast section */
@@ -254,11 +317,11 @@
     }
 
     .podcast-image {
-      max-width: 200px;
+      max-width: 220px;
       margin: 0 auto 20px;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
     }
 
     .podcast-image img {
@@ -268,14 +331,14 @@
 
     /* Footer */
     footer {
-      background: rgba(15, 15, 15, 0.8);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(10, 10, 20, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: #fff;
       text-align: center;
       padding: 30px 20px;
       margin-top: 60px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(0, 255, 255, 0.1);
     }
 
     .footer-links {
@@ -283,14 +346,15 @@
     }
 
     .footer-links a {
-      color: #e63946;
+      color: #00f7ff;
       margin: 0 15px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
-      color: #f48c06;
+      color: #ff00ff;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
     }
 
     .social-links {
@@ -311,14 +375,15 @@
     }
 
     .social-links a:hover {
-      background: #e63946;
+      background: #00f7ff;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
       transform: translateY(-3px);
     }
 
     /* Responsive design */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 1.8em;
+        font-size: 1.9em;
       }
       
       .services, .ebooks {
@@ -479,7 +544,7 @@
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/micmralslogo.png?raw=true" alt="Mic & Morals Podcast Logo">
     </div>
     <p><strong>Coming Soon</strong></p>
-    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #e63946;">@hustlerentmedia</a></p>
+    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #00f7ff;">@hustlerentmedia</a></p>
   </section>
 
   <!-- Footer -->
@@ -498,13 +563,21 @@
   </footer>
 
   <script>
-    // Simple fade-in animation for elements
     document.addEventListener('DOMContentLoaded', function() {
       const fadeElements = document.querySelectorAll('.fade-in');
       fadeElements.forEach(element => { element.style.opacity = 0; });
       setTimeout(function() {
         fadeElements.forEach(element => { element.style.opacity = 1; });
       }, 100);
+
+      // Glitch effect on card hover
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.animation = 'glitch 0.3s';
+          setTimeout(() => { card.style.animation = ''; }, 300);
+        });
+      });
     });
   </script>
 </body>
