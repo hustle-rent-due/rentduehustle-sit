@@ -1,911 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BAP — Enterprise AI Operations Hub</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" as="style">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hustle Rent Media | Branding, Design & Hustle Knowledge</title>
+  <meta name="description" content="Hustle Rent Media offers branding, flyer design, web design, classes, brand kits, eBooks, and the Mic & Morals podcast. Build your hustle with us.">
+  <meta name="keywords" content="branding, web design, eBooks, dating advice, personal growth, hustle rent media">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --c-bg1: #0a1022; /* Deep cosmic blue */
-      --c-bg2: #1a2238; /* Nebula transition */
-      --c-bg3: #2a3448; /* Starry night */
-      --c-blue: #4b9eff; /* Bright star blue */
-      --c-cyan: #00d4ff; /* Cosmic cyan */
-      --c-green: #33ff99; /* Nebula green */
-      --c-amber: #ffb833; /* Star glow */
-      --c-red: #ff4d4d; /* Alert red */
-      --c-purple: #a855f7; /* Cosmic purple */
-      --c-star: #e0e7ff; /* Star white */
-      --glass: rgba(255,255,255,.05); /* More transparent */
-      --glass-b: rgba(255,255,255,.12); /* Subtle silver border */
-    }
-    * { box-sizing: border-box; }
-    body {
+    * {
       margin: 0;
-      color: #e0e7ff;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      background: 
-        /* Starfield */
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,.02) 0.5%, transparent 1%),
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,.015) 0.4%, transparent 0.8%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,.015) 0.4%, transparent 0.8%),
-        /* Nebula gradient */
-        linear-gradient(135deg, var(--c-bg1), var(--c-bg2) 55%, var(--c-bg3));
-      min-height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+      color: #FFFFFF;
+      line-height: 1.6;
       overflow-x: hidden;
-      position: relative;
     }
-    /* Starfield effect */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 10% 20%, var(--c-star) 0.1%, transparent 0.2%),
-        radial-gradient(circle at 90% 30%, var(--c-star) 0.1%, transparent 0.2%),
-        radial-gradient(circle at 50% 80%, var(--c-star) 0.1%, transparent 0.2%),
-        radial-gradient(circle at 30% 60%, var(--c-star) 0.1%, transparent 0.2%);
-      opacity: 0.6;
-      pointer-events: none;
+
+    /* Sticky Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(26, 26, 26, 0.95);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
-    .glass {
-      background: var(--glass);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-b);
-      border-radius: 18px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.1);
+    .sticky-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
     }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.15);
-      background: rgba(255,255,255,.03);
+    .sticky-nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--c-star);
+      font-size: 1.1em;
+      transition: color 0.3s;
     }
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
+    .sticky-nav a:hover {
+      color: #FF0000;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.7; }
+    @media (max-width: 768px) {
+      .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Map container */
-    #map-wrap {
+    /* Hero Section */
+    .hero-section {
       position: relative;
-      height: 680px;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-    #map-area {
-      position: absolute;
-      inset: 0;
-      transform-origin: 0 0;
-      will-change: transform;
-      perspective: 1000px;
-    }
-    #map-bg::after {
-      content: "";
-      position: absolute;
-      inset: -25%;
-      background: linear-gradient(135deg, rgba(75,158,255,.08), transparent 60%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    /* Zones */
-    .zone {
-      position: absolute;
-      border: 2px solid rgba(255,255,255,.15);
-      border-radius: 12px;
-      background: rgba(255,255,255,.04);
-      backdrop-filter: blur(10px);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-      cursor: pointer;
-      overflow: hidden;
-    }
-    .zone::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,.1), transparent);
-      opacity: 0;
-      transition: 0.25s;
-    }
-    .zone:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 0 26px var(--area-color), 0 0 72px var(--area-color);
-      border-color: var(--area-color);
-    }
-    .zone:hover::before {
-      opacity: 0.5;
-    }
-    .zone.selected {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 36px var(--area-color), 0 0 90px var(--area-color);
-      border-color: var(--area-color);
-    }
-    .zone .status {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--area-color);
-      box-shadow: 0 0 14px var(--area-color), 0 0 30px var(--area-color);
-      animation: pulse 2.2s infinite;
-    }
-    .zone .label {
-      position: absolute;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 12px;
-      background: rgba(0,0,0,.7);
-      padding: 6px;
-      border-radius: 6px;
-      color: var(--c-star);
-    }
-
-    /* Enhanced peek tooltip */
-    .peek {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      font-size: 11px;
-      font-weight: 600;
-      text-align: center;
-      line-height: 1.4;
-      background: rgba(0,0,0,.8);
-      padding: 10px;
-      border-radius: 8px;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      width: 150px;
-      z-index: 10;
-      color: var(--c-star);
-    }
-    .zone:hover .peek {
-      opacity: 1;
-    }
-    .peek-icon {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-    .peek-kpi {
-      font-size: 10px;
-      line-height: 1.3;
-      margin-bottom: 6px;
-    }
-    .peek-equip {
-      font-size: 9px;
-      color: #ccc;
-      margin-bottom: 6px;
-      max-height: 36px;
-      overflow: hidden;
-    }
-    .peek-sparkline {
-      width: 100%;
-      height: 22px;
-      margin-top: 4px;
-    }
-
-    /* Connections */
-    #net svg {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-    .path {
-      stroke-width: 2.5;
-      fill: none;
-      stroke: url(#gradPulse);
-      filter: drop-shadow(0 0 6px rgba(75,158,255,.6));
-      stroke-dasharray: 8 6;
-      animation: dashmove 3.2s linear infinite;
-    }
-    @keyframes dashmove {
-      to { stroke-dashoffset: -140; }
-    }
-
-    /* Slower ticker with tap-to-pause */
-    #ticker {
-      white-space: nowrap;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    #ticker .track {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 50s linear infinite;
-    }
-    #ticker:hover .track, #ticker.tapped .track {
-      animation-play-state: paused;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* Buttons */
-    .btn {
-      background: linear-gradient(145deg, var(--c-bg2), var(--c-bg1));
-      border: 1px solid rgba(255,255,255,.1);
-      color: var(--c-star);
-      border-radius: 12px;
-      padding: 10px 14px;
-      font-weight: 600;
-      transition: 0.25s;
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.4);
-      background: linear-gradient(145deg, var(--c-bg3), var(--c-bg2));
-    }
-    .btn:hover::after {
-      content: "✨";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      opacity: 0.3;
-      animation: sparkle 0.5s ease-out;
-    }
-    @keyframes sparkle {
-      0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-      50% { opacity: 0.3; }
-      100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    }
-    .btn.active {
-      background: linear-gradient(145deg, var(--c-blue), var(--c-cyan));
-      color: #fff;
-      border-color: rgba(75,158,255,.5);
-      box-shadow: 0 0 18px rgba(75,158,255,.6);
-    }
-    .btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,.3);
-      transform: scale(0);
-      animation: rip 0.6s ease-out;
-    }
-    @keyframes rip {
-      to { transform: scale(4); opacity: 0; }
-    }
-
-    /* Panels */
-    .panel {
-      padding: 18px;
-      border-radius: 16px;
-    }
-    .h-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--c-star);
-    }
-    #panel {
-      position: absolute;
-      width: 280px;
-      max-height: 400px;
-      overflow-y: auto;
-      z-index: 100;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 20px 60px rgba(0,0,0,.5);
-    }
-    #panel.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    #panel .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: rgba(0,0,0,.5);
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      border: none;
-      color: var(--c-star);
-      font-size: 16px;
-      z-index: 101;
+      text-align: center;
+      background: url('https://source.unsplash.com/random/1920x1080/?creative,media') no-repeat center/cover;
+      color: #FFFFFF;
+      overflow: hidden;
     }
-    #panel .close-btn:hover {
-      background: rgba(255,77,77,.7);
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-logo {
+      max-width: 300px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      filter: drop-shadow(0 2px 10px rgba(255, 215, 0, 0.5));
+      animation: logoEnter 1s ease forwards;
+    }
+    .hero-logo:hover {
+      transform: scale(1.15);
+    }
+    @keyframes logoEnter {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4em;
+      font-weight: 700;
+      color: #FFD700;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    .hero-content p {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+    .hero-cta {
+      padding: 15px 40px;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero-cta:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    .hero-cta.secondary {
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5em; }
+      .hero-content p { font-size: 1.2em; }
+      .hero-cta { display: block; margin: 10px auto; }
+      .hero-logo { max-width: 200px; }
     }
 
+    /* eBook Teaser Section */
+    #ebook-teaser {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+      border-radius: 10px;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    .teaser-image {
+      max-width: 300px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .excerpt-container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .excerpt-text {
+      font-size: 1.3em;
+      font-style: italic;
+      color: #FFFFFF;
+      animation: slideIn 2s ease forwards;
+    }
+    .excerpt-text span {
+      display: block;
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #FFD700;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @media (max-width: 768px) {
+      .teaser-image { max-width: 200px; }
+      .excerpt-text { font-size: 1.1em; }
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      background: rgba(26, 26, 26, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.8em;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 40px;
+      color: #FFD700;
+      text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
+    }
+
+    /* eBooks Section */
+    .ebooks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #2A2A2A;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      border: none;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    }
+    .card-image {
+      height: 250px;
+      position: relative;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
+    }
+    .card:hover .card-overlay {
+      opacity: 1;
+    }
+    .card-overlay p {
+      color: #FFD700;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    .card-content {
+      padding: 25px;
+    }
+    .card h3 {
+      font-size: 1.8em;
+      color: #FFFFFF;
+      font-family: 'Poppins', sans-serif;
+    }
+    .card p {
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+    .cta-button {
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+      padding: 12px 25px;
+      border-radius: 50px;
+      color: #FFFFFF;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    .featured-card .cta-button {
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+    }
+    .featured-card .cta-button:hover {
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+    .coming-soon {
+      background: linear-gradient(45deg, #6c757d, #495057) !important;
+      color: #FFFFFF !important;
+      cursor: not-allowed;
+    }
+    .coming-soon:hover {
+      background: linear-gradient(45deg, #5a6268, #3d444b) !important;
+      box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important;
+    }
+    .featured-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: bold;
+      z-index: 10;
+    }
+    .note {
+      text-align: center;
+      margin-top: 25px;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    /* Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
+    }
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    .portfolio-overlay p {
+      color: #FFD700;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    /* Podcast Section */
+    .podcast-image {
+      max-width: 220px;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .podcast-image img {
+      width: 100%;
+      display: block;
+    }
+
+    /* About Section */
+    #about {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+    }
+    #about p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2em;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(26, 26, 26, 0.9);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+      border-top: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    .footer-links {
+      margin: 20px 0;
+    }
+    .footer-links a {
+      color: #FFD700;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #FF0000;
+    }
+    .social-links {
+      margin: 20px 0;
+    }
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: rgba(255, 215, 0, 0.1);
+      color: #FFD700;
+      border-radius: 50%;
+      margin: 0 8px;
+      transition: all 0.3s;
+    }
+    .social-links a:hover {
+      background: #FFD700;
+      color: #1A1A1A;
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+
     /* Responsive */
-    @media (max-width: 1024px) { #map-wrap { height: 540px; } }
-    @media (max-width: 640px) {
-      #map-wrap { height: 420px; }
-      .peek { width: 120px; font-size: 10px; }
-      .peek-kpi { font-size: 9px; }
-      .peek-equip { font-size: 8px; }
+    @media (max-width: 768px) {
+      .services, .ebooks, .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="max-w-7xl mx-auto px-6 pt-6 pb-4">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-      <div>
-        <div class="text-3xl font-extrabold">
-          <span style="background:linear-gradient(135deg,var(--c-blue),var(--c-cyan),var(--c-green));-webkit-background-clip:text;background-clip:text;color:transparent">BAP</span>
-          <span class="text-white">— Enterprise AI Operations Hub</span>
-        </div>
-        <div class="text-slate-300 mt-1">Hubs • Dashboards • Simulations • Web Apps</div>
-      </div>
-      <div class="flex items-center flex-wrap gap-3">
-        <div class="badge" role="status" aria-label="Operational Status"><span class="dot" style="background:var(--c-green)"></span> Operational</div>
-        <div id="clock" class="text-sm text-slate-300"></div>
-      </div>
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#ebooks">eBooks</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+    </ul>
+  </nav>
+
+  <div class="background"></div>
+
+  <!-- Hero Section with Logo -->
+  <header id="home" class="hero-section">
+    <div class="hero-content">
+      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_37_47%20AM.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
+      <h1>Hustle Rent Media</h1>
+      <p>Empower Your Hustle with Premium Branding & Knowledge</p>
+      <a href="#ebooks" class="hero-cta">Discover Our eBooks</a>
+      <a href="#services" class="hero-cta secondary">Explore Services</a>
     </div>
   </header>
 
-  <!-- Controls -->
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-wrap gap-3 mb-6">
-      <button class="btn active" id="btn-overview" aria-label="Show Overview">Overview</button>
-      <button class="btn" id="btn-heat" aria-label="Show Heatmap">Heatmap</button>
-      <button class="btn" id="btn-energy" aria-label="Show High Energy Zones">High Energy</button>
-      <button class="btn" id="btn-downtime" aria-label="Show Downtime Zones">Downtime</button>
-      <button class="btn" id="btn-sim" aria-label="Run Simulation">Run Simulation</button>
-      <button class="btn" id="btn-export" aria-label="Export Data">Export</button>
-      <button class="btn" id="btn-clear" aria-label="Clear Selection">Clear Selection</button>
+  <!-- eBook Teaser Section -->
+  <section id="ebook-teaser" class="fade-in">
+    <h2>Transform Your Love Life</h2>
+    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Dating eBook" class="teaser-image">
+    <div class="excerpt-container">
+      <p class="excerpt-text">"Learn why you attract the wrong partners and how to break free from toxic cycles." <span>— Why You Keep Attracting the Wrong People</span></p>
     </div>
-  </div>
+    <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" class="cta-button">Buy Now - $27</a>
+  </section>
 
-  <!-- Main Layout -->
-  <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <!-- Map Section -->
-    <section class="lg:col-span-2">
-      <div class="glass panel" id="map-wrap" role="region" aria-label="Interactive Facility Map">
-        <div id="map-area">
-          <div id="map-bg" class="absolute inset-0"></div>
-          <div id="net">
-            <svg viewBox="0 0 1200 700" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="gradPulse" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="var(--c-star)"/>
-                  <stop offset="50%" stop-color="var(--c-blue)"/>
-                  <stop offset="100%" stop-color="var(--c-cyan)"/>
-                </linearGradient>
-              </defs>
-            </svg>
+  <!-- eBooks Section -->
+  <section id="ebooks" class="fade-in">
+    <h2>The Hustle Library</h2>
+    <div class="ebooks">
+      <div class="card featured-card">
+        <div class="featured-badge">NEW RELEASE</div>
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People">
+          <div class="card-overlay">
+            <p>Break toxic patterns today!</p>
           </div>
         </div>
-        <div id="panel" class="glass panel hidden">
-          <button class="close-btn" id="close-panel" title="Close" aria-label="Close Panel">&times;</button>
-          <div class="flex items-center justify-between mb-2">
-            <div class="h-title">Selection</div>
-          </div>
-          <div id="panel-body" class="space-y-3 text-sm"></div>
+        <div class="card-content">
+          <h3>Why You Keep Attracting the Wrong People</h3>
+          <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
+          <p>Uncover the hidden patterns behind your relationships and learn proven strategies to attract the right partner. This eBook combines psychology and practical advice to transform your love life.</p>
+          <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" class="cta-button">Buy Now - $27</a>
         </div>
       </div>
-    </section>
-
-    <!-- Sidebar -->
-    <aside class="space-y-6">
-      <div class="glass panel">
-        <div class="h-title mb-4">Live Alert Ticker</div>
-        <div id="ticker" class="bg-black/30 rounded-lg p-2 overflow-hidden" role="marquee" aria-label="Live Alerts">
-          <div class="track" id="ticker-track"></div>
-        </div>
-      </div>
-      <div class="glass panel">
-        <div class="h-title mb-3">Quick Actions</div>
-        <div class="grid gap-3">
-          <button class="btn" id="qa-report" aria-label="Generate AI Report">Generate AI Report</button>
-          <button class="btn" id="qa-maint" aria-label="Schedule Maintenance">Schedule Maintenance</button>
-          <button class="btn" id="qa-sim" aria-label="Run Shift Optimization Simulation">Scenario: Shift Optimization</button>
-        </div>
-      </div>
-      <div class="glass panel">
-        <div class="h-title mb-4">Executive Summary</div>
-        <div class="grid grid-cols-2 gap-4 mb-4">
-          <div class="glass panel">
-            <div class="text-slate-300 text-sm">Total Energy (kWh)</div>
-            <div id="kpi-energy" class="text-2xl font-extrabold">0</div>
-          </div>
-          <div class="glass panel">
-            <div class="text-slate-300 text-sm">Avg Efficiency</div>
-            <div id="kpi-eff" class="text-2xl font-extrabold">0%</div>
-          </div>
-          <div class="glass panel">
-            <div class="text-slate-300 text-sm">Critical Systems</div>
-            <div id="kpi-critical" class="text-2xl font-extrabold text-red-400">0</div>
-          </div>
-          <div class="glass panel">
-            <div class="text-slate-300 text-sm">Projected Savings</div>
-            <div id="kpi-savings" class="text-2xl font-extrabold text-emerald-400">$0</div>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control">
+          <div class="card-overlay">
+            <p>Master your mindset!</p>
           </div>
         </div>
-        <div class="glass panel">
-          <canvas id="forecast" height="120" aria-label="Energy and Efficiency Forecast Chart"></canvas>
+        <div class="card-content">
+          <h3>The Biology of Control</h3>
+          <p><em>The Psychology of Freedom</em></p>
+          <p>Explore the science of self-mastery and unlock your potential with actionable insights into mindset, discipline, and personal growth. Take control of your life today.</p>
+          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" class="cta-button">Buy Now</a>
         </div>
       </div>
-    </aside>
-  </main>
-
-  <footer class="max-w-7xl mx-auto p-6 mt-6">
-    <div class="glass panel text-center">
-      <div class="font-bold" style="background:linear-gradient(135deg,var(--c-blue),var(--c-cyan),var(--c-green));-webkit-background-clip:text;background-clip:text;color:transparent">
-        BAP • Breakthrough AI Protocol
+      <div class="card">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover">
+          <div class="card-overlay">
+            <p>Hustle smarter!</p>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Traponomics</h3>
+          <p>A no-nonsense guide to building wealth through modern hustle strategies. Learn innovative systems to maximize your income and thrive in today’s economy.</p>
+          <a class="coming-soon">Coming Soon</a>
+        </div>
       </div>
-      <div class="text-slate-300 text-sm">© 2025 — White-labelable. Built for enterprise rollouts.</div>
     </div>
+    <p class="note">📚 More titles coming soon...</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="fade-in delay-1">
+    <h2>Hustle Rent Media Services</h2>
+    <div class="services">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Services">
+          <div class="card-overlay">
+            <p>Build your dream site!</p>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Graphic & Web Design</h3>
+          <p>Flyers, eBook covers, brand kits, full website design for entrepreneurs and businesses.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Book Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Service">
+          <div class="card-overlay">
+            <p>Grab attention!</p>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Flyer Design</h3>
+          <p>Eye-catching flyers and promotional materials to keep the crowd focused.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Order Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service" style="max-width:90%; max-height:160px; object-fit:contain;">
+          <div class="card-overlay">
+            <p>Elevate your brand!</p>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Brand Kits & Assets</h3>
+          <p>Custom visual identity sets including logo, palette & typography.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Get a Kit</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials">
+          <div class="card-overlay">
+            <p>Level up your skills!</p>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Classes & Tutorials</h3>
+          <p>Learn digital marketing, content creation, and design skills.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="fade-in delay-2">
+    <h2>Our Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Web Design">
+        <div class="portfolio-overlay">
+          <p>Custom Website for Client X</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design">
+        <div class="portfolio-overlay">
+          <p>Event Flyer for Brand Y</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Podcast Section -->
+  <section id="podcast" class="fade-in delay-3">
+    <h2>Mic & Morals Podcast</h2>
+    <div class="podcast-image">
+      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/micmralslogo.png?raw=true" alt="Mic & Morals Podcast Logo">
+    </div>
+    <p><strong>Coming Soon</strong></p>
+    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #FFD700;">@hustlerentmedia</a></p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in">
+    <h2>About Hustle Rent Media</h2>
+    <p>We empower entrepreneurs and hustlers to build their brand, master their mindset, and create a legacy. From stunning web designs to transformative eBooks like <em>Why You Keep Attracting the Wrong People</em>, we’re here to elevate your hustle.</p>
+    <a href="#services" class="cta-button">Work With Us</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#ebooks">The Hustle Library</a>
+      <a href="#services">Our Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#podcast">Podcast</a>
+    </div>
+    <div class="social-links">
+      <a href="https://x.com/hustle_rent_due" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@hustlerentmedia" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>© 2025 Hustle Rent Media. All Rights Reserved.</p>
   </footer>
 
   <script>
-    /* ---------- DATA ---------- */
-    const plantData = {
-      'Production A': { pos:[6,10,20,23], energy:12500, eff:85, temp:75, status:'critical', alerts:['High temp','Efficiency below target'], lastMaint:'2025-09-15', equip:['Conveyors','Assembly','Pneumatics','Scanners'], trend:[11000,11500,12000,12500,12800,12500] },
-      'Production B': { pos:[6,40,20,22], energy:11500, eff:88, temp:68, status:'warning', alerts:['Maintenance due'], lastMaint:'2025-09-10', equip:['Conveyors','Pick&Place','Vision','Stations'], trend:[10500,10800,11200,11500,11700,11500] },
-      'Machine Shop': { pos:[28,10,20,26], energy:8000, eff:90, temp:72, status:'normal', alerts:[], lastMaint:'2025-09-18', equip:['CNC Mills','Lathes','Drill Press','Grinders'], trend:[7800,7900,8000,8100,8050,8000] },
-      'Packaging': { pos:[28,60,20,20], energy:3000, eff:92, temp:65, status:'normal', alerts:[], lastMaint:'2025-09-12', equip:['Wrap','Palletizers','Labelers'], trend:[2900,2950,3000,3050,3020,3000] },
-      'Boiler & Util': { pos:[6,64,20,24], energy:6000, eff:80, temp:85, status:'critical', alerts:['Pressure drop','Temp spike'], lastMaint:'2025-08-28', equip:['Boiler','Water Treat','Panels','GenSet'], trend:[5800,5900,6000,6100,6050,6000] },
-      'Air Compressors': { pos:[75,10,20,16], energy:4500, eff:78, temp:78, status:'warning', alerts:['Air leak detected'], lastMaint:'2025-09-05', equip:['Screw Comp','Dryer','Receiver','Filters'], trend:[4300,4400,4500,4600,4700,4500] },
-      'HVAC': { pos:[75,30,20,16], energy:4200, eff:82, temp:71, status:'normal', alerts:[], lastMaint:'2025-09-14', equip:['AHU','Exhaust','VSDs'], trend:[4000,4100,4200,4300,4250,4200] },
-      'Chiller Plant': { pos:[75,50,20,26], energy:5000, eff:85, temp:55, status:'normal', alerts:[], lastMaint:'2025-09-16', equip:['Chiller','Tower','Pumps','Controls'], trend:[4800,4900,5000,5100,5050,5000] },
-      'Warehouse': { pos:[53,20,17,28], energy:1500, eff:95, temp:68, status:'normal', alerts:[], lastMaint:'2025-09-11', equip:['Racks','Charging','LED'], trend:[1400,1450,1500,1550,1520,1500] },
-      'Loading Dock': { pos:[25,85,30,10], energy:800, eff:90, temp:62, status:'normal', alerts:[], lastMaint:'2025-09-13', equip:['Levelers','Doors','Scales'], trend:[750,780,800,820,810,800] },
-      'Quality Lab': { pos:[53,52,17,12], energy:1200, eff:98, temp:70, status:'normal', alerts:[], lastMaint:'2025-09-17', equip:['CMM','Env Chamber','Data Sys'], trend:[1150,1180,1200,1220,1210,1200] },
-      'Data Center': { pos:[40,5,16,16], energy:3600, eff:88, temp:67, status:'warning', alerts:['Rack temp rising'], lastMaint:'2025-09-08', equip:['Racks','UPS','PDUs','Cooling'], trend:[3300,3400,3500,3600,3650,3600] }
-    };
-    const statusColor = { critical: '#ff4d4d', warning: '#ffb833', normal: '#33ff99' };
-
-    /* ---------- UTIL ---------- */
-    const $ = s => document.querySelector(s);
-    const $$ = s => Array.from(document.querySelectorAll(s));
-    function ripple(e) {
-      const b = e.currentTarget.getBoundingClientRect();
-      const r = document.createElement('span'); r.className = 'ripple';
-      const size = Math.max(b.width, b.height); r.style.width = r.style.height = size + 'px';
-      r.style.left = (e.clientX - b.left - size/2) + 'px'; r.style.top = (e.clientY - b.top - size/2) + 'px';
-      e.currentTarget.appendChild(r); setTimeout(() => r.remove(), 650);
-    }
-    function animNumber(el, target, suffix = '') {
-      const v = Number(String(target).replace(/[^\d.-]/g, '')); let c = 0; const step = Math.max(1, Math.abs(v)/40);
-      const id = setInterval(() => { c += step; if (c >= v) { c = v; clearInterval(id); } el.textContent = Math.floor(c).toLocaleString() + suffix; }, 25);
-    }
-    function fmtMoney(n) { return '$' + n.toLocaleString(); }
-
-    /* ---------- CLOCK ---------- */
-    function tickClock() {
-      const now = new Date();
-      $('#clock').textContent = `Updated: ${now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}, ${now.toLocaleDateString()}`;
-    }
-    setInterval(tickClock, 60000); tickClock();
-
-    /* ---------- MAP RENDER ---------- */
-    const map = $('#map-area');
-    const svg = document.querySelector('#net svg');
-    let resizeObserver;
-
-    function getZoneIcon(equip) {
-      if (!equip || equip.length === 0) return "🌌";
-      const key = equip[0].toLowerCase();
-      if (key.includes("cnc") || key.includes("mill") || key.includes("lathe") || key.includes("drill")) return "⚙️";
-      if (key.includes("qc") || key.includes("lab") || key.includes("cmm")) return "🔬";
-      if (key.includes("utility") || key.includes("chiller") || key.includes("dryer") || key.includes("boiler")) return "⚡";
-      if (key.includes("storage") || key.includes("warehouse") || key.includes("rack")) return "📦";
-      if (key.includes("data") || key.includes("server") || key.includes("ups")) return "💻";
-      if (key.includes("hvac") || key.includes("ahu")) return "🌡️";
-      if (key.includes("compressor") || key.includes("air")) return "💨";
-      if (key.includes("loading") || key.includes("dock")) return "🚚";
-      return "🌌";
-    }
-
-    function drawSparkline(canvas, trend) {
-      const ctx = canvas.getContext('2d');
-      const width = canvas.width; const height = canvas.height;
-      ctx.clearRect(0, 0, width, height);
-      if (!trend || trend.length < 2) return;
-      const maxVal = Math.max(...trend); const minVal = Math.min(...trend); const range = maxVal - minVal || 1;
-      const lastVal = trend[trend.length - 1]; const firstVal = trend[0];
-      const lineColor = lastVal > firstVal ? '#ff4d4d' : (lastVal < firstVal ? '#33ff99' : '#ffb833');
-      ctx.beginPath();
-      ctx.moveTo(0, height - ((trend[0] - minVal) / range) * height);
-      for (let i = 1; i < trend.length; i++) {
-        const x = (i / (trend.length - 1)) * width;
-        const y = height - ((trend[i] - minVal) / range) * height;
-        ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = lineColor; ctx.lineWidth = 1.5; ctx.stroke();
-    }
-
-    function renderZones() {
-      map.innerHTML = '<div id="map-bg" class="absolute inset-0"></div><div id="net"><svg viewBox="0 0 1200 700" preserveAspectRatio="none"><defs><linearGradient id="gradPulse" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--c-star)"/><stop offset="50%" stop-color="var(--c-blue)"/><stop offset="100%" stop-color="var(--c-cyan)"/></linearGradient></defs></svg></div>';
-      Object.entries(plantData).forEach(([name, data]) => {
-        const [x, y, w, h] = data.pos;
-        const zone = document.createElement('div');
-        zone.className = 'zone';
-        zone.style.left = x + '%'; zone.style.top = y + '%'; zone.style.width = w + '%'; zone.style.height = h + '%';
-        zone.style.setProperty('--area-color', statusColor[data.status]);
-        zone.dataset.name = name;
-        zone.setAttribute('role', 'button');
-        zone.setAttribute('aria-label', `Select ${name} zone`);
-        zone.setAttribute('tabindex', '0');
-        const canvasId = `spark-${name.replace(/\s+/g, '-')}`;
-        const icon = getZoneIcon(data.equip);
-        const equipList = data.equip.join(', ');
-        zone.innerHTML = `
-          <div class="status" aria-hidden="true"></div>
-          <div class="peek" role="tooltip">
-            <div class="peek-icon">${icon}</div>
-            <div class="peek-kpi">${data.energy.toLocaleString()} kWh<br>${data.eff}% • ${data.temp}°C</div>
-            <div class="peek-equip">${equipList}</div>
-            <canvas class="peek-sparkline" id="${canvasId}"></canvas>
-          </div>
-          <div class="label">${name}</div>
-        `;
-        zone.addEventListener('click', (e) => { if (e.metaKey || e.ctrlKey) { toggleSelect(name, zone, e); } else { selectSingle(name, zone, e); } ripple(e); });
-        zone.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { selectSingle(name, zone, e); e.preventDefault(); } });
-        map.appendChild(zone);
-        setTimeout(() => {
-          const canvas = document.getElementById(canvasId);
-          if (canvas) drawSparkline(canvas, data.trend);
-        }, 100);
-      });
-      drawPaths();
-      if (resizeObserver) resizeObserver.disconnect();
-      resizeObserver = new ResizeObserver(() => drawPaths());
-      resizeObserver.observe(map);
-    }
-
-    function centerOfZone(name) {
-      const d = plantData[name];
-      const zoneEl = $(`[data-name="${name}"]`);
-      if (zoneEl) {
-        const rect = zoneEl.getBoundingClientRect();
-        const mapRect = map.getBoundingClientRect();
-        const cx = ((rect.left + rect.width/2 - mapRect.left) / mapRect.width) * 1200;
-        const cy = ((rect.top + rect.height/2 - mapRect.top) / mapRect.height) * 700;
-        return [cx, cy];
-      }
-      const [x, y, w, h] = d.pos;
-      const cx = (x + w/2)/100 * 1200;
-      const cy = (y + h/2)/100 * 700;
-      return [cx, cy];
-    }
-
-    function link(a, b) {
-      if (!plantData[a] || !plantData[b]) return;
-      const [x1, y1] = centerOfZone(a);
-      const [x2, y2] = centerOfZone(b);
-      const dx = (x2 - x1) * 0.3; const dy = (y2 - y1) * 0.3;
-      const d = `M ${x1} ${y1} C ${x1 + dx} ${y1 + dy}, ${x2 - dx} ${y2 - dy}, ${x2} ${y2}`;
-      const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      p.setAttribute('d', d); p.setAttribute('class', 'path');
-      const zoneA = $(`[data-name="${a}"]`); const zoneB = $(`[data-name="${b}"]`);
-      if (zoneA && zoneB && zoneA.style.display !== 'none' && zoneB.style.display !== 'none') svg.appendChild(p);
-    }
-
-    function drawPaths() {
-      svg.querySelectorAll('path').forEach(p => p.remove());
-      link('Production A', 'Production B'); link('Production A', 'Machine Shop'); link('Machine Shop', 'Packaging');
-      link('Packaging', 'Loading Dock'); link('Production B', 'Warehouse'); link('Warehouse', 'Quality Lab');
-      link('Quality Lab', 'Data Center'); link('Data Center', 'HVAC'); link('HVAC', 'Chiller Plant');
-      link('Chiller Plant', 'Boiler & Util'); link('Air Compressors', 'Boiler & Util'); link('Air Compressors', 'Production B');
-    }
-
-    /* ---------- SELECTION & PANEL ---------- */
-    const selected = new Set();
-
-    function positionPanelNearZone(zoneElement, event) {
-      const panel = $('#panel');
-      const mapWrap = $('#map-wrap');
-      const mapRect = mapWrap.getBoundingClientRect();
-      const zoneRect = zoneElement.getBoundingClientRect();
-      const zoneCenterX = zoneRect.left + zoneRect.width/2 - mapRect.left;
-      const zoneCenterY = zoneRect.top + zoneRect.height/2 - mapRect.top;
-      let panelX = zoneCenterX + zoneRect.width/2 + 20;
-      let panelY = zoneCenterY - panel.offsetHeight/2;
-      if (panelX + panel.offsetWidth > mapRect.width) {
-        panelX = zoneCenterX - zoneRect.width/2 - panel.offsetWidth - 20;
-      }
-      if (panelY < 20) panelY = 20;
-      if (panelY + panel.offsetHeight > mapRect.height - 20) {
-        panelY = mapRect.height - panel.offsetHeight - 20;
-      }
-      panel.style.left = panelX + 'px';
-      panel.style.top = panelY + 'px';
-    }
-
-    function selectSingle(name, el, event) {
-      selected.clear(); $$('.zone').forEach(z => z.classList.remove('selected'));
-      selected.add(name); el.classList.add('selected');
-      positionPanelNearZone(el, event);
-      updatePanel();
-      showPanel();
-    }
-
-    function toggleSelect(name, el, event) {
-      if (selected.has(name)) { selected.delete(name); el.classList.remove('selected'); }
-      else { selected.add(name); el.classList.add('selected'); positionPanelNearZone(el, event); }
-      updatePanel();
-      if (selected.size > 0) { showPanel(); } else { hidePanel(); }
-    }
-
-    function showPanel() {
-      const panel = $('#panel');
-      panel.classList.remove('hidden');
-      setTimeout(() => { panel.classList.add('visible'); }, 10);
-    }
-
-    function hidePanel() {
-      const panel = $('#panel');
-      panel.classList.remove('visible');
-      setTimeout(() => { panel.classList.add('hidden'); }, 300);
-    }
-
-    function updatePanel() {
-      const panel = $('#panel'); const body = $('#panel-body');
-      if (selected.size === 0) { hidePanel(); return; }
-      const items = [...selected].map(name => {
-        const d = plantData[name];
-        const statusBadge = `<span class="badge"><span class="dot" style="background:${statusColor[d.status]}"></span>${d.status.toUpperCase()}</span>`;
-        const alerts = d.alerts.length ? d.alerts.map(a => `<li>• ${a}</li>`).join('') : '<li>None</li>';
-        return `
-          <div class="glass panel mb-3 last:mb-0">
-            <div class="flex items-center justify-between">
-              <div class="font-bold">${name}</div>
-              ${statusBadge}
-            </div>
-            <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
-              <div><span class="text-slate-300">Energy</span><div class="font-bold">${d.energy.toLocaleString()} kWh</div></div>
-              <div><span class="text-slate-300">Efficiency</div><div class="font-bold">${d.eff}%</div></div>
-              <div><span class="text-slate-300">Temp</span><div class="font-bold">${d.temp}°C</div></div>
-              <div><span class="text-slate-300">Last Maint</span><div class="font-bold">${d.lastMaint || '—'}</div></div>
-            </div>
-            <div class="mt-2">
-              <div class="text-slate-300">Equipment</div>
-              <div class="text-xs">${d.equip.join(', ')}</div>
-            </div>
-            <div class="mt-2">
-              <div class="text-slate-300">Alerts</div>
-              <ul class="text-xs">${alerts}</ul>
-            </div>
-          </div>
-        `;
-      }).join('');
-      body.innerHTML = (selected.size > 1 ? `<div class="text-amber-300 text-xs font-semibold mb-3">Multi-select comparison (${selected.size} areas)</div>` : '') + items;
-      refreshKPIs();
-      drawPaths();
-    }
-
-    $('#close-panel').addEventListener('click', () => {
-      selected.clear(); $$('.zone').forEach(z => z.classList.remove('selected')); hidePanel(); refreshKPIs();
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(element => { element.style.opacity = 0; });
+      setTimeout(function() {
+        fadeElements.forEach(element => { element.style.opacity = 1; });
+      }, 100);
     });
-
-    document.addEventListener('click', (e) => {
-      const panel = $('#panel');
-      if (!panel.contains(e.target) && !e.target.closest('.zone') && panel.classList.contains('visible')) {
-        setTimeout(() => {
-          if (!e.target.closest('.zone')) {
-            selected.clear(); $$('.zone').forEach(z => z.classList.remove('selected')); hidePanel(); refreshKPIs();
-          }
-        }, 10);
-      }
-    });
-
-    /* ---------- KPI + FORECAST ---------- */
-    let forecastChart = null;
-    function refreshKPIs() {
-      const names = selected.size ? [...selected] : Object.keys(plantData);
-      const ds = names.map(n => plantData[n]);
-      const totalE = ds.reduce((s, a) => s + a.energy, 0);
-      const avgEff = Math.round(ds.reduce((s, a) => s + a.eff, 0) / ds.length);
-      const crit = ds.filter(a => a.status === 'critical').length;
-      const projectedSavings = Math.round(totalE * 0.065);
-      animNumber($('#kpi-energy'), totalE, '');
-      animNumber($('#kpi-eff'), avgEff, '%');
-      animNumber($('#kpi-critical'), crit, '');
-      animNumber($('#kpi-savings'), projectedSavings, '');
-
-      const labels = ['-5','-4','-3','-2','-1','Now','+1','+2','+3'];
-      const base = ds[0].trend;
-      const future = [...base, Math.round(base.at(-1) * 0.97), Math.round(base.at(-1) * 0.95), Math.round(base.at(-1) * 0.93)];
-      const effFuture = [82,84,85,86,86,avgEff,avgEff+1,avgEff+2,avgEff+3].map(v => Math.min(100,v));
-      if (forecastChart) forecastChart.destroy();
-      forecastChart = new Chart($('#forecast'), {
-        type: 'line',
-        data: {
-          labels,
-          datasets: [
-            { label: 'Energy (kWh)', data: [...base, ...future.slice(-3)], borderColor: '#4b9eff', backgroundColor: 'rgba(75,158,255,.12)', tension: 0.35, fill: true },
-            { label: 'Efficiency (%)', data: effFuture, borderColor: '#33ff99', backgroundColor: 'rgba(51,255,153,.12)', tension: 0.35, yAxisID: 'y1', fill: true }
-          ]
-        },
-        options: {
-          responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { labels: { color: '#e0e7ff' } }, tooltip: { backgroundColor: 'rgba(10,16,34,.95)', borderColor: 'rgba(255,255,255,.15)', borderWidth: 1 } },
-          scales: {
-            y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(148,163,184,.1)' } },
-            y1: { position: 'right', min: 70, max: 100, ticks: { color: '#94a3b8' }, grid: { drawOnChartArea: false } }
-          }
-        }
-      });
-    }
-
-    /* ---------- TICKER ---------- */
-    const tickerFeed = [];
-    function seedTicker() {
-      tickerFeed.length = 0;
-      Object.entries(plantData).forEach(([name, d]) => {
-        (d.alerts.length ? d.alerts : ['OK']).forEach(a => {
-          const label = d.status === 'critical' ? 'CRITICAL' : (d.status === 'warning' ? 'WARN' : 'OK');
-          tickerFeed.push(`[${label}] ${name}: ${a}`);
-        });
-      });
-      renderTicker();
-    }
-    function renderTicker() {
-      $('#ticker-track').innerHTML = tickerFeed.concat(tickerFeed).map(x => `<span class="mr-10">${x}</span>`).join('');
-    }
-    $('#ticker').addEventListener('click', () => $('#ticker').classList.toggle('tapped'));
-    $('#ticker').addEventListener('touchstart', () => $('#ticker').classList.toggle('tapped'), { passive: true });
-
-    /* ---------- SIMULATION ---------- */
-    let simRunning = false;
-    function runSim() {
-      if (simRunning) return;
-      simRunning = true; $('#btn-sim').classList.add('active'); $('#btn-sim').textContent = 'Simulating…';
-      setTimeout(() => {
-        Object.values(plantData).forEach(d => {
-          const reduction = 1 - (Math.random() * 0.05 + 0.03);
-          d.energy = Math.round(d.energy * reduction);
-          d.trend = d.trend.map(v => Math.round(v * reduction));
-          d.eff = Math.min(100, d.eff + Math.floor(Math.random() * 4) + 1);
-          if (d.status !== 'normal' && Math.random() < 0.5) d.status = 'warning';
-        });
-        $$('.zone').forEach(z => {
-          const n = z.dataset.name;
-          z.style.setProperty('--area-color', statusColor[plantData[n].status]);
-          const icon = getZoneIcon(plantData[n].equip);
-          const equipList = plantData[n].equip.join(', ');
-          z.querySelector('.peek').innerHTML = `
-            <div class="peek-icon">${icon}</div>
-            <div class="peek-kpi">${plantData[n].energy.toLocaleString()} kWh<br>${plantData[n].eff}% • ${plantData[n].temp}°C</div>
-            <div class="peek-equip">${equipList}</div>
-            <canvas class="peek-sparkline" id="spark-${n.replace(/\s+/g, '-')}"></canvas>
-          `;
-          setTimeout(() => {
-            const canvas = z.querySelector('.peek-sparkline');
-            if (canvas) drawSparkline(canvas, plantData[n].trend);
-          }, 100);
-        });
-        drawPaths();
-        refreshKPIs();
-        tickerFeed.unshift('[SIM] AI optimization reduced energy 3–8% overall');
-        renderTicker();
-        if (selected.size > 0) updatePanel();
-        $('#btn-sim').classList.remove('active'); $('#btn-sim').textContent = 'Run Simulation';
-        simRunning = false;
-      }, 1600);
-    }
-
-    /* ---------- EXPORT ---------- */
-    function exportJSON() {
-      const payload = { ts: new Date().toISOString(), selection: [...selected], plantData };
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob); const a = document.createElement('a');
-      a.href = url; a.download = `plant-data-${new Date().toISOString().slice(0,10)}.json`; a.click(); URL.revokeObjectURL(url);
-    }
-    function exportCSV() {
-      const headers = ['Area','Energy','Efficiency','Temp','Status','LastMaintenance','Alerts'];
-      const rows = Object.entries(plantData).map(([k, v]) => [
-        k, v.energy, v.eff, v.temp, v.status, v.lastMaint || '', (v.alerts || []).join('|')
-      ].join(','));
-      const csv = [headers.join(','), ...rows].join('\n');
-      const blob = new Blob([csv], { type: 'text/csv' }); const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = `plant-data-${new Date().toISOString().slice(0,10)}.csv`; a.click(); URL.revokeObjectURL(url);
-    }
-
-    /* ---------- FILTERS ---------- */
-    function setMode(btnId) {
-      $$('.btn').forEach(b => b.classList.remove('active'));
-      $(btnId).classList.add('active');
-    }
-    function applyFilter(kind) {
-      $$('.zone').forEach(z => {
-        const d = plantData[z.dataset.name];
-        let show = true;
-        if (kind === 'energy') show = d.energy > 5000;
-        if (kind === 'downtime') show = d.status !== 'normal';
-        if (kind === 'overview' || kind === 'heat') show = true;
-        z.style.display = show ? 'block' : 'none';
-        if (kind === 'heat') {
-          const t = d.temp;
-          let col = t > 80 ? '#ff4d4d' : (t > 70 ? '#ffb833' : '#33ff99');
-          z.style.setProperty('--area-color', col);
-        } else {
-          z.style.setProperty('--area-color', statusColor[d.status]);
-        }
-      });
-      drawPaths();
-    }
-
-    /* ---------- ZOOM & PAN + PARALLAX ---------- */
-    let scale = 1, origin = { x: 0, y: 0 }, dragging = false, dragStart = { x: 0, y: 0 }, last = { x: 0, y: 0 };
-    function redraw() {
-      map.style.transform = `translate(${origin.x}px, ${origin.y}px) scale(${scale})`;
-      drawPaths();
-    }
-    $('#map-wrap').addEventListener('wheel', (e) => {
-      e.preventDefault();
-      const delta = e.deltaY > 0 ? -0.08 : 0.08;
-      const newScale = Math.min(2.2, Math.max(0.7, scale + delta));
-      const rect = map.getBoundingClientRect();
-      const px = e.clientX - rect.left, py = e.clientY - rect.top;
-      origin.x = px - (px - origin.x) * (newScale / scale);
-      origin.y = py - (py - origin.y) * (newScale / scale);
-      scale = newScale; redraw();
-    }, { passive: false });
-    $('#map-wrap').addEventListener('mousedown', (e) => { dragging = true; dragStart = { x: e.clientX, y: e.clientY }; last = { ...origin }; });
-    window.addEventListener('mouseup', () => dragging = false);
-    window.addEventListener('mousemove', (e) => {
-      if (!dragging) return;
-      origin.x = last.x + (e.clientX - dragStart.x);
-      origin.y = last.y + (e.clientY - dragStart.y);
-      redraw();
-    });
-    $('#map-wrap').addEventListener('mousemove', (e) => {
-      const r = $('#map-wrap').getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5; const y = (e.clientY - r.top) / r.height - 0.5;
-      map.style.transform += ` rotateX(${y * 3}deg) rotateY(${x * 3}deg)`;
-      setTimeout(() => redraw(), 40);
-    });
-
-    /* ---------- QUICK ACTIONS ---------- */
-    $('#qa-report').addEventListener('click', e => { ripple(e); alert('AI Report drafted: anomalies, forecasts, and savings identified.'); });
-    $('#qa-maint').addEventListener('click', e => { ripple(e); alert('Maintenance window proposed for low-impact slot (Sun 02:00–04:00).'); });
-    $('#qa-sim').addEventListener('click', e => { ripple(e); runSim(); });
-
-    /* ---------- BUTTONS ---------- */
-    $('#btn-overview').addEventListener('click', (e) => { ripple(e); setMode('#btn-overview'); applyFilter('overview'); });
-    $('#btn-heat').addEventListener('click', (e) => { ripple(e); setMode('#btn-heat'); applyFilter('heat'); });
-    $('#btn-energy').addEventListener('click', (e) => { ripple(e); setMode('#btn-energy'); applyFilter('energy'); });
-    $('#btn-downtime').addEventListener('click', (e) => { ripple(e); setMode('#btn-downtime'); applyFilter('downtime'); });
-    $('#btn-sim').addEventListener('click', (e) => { ripple(e); runSim(); });
-    $('#btn-export').addEventListener('click', (e) => { ripple(e); exportJSON(); exportCSV(); });
-    $('#btn-clear').addEventListener('click', (e) => { ripple(e); selected.clear(); $$('.zone').forEach(z => z.classList.remove('selected')); hidePanel(); refreshKPIs(); });
-
-    /* ---------- INIT ---------- */
-    renderZones();
-    refreshKPIs();
-    seedTicker();
   </script>
 </body>
 </html>
