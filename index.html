@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hustle Rent Media | Branding, Design & Hustle Knowledge</title>
   <meta name="description" content="Hustle Rent Media offers branding, flyer design, web design, classes, brand kits, eBooks, and the Mic & Morals podcast. Build your hustle with us.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta name="keywords" content="branding, web design, eBooks, dating advice, personal growth, hustle rent media">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -22,84 +23,98 @@
       overflow-x: hidden;
     }
 
-    /* Background */
-    .background {
-      position: fixed;
+    /* Sticky Navigation */
+    .sticky-nav {
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
-      z-index: -2;
+      background: rgba(26, 26, 26, 0.95);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .sticky-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+    .sticky-nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    .sticky-nav a:hover {
+      color: #FF0000;
+    }
+    @media (max-width: 768px) {
+      .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Header with polished look */
-    header {
-      background: rgba(26, 26, 26, 0.9);
-      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-      color: #FFFFFF;
-      padding: 30px 20px;
-      text-align: center;
+    /* Hero Section */
+    .hero-section {
       position: relative;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://source.unsplash.com/random/1920x1080/?creative,media') no-repeat center/cover;
+      color: #FFFFFF;
+      overflow: hidden;
     }
-
-    header::before {
+    .hero-section::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #FFD700, transparent);
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
-
-    header img.logo {
-      max-width: 130px;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
-
-    header h1 {
-      font-size: 2.4em;
-      margin: 10px 0;
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4em;
       font-weight: 700;
       color: #FFD700;
-      text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
-
-    header p {
-      font-size: 1.2em;
-      margin: 10px 0 20px;
-      opacity: 0.9;
-      letter-spacing: 0.5px;
+    .hero-content p {
+      font-size: 1.5em;
+      margin: 20px 0;
     }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .cta-button {
-      padding: 12px 30px;
+    .hero-cta {
+      padding: 15px 40px;
       background: linear-gradient(45deg, #FFD700, #DAA520);
       color: #1A1A1A;
       text-decoration: none;
-      border-radius: 25px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero-cta:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    .hero-cta.secondary {
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5em; }
+      .hero-content p { font-size: 1.2em; }
+      .hero-cta { display: block; margin: 10px auto; }
     }
 
-    .cta-button:hover {
-      background: linear-gradient(45deg, #DAA520, #FFD700);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-    }
-
-    /* Sections with clean design */
+    /* Sections */
     section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -107,126 +122,104 @@
       background: rgba(26, 26, 26, 0.9);
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.1);
     }
 
     h2 {
       text-align: center;
-      font-size: 2.3em;
+      font-size: 2.8em;
+      font-family: 'Poppins', sans-serif;
       margin-bottom: 40px;
-      font-weight: 700;
       color: #FFD700;
       text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
     }
 
-    /* Card styles */
-    .services, .ebooks {
+    /* eBooks Section */
+    .ebooks {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
-
     .card {
       background: #2A2A2A;
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(255, 215, 0, 0.1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      border: none;
     }
-
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
     }
-
     .card-image {
-      height: 180px;
-      overflow: hidden;
+      height: 250px;
+      position: relative;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1A1A1A;
+      transition: opacity 0.3s;
     }
-
-    .card-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: transform 0.5s ease;
+    .card:hover .card-overlay {
+      opacity: 1;
     }
-
-    .card:hover .card-image img {
-      transform: scale(1.05);
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card h3 {
-      font-size: 1.5em;
-      margin-bottom: 12px;
-      color: #FFFFFF;
+    .card-overlay p {
+      color: #FFD700;
+      font-size: 1.2em;
       font-weight: 600;
     }
-
+    .card-content {
+      padding: 25px;
+    }
+    .card h3 {
+      font-size: 1.8em;
+      color: #FFFFFF;
+      font-family: 'Poppins', sans-serif;
+    }
     .card p {
-      margin-bottom: 20px;
-      opacity: 0.9;
-      font-weight: 300;
+      font-size: 1em;
+      margin-bottom: 15px;
     }
-
-    .card a {
-      display: inline-block;
-      padding: 10px 20px;
+    .cta-button {
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+      padding: 12px 25px;
+      border-radius: 50px;
+      color: #FFFFFF;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    .featured-card .cta-button {
       background: linear-gradient(45deg, #FFD700, #DAA520);
-      color: #1A1A1A;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 500;
-      transition: all 0.3s ease;
     }
-
-    .card a:hover {
-      background: linear-gradient(45deg, #DAA520, #FFD700);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    .featured-card .cta-button:hover {
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
     }
-
     .coming-soon {
       background: linear-gradient(45deg, #6c757d, #495057) !important;
       color: #FFFFFF !important;
       cursor: not-allowed;
     }
-
     .coming-soon:hover {
       background: linear-gradient(45deg, #5a6268, #3d444b) !important;
       box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important;
     }
-
-    /* Ebook section styling */
-    #ebooks {
-      background: rgba(26, 26, 26, 0.9);
-      border: 1px solid rgba(255, 215, 0, 0.1);
-    }
-
-    #ebooks .card {
-      background: #2A2A2A;
-    }
-
-    .note {
-      text-align: center;
-      margin-top: 25px;
-      font-style: italic;
-      opacity: 0.7;
-    }
-
-    /* Featured card styling */
-    .featured-card {
-      border: 2px solid rgba(255, 215, 0, 0.4);
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
-    }
-
     .featured-badge {
       position: absolute;
       top: 15px;
@@ -238,14 +231,60 @@
       font-size: 0.8em;
       font-weight: bold;
       z-index: 10;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
-
-    /* Podcast section */
-    #podcast {
+    .note {
       text-align: center;
+      margin-top: 25px;
+      font-style: italic;
+      opacity: 0.7;
     }
 
+    /* Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
+    }
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    .portfolio-overlay p {
+      color: #FFD700;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    /* Podcast Section */
     .podcast-image {
       max-width: 220px;
       margin: 0 auto 20px;
@@ -253,10 +292,21 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-
     .podcast-image img {
       width: 100%;
       display: block;
+    }
+
+    /* About Section */
+    #about {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+    }
+    #about p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2em;
     }
 
     /* Footer */
@@ -268,27 +318,21 @@
       margin-top: 60px;
       border-top: 1px solid rgba(255, 215, 0, 0.1);
     }
-
     .footer-links {
       margin: 20px 0;
     }
-
     .footer-links a {
       color: #FFD700;
       margin: 0 15px;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
-
     .footer-links a:hover {
-      color: #DAA520;
-      text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+      color: #FF0000;
     }
-
     .social-links {
       margin: 20px 0;
     }
-
     .social-links a {
       display: inline-block;
       width: 40px;
@@ -299,9 +343,8 @@
       color: #FFD700;
       border-radius: 50%;
       margin: 0 8px;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
-
     .social-links a:hover {
       background: #FFD700;
       color: #1A1A1A;
@@ -309,98 +352,87 @@
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
 
-    /* Responsive design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.9em;
-      }
-      
-      .services, .ebooks {
-        grid-template-columns: 1fr;
-      }
-      
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .cta-button {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .fade-in {
       animation: fadeIn 1s ease forwards;
     }
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
 
-    .delay-1 {
-      animation-delay: 0.2s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.4s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.6s;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .services, .ebooks, .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#ebooks">eBooks</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+    </ul>
+  </nav>
+
   <div class="background"></div>
 
-  <!-- Header Section -->
-  <header class="fade-in">
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_37_47%20AM.png?raw=true" alt="Hustle Rent Media Logo" class="logo">
-    <h1>Hustle Rent Media</h1>
-    <p>Your Brand. Your Hustle. Your Media.</p>
-    <div class="cta-buttons">
-      <a href="#ebooks" class="cta-button">The Hustle Library</a>
-      <a href="#services" class="cta-button">Our Services</a>
+  <!-- Hero Section -->
+  <header id="home" class="hero-section">
+    <div class="hero-content">
+      <h1>Hustle Rent Media</h1>
+      <p>Empower Your Hustle with Premium Branding & Knowledge</p>
+      <a href="#ebooks" class="hero-cta">Discover Our eBooks</a>
+      <a href="#services" class="hero-cta secondary">Explore Services</a>
     </div>
   </header>
 
-  <!-- Hustle Library Section -->
-  <section id="ebooks" class="fade-in delay-1">
+  <!-- eBooks Section -->
+  <section id="ebooks" class="fade-in">
     <h2>The Hustle Library</h2>
     <div class="ebooks">
-      <!-- NEW EBOOK CARD - FEATURED -->
       <div class="card featured-card">
         <div class="featured-badge">NEW RELEASE</div>
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People">
+          <div class="card-overlay">
+            <p>Break toxic patterns today!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>Why You Keep Attracting the Wrong People</h3>
           <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
-          <p>Break free from toxic relationship patterns and understand the mechanics of attraction in this groundbreaking guide.</p>
-          <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank">Buy Now - $27</a>
+          <p>Discover why you attract the wrong partners and how to change it.</p>
+          <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" class="cta-button">Buy Now - $27</a>
         </div>
       </div>
-      
-      <!-- The Biology of Control Card -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control">
+          <div class="card-overlay">
+            <p>Master your mindset!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>The Biology of Control</h3>
-          <p>The Psychology of Freedom — explore mindset and growth through deeper perspectives.</p>
-          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank">Buy Now</a>
+          <p>The Psychology of Freedom — explore mindset and growth.</p>
+          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" class="cta-button">Buy Now</a>
         </div>
       </div>
-      
-      <!-- Traponomics Card -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover">
+          <div class="card-overlay">
+            <p>Hustle smarter!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>Traponomics</h3>
@@ -413,54 +445,78 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="fade-in delay-2">
+  <section id="services" class="fade-in delay-1">
     <h2>Hustle Rent Media Services</h2>
     <div class="services">
-      <!-- Website -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Services">
+          <div class="card-overlay">
+            <p>Build your dream site!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>Graphic & Web Design</h3>
           <p>Flyers, eBook covers, brand kits, full website design for entrepreneurs and businesses.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Book Now</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Book Now</a>
         </div>
       </div>
-
-      <!-- Flyer Design -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Service">
+          <div class="card-overlay">
+            <p>Grab attention!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>Flyer Design</h3>
-          <p>Eye-catching flyers and promotional materials to keep the crowd focused on your event or offer.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Order Now</a>
+          <p>Eye-catching flyers and promotional materials to keep the crowd focused.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Order Now</a>
         </div>
       </div>
-
-      <!-- Brand Kit -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service" style="max-width:90%; max-height:160px; object-fit:contain;">
+          <div class="card-overlay">
+            <p>Elevate your brand!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>Brand Kits & Assets</h3>
-          <p>Custom visual identity sets including logo, palette & typography for your brand lift.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Get a Kit</a>
+          <p>Custom visual identity sets including logo, palette & typography.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Get a Kit</a>
         </div>
       </div>
-
-      <!-- Classes -->
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials">
+          <div class="card-overlay">
+            <p>Level up your skills!</p>
+          </div>
         </div>
         <div class="card-content">
           <h3>Classes & Tutorials</h3>
-          <p>Learn digital marketing, content creation, and design skills to level up your hustle.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank">Enroll Now</a>
+          <p>Learn digital marketing, content creation, and design skills.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="fade-in delay-2">
+    <h2>Our Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Web Design">
+        <div class="portfolio-overlay">
+          <p>Custom Website for Client X</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design">
+        <div class="portfolio-overlay">
+          <p>Event Flyer for Brand Y</p>
         </div>
       </div>
     </div>
@@ -476,11 +532,19 @@
     <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #FFD700;">@hustlerentmedia</a></p>
   </section>
 
+  <!-- About Section -->
+  <section id="about" class="fade-in">
+    <h2>About Hustle Rent Media</h2>
+    <p>We empower entrepreneurs and hustlers to build their brand, master their mindset, and create a legacy. From stunning web designs to transformative eBooks like <em>Why You Keep Attracting the Wrong People</em>, we’re here to elevate your hustle.</p>
+    <a href="#services" class="cta-button">Work With Us</a>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-links">
       <a href="#ebooks">The Hustle Library</a>
       <a href="#services">Our Services</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#podcast">Podcast</a>
     </div>
     <div class="social-links">
