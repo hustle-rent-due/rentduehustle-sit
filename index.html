@@ -143,111 +143,59 @@
       text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
     }
 
-    /* eBooks Section */
-    .ebooks {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #2A2A2A;
-      border-radius: 15px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      border: none;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-    }
-    .card-image {
-      height: 250px;
-      position: relative;
-    }
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .card-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
-      opacity: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.3s;
-    }
-    .card:hover .card-overlay {
-      opacity: 1;
-    }
-    .card-overlay p {
-      color: #FFD700;
-      font-size: 1.2em;
-      font-weight: 600;
-    }
-    .card-content {
-      padding: 25px;
-    }
-    .card h3 {
-      font-size: 1.8em;
-      color: #FFFFFF;
-      font-family: 'Poppins', sans-serif;
-    }
-    .card p {
-      font-size: 1em;
-      margin-bottom: 15px;
-    }
-    .cta-button {
-      background: linear-gradient(45deg, #FF0000, #CC0000);
-      padding: 12px 25px;
-      border-radius: 50px;
-      color: #FFFFFF;
-      font-weight: 600;
-      transition: transform 0.3s;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-    }
-    .featured-card .cta-button {
-      background: linear-gradient(45deg, #FFD700, #DAA520);
-    }
-    .featured-card .cta-button:hover {
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    }
-    .coming-soon {
-      background: linear-gradient(45deg, #6c757d, #495057) !important;
-      color: #FFFFFF !important;
-      cursor: not-allowed;
-    }
-    .coming-soon:hover {
-      background: linear-gradient(45deg, #5a6268, #3d444b) !important;
-      box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important;
-    }
-    .featured-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: linear-gradient(45deg, #FFD700, #DAA520);
-      color: #1A1A1A;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.8em;
-      font-weight: bold;
-      z-index: 10;
-    }
-    .note {
-      text-align: center;
-      margin-top: 25px;
-      font-style: italic;
-      opacity: 0.7;
-    }
+   <!-- eBooks Section -->
+<section id="ebooks" class="fade-in">
+  <h2>The Hustle Library</h2>
+  <div class="ebooks">
+    <div class="card featured-card">
+      <div class="featured-badge">NEW RELEASE</div>
+      <div class="card-image">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People">
+        <div class="card-overlay">
+          <p>Break toxic patterns today!</p>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Why You Keep Attracting the Wrong People</h3>
+        <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
+        <p>Discover why you attract the wrong partners and how to change it.</p>
+        <!-- Changed to product page -->
+        <a href="wrong-people.html" class="cta-button">Learn More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control">
+        <div class="card-overlay">
+          <p>Master your mindset!</p>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>The Biology of Control</h3>
+        <p>The Psychology of Freedom — explore mindset and growth.</p>
+        <!-- Changed to product page -->
+        <a href="biology-of-control.html" class="cta-button">Learn More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover">
+        <div class="card-overlay">
+          <p>Hustle smarter!</p>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Traponomics</h3>
+        <p>A guide to modern hustle strategies and money-making systems.</p>
+        <a class="coming-soon">Coming Soon</a>
+      </div>
+    </div>
+  </div>
+  <p class="note">📚 More titles coming soon...</p>
+</section>
+
 
     /* Services Section */
     .services {
