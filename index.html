@@ -8,12 +8,9 @@
   <meta name="keywords" content="branding, web design, eBooks, dating advice, personal growth, hustle rent media">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -46,9 +43,7 @@
       font-size: 1.1em;
       transition: color 0.3s;
     }
-    .sticky-nav a:hover {
-      color: #FF0000;
-    }
+    .sticky-nav a:hover { color: #FF0000; }
     @media (max-width: 768px) {
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
@@ -56,7 +51,7 @@
     /* Hero Section */
     .hero-section {
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -68,17 +63,11 @@
     .hero-section::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
+    .hero-content { position: relative; z-index: 2; }
     .hero-logo {
       max-width: 300px;
       margin-bottom: 20px;
@@ -86,9 +75,7 @@
       filter: drop-shadow(0 2px 10px rgba(255, 215, 0, 0.5));
       animation: logoEnter 1s ease forwards;
     }
-    .hero-logo:hover {
-      transform: scale(1.15);
-    }
+    .hero-logo:hover { transform: scale(1.15); }
     @keyframes logoEnter {
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
@@ -100,10 +87,7 @@
       color: #FFD700;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
-    .hero-content p {
-      font-size: 1.5em;
-      margin: 20px 0;
-    }
+    .hero-content p { font-size: 1.5em; margin: 20px 0; }
     .hero-cta {
       padding: 15px 40px;
       background: linear-gradient(45deg, #FFD700, #DAA520);
@@ -115,13 +99,8 @@
       margin: 0 10px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .hero-cta:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    }
-    .hero-cta.secondary {
-      background: linear-gradient(45deg, #FF0000, #CC0000);
-    }
+    .hero-cta:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+    .hero-cta.secondary { background: linear-gradient(45deg, #FF0000, #CC0000); }
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2.5em; }
       .hero-content p { font-size: 1.2em; }
@@ -144,10 +123,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-    .excerpt-container {
-      max-width: 800px;
-      margin: 20px auto;
-    }
+    .excerpt-container { max-width: 800px; margin: 20px auto; }
     .excerpt-text {
       font-size: 1.3em;
       font-style: italic;
@@ -178,7 +154,6 @@
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-
     h2 {
       text-align: center;
       font-size: 2.8em;
@@ -202,52 +177,22 @@
       position: relative;
       border: none;
     }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-    }
-    .card-image {
-      height: 250px;
-      position: relative;
-    }
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
+    .card-image { height: 250px; position: relative; }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; }
     .card-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.7);
       opacity: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       transition: opacity 0.3s;
     }
-    .card:hover .card-overlay {
-      opacity: 1;
-    }
-    .card-overlay p {
-      color: #FFD700;
-      font-size: 1.2em;
-      font-weight: 600;
-    }
-    .card-content {
-      padding: 25px;
-    }
-    .card h3 {
-      font-size: 1.8em;
-      color: #FFFFFF;
-      font-family: 'Poppins', sans-serif;
-    }
-    .card p {
-      font-size: 1em;
-      margin-bottom: 15px;
-    }
+    .card:hover .card-overlay { opacity: 1; }
+    .card-overlay p { color: #FFD700; font-size: 1.2em; font-weight: 600; }
+    .card-content { padding: 25px; }
+    .card h3 { font-size: 1.8em; color: #FFFFFF; font-family: 'Poppins', sans-serif; }
+    .card p { font-size: 1em; margin-bottom: 15px; }
     .cta-button {
       background: linear-gradient(45deg, #FF0000, #CC0000);
       padding: 12px 25px;
@@ -256,42 +201,23 @@
       font-weight: 600;
       transition: transform 0.3s;
     }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-    }
-    .featured-card .cta-button {
-      background: linear-gradient(45deg, #FFD700, #DAA520);
-    }
-    .featured-card .cta-button:hover {
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    }
-    .coming-soon {
-      background: linear-gradient(45deg, #6c757d, #495057) !important;
-      color: #FFFFFF !important;
-      cursor: not-allowed;
-    }
-    .coming-soon:hover {
-      background: linear-gradient(45deg, #5a6268, #3d444b) !important;
-      box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important;
-    }
+    .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
+    .featured-card .cta-button { background: linear-gradient(45deg, #FFD700, #DAA520); }
+    .featured-card .cta-button:hover { box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
+    .coming-soon { background: linear-gradient(45deg, #6c757d, #495057) !important; color: #FFFFFF !important; cursor: not-allowed; }
+    .coming-soon:hover { background: linear-gradient(45deg, #5a6268, #3d444b) !important; box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important; }
     .featured-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
+      position: absolute; top: 15px; right: 15px;
       background: linear-gradient(45deg, #FFD700, #DAA520);
-      color: #1A1A1A;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.8em;
-      font-weight: bold;
-      z-index: 10;
+      color: #1A1A1A; padding: 5px 12px; border-radius: 20px;
+      font-size: 0.8em; font-weight: bold; z-index: 10;
     }
-    .note {
-      text-align: center;
-      margin-top: 25px;
-      font-style: italic;
-      opacity: 0.7;
+    .note { text-align: center; margin-top: 25px; font-style: italic; opacity: 0.7; }
+
+    /* Responsive card text */
+    @media (max-width: 500px) {
+      .card-content h3 { font-size: 1.4em; }
+      .card-content p { font-size: 0.9em; }
     }
 
     /* Services Section */
@@ -307,37 +233,16 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+    .portfolio-item { position: relative; overflow: hidden; border-radius: 10px; }
+    .portfolio-item img { width: 100%; height: 200px; object-fit: cover; }
     .portfolio-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.7);
-      opacity: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      opacity: 0; display: flex; align-items: center; justify-content: center;
       transition: opacity 0.3s;
     }
-    .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-    }
-    .portfolio-overlay p {
-      color: #FFD700;
-      font-size: 1.2em;
-      font-weight: 600;
-    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay p { color: #FFD700; font-size: 1.2em; font-weight: 600; }
 
     /* Podcast Section */
     .podcast-image {
@@ -347,10 +252,7 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-    .podcast-image img {
-      width: 100%;
-      display: block;
-    }
+    .podcast-image img { width: 100%; display: block; }
 
     /* About Section */
     #about {
@@ -358,11 +260,7 @@
       padding: 60px 20px;
       background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
     }
-    #about p {
-      max-width: 800px;
-      margin: 20px auto;
-      font-size: 1.2em;
-    }
+    #about p { max-width: 800px; margin: 20px auto; font-size: 1.2em; }
 
     /* Footer */
     footer {
@@ -373,36 +271,21 @@
       margin-top: 60px;
       border-top: 1px solid rgba(255, 215, 0, 0.1);
     }
-    .footer-links {
-      margin: 20px 0;
-    }
+    .footer-links { margin: 20px 0; }
     .footer-links a {
-      color: #FFD700;
-      margin: 0 15px;
-      text-decoration: none;
-      transition: color 0.3s;
+      color: #FFD700; margin: 0 15px; text-decoration: none; transition: color 0.3s;
     }
-    .footer-links a:hover {
-      color: #FF0000;
-    }
-    .social-links {
-      margin: 20px 0;
-    }
+    .footer-links a:hover { color: #FF0000; }
+    .social-links { margin: 20px 0; }
     .social-links a {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      text-align: center;
+      display: inline-block; width: 40px; height: 40px;
+      line-height: 40px; text-align: center;
       background: rgba(255, 215, 0, 0.1);
-      color: #FFD700;
-      border-radius: 50%;
-      margin: 0 8px;
-      transition: all 0.3s;
+      color: #FFD700; border-radius: 50%;
+      margin: 0 8px; transition: all 0.3s;
     }
     .social-links a:hover {
-      background: #FFD700;
-      color: #1A1A1A;
+      background: #FFD700; color: #1A1A1A;
       transform: translateY(-3px);
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
@@ -412,18 +295,13 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
-    }
+    .fade-in { animation: fadeIn 1s ease forwards; }
     .delay-1 { animation-delay: 0.2s; }
     .delay-2 { animation-delay: 0.4s; }
     .delay-3 { animation-delay: 0.6s; }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .services, .ebooks, .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
+      .services, .ebooks, .portfolio-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -437,8 +315,6 @@
       <li><a href="#podcast">Podcast</a></li>
     </ul>
   </nav>
-
-  <div class="background"></div>
 
   <!-- Hero Section with Logo -->
   <header id="home" class="hero-section">
@@ -454,11 +330,11 @@
   <!-- eBook Teaser Section -->
   <section id="ebook-teaser" class="fade-in">
     <h2>Transform Your Love Life</h2>
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Dating eBook" class="teaser-image">
+    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People eBook Cover" class="teaser-image">
     <div class="excerpt-container">
       <p class="excerpt-text">"Learn why you attract the wrong partners and how to break free from toxic cycles." <span>— Why You Keep Attracting the Wrong People</span></p>
     </div>
-    <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" class="cta-button">Buy Now - $27</a>
+    <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook - $27</a>
   </section>
 
   <!-- eBooks Section -->
@@ -469,37 +345,31 @@
         <div class="featured-badge">NEW RELEASE</div>
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People">
-          <div class="card-overlay">
-            <p>Break toxic patterns today!</p>
-          </div>
+          <div class="card-overlay"><p>Break toxic patterns today!</p></div>
         </div>
         <div class="card-content">
           <h3>Why You Keep Attracting the Wrong People</h3>
           <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
           <p>Uncover the hidden patterns behind your relationships and learn proven strategies to attract the right partner. This eBook combines psychology and practical advice to transform your love life.</p>
-          <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" class="cta-button">Buy Now - $27</a>
+          <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook - $27</a>
         </div>
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control">
-          <div class="card-overlay">
-            <p>Master your mindset!</p>
-          </div>
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control Book Cover">
+          <div class="card-overlay"><p>Master your mindset!</p></div>
         </div>
         <div class="card-content">
           <h3>The Biology of Control</h3>
           <p><em>The Psychology of Freedom</em></p>
           <p>Explore the science of self-mastery and unlock your potential with actionable insights into mindset, discipline, and personal growth. Take control of your life today.</p>
-          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" class="cta-button">Buy Now</a>
+          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook</a>
         </div>
       </div>
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/trapbook1.png?raw=true" alt="Traponomics eBook Cover">
-          <div class="card-overlay">
-            <p>Hustle smarter!</p>
-          </div>
+          <div class="card-overlay"><p>Hustle smarter!</p></div>
         </div>
         <div class="card-content">
           <h3>Traponomics</h3>
@@ -517,54 +387,46 @@
     <div class="services">
       <div class="card">
         <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Services">
-          <div class="card-overlay">
-            <p>Build your dream site!</p>
-          </div>
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Service">
+          <div class="card-overlay"><p>Build your dream site!</p></div>
         </div>
         <div class="card-content">
           <h3>Graphic & Web Design</h3>
           <p>Flyers, eBook covers, brand kits, full website design for entrepreneurs and businesses.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Book Now</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Book Now</a>
         </div>
       </div>
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Service">
-          <div class="card-overlay">
-            <p>Grab attention!</p>
-          </div>
+          <div class="card-overlay"><p>Grab attention!</p></div>
         </div>
         <div class="card-content">
           <h3>Flyer Design</h3>
           <p>Eye-catching flyers and promotional materials to keep the crowd focused.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Order Now</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Order Now</a>
         </div>
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service" style="max-width:90%; max-height:160px; object-fit:contain;">
-          <div class="card-overlay">
-            <p>Elevate your brand!</p>
-          </div>
+          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service">
+          <div class="card-overlay"><p>Elevate your brand!</p></div>
         </div>
         <div class="card-content">
           <h3>Brand Kits & Assets</h3>
           <p>Custom visual identity sets including logo, palette & typography.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Get a Kit</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Get a Kit</a>
         </div>
       </div>
       <div class="card">
         <div class="card-image">
           <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials">
-          <div class="card-overlay">
-            <p>Level up your skills!</p>
-          </div>
+          <div class="card-overlay"><p>Level up your skills!</p></div>
         </div>
         <div class="card-content">
           <h3>Classes & Tutorials</h3>
           <p>Learn digital marketing, content creation, and design skills.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" class="cta-button">Enroll Now</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Enroll Now</a>
         </div>
       </div>
     </div>
@@ -575,16 +437,12 @@
     <h2>Our Work</h2>
     <div class="portfolio-grid">
       <div class="portfolio-item">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Web Design">
-        <div class="portfolio-overlay">
-          <p>Custom Website for Client X</p>
-        </div>
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Web Design Example">
+        <div class="portfolio-overlay"><p>Custom Website for Client X</p></div>
       </div>
       <div class="portfolio-item">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design">
-        <div class="portfolio-overlay">
-          <p>Event Flyer for Brand Y</p>
-        </div>
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Example">
+        <div class="portfolio-overlay"><p>Event Flyer for Brand Y</p></div>
       </div>
     </div>
   </section>
@@ -596,7 +454,7 @@
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/micmralslogo.png?raw=true" alt="Mic & Morals Podcast Logo">
     </div>
     <p><strong>Coming Soon</strong></p>
-    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" style="color: #FFD700;">@hustlerentmedia</a></p>
+    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #FFD700;">@hustlerentmedia</a></p>
   </section>
 
   <!-- About Section -->
@@ -615,11 +473,11 @@
       <a href="#podcast">Podcast</a>
     </div>
     <div class="social-links">
-      <a href="https://x.com/hustle_rent_due" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://youtube.com/@hustlerentmedia" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://x.com/hustle_rent_due" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
     </div>
-    <p>© 2025 Hustle Rent Media. All Rights Reserved.</p>
+    <p>© <span id="year"></span> Hustle Rent Media. All Rights Reserved.</p>
   </footer>
 
   <script>
@@ -629,6 +487,9 @@
       setTimeout(function() {
         fadeElements.forEach(element => { element.style.opacity = 1; });
       }, 100);
+
+      // Auto year update
+      document.getElementById("year").textContent = new Date().getFullYear();
     });
   </script>
 </body>
