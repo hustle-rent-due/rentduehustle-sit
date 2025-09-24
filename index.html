@@ -63,7 +63,7 @@
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Hero Section */
+    /* Hero Section - Updated with Urban Background */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -72,11 +72,16 @@
       justify-content: center;
       text-align: center;
       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                  url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
+                  url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center/cover;
       color: #FFFFFF;
       overflow: hidden;
     }
-    .hero-content { position: relative; z-index: 2; }
+    .hero-content { 
+      position: relative; 
+      z-index: 2;
+      width: 90%;
+      max-width: 1200px;
+    }
     .hero-logo {
       max-width: 280px;
       margin-bottom: 25px;
@@ -107,6 +112,12 @@
       margin-left: auto;
       margin-right: auto;
     }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
     .hero-cta {
       padding: 16px 45px;
       background: linear-gradient(45deg, #FFD700, #DAA520);
@@ -115,12 +126,14 @@
       border-radius: 50px;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      margin: 0 15px;
       transition: all 0.3s;
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
       position: relative;
       overflow: hidden;
       z-index: 1;
+      display: inline-block;
+      min-width: 220px;
+      text-align: center;
     }
     .hero-cta::before {
       content: '';
@@ -150,7 +163,8 @@
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2.8em; }
       .hero-content p { font-size: 1.2em; }
-      .hero-cta { display: block; margin: 15px auto; max-width: 250px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .hero-cta { width: 100%; max-width: 280px; }
       .hero-logo { max-width: 200px; }
     }
 
@@ -605,14 +619,16 @@
     </ul>
   </nav>
 
-  <!-- Hero Section with Logo -->
+  <!-- Hero Section with Logo - Updated Background -->
   <header id="home" class="hero-section">
     <div class="hero-content">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_37_47%20AM.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
       <h1>Hustle Rent Media</h1>
       <p>Empower Your Hustle with Premium Branding & Transformative Knowledge</p>
-      <a href="#ebooks" class="hero-cta">Discover Our eBooks</a>
-      <a href="#services" class="hero-cta secondary">Explore Services</a>
+      <div class="hero-buttons">
+        <a href="#ebooks" class="hero-cta">Discover Our eBooks</a>
+        <a href="#services" class="hero-cta secondary">Explore Services</a>
+      </div>
     </div>
   </header>
 
