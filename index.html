@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
       color: #FFFFFF;
       line-height: 1.6;
       overflow-x: hidden;
@@ -24,15 +24,17 @@
     .sticky-nav {
       position: sticky;
       top: 0;
-      background: rgba(26, 26, 26, 0.95);
+      background: rgba(12, 12, 12, 0.95);
+      backdrop-filter: blur(10px);
       padding: 15px 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
     }
     .sticky-nav ul {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
       list-style: none;
     }
     .sticky-nav a {
@@ -41,9 +43,22 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       font-size: 1.1em;
-      transition: color 0.3s;
+      transition: all 0.3s;
+      position: relative;
+      padding: 5px 0;
     }
-    .sticky-nav a:hover { color: #FF0000; }
+    .sticky-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF0000;
+      transition: width 0.3s;
+    }
+    .sticky-nav a:hover::after { width: 100%; }
+    .sticky-nav a:hover { color: #FFFFFF; }
     @media (max-width: 768px) {
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
@@ -56,130 +71,267 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: url('https://source.unsplash.com/random/1920x1080/?creative,media') no-repeat center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
       color: #FFFFFF;
       overflow: hidden;
     }
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
     .hero-content { position: relative; z-index: 2; }
     .hero-logo {
-      max-width: 300px;
-      margin-bottom: 20px;
-      transition: transform 0.3s;
-      filter: drop-shadow(0 2px 10px rgba(255, 215, 0, 0.5));
+      max-width: 280px;
+      margin-bottom: 25px;
+      transition: transform 0.5s;
+      filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.3));
       animation: logoEnter 1s ease forwards;
     }
-    .hero-logo:hover { transform: scale(1.15); }
+    .hero-logo:hover { transform: scale(1.08) rotate(2deg); }
     @keyframes logoEnter {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: scale(0.8) translateY(-20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
     .hero-content h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: 4em;
+      font-size: 4.5em;
       font-weight: 700;
-      color: #FFD700;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
     }
-    .hero-content p { font-size: 1.5em; margin: 20px 0; }
+    .hero-content p { 
+      font-size: 1.5em; 
+      margin: 25px 0 35px; 
+      color: #e0e0e0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .hero-cta {
-      padding: 15px 40px;
+      padding: 16px 45px;
       background: linear-gradient(45deg, #FFD700, #DAA520);
       color: #1A1A1A;
       text-decoration: none;
       border-radius: 50px;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      margin: 0 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      margin: 0 15px;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
-    .hero-cta:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-    .hero-cta.secondary { background: linear-gradient(45deg, #FF0000, #CC0000); }
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #FFA500, #FFD700);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    .hero-cta:hover::before { left: 0; }
+    .hero-cta:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+    }
+    .hero-cta.secondary { 
+      background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+      color: #FFD700;
+      border: 2px solid #FFD700;
+    }
+    .hero-cta.secondary::before {
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+    }
+    .hero-cta.secondary:hover { color: #1a1a1a; }
     @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2.5em; }
+      .hero-content h1 { font-size: 2.8em; }
       .hero-content p { font-size: 1.2em; }
-      .hero-cta { display: block; margin: 10px auto; }
+      .hero-cta { display: block; margin: 15px auto; max-width: 250px; }
       .hero-logo { max-width: 200px; }
     }
 
-    /* eBook Teaser Section */
+    /* eBook Teaser Section - Redesigned */
     #ebook-teaser {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(45deg, #FF0000, #CC0000);
-      border-radius: 10px;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #ebook-teaser::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+    .teaser-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
       max-width: 1200px;
-      margin: 40px auto;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .teaser-image-container {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
     }
     .teaser-image {
-      max-width: 300px;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s;
     }
-    .excerpt-container { max-width: 800px; margin: 20px auto; }
+    .teaser-image:hover {
+      transform: scale(1.03);
+    }
+    .teaser-content {
+      flex: 1;
+      text-align: left;
+    }
+    #ebook-teaser h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: left;
+    }
     .excerpt-text {
-      font-size: 1.3em;
+      font-size: 1.4em;
       font-style: italic;
-      color: #FFFFFF;
-      animation: slideIn 2s ease forwards;
+      color: #e0e0e0;
+      margin-bottom: 25px;
+      line-height: 1.7;
     }
     .excerpt-text span {
       display: block;
       font-size: 0.9em;
-      margin-top: 10px;
+      margin-top: 15px;
       color: #FFD700;
+      font-style: normal;
+      font-weight: 600;
     }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
+    .teaser-cta {
+      padding: 14px 35px;
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .teaser-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #CC0000, #FF0000);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    .teaser-cta:hover::before { left: 0; }
+    .teaser-cta:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+    }
+    @media (max-width: 968px) {
+      .teaser-container { flex-direction: column; text-align: center; gap: 30px; }
+      .teaser-content { text-align: center; }
+      #ebook-teaser h2 { text-align: center; }
     }
     @media (max-width: 768px) {
-      .teaser-image { max-width: 200px; }
-      .excerpt-text { font-size: 1.1em; }
+      .teaser-image-container { max-width: 300px; }
+      #ebook-teaser h2 { font-size: 2.5em; }
+      .excerpt-text { font-size: 1.2em; }
     }
 
     /* Sections */
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1200px;
-      margin: 40px auto;
-      background: rgba(26, 26, 26, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin: 60px auto;
+      background: rgba(18, 18, 18, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 215, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FFD700, #FF0000, #FFD700);
     }
     h2 {
       text-align: center;
-      font-size: 2.8em;
+      font-size: 3em;
       font-family: 'Poppins', sans-serif;
-      margin-bottom: 40px;
-      color: #FFD700;
-      text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
+      margin-bottom: 50px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* eBooks Section */
+    /* eBooks Section - Fixed Image Display */
     .ebooks {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
     }
     .card {
-      background: #2A2A2A;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
       border-radius: 15px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.4s;
       position: relative;
-      border: none;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
-    .card-image { height: 250px; position: relative; }
-    .card-image img { width: 100%; height: 100%; object-fit: cover; }
+    .card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+    .card-image { 
+      height: 280px; 
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a1a;
+    }
+    .card-image img { 
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s;
+    }
+    .card:hover .card-image img { transform: scale(1.05); }
     .card-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -189,35 +341,96 @@
       transition: opacity 0.3s;
     }
     .card:hover .card-overlay { opacity: 1; }
-    .card-overlay p { color: #FFD700; font-size: 1.2em; font-weight: 600; }
-    .card-content { padding: 25px; }
-    .card h3 { font-size: 1.8em; color: #FFFFFF; font-family: 'Poppins', sans-serif; }
-    .card p { font-size: 1em; margin-bottom: 15px; }
+    .card-overlay p { 
+      color: #FFD700; 
+      font-size: 1.3em; 
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+    }
+    .card-content { padding: 30px; }
+    .card h3 { 
+      font-size: 1.8em; 
+      color: #FFFFFF; 
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 15px;
+    }
+    .card p { 
+      font-size: 1em; 
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
     .cta-button {
       background: linear-gradient(45deg, #FF0000, #CC0000);
       padding: 12px 25px;
       border-radius: 50px;
       color: #FFFFFF;
       font-weight: 600;
-      transition: transform 0.3s;
+      transition: all 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
-    .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
-    .featured-card .cta-button { background: linear-gradient(45deg, #FFD700, #DAA520); }
-    .featured-card .cta-button:hover { box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
-    .coming-soon { background: linear-gradient(45deg, #6c757d, #495057) !important; color: #FFFFFF !important; cursor: not-allowed; }
-    .coming-soon:hover { background: linear-gradient(45deg, #5a6268, #3d444b) !important; box-shadow: 0 0 15px rgba(108, 117, 125, 0.3) !important; }
-    .featured-badge {
-      position: absolute; top: 15px; right: 15px;
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #CC0000, #FF0000);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    .cta-button:hover::before { left: 0; }
+    .cta-button:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+    }
+    .featured-card .cta-button { 
       background: linear-gradient(45deg, #FFD700, #DAA520);
-      color: #1A1A1A; padding: 5px 12px; border-radius: 20px;
-      font-size: 0.8em; font-weight: bold; z-index: 10;
+      color: #1A1A1A;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
     }
-    .note { text-align: center; margin-top: 25px; font-style: italic; opacity: 0.7; }
-
-    /* Responsive card text */
-    @media (max-width: 500px) {
-      .card-content h3 { font-size: 1.4em; }
-      .card-content p { font-size: 0.9em; }
+    .featured-card .cta-button::before {
+      background: linear-gradient(45deg, #DAA520, #FFD700);
+    }
+    .featured-card .cta-button:hover { 
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+    }
+    .coming-soon { 
+      background: linear-gradient(45deg, #6c757d, #495057) !important; 
+      color: #FFFFFF !important; 
+      cursor: not-allowed;
+      box-shadow: 0 5px 15px rgba(108, 117, 125, 0.2) !important;
+    }
+    .coming-soon:hover { 
+      background: linear-gradient(45deg, #5a6268, #3d444b) !important; 
+      box-shadow: 0 8px 20px rgba(108, 117, 125, 0.3) !important;
+      transform: none !important;
+    }
+    .featured-badge {
+      position: absolute; 
+      top: 15px; 
+      right: 15px;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A; 
+      padding: 8px 15px; 
+      border-radius: 20px;
+      font-size: 0.8em; 
+      font-weight: bold; 
+      z-index: 10;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    .note { 
+      text-align: center; 
+      margin-top: 40px; 
+      font-style: italic; 
+      opacity: 0.7;
+      font-size: 1.1em;
     }
 
     /* Services Section */
@@ -227,81 +440,157 @@
       gap: 30px;
     }
 
-    /* Portfolio Section */
+    /* Portfolio Section - Fixed Image Display */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
-    .portfolio-item { position: relative; overflow: hidden; border-radius: 10px; }
-    .portfolio-item img { width: 100%; height: 200px; object-fit: cover; }
+    .portfolio-item { 
+      position: relative; 
+      overflow: hidden; 
+      border-radius: 10px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a1a;
+    }
+    .portfolio-item img { 
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s;
+    }
+    .portfolio-item:hover img { transform: scale(1.05); }
     .portfolio-overlay {
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      position: absolute; 
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.7);
-      opacity: 0; display: flex; align-items: center; justify-content: center;
+      opacity: 0; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
       transition: opacity 0.3s;
     }
     .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-    .portfolio-overlay p { color: #FFD700; font-size: 1.2em; font-weight: 600; }
+    .portfolio-overlay p { 
+      color: #FFD700; 
+      font-size: 1.3em; 
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+    }
 
     /* Podcast Section */
+    .podcast-container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
     .podcast-image {
-      max-width: 220px;
-      margin: 0 auto 20px;
-      border-radius: 10px;
+      flex: 1;
+      max-width: 300px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
     .podcast-image img { width: 100%; display: block; }
+    .podcast-content {
+      flex: 2;
+      text-align: left;
+    }
+    .podcast-content p { 
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      color: #e0e0e0;
+    }
+    @media (max-width: 768px) {
+      .podcast-container { flex-direction: column; text-align: center; }
+      .podcast-content { text-align: center; }
+    }
 
     /* About Section */
     #about {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
     }
-    #about p { max-width: 800px; margin: 20px auto; font-size: 1.2em; }
+    #about p { 
+      max-width: 800px; 
+      margin: 25px auto; 
+      font-size: 1.3em;
+      color: #e0e0e0;
+    }
 
     /* Footer */
     footer {
-      background: rgba(26, 26, 26, 0.9);
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
       color: #FFFFFF;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
+      padding: 50px 20px 30px;
+      margin-top: 80px;
       border-top: 1px solid rgba(255, 215, 0, 0.1);
+      position: relative;
     }
-    .footer-links { margin: 20px 0; }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FFD700, #FF0000, #FFD700);
+    }
+    .footer-links { margin: 30px 0; }
     .footer-links a {
-      color: #FFD700; margin: 0 15px; text-decoration: none; transition: color 0.3s;
+      color: #FFD700; 
+      margin: 0 20px; 
+      text-decoration: none; 
+      transition: color 0.3s;
+      font-weight: 500;
     }
     .footer-links a:hover { color: #FF0000; }
-    .social-links { margin: 20px 0; }
+    .social-links { margin: 30px 0; }
     .social-links a {
-      display: inline-block; width: 40px; height: 40px;
-      line-height: 40px; text-align: center;
+      display: inline-block; 
+      width: 50px; 
+      height: 50px;
+      line-height: 50px; 
+      text-align: center;
       background: rgba(255, 215, 0, 0.1);
-      color: #FFD700; border-radius: 50%;
-      margin: 0 8px; transition: all 0.3s;
+      color: #FFD700; 
+      border-radius: 50%;
+      margin: 0 10px; 
+      transition: all 0.3s;
+      font-size: 1.2em;
     }
     .social-links a:hover {
-      background: #FFD700; color: #1A1A1A;
-      transform: translateY(-3px);
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      background: #FFD700; 
+      color: #1A1A1A;
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
     }
 
     /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .fade-in { animation: fadeIn 1s ease forwards; }
+    .fade-in { 
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
     .delay-1 { animation-delay: 0.2s; }
     .delay-2 { animation-delay: 0.4s; }
     .delay-3 { animation-delay: 0.6s; }
 
     @media (max-width: 768px) {
       .services, .ebooks, .portfolio-grid { grid-template-columns: 1fr; }
+      section { padding: 50px 20px; margin: 40px auto; }
+      h2 { font-size: 2.5em; }
     }
   </style>
 </head>
@@ -321,20 +610,24 @@
     <div class="hero-content">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_37_47%20AM.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
       <h1>Hustle Rent Media</h1>
-      <p>Empower Your Hustle with Premium Branding & Knowledge</p>
+      <p>Empower Your Hustle with Premium Branding & Transformative Knowledge</p>
       <a href="#ebooks" class="hero-cta">Discover Our eBooks</a>
       <a href="#services" class="hero-cta secondary">Explore Services</a>
     </div>
   </header>
 
-  <!-- eBook Teaser Section -->
+  <!-- eBook Teaser Section - Redesigned -->
   <section id="ebook-teaser" class="fade-in">
-    <h2>Transform Your Love Life</h2>
-    <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People eBook Cover" class="teaser-image">
-    <div class="excerpt-container">
-      <p class="excerpt-text">"Learn why you attract the wrong partners and how to break free from toxic cycles." <span>— Why You Keep Attracting the Wrong People</span></p>
+    <div class="teaser-container">
+      <div class="teaser-image-container">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2021,%202025%20at%2012_15_50%20PM.png?raw=true" alt="Why You Keep Attracting the Wrong People eBook Cover" class="teaser-image">
+      </div>
+      <div class="teaser-content">
+        <h2>Transform Your Love Life</h2>
+        <p class="excerpt-text">"Learn why you attract the wrong partners and how to break free from toxic cycles. This eBook combines psychology and practical advice to transform your love life." <span>— Why You Keep Attracting the Wrong People</span></p>
+        <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="teaser-cta">Get the eBook - $27</a>
+      </div>
     </div>
-    <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook - $27</a>
   </section>
 
   <!-- eBooks Section -->
@@ -350,7 +643,7 @@
         <div class="card-content">
           <h3>Why You Keep Attracting the Wrong People</h3>
           <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
-          <p>Uncover the hidden patterns behind your relationships and learn proven strategies to attract the right partner. This eBook combines psychology and practical advice to transform your love life.</p>
+          <p>Uncover the hidden patterns behind your relationships and learn proven strategies to attract the right partner.</p>
           <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook - $27</a>
         </div>
       </div>
@@ -362,7 +655,7 @@
         <div class="card-content">
           <h3>The Biology of Control</h3>
           <p><em>The Psychology of Freedom</em></p>
-          <p>Explore the science of self-mastery and unlock your potential with actionable insights into mindset, discipline, and personal growth. Take control of your life today.</p>
+          <p>Explore the science of self-mastery and unlock your potential with actionable insights into mindset, discipline, and personal growth.</p>
           <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook</a>
         </div>
       </div>
@@ -373,12 +666,12 @@
         </div>
         <div class="card-content">
           <h3>Traponomics</h3>
-          <p>A no-nonsense guide to building wealth through modern hustle strategies. Learn innovative systems to maximize your income and thrive in today’s economy.</p>
-          <a class="coming-soon">Coming Soon</a>
+          <p>A no-nonsense guide to building wealth through modern hustle strategies. Learn innovative systems to maximize your income.</p>
+          <a class="cta-button coming-soon">Coming Soon</a>
         </div>
       </div>
     </div>
-    <p class="note">📚 More titles coming soon...</p>
+    <p class="note">📚 More transformative titles coming soon...</p>
   </section>
 
   <!-- Services Section -->
@@ -444,23 +737,32 @@
         <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Example">
         <div class="portfolio-overlay"><p>Event Flyer for Brand Y</p></div>
       </div>
+      <div class="portfolio-item">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Example">
+        <div class="portfolio-overlay"><p>Complete Brand Kit</p></div>
+      </div>
     </div>
   </section>
 
   <!-- Podcast Section -->
   <section id="podcast" class="fade-in delay-3">
     <h2>Mic & Morals Podcast</h2>
-    <div class="podcast-image">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/micmralslogo.png?raw=true" alt="Mic & Morals Podcast Logo">
+    <div class="podcast-container">
+      <div class="podcast-image">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/micmralslogo.png?raw=true" alt="Mic & Morals Podcast Logo">
+      </div>
+      <div class="podcast-content">
+        <p><strong>Coming Soon</strong></p>
+        <p>Join us for insightful conversations about life, business, and personal growth. The Mic & Morals podcast will feature interviews with successful entrepreneurs and thought leaders.</p>
+        <p>Follow us on YouTube to stay updated: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #FFD700; text-decoration: none;">@hustlerentmedia</a></p>
+      </div>
     </div>
-    <p><strong>Coming Soon</strong></p>
-    <p>Follow us on YouTube: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #FFD700;">@hustlerentmedia</a></p>
   </section>
 
   <!-- About Section -->
   <section id="about" class="fade-in">
     <h2>About Hustle Rent Media</h2>
-    <p>We empower entrepreneurs and hustlers to build their brand, master their mindset, and create a legacy. From stunning web designs to transformative eBooks like <em>Why You Keep Attracting the Wrong People</em>, we’re here to elevate your hustle.</p>
+    <p>We empower entrepreneurs and hustlers to build their brand, master their mindset, and create a legacy. From stunning web designs to transformative eBooks like <em>Why You Keep Attracting the Wrong People</em>, we're here to elevate your hustle with premium quality and actionable insights.</p>
     <a href="#services" class="cta-button">Work With Us</a>
   </section>
 
@@ -484,12 +786,28 @@
     document.addEventListener('DOMContentLoaded', function() {
       const fadeElements = document.querySelectorAll('.fade-in');
       fadeElements.forEach(element => { element.style.opacity = 0; });
-      setTimeout(function() {
-        fadeElements.forEach(element => { element.style.opacity = 1; });
-      }, 100);
-
+      
       // Auto year update
       document.getElementById("year").textContent = new Date().getFullYear();
+      
+      // Scroll animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
     });
   </script>
 </body>
