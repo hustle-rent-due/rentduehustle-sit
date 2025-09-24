@@ -404,6 +404,39 @@
       transform: translateY(-3px); 
       box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
     }
+    
+    /* NEW: Learn More Button Style */
+    .learn-more-button {
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1A1A1A;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .learn-more-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #DAA520, #FFD700);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    .learn-more-button:hover::before { left: 0; }
+    .learn-more-button:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+    }
+    
     .featured-card .cta-button { 
       background: linear-gradient(45deg, #FFD700, #DAA520);
       color: #1A1A1A;
@@ -641,7 +674,8 @@
       <div class="teaser-content">
         <h2>Transform Your Love Life</h2>
         <p class="excerpt-text">"Learn why you attract the wrong partners and how to break free from toxic cycles. This eBook combines psychology and practical advice to transform your love life." <span>— Why You Keep Attracting the Wrong People</span></p>
-        <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="teaser-cta">Get the eBook - $27</a>
+        <!-- CHANGED: Updated to Learn More button linking to product page -->
+        <a href="why-wrong-people.html" class="teaser-cta">Learn More</a>
       </div>
     </div>
   </section>
@@ -660,7 +694,8 @@
           <h3>Why You Keep Attracting the Wrong People</h3>
           <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
           <p>Uncover the hidden patterns behind your relationships and learn proven strategies to attract the right partner.</p>
-          <a href="https://buy.stripe.com/8x2dR90uo8fs7UDfrF2wU0w" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook - $27</a>
+          <!-- CHANGED: Updated to Learn More button linking to product page -->
+          <a href="why-wrong-people.html" class="learn-more-button">Learn More</a>
         </div>
       </div>
       <div class="card">
@@ -672,7 +707,8 @@
           <h3>The Biology of Control</h3>
           <p><em>The Psychology of Freedom</em></p>
           <p>Explore the science of self-mastery and unlock your potential with actionable insights into mindset, discipline, and personal growth.</p>
-          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="cta-button">Get the eBook</a>
+          <!-- CHANGED: Updated to Learn More button (keeping Stripe link for now) -->
+          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="learn-more-button">Learn More</a>
         </div>
       </div>
       <div class="card">
