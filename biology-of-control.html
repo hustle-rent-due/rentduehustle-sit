@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Biology of Control, The Psychology of Freedom | Hustle Rent Media</title>
+  <meta name="description" content="Discover how communities are engineered and learn to break free from systemic control. Transform survival mode into vision mode with this powerful eBook.">
+  <meta name="keywords" content="community development, systemic control, personal freedom, psychology, eBook, social engineering">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      color: #FFFFFF;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(12, 12, 12, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    .sticky-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .sticky-nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: all 0.3s;
+      position: relative;
+      padding: 5px 0;
+    }
+    .sticky-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF0000;
+      transition: width 0.3s;
+    }
+    .sticky-nav a:hover::after { width: 100%; }
+    .sticky-nav a:hover { color: #FFFFFF; }
+    @media (max-width: 768px) {
+      .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    /* Product Hero Section */
+    .product-hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center/cover;
+      color: #FFFFFF;
+      overflow: hidden;
+      padding: 60px 20px;
+    }
+    .product-hero-content { 
+      position: relative; 
+      z-index: 2;
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      text-align: left;
+    }
+    .book-cover-container {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
+    }
+    .book-cover {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s;
+    }
+    .book-cover:hover {
+      transform: scale(1.03);
+    }
+    .product-info {
+      flex: 1;
+    }
+    .product-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5em;
+      font-weight: 700;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+    .product-subtitle {
+      font-size: 1.8em;
+      color: #e0e0e0;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+    .product-description {
+      font-size: 1.2em;
+      color: #e0e0e0;
+      margin-bottom: 30px;
+    }
+    .product-price {
+      font-size: 2.5em;
+      color: #FFD700;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    .product-cta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .buy-button {
+      padding: 16px 45px;
+      background: linear-gradient(45deg, #FF0000, #CC0000);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: inline-block;
+      min-width: 220px;
+      text-align: center;
+    }
+    .buy-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #CC0000, #FF0000);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    .buy-button:hover::before { left: 0; }
+    .buy-button:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+    }
+    .preview-button {
+      padding: 16px 45px;
+      background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+      color: #FFD700;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 2px solid #FFD700;
+      display: inline-block;
+      min-width: 220px;
+      text-align: center;
+    }
+    .preview-button:hover {
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      color: #1a1a1a;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+    }
+    @media (max-width: 968px) {
+      .product-hero-content { flex-direction: column; text-align: center; }
+      .product-info { text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .product-hero h1 { font-size: 2.5em; }
+      .product-subtitle { font-size: 1.4em; }
+      .product-description { font-size: 1.1em; }
+      .product-price { font-size: 2em; }
+      .product-cta { flex-direction: column; align-items: center; }
+    }
+
+    /* Book Details Section */
+    .book-details {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .details-container {
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+    }
+    .details-content {
+      flex: 2;
+    }
+    .details-sidebar {
+      flex: 1;
+      background: rgba(26, 26, 26, 0.7);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .details-sidebar h3 {
+      color: #FFD700;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+    .book-specs {
+      list-style: none;
+    }
+    .book-specs li {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    .spec-label {
+      font-weight: 600;
+      color: #FFD700;
+    }
+    .section-title {
+      font-size: 2.5em;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 40px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .chapter-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .chapter-card {
+      background: rgba(26, 26, 26, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .chapter-card:hover {
+      transform: translateY(-5px);
+    }
+    .chapter-card h4 {
+      color: #FFD700;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .testimonial {
+      background: rgba(26, 26, 26, 0.7);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 40px 0;
+      border-left: 5px solid #FFD700;
+    }
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      color: #FFD700;
+    }
+    .benefits-list {
+      list-style: none;
+      margin: 30px 0;
+    }
+    .benefits-list li {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+    }
+    .benefits-list li:before {
+      content: '✓';
+      color: #FFD700;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    @media (max-width: 968px) {
+      .details-container { flex-direction: column; }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
+      margin-top: 60px;
+    }
+    .cta-section h2 {
+      font-size: 3em;
+      margin-bottom: 30px;
+    }
+    .guarantee-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #FFD700, #DAA520);
+      color: #1a1a1a;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin: 20px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 50px 20px 30px;
+      margin-top: 80px;
+      border-top: 1px solid rgba(255, 215, 0, 0.1);
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FFD700, #FF0000, #FFD700);
+    }
+    .footer-links { margin: 30px 0; }
+    .footer-links a {
+      color: #FFD700; 
+      margin: 0 20px; 
+      text-decoration: none; 
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    .footer-links a:hover { color: #FF0000; }
+    .social-links { margin: 30px 0; }
+    .social-links a {
+      display: inline-block; 
+      width: 50px; 
+      height: 50px;
+      line-height: 50px; 
+      text-align: center;
+      background: rgba(255, 215, 0, 0.1);
+      color: #FFD700; 
+      border-radius: 50%;
+      margin: 0 10px; 
+      transition: all 0.3s;
+      font-size: 1.2em;
+    }
+    .social-links a:hover {
+      background: #FFD700; 
+      color: #1A1A1A;
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Modal for Preview */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 2em;
+      color: #FFD700;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .close-modal:hover {
+      color: #FF0000;
+    }
+    .preview-content {
+      max-height: 70vh;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .preview-page {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+    .preview-page h3 {
+      color: #FFD700;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { 
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="index.html">← Back to Home</a></li>
+      <li><a href="#details">Book Details</a></li>
+      <li><a href="#chapters">Chapters</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <!-- Product Hero Section -->
+  <section class="product-hero fade-in">
+    <div class="product-hero-content">
+      <div class="book-cover-container">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/engineringbook.png?raw=true" alt="The Biology of Control, The Psychology of Freedom eBook Cover" class="book-cover">
+      </div>
+      <div class="product-info">
+        <h1>The Biology of Control, The Psychology of Freedom</h1>
+        <p class="product-subtitle">By Nile Green</p>
+        <p class="product-description">Discover how communities are engineered and learn to break free from systemic control. Transform survival mode into vision mode with this powerful guide to reclaiming your power and rebuilding your community.</p>
+        <div class="product-price">$27</div>
+        <div class="product-cta">
+          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+          <a href="#" class="preview-button" id="preview-btn">Preview Book</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Details Section -->
+  <section class="book-details fade-in" id="details">
+    <div class="details-container">
+      <div class="details-content">
+        <h2 class="section-title">About This Book</h2>
+        <p>Nothing in our environment is by accident. Walk through any neighborhood and you'll see the design. In some communities: farmers' markets, bookstores, museums, tree-lined parks where children run freely. In others: liquor stores on every corner, fast food chains, payday loan shops, and concrete where grass should grow.</p>
+        
+        <p>This isn't coincidence. This isn't market forces. This isn't "natural" community development. This is engineering.</p>
+        
+        <p>The placement of every store, the absence of every resource, the presence of every distraction - all of it is intentional. Some communities are designed to cultivate vision, growth, and long-term thinking. Others are designed to keep people locked in survival mode, focused only on getting through today.</p>
+        
+        <p>This book will show you the blueprint. How neighborhoods are engineered to shape behavior. How schools are structured to limit potential. How history is erased to steal identity. How the psychology of dependence is manufactured. How self-hate is cultivated to prevent unity.</p>
+        
+        <p>But more importantly, this book will show you how to break the design.</p>
+        
+        <h3 class="section-title" style="font-size: 2em; margin-top: 40px;">What You'll Learn</h3>
+        <ul class="benefits-list">
+          <li>Understand how communities are intentionally engineered for control</li>
+          <li>Recognize the psychological traps that keep you in survival mode</li>
+          <li>Learn how history is weaponized to steal identity and pride</li>
+          <li>Discover the "Savior Design" that keeps you waiting instead of building</li>
+          <li>Transform self-hate into generational alchemy</li>
+          <li>Develop a blueprint for rebuilding your community from the ground up</li>
+          <li>Study real success stories of communities that broke the design</li>
+        </ul>
+        
+        <div class="testimonial" id="testimonials">
+          <p class="testimonial-text">"This book opened my eyes to patterns I've been living in my whole life. The concept of 'survival mode as a system' completely changed how I view my community and my role in it."</p>
+          <p class="testimonial-author">- Marcus T., community organizer</p>
+        </div>
+        
+        <h3 class="section-title" id="chapters" style="font-size: 2em;">Chapter Overview</h3>
+        <div class="chapter-list">
+          <div class="chapter-card">
+            <h4>Introduction: The Illusion of Randomness</h4>
+            <p>Discover how nothing in our environment is accidental and everything is by design.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 1: Community by Design</h4>
+            <p>How neighborhoods are engineered to shape behavior and limit potential.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 2: Education by Design</h4>
+            <p>How schools are structured to keep communities locked in survival mode.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 3: The Savior Design</h4>
+            <p>The psychological trap of waiting for external salvation instead of building internal power.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 4: Hidden Histories, Erased Legacies</h4>
+            <p>How history is weaponized to steal identity and create directionless rage.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 5: Self-Hate & Generational Alchemy</h4>
+            <p>Transforming what looks like curse into contrast and raw material for direction.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 6: Reengineering the Design</h4>
+            <p>Practical strategies for flipping the script and reclaiming community control.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 7: Blueprint for Rebuilding</h4>
+            <p>A step-by-step construction manual for communities ready to transform.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Chapter 8: Success Stories</h4>
+            <p>Real communities that broke the cycle and reclaimed their power.</p>
+          </div>
+          <div class="chapter-card">
+            <h4>Conclusion: From Survival Mode to Vision Mode</h4>
+            <p>The journey from recognizing the design to becoming an alchemist of freedom.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="details-sidebar">
+        <h3>Book Details</h3>
+        <ul class="book-specs">
+          <li><span class="spec-label">Format:</span> PDF eBook</li>
+          <li><span class="spec-label">Pages:</span> Comprehensive guide with 8 chapters</li>
+          <li><span class="spec-label">File Size:</span> 3.2 MB</li>
+          <li><span class="spec-label">Reading Time:</span> 2-3 hours</li>
+          <li><span class="spec-label">Language:</span> English</li>
+          <li><span class="spec-label">Instant Delivery:</span> Yes</li>
+          <li><span class="spec-label">Device Compatible:</span> All devices</li>
+        </ul>
+        
+        <h3 style="margin-top: 30px;">Who Is This For?</h3>
+        <ul class="book-specs">
+          <li>Community organizers and activists</li>
+          <li>Anyone feeling trapped by their environment</li>
+          <li>People wanting to understand systemic control</li>
+          <li>Those ready to transform their community</li>
+          <li>Educators and social workers</li>
+          <li>Anyone seeking psychological freedom</li>
+        </ul>
+        
+        <h3 style="margin-top: 30px;">About the Author</h3>
+        <p>Nile Green is a researcher and community advocate who has spent years studying how systems of control operate and how communities can reclaim their power. His work bridges psychology, urban planning, and social justice to provide practical strategies for transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section fade-in">
+    <h2>Ready to Break Free From the Design?</h2>
+    <p style="font-size: 1.3em; max-width: 800px; margin: 0 auto 30px;">Stop surviving and start building. Transform your understanding of control and reclaim your psychological freedom.</p>
+    <div class="guarantee-badge">Instant Digital Delivery</div>
+    <div style="margin-top: 30px;">
+      <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="buy-button" style="font-size: 1.2em; padding: 18px 50px;">Get Your Copy Now - $27</a>
+    </div>
+    <p style="margin-top: 20px; opacity: 0.8;">Secure payment processed by Stripe</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="#details">Book Details</a>
+      <a href="#chapters">Chapters</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+    <div class="social-links">
+      <a href="https://x.com/hustle_rent_due" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>© <span id="year"></span> Hustle Rent Media. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Preview Modal -->
+  <div class="modal" id="preview-modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      <h2 style="text-align: center; margin-bottom: 20px;">Book Preview</h2>
+      <div class="preview-content">
+        <div class="preview-page">
+          <h3>Introduction: The Illusion of Randomness</h3>
+          <p>Nothing in our environment is by accident.</p>
+          <p>Walk through any neighborhood and you'll see the design. In some communities: farmers' markets, bookstores, museums, tree-lined parks where children run freely. In others: liquor stores on every corner, fast food chains, payday loan shops, and concrete where grass should grow.</p>
+          <p>This isn't coincidence. This isn't market forces. This isn't "natural" community development.</p>
+          <p><strong>This is engineering.</strong></p>
+        </div>
+        
+        <div class="preview-page">
+          <h3>Chapter 1: Community by Design</h3>
+          <p>Look around your neighborhood. What do you really see?</p>
+          <p>Corner stores, liquor shops, fast food spots on every corner. Apartment stacked on top of apartment, bricks pressing against bricks. The park is there — but the grass is gone, replaced with cracked concrete, bent rims, and rusted swings.</p>
+          <p>Music blasts from every block, speakers shaking, bass heavy. It's not jazz drifting from cafés or violins from open-air concerts. It's drill rap, trap beats, low-level noise telling the same story: survive today, maybe tomorrow. The soundtrack is survival, not possibility.</p>
+        </div>
+        
+        <div class="preview-page">
+          <h3>Chapter 2: Education by Design</h3>
+          <p>School is supposed to be neutral, a place to learn. But in our neighborhoods, it's not just education — it's survival training.</p>
+          <p>You walk into class carrying more than a backpack. You carry the noise of last night's arguments, the stress of overdue bills, the fear of what waits outside when the bell rings. In the hallways, gangs recruit, beefs spill over, and fights break out. The teacher talks about fractions, but your brain is calculating survival.</p>
+          <p>That's not a classroom. That's a battlefield.</p>
+        </div>
+        
+        <div class="preview-page">
+          <h3>Chapter 3: The Savior Design</h3>
+          <p>The system is engineered to keep us waiting. Waiting for help. Waiting for a leader. Waiting for a savior.</p>
+          <p>We're told from every direction that salvation is external:</p>
+          <ul>
+            <li>"Endure now, help is coming."</li>
+            <li>"Don't fight too hard — someone else will fix it."</li>
+            <li>"Wait your turn. Your time will come."</li>
+          </ul>
+          <p>That message is not harmless. It's a trap.</p>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; font-style: italic;">This is just a preview. The full book contains 8 powerful chapters that will transform how you see your community and your role in it.</p>
+        
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="https://buy.stripe.com/dRmeVd6SM7bo2AjfrF2wU0v" target="_blank" rel="noopener noreferrer" class="buy-button">Get Full Access Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Auto year update
+      document.getElementById("year").textContent = new Date().getFullYear();
+      
+      // Modal functionality
+      const previewBtn = document.getElementById('preview-btn');
+      const modal = document.getElementById('preview-modal');
+      const closeModal = document.getElementById('close-modal');
+      
+      previewBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+      });
+      
+      closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+      
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if(targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if(targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
