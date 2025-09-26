@@ -6,7 +6,7 @@
   <title>Hustle Rent Media | Branding, Design & Hustle Knowledge</title>
   <meta name="description" content="Hustle Rent Media offers branding, flyer design, web design, classes, brand kits, eBooks, and the Mic & Morals podcast. Build your hustle with us.">
   <meta name="keywords" content="branding, web design, eBooks, dating advice, personal growth, hustle rent media">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600;700;800;900&family=Abril+Fatface&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -63,7 +63,7 @@
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Hero Section - Updated with Urban Background */
+    /* Hero Section - Updated with NEW Logo and Typography */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -83,40 +83,103 @@
       max-width: 1200px;
     }
     .hero-logo {
-      max-width: 280px;
+      max-width: 320px;
       margin-bottom: 25px;
       transition: transform 0.5s;
-      filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.3));
-      animation: logoEnter 1s ease forwards;
+      filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.5));
+      animation: logoEnter 1.2s ease forwards;
     }
-    .hero-logo:hover { transform: scale(1.08) rotate(2deg); }
+    .hero-logo:hover { 
+      transform: scale(1.08) rotate(2deg); 
+      filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.7));
+    }
     @keyframes logoEnter {
-      from { opacity: 0; transform: scale(0.8) translateY(-20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+      from { 
+        opacity: 0; 
+        transform: scale(0.8) translateY(-30px) rotate(-5deg);
+      }
+      to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0) rotate(0);
+      }
     }
+    
+    /* NEW: Enhanced Typography for Header */
     .hero-content h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 4.5em;
-      font-weight: 700;
-      background: linear-gradient(45deg, #FFD700, #FFA500);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 5.5em;
+      font-weight: 900;
+      background: linear-gradient(45deg, #FFD700 0%, #FFA500 25%, #FF6B00 50%, #FF0000 75%, #FFD700 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      background-size: 200% auto;
+      text-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
       margin-bottom: 15px;
+      letter-spacing: 2px;
+      animation: shimmer 3s infinite linear, float 6s ease-in-out infinite;
+      position: relative;
     }
+    
+    /* Shimmer effect for the text */
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+    
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Add a subtle glow effect */
+    .hero-content h1::after {
+      content: 'Hustle Rent Media';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #FFD700, #FF0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.7;
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.8; }
+    }
+    
     .hero-content p { 
-      font-size: 1.5em; 
+      font-size: 1.6em; 
       margin: 25px 0 35px; 
       color: #e0e0e0;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1.5s ease 0.5s forwards;
+      opacity: 0;
     }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
     .hero-buttons {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      animation: fadeInUp 1.5s ease 0.8s forwards;
+      opacity: 0;
     }
     .hero-cta {
       padding: 16px 45px;
@@ -125,7 +188,7 @@
       text-decoration: none;
       border-radius: 50px;
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s;
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
       position: relative;
@@ -134,6 +197,7 @@
       display: inline-block;
       min-width: 220px;
       text-align: center;
+      letter-spacing: 1px;
     }
     .hero-cta::before {
       content: '';
@@ -150,6 +214,7 @@
     .hero-cta:hover { 
       transform: translateY(-3px); 
       box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+      letter-spacing: 2px;
     }
     .hero-cta.secondary { 
       background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
@@ -161,13 +226,17 @@
     }
     .hero-cta.secondary:hover { color: #1a1a1a; }
     @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2.8em; }
-      .hero-content p { font-size: 1.2em; }
+      .hero-content h1 { 
+        font-size: 3.2em; 
+        letter-spacing: 1px;
+      }
+      .hero-content p { font-size: 1.3em; }
       .hero-buttons { flex-direction: column; align-items: center; }
       .hero-cta { width: 100%; max-width: 280px; }
-      .hero-logo { max-width: 200px; }
+      .hero-logo { max-width: 250px; }
     }
 
+    /* Rest of your existing CSS remains the same */
     /* eBook Teaser Section - Redesigned */
     #ebook-teaser {
       padding: 80px 20px;
@@ -652,10 +721,11 @@
     </ul>
   </nav>
 
-  <!-- Hero Section with Logo - Updated Background -->
+  <!-- Hero Section with NEW Logo and Enhanced Typography -->
   <header id="home" class="hero-section">
     <div class="hero-content">
-      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_37_47%20AM.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
+      <!-- UPDATED: Changed logo to the new transparent version -->
+      <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/translogo.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
       <h1>Hustle Rent Media</h1>
       <p>Empower Your Hustle with Premium Branding & Transformative Knowledge</p>
       <div class="hero-buttons">
@@ -665,6 +735,7 @@
     </div>
   </header>
 
+  <!-- Rest of your page content remains the same -->
   <!-- eBook Teaser Section - Redesigned -->
   <section id="ebook-teaser" class="fade-in">
     <div class="teaser-container">
