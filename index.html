@@ -63,7 +63,7 @@
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Hero Section - Updated with NEW Logo and Typography */
+    /* Hero Section - Updated with NEW Logo and Brighter Typography */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -104,12 +104,13 @@
       }
     }
     
-    /* NEW: Enhanced Typography for Header */
+    /* UPDATED: Brighter, More Vibrant Typography for Header */
     .hero-content h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 5.5em;
       font-weight: 900;
-      background: linear-gradient(45deg, #FFD700 0%, #FFA500 25%, #FF6B00 50%, #FF0000 75%, #FFD700 100%);
+      /* BRIGHTER GRADIENT: More vibrant golds and oranges */
+      background: linear-gradient(45deg, #FFFF00 0%, #FFD700 20%, #FFA500 40%, #FF8C00 60%, #FF4500 80%, #FFFF00 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-size: 200% auto;
@@ -132,7 +133,7 @@
       50% { transform: translateY(-10px); }
     }
     
-    /* Add a subtle glow effect */
+    /* UPDATED: Brighter glow effect */
     .hero-content h1::after {
       content: 'Hustle Rent Media';
       position: absolute;
@@ -140,24 +141,24 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FFD700, #FF0000);
+      background: linear-gradient(45deg, #FFFF00, #FFA500, #FF4500);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       z-index: -1;
-      filter: blur(8px);
-      opacity: 0.7;
+      filter: blur(10px);
+      opacity: 0.8;
       animation: glowPulse 4s ease-in-out infinite;
     }
     
     @keyframes glowPulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 0.8; }
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.9; }
     }
     
     .hero-content p { 
       font-size: 1.6em; 
       margin: 25px 0 35px; 
-      color: #e0e0e0;
+      color: #f0f0f0; /* Slightly brighter text color */
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
@@ -183,14 +184,14 @@
     }
     .hero-cta {
       padding: 16px 45px;
-      background: linear-gradient(45deg, #FFD700, #DAA520);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
       color: #1A1A1A;
       text-decoration: none;
       border-radius: 50px;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -206,23 +207,23 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FFA500, #FFD700);
+      background: linear-gradient(45deg, #FFD700, #FFFF00); /* Brighter hover effect */
       transition: left 0.5s;
       z-index: -1;
     }
     .hero-cta:hover::before { left: 0; }
     .hero-cta:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.6); /* Brighter hover shadow */
       letter-spacing: 2px;
     }
     .hero-cta.secondary { 
       background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-      color: #FFD700;
-      border: 2px solid #FFD700;
+      color: #FFFF00; /* Brighter gold text */
+      border: 2px solid #FFFF00; /* Brighter border */
     }
     .hero-cta.secondary::before {
-      background: linear-gradient(45deg, #FFD700, #FFA500);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter hover */
     }
     .hero-cta.secondary:hover { color: #1a1a1a; }
     @media (max-width: 768px) {
@@ -285,7 +286,7 @@
     #ebook-teaser h2 {
       font-size: 3em;
       margin-bottom: 20px;
-      background: linear-gradient(45deg, #FFD700, #FFA500);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gradient */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: left;
@@ -293,7 +294,7 @@
     .excerpt-text {
       font-size: 1.4em;
       font-style: italic;
-      color: #e0e0e0;
+      color: #f0f0f0; /* Brighter text */
       margin-bottom: 25px;
       line-height: 1.7;
     }
@@ -301,13 +302,13 @@
       display: block;
       font-size: 0.9em;
       margin-top: 15px;
-      color: #FFD700;
+      color: #FFFF00; /* Brighter gold */
       font-style: normal;
       font-weight: 600;
     }
     .teaser-cta {
       padding: 14px 35px;
-      background: linear-gradient(45deg, #FF0000, #CC0000);
+      background: linear-gradient(45deg, #FF4500, #FF0000); /* Brighter red */
       color: #FFFFFF;
       text-decoration: none;
       border-radius: 50px;
@@ -315,7 +316,7 @@
       font-weight: 600;
       transition: all 0.3s;
       display: inline-block;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4); /* Brighter shadow */
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -327,14 +328,14 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #CC0000, #FF0000);
+      background: linear-gradient(45deg, #FF0000, #FF4500); /* Brighter hover */
       transition: left 0.5s;
       z-index: -1;
     }
     .teaser-cta:hover::before { left: 0; }
     .teaser-cta:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6); /* Brighter hover shadow */
     }
     @media (max-width: 968px) {
       .teaser-container { flex-direction: column; text-align: center; gap: 30px; }
@@ -352,10 +353,10 @@
       padding: 80px 20px;
       max-width: 1200px;
       margin: 60px auto;
-      background: rgba(18, 18, 18, 0.7);
+      background: rgba(25, 25, 25, 0.8); /* Slightly brighter section background */
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -366,17 +367,59 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #FFD700, #FF0000, #FFD700);
+      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00); /* Brighter gradient */
     }
     h2 {
       text-align: center;
       font-size: 3em;
       font-family: 'Poppins', sans-serif;
       margin-bottom: 50px;
-      background: linear-gradient(45deg, #FFD700, #FFA500);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gradient */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* NEW: Terms & Conditions and Order Process Sections */
+    .legal-content, .order-process-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    
+    .legal-content h3, .order-process-content h3 {
+      color: #FFFF00;
+      font-size: 1.8em;
+      margin: 30px 0 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .legal-content p, .order-process-content p {
+      margin-bottom: 20px;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    
+    .legal-content ul, .order-process-content ul {
+      margin: 20px 0;
+      padding-left: 30px;
+    }
+    
+    .legal-content li, .order-process-content li {
+      margin-bottom: 10px;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    
+    .legal-content a, .order-process-content a {
+      color: #FFFF00;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .legal-content a:hover, .order-process-content a:hover {
+      color: #FF4500;
+      text-decoration: underline;
     }
 
     /* eBooks Section - Fixed Image Display */
@@ -425,7 +468,7 @@
     }
     .card:hover .card-overlay { opacity: 1; }
     .card-overlay p { 
-      color: #FFD700; 
+      color: #FFFF00; /* Brighter gold */
       font-size: 1.3em; 
       font-weight: 600;
       text-align: center;
@@ -441,10 +484,10 @@
     .card p { 
       font-size: 1em; 
       margin-bottom: 20px;
-      color: #e0e0e0;
+      color: #f0f0f0; /* Brighter text */
     }
     .cta-button {
-      background: linear-gradient(45deg, #FF0000, #CC0000);
+      background: linear-gradient(45deg, #FF4500, #FF0000); /* Brighter red */
       padding: 12px 25px;
       border-radius: 50px;
       color: #FFFFFF;
@@ -452,7 +495,7 @@
       transition: all 0.3s;
       display: inline-block;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4); /* Brighter shadow */
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -464,19 +507,19 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #CC0000, #FF0000);
+      background: linear-gradient(45deg, #FF0000, #FF4500); /* Brighter hover */
       transition: left 0.5s;
       z-index: -1;
     }
     .cta-button:hover::before { left: 0; }
     .cta-button:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6); /* Brighter hover shadow */
     }
     
-    /* NEW: Learn More Button Style */
+    /* UPDATED: Brighter Learn More Button Style */
     .learn-more-button {
-      background: linear-gradient(45deg, #FFD700, #DAA520);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
       color: #1A1A1A;
       padding: 12px 25px;
       border-radius: 50px;
@@ -484,7 +527,7 @@
       transition: all 0.3s;
       display: inline-block;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -496,26 +539,26 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #DAA520, #FFD700);
+      background: linear-gradient(45deg, #FFD700, #FFFF00); /* Brighter hover */
       transition: left 0.5s;
       z-index: -1;
     }
     .learn-more-button:hover::before { left: 0; }
     .learn-more-button:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.6); /* Brighter hover shadow */
     }
     
     .featured-card .cta-button { 
-      background: linear-gradient(45deg, #FFD700, #DAA520);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
       color: #1A1A1A;
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
     }
     .featured-card .cta-button::before {
-      background: linear-gradient(45deg, #DAA520, #FFD700);
+      background: linear-gradient(45deg, #FFD700, #FFFF00); /* Brighter hover */
     }
     .featured-card .cta-button:hover { 
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.6); /* Brighter hover shadow */
     }
     .coming-soon { 
       background: linear-gradient(45deg, #6c757d, #495057) !important; 
@@ -532,7 +575,7 @@
       position: absolute; 
       top: 15px; 
       right: 15px;
-      background: linear-gradient(45deg, #FFD700, #DAA520);
+      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
       color: #1A1A1A; 
       padding: 8px 15px; 
       border-radius: 20px;
@@ -554,48 +597,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-    }
-
-    /* Portfolio Section - Fixed Image Display */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-    .portfolio-item { 
-      position: relative; 
-      overflow: hidden; 
-      border-radius: 10px;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #1a1a1a;
-    }
-    .portfolio-item img { 
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: transform 0.5s;
-    }
-    .portfolio-item:hover img { transform: scale(1.05); }
-    .portfolio-overlay {
-      position: absolute; 
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
-      opacity: 0; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      transition: opacity 0.3s;
-    }
-    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-    .portfolio-overlay p { 
-      color: #FFD700; 
-      font-size: 1.3em; 
-      font-weight: 600;
-      text-align: center;
-      padding: 20px;
     }
 
     /* Podcast Section */
@@ -621,7 +622,7 @@
     .podcast-content p { 
       margin-bottom: 20px;
       font-size: 1.2em;
-      color: #e0e0e0;
+      color: #f0f0f0; /* Brighter text */
     }
     @media (max-width: 768px) {
       .podcast-container { flex-direction: column; text-align: center; }
@@ -638,7 +639,7 @@
       max-width: 800px; 
       margin: 25px auto; 
       font-size: 1.3em;
-      color: #e0e0e0;
+      color: #f0f0f0; /* Brighter text */
     }
 
     /* Footer */
@@ -658,17 +659,17 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #FFD700, #FF0000, #FFD700);
+      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00); /* Brighter gradient */
     }
     .footer-links { margin: 30px 0; }
     .footer-links a {
-      color: #FFD700; 
+      color: #FFFF00; /* Brighter gold */
       margin: 0 20px; 
       text-decoration: none; 
       transition: color 0.3s;
       font-weight: 500;
     }
-    .footer-links a:hover { color: #FF0000; }
+    .footer-links a:hover { color: #FF4500; } /* Brighter hover color */
     .social-links { margin: 30px 0; }
     .social-links a {
       display: inline-block; 
@@ -676,18 +677,18 @@
       height: 50px;
       line-height: 50px; 
       text-align: center;
-      background: rgba(255, 215, 0, 0.1);
-      color: #FFD700; 
+      background: rgba(255, 255, 0, 0.2); /* Brighter background */
+      color: #FFFF00; /* Brighter gold */
       border-radius: 50%;
       margin: 0 10px; 
       transition: all 0.3s;
       font-size: 1.2em;
     }
     .social-links a:hover {
-      background: #FFD700; 
+      background: #FFFF00; /* Brighter gold */
       color: #1A1A1A;
       transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
     }
 
     /* Animations */
@@ -702,9 +703,10 @@
     .delay-1 { animation-delay: 0.2s; }
     .delay-2 { animation-delay: 0.4s; }
     .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
 
     @media (max-width: 768px) {
-      .services, .ebooks, .portfolio-grid { grid-template-columns: 1fr; }
+      .services, .ebooks { grid-template-columns: 1fr; }
       section { padding: 50px 20px; margin: 40px auto; }
       h2 { font-size: 2.5em; }
     }
@@ -716,15 +718,15 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#ebooks">eBooks</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#order-process">Order Process</a></li>
+      <li><a href="#terms">Terms</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section with NEW Logo and Enhanced Typography -->
+  <!-- Hero Section with NEW Logo and Brighter Typography -->
   <header id="home" class="hero-section">
     <div class="hero-content">
-      <!-- UPDATED: Changed logo to the new transparent version -->
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/translogo.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
       <h1>Hustle Rent Media</h1>
       <p>Empower Your Hustle with Premium Branding & Transformative Knowledge</p>
@@ -735,8 +737,7 @@
     </div>
   </header>
 
-  <!-- Rest of your page content remains the same -->
-  <!-- eBook Teaser Section - Redesigned -->
+  <!-- eBook Teaser Section -->
   <section id="ebook-teaser" class="fade-in">
     <div class="teaser-container">
       <div class="teaser-image-container">
@@ -745,7 +746,6 @@
       <div class="teaser-content">
         <h2>Transform Your Love Life</h2>
         <p class="excerpt-text">"Learn why you attract the wrong partners and how to break free from toxic cycles. This eBook combines psychology and practical advice to transform your love life." <span>— Why You Keep Attracting the Wrong People</span></p>
-        <!-- CHANGED: Updated to Learn More button linking to product page -->
         <a href="why-wrong-people.html" class="teaser-cta">Learn More</a>
       </div>
     </div>
@@ -765,7 +765,6 @@
           <h3>Why You Keep Attracting the Wrong People</h3>
           <p><em>The Codex of Awareness: Polarity, Patterns & Emotional Mechanics</em></p>
           <p>Uncover the hidden patterns behind your relationships and learn proven strategies to attract the right partner.</p>
-          <!-- CHANGED: Updated to Learn More button linking to product page -->
           <a href="why-wrong-people.html" class="learn-more-button">Learn More</a>
         </div>
       </div>
@@ -778,7 +777,6 @@
           <h3>The Biology of Control</h3>
           <p><em>The Psychology of Freedom</em></p>
           <p>Explore the science of self-mastery and unlock your potential with actionable insights into mindset, discipline, and personal growth.</p>
-          <!-- UPDATED: Changed to link to biology-of-control.html product page -->
           <a href="biology-of-control.html" class="learn-more-button">Learn More</a>
         </div>
       </div>
@@ -848,27 +846,8 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="fade-in delay-2">
-    <h2>Our Work</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Web Design Example">
-        <div class="portfolio-overlay"><p>Custom Website for Client X</p></div>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Example">
-        <div class="portfolio-overlay"><p>Event Flyer for Brand Y</p></div>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Example">
-        <div class="portfolio-overlay"><p>Complete Brand Kit</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- Podcast Section -->
-  <section id="podcast" class="fade-in delay-3">
+  <section id="podcast" class="fade-in delay-2">
     <h2>Mic & Morals Podcast</h2>
     <div class="podcast-container">
       <div class="podcast-image">
@@ -877,8 +856,94 @@
       <div class="podcast-content">
         <p><strong>Coming Soon</strong></p>
         <p>Join us for insightful conversations about life, business, and personal growth. The Mic & Morals podcast will feature interviews with successful entrepreneurs and thought leaders.</p>
-        <p>Follow us on YouTube to stay updated: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #FFD700; text-decoration: none;">@hustlerentmedia</a></p>
+        <p>Follow us on YouTube to stay updated: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #FFFF00; text-decoration: none;">@hustlerentmedia</a></p>
       </div>
+    </div>
+  </section>
+
+  <!-- NEW: Order Process Section -->
+  <section id="order-process" class="fade-in delay-3">
+    <h2>Order Process</h2>
+    <div class="order-process-content">
+      <h3>How to Place an Order</h3>
+      <p>Ordering from Hustle Rent Media is simple and straightforward. Follow these steps to get started:</p>
+      
+      <h3>Step 1: Consultation</h3>
+      <p>Contact us through our booking form to discuss your project requirements. We'll schedule a free consultation to understand your needs and provide a quote.</p>
+      
+      <h3>Step 2: Project Details</h3>
+      <p>Provide us with all necessary information about your project, including:</p>
+      <ul>
+        <li>Your brand guidelines (if available)</li>
+        <li>Specific design requirements</li>
+        <li>Deadlines and timeline expectations</li>
+        <li>Examples of styles you like</li>
+      </ul>
+      
+      <h3>Step 3: Payment & Agreement</h3>
+      <p>Once we agree on the scope and pricing, we'll send you an invoice. A 50% deposit is required to begin work on most projects.</p>
+      
+      <h3>Step 4: Creation & Revisions</h3>
+      <p>We'll create your design and provide updates throughout the process. You'll have opportunities for revisions to ensure complete satisfaction.</p>
+      
+      <h3>Step 5: Final Delivery</h3>
+      <p>After final approval and remaining payment, we'll deliver your completed files in all required formats.</p>
+      
+      <h3>Payment Methods</h3>
+      <p>We accept various payment methods including credit cards, PayPal, and bank transfers.</p>
+      
+      <p><strong>Ready to get started?</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Book your consultation now</a></p>
+    </div>
+  </section>
+
+  <!-- NEW: Terms & Conditions Section -->
+  <section id="terms" class="fade-in delay-4">
+    <h2>Terms & Conditions</h2>
+    <div class="legal-content">
+      <h3>1. Acceptance of Terms</h3>
+      <p>By purchasing our services or products, you agree to be bound by these Terms and Conditions.</p>
+      
+      <h3>2. Services Provided</h3>
+      <p>Hustle Rent Media provides digital services including but not limited to:</p>
+      <ul>
+        <li>Graphic design services</li>
+        <li>Web design and development</li>
+        <li>eBook creation and distribution</li>
+        <li>Branding and identity design</li>
+        <li>Educational content and classes</li>
+      </ul>
+      
+      <h3>3. Payment Terms</h3>
+      <p>All services require payment as follows:</p>
+      <ul>
+        <li>50% deposit required before work begins</li>
+        <li>Balance due upon project completion</li>
+        <li>All payments are non-refundable once work has commenced</li>
+      </ul>
+      
+      <h3>4. Intellectual Property</h3>
+      <p>Upon full payment, clients receive full rights to the final delivered work. Hustle Rent Media retains the right to display completed work in our portfolio unless otherwise agreed in writing.</p>
+      
+      <h3>5. Revisions Policy</h3>
+      <p>We include up to 3 rounds of revisions in our standard pricing. Additional revisions may incur extra charges.</p>
+      
+      <h3>6. Delivery Timeline</h3>
+      <p>Delivery times vary by project complexity. Standard turnaround is 7-14 business days. Rush services may be available for an additional fee.</p>
+      
+      <h3>7. eBook Purchases</h3>
+      <p>All eBook sales are final. Due to the digital nature of these products, no refunds can be issued after purchase.</p>
+      
+      <h3>8. Limitation of Liability</h3>
+      <p>Hustle Rent Media's liability is limited to the amount paid for services. We are not liable for indirect or consequential damages.</p>
+      
+      <h3>9. Governing Law</h3>
+      <p>These terms are governed by the laws of the United States. Any disputes will be resolved through arbitration.</p>
+      
+      <h3>10. Changes to Terms</h3>
+      <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of updated terms.</p>
+      
+      <p><strong>Last Updated:</strong> September 2024</p>
+      <p>For questions about these terms, contact us through our <a href="#services">services page</a>.</p>
     </div>
   </section>
 
@@ -894,8 +959,9 @@
     <div class="footer-links">
       <a href="#ebooks">The Hustle Library</a>
       <a href="#services">Our Services</a>
-      <a href="#portfolio">Portfolio</a>
       <a href="#podcast">Podcast</a>
+      <a href="#order-process">Order Process</a>
+      <a href="#terms">Terms & Conditions</a>
     </div>
     <div class="social-links">
       <a href="https://x.com/hustle_rent_due" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
