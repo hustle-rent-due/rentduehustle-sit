@@ -237,7 +237,6 @@
       .hero-logo { max-width: 250px; }
     }
 
-    /* Rest of your existing CSS remains the same */
     /* eBook Teaser Section - Redesigned */
     #ebook-teaser {
       padding: 80px 20px;
@@ -378,48 +377,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    /* NEW: Terms & Conditions and Order Process Sections */
-    .legal-content, .order-process-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    
-    .legal-content h3, .order-process-content h3 {
-      color: #FFFF00;
-      font-size: 1.8em;
-      margin: 30px 0 15px;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .legal-content p, .order-process-content p {
-      margin-bottom: 20px;
-      color: #e0e0e0;
-      line-height: 1.7;
-    }
-    
-    .legal-content ul, .order-process-content ul {
-      margin: 20px 0;
-      padding-left: 30px;
-    }
-    
-    .legal-content li, .order-process-content li {
-      margin-bottom: 10px;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-    
-    .legal-content a, .order-process-content a {
-      color: #FFFF00;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .legal-content a:hover, .order-process-content a:hover {
-      color: #FF4500;
-      text-decoration: underline;
     }
 
     /* eBooks Section - Fixed Image Display */
@@ -592,13 +549,6 @@
       font-size: 1.1em;
     }
 
-    /* Services Section */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
     /* Podcast Section */
     .podcast-container {
       display: flex;
@@ -717,10 +667,8 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#ebooks">eBooks</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#podcast">Podcast</a></li>
-      <li><a href="#order-process">Order Process</a></li>
-      <li><a href="#terms">Terms</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
   </nav>
 
@@ -732,7 +680,7 @@
       <p>Empower Your Hustle with Premium Branding & Transformative Knowledge</p>
       <div class="hero-buttons">
         <a href="#ebooks" class="hero-cta">Discover Our eBooks</a>
-        <a href="#services" class="hero-cta secondary">Explore Services</a>
+        <a href="#about" class="hero-cta secondary">About Us</a>
       </div>
     </div>
   </header>
@@ -795,57 +743,6 @@
     <p class="note">📚 More transformative titles coming soon...</p>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="fade-in delay-1">
-    <h2>Hustle Rent Media Services</h2>
-    <div class="services">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/mockwebsite.png?raw=true" alt="Website Design Service">
-          <div class="card-overlay"><p>Build your dream site!</p></div>
-        </div>
-        <div class="card-content">
-          <h3>Graphic & Web Design</h3>
-          <p>Flyers, eBook covers, brand kits, full website design for entrepreneurs and businesses.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Book Now</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ad.png?raw=true" alt="Flyer Design Service">
-          <div class="card-overlay"><p>Grab attention!</p></div>
-        </div>
-        <div class="card-content">
-          <h3>Flyer Design</h3>
-          <p>Eye-catching flyers and promotional materials to keep the crowd focused.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Order Now</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/brandkitmocknew.png?raw=true" alt="Brand Kit Service">
-          <div class="card-overlay"><p>Elevate your brand!</p></div>
-        </div>
-        <div class="card-content">
-          <h3>Brand Kits & Assets</h3>
-          <p>Custom visual identity sets including logo, palette & typography.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Get a Kit</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/ChatGPT%20Image%20Sep%2020,%202025%20at%2008_46_04%20AM.png?raw=true" alt="Classes & Tutorials">
-          <div class="card-overlay"><p>Level up your skills!</p></div>
-        </div>
-        <div class="card-content">
-          <h3>Classes & Tutorials</h3>
-          <p>Learn digital marketing, content creation, and design skills.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button">Enroll Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Podcast Section -->
   <section id="podcast" class="fade-in delay-2">
     <h2>Mic & Morals Podcast</h2>
@@ -861,107 +758,18 @@
     </div>
   </section>
 
-  <!-- NEW: Order Process Section -->
-  <section id="order-process" class="fade-in delay-3">
-    <h2>Order Process</h2>
-    <div class="order-process-content">
-      <h3>How to Place an Order</h3>
-      <p>Ordering from Hustle Rent Media is simple and straightforward. Follow these steps to get started:</p>
-      
-      <h3>Step 1: Consultation</h3>
-      <p>Contact us through our booking form to discuss your project requirements. We'll schedule a free consultation to understand your needs and provide a quote.</p>
-      
-      <h3>Step 2: Project Details</h3>
-      <p>Provide us with all necessary information about your project, including:</p>
-      <ul>
-        <li>Your brand guidelines (if available)</li>
-        <li>Specific design requirements</li>
-        <li>Deadlines and timeline expectations</li>
-        <li>Examples of styles you like</li>
-      </ul>
-      
-      <h3>Step 3: Payment & Agreement</h3>
-      <p>Once we agree on the scope and pricing, we'll send you an invoice. A 50% deposit is required to begin work on most projects.</p>
-      
-      <h3>Step 4: Creation & Revisions</h3>
-      <p>We'll create your design and provide updates throughout the process. You'll have opportunities for revisions to ensure complete satisfaction.</p>
-      
-      <h3>Step 5: Final Delivery</h3>
-      <p>After final approval and remaining payment, we'll deliver your completed files in all required formats.</p>
-      
-      <h3>Payment Methods</h3>
-      <p>We accept various payment methods including credit cards, PayPal, and bank transfers.</p>
-      
-      <p><strong>Ready to get started?</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLScEgur926BfExRsCt-of3DwDRCq8foq37q4y-qEhUKgk0KUOg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Book your consultation now</a></p>
-    </div>
-  </section>
-
-  <!-- NEW: Terms & Conditions Section -->
-  <section id="terms" class="fade-in delay-4">
-    <h2>Terms & Conditions</h2>
-    <div class="legal-content">
-      <h3>1. Acceptance of Terms</h3>
-      <p>By purchasing our services or products, you agree to be bound by these Terms and Conditions.</p>
-      
-      <h3>2. Services Provided</h3>
-      <p>Hustle Rent Media provides digital services including but not limited to:</p>
-      <ul>
-        <li>Graphic design services</li>
-        <li>Web design and development</li>
-        <li>eBook creation and distribution</li>
-        <li>Branding and identity design</li>
-        <li>Educational content and classes</li>
-      </ul>
-      
-      <h3>3. Payment Terms</h3>
-      <p>All services require payment as follows:</p>
-      <ul>
-        <li>50% deposit required before work begins</li>
-        <li>Balance due upon project completion</li>
-        <li>All payments are non-refundable once work has commenced</li>
-      </ul>
-      
-      <h3>4. Intellectual Property</h3>
-      <p>Upon full payment, clients receive full rights to the final delivered work. Hustle Rent Media retains the right to display completed work in our portfolio unless otherwise agreed in writing.</p>
-      
-      <h3>5. Revisions Policy</h3>
-      <p>We include up to 3 rounds of revisions in our standard pricing. Additional revisions may incur extra charges.</p>
-      
-      <h3>6. Delivery Timeline</h3>
-      <p>Delivery times vary by project complexity. Standard turnaround is 7-14 business days. Rush services may be available for an additional fee.</p>
-      
-      <h3>7. eBook Purchases</h3>
-      <p>All eBook sales are final. Due to the digital nature of these products, no refunds can be issued after purchase.</p>
-      
-      <h3>8. Limitation of Liability</h3>
-      <p>Hustle Rent Media's liability is limited to the amount paid for services. We are not liable for indirect or consequential damages.</p>
-      
-      <h3>9. Governing Law</h3>
-      <p>These terms are governed by the laws of the United States. Any disputes will be resolved through arbitration.</p>
-      
-      <h3>10. Changes to Terms</h3>
-      <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of updated terms.</p>
-      
-      <p><strong>Last Updated:</strong> September 2024</p>
-      <p>For questions about these terms, contact us through our <a href="#services">services page</a>.</p>
-    </div>
-  </section>
-
   <!-- About Section -->
   <section id="about" class="fade-in">
     <h2>About Hustle Rent Media</h2>
     <p>We empower entrepreneurs and hustlers to build their brand, master their mindset, and create a legacy. From stunning web designs to transformative eBooks like <em>Why You Keep Attracting the Wrong People</em>, we're here to elevate your hustle with premium quality and actionable insights.</p>
-    <a href="#services" class="cta-button">Work With Us</a>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-links">
       <a href="#ebooks">The Hustle Library</a>
-      <a href="#services">Our Services</a>
       <a href="#podcast">Podcast</a>
-      <a href="#order-process">Order Process</a>
-      <a href="#terms">Terms & Conditions</a>
+      <a href="#about">About</a>
     </div>
     <div class="social-links">
       <a href="https://x.com/hustle_rent_due" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
