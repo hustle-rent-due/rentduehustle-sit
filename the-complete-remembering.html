@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete Re-Membering: From Kemet to Wall Street | Hustle Rent Media</title>
+  <meta name="description" content="The Complete Re-Membering: From Kemet to Wall Street - A re-membering map of history, identity, symbolism, and systems. Restore what was fragmented and translate it into present-day understanding.">
+  <meta name="keywords" content="re-membering, kemet, wall street, history, identity, systems, fragmented, restoration, hustle rent media, ebook">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@600;700;800;900&family=Abril+Fatface&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      color: #FFFFFF;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Sticky Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(12, 12, 12, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    .sticky-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .sticky-nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: all 0.3s;
+      position: relative;
+      padding: 5px 0;
+    }
+    .sticky-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF0000;
+      transition: width 0.3s;
+    }
+    .sticky-nav a:hover::after { width: 100%; }
+    .sticky-nav a:hover { color: #FFFFFF; }
+    @media (max-width: 768px) {
+      .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    /* Book Hero Section - Updated Background */
+    .book-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)), 
+                  url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center/cover;
+      color: #FFFFFF;
+      overflow: hidden;
+      padding: 60px 20px;
+    }
+    .book-hero-content {
+      position: relative; 
+      z-index: 2;
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      text-align: left;
+    }
+    .book-cover-container {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
+    }
+    .book-cover {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      transition: transform 0.5s;
+      border: 3px solid rgba(255, 215, 0, 0.3);
+    }
+    .book-cover:hover {
+      transform: scale(1.03) rotate(1deg);
+    }
+    .book-hero-text {
+      flex: 2;
+    }
+    .book-hero-text h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4em;
+      font-weight: 900;
+      background: linear-gradient(45deg, #FFFF00, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .book-subtitle {
+      font-family: 'Abril Fatface', serif;
+      font-size: 2.2em;
+      color: #FFD700;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+    .book-tagline {
+      font-size: 1.8em;
+      color: #f0f0f0;
+      margin-bottom: 30px;
+      font-weight: 300;
+      line-height: 1.4;
+      border-left: 4px solid #FFD700;
+      padding-left: 20px;
+    }
+    .book-excerpt {
+      font-size: 1.4em;
+      font-style: italic;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      line-height: 1.7;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #FF4500;
+    }
+    .book-cta-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .book-cta-button {
+      padding: 16px 40px;
+      background: linear-gradient(45deg, #FF4500, #FF0000);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: inline-block;
+      text-align: center;
+      letter-spacing: 1px;
+      min-width: 220px;
+    }
+    .book-cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #FF0000, #FF4500);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    .book-cta-button:hover::before { left: 0; }
+    .book-cta-button:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6);
+      letter-spacing: 2px;
+    }
+    .book-cta-button.secondary { 
+      background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+      color: #FFFF00;
+      border: 2px solid #FFFF00;
+    }
+    .book-cta-button.secondary::before {
+      background: linear-gradient(45deg, #FFFF00, #FFD700);
+    }
+    .book-cta-button.secondary:hover { color: #1a1a1a; }
+    @media (max-width: 968px) {
+      .book-hero-content { flex-direction: column; text-align: center; gap: 40px; }
+      .book-hero-text { text-align: center; }
+      .book-tagline { border-left: none; padding-left: 0; border-top: 3px solid #FFD700; padding-top: 20px; }
+      .book-excerpt { border-left: none; border-top: 3px solid #FF4500; }
+    }
+    @media (max-width: 768px) {
+      .book-hero-text h1 { font-size: 2.8em; }
+      .book-subtitle { font-size: 1.8em; }
+      .book-tagline { font-size: 1.4em; }
+      .book-excerpt { font-size: 1.2em; }
+      .book-cta-buttons { flex-direction: column; align-items: center; }
+      .book-cta-button { width: 100%; max-width: 300px; }
+      .book-cover-container { max-width: 300px; }
+    }
+
+    /* Sections */
+    .book-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 60px auto;
+      background: rgba(25, 25, 25, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .book-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 3em;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 50px;
+      background: linear-gradient(45deg, #FFFF00, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Book Details */
+    .book-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .detail-card {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      border-radius: 15px;
+      padding: 30px;
+      transition: all 0.4s;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .detail-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+    .detail-card h3 {
+      font-size: 1.8em;
+      color: #FFD700;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .detail-card h3 i {
+      font-size: 1.2em;
+    }
+    .detail-card p {
+      font-size: 1.1em;
+      color: #f0f0f0;
+      line-height: 1.7;
+    }
+    .detail-card ul {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+    .detail-card li {
+      margin-bottom: 12px;
+      color: #f0f0f0;
+      line-height: 1.6;
+      position: relative;
+    }
+    .detail-card li::before {
+      content: '▸';
+      color: #FFD700;
+      position: absolute;
+      left: -15px;
+    }
+
+    /* Chapter Preview */
+    .chapter-preview {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
+      padding: 40px;
+      border-radius: 15px;
+      border-left: 5px solid #FF4500;
+      margin-top: 30px;
+    }
+    .chapter-preview h4 {
+      font-size: 1.8em;
+      color: #FFFF00;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .chapter-preview p {
+      font-size: 1.2em;
+      color: #e0e0e0;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .chapter-preview .note {
+      font-style: italic;
+      color: #FFA500;
+      border-top: 1px solid rgba(255, 215, 0, 0.3);
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 50px 20px 30px;
+      margin-top: 80px;
+      border-top: 1px solid rgba(255, 215, 0, 0.1);
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00);
+    }
+    .footer-links { margin: 30px 0; }
+    .footer-links a {
+      color: #FFFF00;
+      margin: 0 20px; 
+      text-decoration: none; 
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    .footer-links a:hover { color: #FF4500; }
+    .social-links { margin: 30px 0; }
+    .social-links a {
+      display: inline-block; 
+      width: 50px; 
+      height: 50px;
+      line-height: 50px; 
+      text-align: center;
+      background: rgba(255, 255, 0, 0.2);
+      color: #FFFF00;
+      border-radius: 50%;
+      margin: 0 10px; 
+      transition: all 0.3s;
+      font-size: 1.2em;
+    }
+    .social-links a:hover {
+      background: #FFFF00;
+      color: #1A1A1A;
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { 
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+
+    @media (max-width: 768px) {
+      .book-section { padding: 50px 20px; margin: 40px auto; }
+      .section-title { font-size: 2.5em; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="index.html">Back to Home</a></li>
+      <li><a href="#about">About the Book</a></li>
+      <li><a href="#chapters">Chapter Preview</a></li>
+    </ul>
+  </nav>
+
+  <!-- Book Hero Section -->
+  <header class="book-hero fade-in">
+    <div class="book-hero-content">
+      <div class="book-cover-container">
+        <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/rememeber.png?raw=true" 
+             alt="The Complete Re-Membering: From Kemet to Wall Street eBook Cover" class="book-cover">
+      </div>
+      <div class="book-hero-text">
+        <h1>The Complete Re-Membering</h1>
+        <p class="book-subtitle">From Kemet to Wall Street</p>
+        <p class="book-tagline">A re-membering map of history, identity, symbolism, and systems — written to restore what was fragmented.</p>
+        
+        <div class="book-excerpt">
+          "This is not written to convince institutions that rely on erasure. It is written to show those who have been fragmented where the pieces are."
+        </div>
+        
+        <div class="book-cta-buttons">
+          <a href="#about" class="book-cta-button">Learn More</a>
+          <a href="#chapters" class="book-cta-button secondary">Read Chapter Preview</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About the Book Section -->
+  <section id="about" class="book-section fade-in delay-1">
+    <h2 class="section-title">About The Book</h2>
+    
+    <div class="book-details">
+      <div class="detail-card">
+        <h3><i class="fas fa-book"></i> What This Book Is</h3>
+        <p><strong>The Complete Re-Membering</strong> is a restoration project in book form. It's a map that connects the fragments of history, identity, and systems that have been deliberately obscured or erased.</p>
+        <p>This isn't just history — it's a framework for understanding how we got here and where the pieces fit together in the present moment.</p>
+      </div>
+      
+      <div class="detail-card">
+        <h3><i class="fas fa-bullseye"></i> Who It's For</h3>
+        <ul>
+          <li>Those who feel disconnected from their history</li>
+          <li>Thinkers seeking to understand systemic patterns</li>
+          <li>Researchers tired of fragmented narratives</li>
+          <li>Anyone asking "how did we get here?"</li>
+          <li>People ready to piece together what's been scattered</li>
+        </ul>
+      </div>
+      
+      <div class="detail-card">
+        <h3><i class="fas fa-lightbulb"></i> What You'll Gain</h3>
+        <ul>
+          <li>A complete framework for historical context</li>
+          <li>Understanding of symbolic connections across time</li>
+          <li>Clarity on identity beyond imposed narratives</li>
+          <li>Tools to decode modern systems and structures</li>
+          <li>A restored sense of continuity and purpose</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter Preview Section -->
+  <section id="chapters" class="book-section fade-in delay-2">
+    <h2 class="section-title">Chapter Preview</h2>
+    
+    <div class="chapter-preview">
+      <h4>Chapter 3: The Fragmentation Engine</h4>
+      <p>"Every system of control relies on the same fundamental mechanism: fragmentation. Break a thing into pieces small enough, separate those pieces far enough, and you create the illusion of disconnection. The pieces remain — they're just harder to see as part of the whole."</p>
+      
+      <p>"From Kemet's deliberate recasting in Western academia to Wall Street's abstraction of value from people, the pattern repeats. We're taught to see the pieces as unrelated, as separate stories, as isolated incidents. Re-membering is the act of refusing that separation."</p>
+      
+      <p>"The fragments are everywhere — in language, in symbols, in economic structures, in educational curricula. They weren't lost; they were scattered. This book is a map to where they landed."</p>
+      
+      <p class="note">This is just a glimpse into one chapter. The complete work contains 12 chapters mapping the journey from ancient systems to modern structures.</p>
+    </div>
+    
+    <div class="book-details" style="margin-top: 40px;">
+      <div class="detail-card">
+        <h3><i class="fas fa-list-ol"></i> Complete Chapter List</h3>
+        <ul>
+          <li>1. Introduction: The Map of Re-Membering</li>
+          <li>2. Kemet: What Was Before the Erasure</li>
+          <li>3. The Fragmentation Engine</li>
+          <li>4. Symbols: The Language of Continuity</li>
+          <li>5. Identity: Beyond the Construct</li>
+          <li>6. Economics: From Barter to Abstraction</li>
+          <li>7. Education: What Gets Taught, What Gets Lost</li>
+          <li>8. Religion: The Rebranding of Systems</li>
+          <li>9. The Middle Passage: Not Just a Journey</li>
+          <li>10. Reconstruction: Putting Pieces Together</li>
+          <li>11. Wall Street: The Modern Temple</li>
+          <li>12. The Complete Picture: Seeing the Whole</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Back to Hustle Rent Media</a>
+      <a href="#about">About the Book</a>
+      <a href="#chapters">Chapter Preview</a>
+    </div>
+    <div class="social-links">
+      <a href="https://x.com/hustle_rent_due" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@hustle.rent.due" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>© <span id="year"></span> Hustle Rent Media. All Rights Reserved.</p>
+    <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">The Complete Re-Membering: From Kemet to Wall Street is a production of Hustle Rent Media</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(element => { element.style.opacity = 0; });
+      
+      // Auto year update
+      document.getElementById("year").textContent = new Date().getFullYear();
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Scroll animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>
