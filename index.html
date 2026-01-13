@@ -20,7 +20,7 @@
       overflow-x: hidden;
     }
 
-    /* Sticky Navigation */
+    /* Sticky Navigation - Updated Colors */
     .sticky-nav {
       position: sticky;
       top: 0;
@@ -29,7 +29,7 @@
       padding: 15px 0;
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.2);
     }
     .sticky-nav ul {
       display: flex;
@@ -38,7 +38,7 @@
       list-style: none;
     }
     .sticky-nav a {
-      color: #FFD700;
+      color: #00FFFF; /* Cyan instead of yellow */
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -54,7 +54,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #FF0000;
+      background: #0080FF; /* Blue instead of red */
       transition: width 0.3s;
     }
     .sticky-nav a:hover::after { width: 100%; }
@@ -63,7 +63,7 @@
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Hero Section - Updated with NEW Logo and Brighter Typography */
+    /* Hero Section - Updated with Blue/Cyan Colors */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -86,12 +86,12 @@
       max-width: 320px;
       margin-bottom: 25px;
       transition: transform 0.5s;
-      filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.5));
+      filter: drop-shadow(0 5px 15px rgba(0, 200, 255, 0.5));
       animation: logoEnter 1.2s ease forwards;
     }
     .hero-logo:hover { 
       transform: scale(1.08) rotate(2deg); 
-      filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.7));
+      filter: drop-shadow(0 8px 25px rgba(0, 200, 255, 0.7));
     }
     @keyframes logoEnter {
       from { 
@@ -104,21 +104,20 @@
       }
     }
     
-    /* UPDATED: Brighter, More Vibrant Typography for Header */
+    /* UPDATED: Blue/Cyan Typography for Header - Simplified */
     .hero-content h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 5.5em;
       font-weight: 900;
-      /* BRIGHTER GRADIENT: More vibrant golds and oranges */
-      background: linear-gradient(45deg, #FFFF00 0%, #FFD700 20%, #FFA500 40%, #FF8C00 60%, #FF4500 80%, #FFFF00 100%);
+      /* BLUE/CYAN GRADIENT */
+      background: linear-gradient(45deg, #00FFFF 0%, #0080FF 50%, #00BFFF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-size: 200% auto;
       text-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
       margin-bottom: 15px;
       letter-spacing: 2px;
-      animation: shimmer 3s infinite linear, float 6s ease-in-out infinite;
-      position: relative;
+      /* REMOVED: float animation, kept shimmer */
+      animation: shimmer 3s infinite linear;
     }
     
     /* Shimmer effect for the text */
@@ -127,38 +126,12 @@
       100% { background-position: 200% center; }
     }
     
-    /* Floating animation */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    /* UPDATED: Brighter glow effect */
-    .hero-content h1::after {
-      content: 'Hustle Rent Media';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #FFFF00, #FFA500, #FF4500);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      z-index: -1;
-      filter: blur(10px);
-      opacity: 0.8;
-      animation: glowPulse 4s ease-in-out infinite;
-    }
-    
-    @keyframes glowPulse {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 0.9; }
-    }
+    /* REMOVED: Floating animation and glow effect */
     
     .hero-content p { 
       font-size: 1.6em; 
       margin: 25px 0 35px; 
-      color: #f0f0f0; /* Slightly brighter text color */
+      color: #f0f0f0;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
@@ -184,14 +157,14 @@
     }
     .hero-cta {
       padding: 16px 45px;
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
-      color: #1A1A1A;
+      background: linear-gradient(45deg, #0080FF, #00BFFF); /* Blue gradient */
+      color: #FFFFFF; /* White text on blue */
       text-decoration: none;
       border-radius: 50px;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
+      box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -207,25 +180,25 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FFD700, #FFFF00); /* Brighter hover effect */
+      background: linear-gradient(45deg, #00BFFF, #0080FF);
       transition: left 0.5s;
       z-index: -1;
     }
     .hero-cta:hover::before { left: 0; }
     .hero-cta:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.6); /* Brighter hover shadow */
+      box-shadow: 0 8px 20px rgba(0, 128, 255, 0.6);
       letter-spacing: 2px;
     }
     .hero-cta.secondary { 
       background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-      color: #FFFF00; /* Brighter gold text */
-      border: 2px solid #FFFF00; /* Brighter border */
+      color: #00FFFF; /* Cyan text */
+      border: 2px solid #00FFFF; /* Cyan border */
     }
     .hero-cta.secondary::before {
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter hover */
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
     }
-    .hero-cta.secondary:hover { color: #1a1a1a; }
+    .hero-cta.secondary:hover { color: #FFFFFF; }
     @media (max-width: 768px) {
       .hero-content h1 { 
         font-size: 3.2em; 
@@ -237,7 +210,7 @@
       .hero-logo { max-width: 250px; }
     }
 
-    /* eBook Teaser Section - Redesigned */
+    /* eBook Teaser Section - Updated Colors */
     #ebook-teaser {
       padding: 80px 20px;
       background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
@@ -251,7 +224,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%);
+      background: radial-gradient(circle at 20% 50%, rgba(0, 128, 255, 0.1) 0%, transparent 50%);
       z-index: 1;
     }
     .teaser-container {
@@ -285,7 +258,7 @@
     #ebook-teaser h2 {
       font-size: 3em;
       margin-bottom: 20px;
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gradient */
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: left;
@@ -293,7 +266,7 @@
     .excerpt-text {
       font-size: 1.4em;
       font-style: italic;
-      color: #f0f0f0; /* Brighter text */
+      color: #f0f0f0;
       margin-bottom: 25px;
       line-height: 1.7;
     }
@@ -301,13 +274,13 @@
       display: block;
       font-size: 0.9em;
       margin-top: 15px;
-      color: #FFFF00; /* Brighter gold */
+      color: #00FFFF;
       font-style: normal;
       font-weight: 600;
     }
     .teaser-cta {
       padding: 14px 35px;
-      background: linear-gradient(45deg, #FF4500, #FF0000); /* Brighter red */
+      background: linear-gradient(45deg, #0080FF, #00BFFF);
       color: #FFFFFF;
       text-decoration: none;
       border-radius: 50px;
@@ -315,7 +288,7 @@
       font-weight: 600;
       transition: all 0.3s;
       display: inline-block;
-      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4); /* Brighter shadow */
+      box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -327,14 +300,14 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FF0000, #FF4500); /* Brighter hover */
+      background: linear-gradient(45deg, #00BFFF, #0080FF);
       transition: left 0.5s;
       z-index: -1;
     }
     .teaser-cta:hover::before { left: 0; }
     .teaser-cta:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6); /* Brighter hover shadow */
+      box-shadow: 0 8px 20px rgba(0, 128, 255, 0.6);
     }
     @media (max-width: 968px) {
       .teaser-container { flex-direction: column; text-align: center; gap: 30px; }
@@ -347,15 +320,15 @@
       .excerpt-text { font-size: 1.2em; }
     }
 
-    /* Sections */
+    /* Sections - Updated Colors */
     section {
       padding: 80px 20px;
       max-width: 1200px;
       margin: 60px auto;
-      background: rgba(25, 25, 25, 0.8); /* Slightly brighter section background */
+      background: rgba(25, 25, 25, 0.8);
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(0, 200, 255, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -366,38 +339,39 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00); /* Brighter gradient */
+      background: linear-gradient(90deg, #00FFFF, #0080FF, #00FFFF);
     }
     h2 {
       text-align: center;
       font-size: 3em;
       font-family: 'Poppins', sans-serif;
       margin-bottom: 50px;
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gradient */
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* eBooks Section - Fixed Image Display */
+    /* eBooks Section - Updated Colors */
     .ebooks {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 40px;
     }
     .card {
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      background: rgba(30, 30, 30, 0.7);
       border-radius: 15px;
       overflow: hidden;
       transition: all 0.4s;
       position: relative;
-      border: 1px solid rgba(255, 215, 0, 0.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border: none;
+      box-shadow: none;
+      backdrop-filter: blur(10px);
     }
     .card:hover { 
       transform: translateY(-10px); 
-      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
-      border-color: rgba(255, 215, 0, 0.3);
+      background: rgba(40, 40, 40, 0.9);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     }
     .card-image { 
       height: 280px; 
@@ -406,15 +380,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #1a1a1a;
-      padding: 18px; /* Added padding for premium look */
+      background: transparent;
+      padding: 20px;
     }
     .card-image img { 
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
       transition: transform 0.5s;
-      border-radius: 10px; /* Added border radius for premium look */
+      border-radius: 8px;
     }
     .card:hover .card-image img { transform: scale(1.05); }
     .card-overlay {
@@ -427,13 +401,16 @@
     }
     .card:hover .card-overlay { opacity: 1; }
     .card-overlay p { 
-      color: #FFFF00; /* Brighter gold */
+      color: #00FFFF;
       font-size: 1.3em; 
       font-weight: 600;
       text-align: center;
       padding: 20px;
     }
-    .card-content { padding: 30px; }
+    .card-content { 
+      padding: 30px; 
+      background: transparent;
+    }
     .card h3 { 
       font-size: 1.8em; 
       color: #FFFFFF; 
@@ -443,10 +420,10 @@
     .card p { 
       font-size: 1em; 
       margin-bottom: 20px;
-      color: #f0f0f0; /* Brighter text */
+      color: #f0f0f0;
     }
     .cta-button {
-      background: linear-gradient(45deg, #FF4500, #FF0000); /* Brighter red */
+      background: linear-gradient(45deg, #0080FF, #00BFFF);
       padding: 12px 25px;
       border-radius: 50px;
       color: #FFFFFF;
@@ -454,7 +431,7 @@
       transition: all 0.3s;
       display: inline-block;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4); /* Brighter shadow */
+      box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -466,27 +443,27 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FF0000, #FF4500); /* Brighter hover */
+      background: linear-gradient(45deg, #00BFFF, #0080FF);
       transition: left 0.5s;
       z-index: -1;
     }
     .cta-button:hover::before { left: 0; }
     .cta-button:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6); /* Brighter hover shadow */
+      box-shadow: 0 8px 20px rgba(0, 128, 255, 0.6);
     }
     
-    /* UPDATED: Brighter Learn More Button Style */
+    /* Learn More Button - Updated Colors */
     .learn-more-button {
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
-      color: #1A1A1A;
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
+      color: #FFFFFF;
       padding: 12px 25px;
       border-radius: 50px;
       font-weight: 600;
       transition: all 0.3s;
       display: inline-block;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
+      box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -498,26 +475,26 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FFD700, #FFFF00); /* Brighter hover */
+      background: linear-gradient(45deg, #0080FF, #00FFFF);
       transition: left 0.5s;
       z-index: -1;
     }
     .learn-more-button:hover::before { left: 0; }
     .learn-more-button:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.6); /* Brighter hover shadow */
+      box-shadow: 0 8px 20px rgba(0, 128, 255, 0.6);
     }
     
     .featured-card .cta-button { 
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
-      color: #1A1A1A;
-      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
+      color: #FFFFFF;
+      box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
     }
     .featured-card .cta-button::before {
-      background: linear-gradient(45deg, #FFD700, #FFFF00); /* Brighter hover */
+      background: linear-gradient(45deg, #0080FF, #00FFFF);
     }
     .featured-card .cta-button:hover { 
-      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.6); /* Brighter hover shadow */
+      box-shadow: 0 8px 20px rgba(0, 128, 255, 0.6);
     }
     .coming-soon { 
       background: linear-gradient(45deg, #6c757d, #495057) !important; 
@@ -534,8 +511,8 @@
       position: absolute; 
       top: 15px; 
       right: 15px;
-      background: linear-gradient(45deg, #FFFF00, #FFD700); /* Brighter gold */
-      color: #1A1A1A; 
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
+      color: #FFFFFF; 
       padding: 8px 15px; 
       border-radius: 20px;
       font-size: 0.8em; 
@@ -551,7 +528,7 @@
       font-size: 1.1em;
     }
 
-    /* Podcast Section */
+    /* Podcast Section - Updated Colors */
     .podcast-container {
       display: flex;
       align-items: center;
@@ -574,7 +551,7 @@
     .podcast-content p { 
       margin-bottom: 20px;
       font-size: 1.2em;
-      color: #f0f0f0; /* Brighter text */
+      color: #f0f0f0;
     }
     @media (max-width: 768px) {
       .podcast-container { flex-direction: column; text-align: center; }
@@ -591,17 +568,17 @@
       max-width: 800px; 
       margin: 25px auto; 
       font-size: 1.3em;
-      color: #f0f0f0; /* Brighter text */
+      color: #f0f0f0;
     }
 
-    /* Footer */
+    /* Footer - Updated Colors */
     footer {
       background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
       color: #FFFFFF;
       text-align: center;
       padding: 50px 20px 30px;
       margin-top: 80px;
-      border-top: 1px solid rgba(255, 215, 0, 0.1);
+      border-top: 1px solid rgba(0, 200, 255, 0.1);
       position: relative;
     }
     footer::before {
@@ -611,17 +588,17 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00); /* Brighter gradient */
+      background: linear-gradient(90deg, #00FFFF, #0080FF, #00FFFF);
     }
     .footer-links { margin: 30px 0; }
     .footer-links a {
-      color: #FFFF00; /* Brighter gold */
+      color: #00FFFF;
       margin: 0 20px; 
       text-decoration: none; 
       transition: color 0.3s;
       font-weight: 500;
     }
-    .footer-links a:hover { color: #FF4500; } /* Brighter hover color */
+    .footer-links a:hover { color: #0080FF; }
     .social-links { margin: 30px 0; }
     .social-links a {
       display: inline-block; 
@@ -629,18 +606,18 @@
       height: 50px;
       line-height: 50px; 
       text-align: center;
-      background: rgba(255, 255, 0, 0.2); /* Brighter background */
-      color: #FFFF00; /* Brighter gold */
+      background: rgba(0, 200, 255, 0.2);
+      color: #00FFFF;
       border-radius: 50%;
       margin: 0 10px; 
       transition: all 0.3s;
       font-size: 1.2em;
     }
     .social-links a:hover {
-      background: #FFFF00; /* Brighter gold */
+      background: #00FFFF;
       color: #1A1A1A;
       transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4); /* Brighter shadow */
+      box-shadow: 0 5px 15px rgba(0, 200, 255, 0.4);
     }
 
     /* Animations */
@@ -674,7 +651,7 @@
     </ul>
   </nav>
 
-  <!-- Hero Section with NEW Logo and Brighter Typography -->
+  <!-- Hero Section with Blue/Cyan Colors -->
   <header id="home" class="hero-section">
     <div class="hero-content">
       <img src="https://github.com/hustle-rent-due/rentduehustle-sit/blob/main/translogo.png?raw=true" alt="Hustle Rent Media Logo" class="hero-logo">
@@ -704,7 +681,6 @@
           <span>— The Complete Re-Membering: From Kemet to Wall Street</span>
         </p>
 
-        <!-- Update this link to your actual book page filename -->
         <a href="the-complete-remembering.html" class="teaser-cta">Learn More</a>
       </div>
     </div>
@@ -735,7 +711,6 @@
             and translate it into present-day understanding.
           </p>
 
-          <!-- Update this link to your actual book page filename -->
           <a href="the-complete-remembering.html" class="learn-more-button">Learn More</a>
         </div>
       </div>
@@ -791,7 +766,7 @@
       <div class="podcast-content">
         <p><strong>Coming Soon</strong></p>
         <p>Join us for insightful conversations about life, business, and personal growth. The Mic & Morals podcast will feature interviews with successful entrepreneurs and thought leaders.</p>
-        <p>Follow us on YouTube to stay updated: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #FFFF00; text-decoration: none;">@hustlerentmedia</a></p>
+        <p>Follow us on YouTube to stay updated: <a href="https://www.youtube.com/@hustlerentmedia" target="_blank" rel="noopener noreferrer" style="color: #00FFFF; text-decoration: none;">@hustlerentmedia</a></p>
       </div>
     </div>
   </section>
