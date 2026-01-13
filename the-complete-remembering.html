@@ -20,7 +20,7 @@
       overflow-x: hidden;
     }
 
-    /* Sticky Navigation */
+    /* Sticky Navigation - Updated Colors */
     .sticky-nav {
       position: sticky;
       top: 0;
@@ -29,7 +29,7 @@
       padding: 15px 0;
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.2);
     }
     .sticky-nav ul {
       display: flex;
@@ -38,7 +38,7 @@
       list-style: none;
     }
     .sticky-nav a {
-      color: #FFD700;
+      color: #00FFFF; /* Cyan */
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -54,7 +54,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #FF0000;
+      background: #0080FF; /* Blue */
       transition: width 0.3s;
     }
     .sticky-nav a:hover::after { width: 100%; }
@@ -63,7 +63,7 @@
       .sticky-nav ul { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* Book Hero Section - Updated Background */
+    /* Book Hero Section - Updated Colors */
     .book-hero {
       position: relative;
       min-height: 100vh;
@@ -97,7 +97,7 @@
       border-radius: 15px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
       transition: transform 0.5s;
-      border: 3px solid rgba(255, 215, 0, 0.3);
+      border: 3px solid rgba(0, 200, 255, 0.3); /* Cyan border */
     }
     .book-cover:hover {
       transform: scale(1.03) rotate(1deg);
@@ -109,17 +109,25 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 4em;
       font-weight: 900;
-      background: linear-gradient(45deg, #FFFF00, #FFD700, #FFA500);
+      background: linear-gradient(45deg, #00FFFF, #0080FF, #00BFFF); /* Blue/Cyan gradient */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
       margin-bottom: 10px;
       letter-spacing: 1px;
+      animation: shimmer 3s infinite linear;
     }
+    
+    /* Shimmer effect */
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+    
     .book-subtitle {
       font-family: 'Abril Fatface', serif;
       font-size: 2.2em;
-      color: #FFD700;
+      color: #00FFFF; /* Cyan */
       margin-bottom: 25px;
       font-style: italic;
     }
@@ -129,7 +137,7 @@
       margin-bottom: 30px;
       font-weight: 300;
       line-height: 1.4;
-      border-left: 4px solid #FFD700;
+      border-left: 4px solid #00FFFF; /* Cyan */
       padding-left: 20px;
     }
     .book-excerpt {
@@ -141,7 +149,7 @@
       background: rgba(0, 0, 0, 0.3);
       padding: 25px;
       border-radius: 10px;
-      border-left: 4px solid #FF4500;
+      border-left: 4px solid #0080FF; /* Blue */
     }
     .book-cta-buttons {
       display: flex;
@@ -150,14 +158,14 @@
     }
     .book-cta-button {
       padding: 16px 40px;
-      background: linear-gradient(45deg, #FF4500, #FF0000);
+      background: linear-gradient(45deg, #0080FF, #00BFFF); /* Blue gradient */
       color: #FFFFFF;
       text-decoration: none;
       border-radius: 50px;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+      box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -173,30 +181,30 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, #FF0000, #FF4500);
+      background: linear-gradient(45deg, #00BFFF, #0080FF);
       transition: left 0.5s;
       z-index: -1;
     }
     .book-cta-button:hover::before { left: 0; }
     .book-cta-button:hover { 
       transform: translateY(-3px); 
-      box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 128, 255, 0.6);
       letter-spacing: 2px;
     }
     .book-cta-button.secondary { 
       background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-      color: #FFFF00;
-      border: 2px solid #FFFF00;
+      color: #00FFFF; /* Cyan text */
+      border: 2px solid #00FFFF; /* Cyan border */
     }
     .book-cta-button.secondary::before {
-      background: linear-gradient(45deg, #FFFF00, #FFD700);
+      background: linear-gradient(45deg, #00FFFF, #0080FF);
     }
-    .book-cta-button.secondary:hover { color: #1a1a1a; }
+    .book-cta-button.secondary:hover { color: #FFFFFF; }
     @media (max-width: 968px) {
       .book-hero-content { flex-direction: column; text-align: center; gap: 40px; }
       .book-hero-text { text-align: center; }
-      .book-tagline { border-left: none; padding-left: 0; border-top: 3px solid #FFD700; padding-top: 20px; }
-      .book-excerpt { border-left: none; border-top: 3px solid #FF4500; }
+      .book-tagline { border-left: none; padding-left: 0; border-top: 3px solid #00FFFF; padding-top: 20px; }
+      .book-excerpt { border-left: none; border-top: 3px solid #0080FF; }
     }
     @media (max-width: 768px) {
       .book-hero-text h1 { font-size: 2.8em; }
@@ -208,7 +216,7 @@
       .book-cover-container { max-width: 300px; }
     }
 
-    /* Sections */
+    /* Sections - Updated Colors */
     .book-section {
       padding: 80px 20px;
       max-width: 1200px;
@@ -216,7 +224,7 @@
       background: rgba(25, 25, 25, 0.8);
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(0, 200, 255, 0.1); /* Cyan border */
       position: relative;
       overflow: hidden;
     }
@@ -227,20 +235,20 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00);
+      background: linear-gradient(90deg, #00FFFF, #0080FF, #00FFFF); /* Blue/Cyan gradient */
     }
     .section-title {
       text-align: center;
       font-size: 3em;
       font-family: 'Poppins', sans-serif;
       margin-bottom: 50px;
-      background: linear-gradient(45deg, #FFFF00, #FFD700);
+      background: linear-gradient(45deg, #00FFFF, #0080FF); /* Blue/Cyan gradient */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Book Details */
+    /* Book Details - Updated Colors */
     .book-details {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -251,17 +259,17 @@
       border-radius: 15px;
       padding: 30px;
       transition: all 0.4s;
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(0, 200, 255, 0.1); /* Cyan border */
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .detail-card:hover { 
       transform: translateY(-10px); 
-      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
-      border-color: rgba(255, 215, 0, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 200, 255, 0.2); /* Cyan shadow */
+      border-color: rgba(0, 200, 255, 0.3); /* Cyan border on hover */
     }
     .detail-card h3 {
       font-size: 1.8em;
-      color: #FFD700;
+      color: #00FFFF; /* Cyan */
       margin-bottom: 20px;
       font-family: 'Poppins', sans-serif;
       display: flex;
@@ -288,22 +296,22 @@
     }
     .detail-card li::before {
       content: '▸';
-      color: #FFD700;
+      color: #00FFFF; /* Cyan */
       position: absolute;
       left: -15px;
     }
 
-    /* Chapter Preview */
+    /* Chapter Preview - Updated Colors */
     .chapter-preview {
       background: linear-gradient(135deg, #1a1a1a 0%, #0c0c0c 100%);
       padding: 40px;
       border-radius: 15px;
-      border-left: 5px solid #FF4500;
+      border-left: 5px solid #0080FF; /* Blue */
       margin-top: 30px;
     }
     .chapter-preview h4 {
       font-size: 1.8em;
-      color: #FFFF00;
+      color: #00FFFF; /* Cyan */
       margin-bottom: 20px;
       font-family: 'Poppins', sans-serif;
     }
@@ -315,20 +323,20 @@
     }
     .chapter-preview .note {
       font-style: italic;
-      color: #FFA500;
-      border-top: 1px solid rgba(255, 215, 0, 0.3);
+      color: #00BFFF; /* Light Blue */
+      border-top: 1px solid rgba(0, 200, 255, 0.3); /* Cyan border */
       padding-top: 20px;
       margin-top: 30px;
     }
 
-    /* Footer */
+    /* Footer - Updated Colors */
     footer {
       background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
       color: #FFFFFF;
       text-align: center;
       padding: 50px 20px 30px;
       margin-top: 80px;
-      border-top: 1px solid rgba(255, 215, 0, 0.1);
+      border-top: 1px solid rgba(0, 200, 255, 0.1); /* Cyan border */
       position: relative;
     }
     footer::before {
@@ -338,17 +346,17 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #FFFF00, #FF4500, #FFFF00);
+      background: linear-gradient(90deg, #00FFFF, #0080FF, #00FFFF); /* Blue/Cyan gradient */
     }
     .footer-links { margin: 30px 0; }
     .footer-links a {
-      color: #FFFF00;
+      color: #00FFFF; /* Cyan */
       margin: 0 20px; 
       text-decoration: none; 
       transition: color 0.3s;
       font-weight: 500;
     }
-    .footer-links a:hover { color: #FF4500; }
+    .footer-links a:hover { color: #0080FF; } /* Blue hover */
     .social-links { margin: 30px 0; }
     .social-links a {
       display: inline-block; 
@@ -356,18 +364,18 @@
       height: 50px;
       line-height: 50px; 
       text-align: center;
-      background: rgba(255, 255, 0, 0.2);
-      color: #FFFF00;
+      background: rgba(0, 200, 255, 0.2); /* Cyan background */
+      color: #00FFFF; /* Cyan */
       border-radius: 50%;
       margin: 0 10px; 
       transition: all 0.3s;
       font-size: 1.2em;
     }
     .social-links a:hover {
-      background: #FFFF00;
+      background: #00FFFF; /* Cyan */
       color: #1A1A1A;
       transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4);
+      box-shadow: 0 5px 15px rgba(0, 200, 255, 0.4); /* Cyan shadow */
     }
 
     /* Animations */
@@ -414,7 +422,8 @@
         </div>
         
         <div class="book-cta-buttons">
-          <a href="#about" class="book-cta-button">Learn More</a>
+          <!-- CHANGED: "Learn More" button replaced with "Buy Now - $5.99" Stripe link -->
+          <a href="https://buy.stripe.com/aFaeVd5OI3ZccaT93h2wU0z" target="_blank" class="book-cta-button">Buy Now - $5.99</a>
           <a href="#chapters" class="book-cta-button secondary">Read Chapter Preview</a>
         </div>
       </div>
